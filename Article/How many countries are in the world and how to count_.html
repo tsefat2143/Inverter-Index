@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5, user-scalable=yes">
+<title>How many countries are in the world and how to count?</title>
+<meta name="description" content="Nowadays the total number of countries in the world is 197. Why such a quantity and how to count them?">
+<link rel="canonical" href="https://www.countries-ofthe-world.com/how-many-countries.html">
+<style>
+html,body,div,span,h1,p,a,ul,li,img,table,tbody,tr,th,td {margin:0;padding:0}
+body, #mainwrap{width:100%;height:100%;min-width:320px;font-family:Tahoma, Helvetica, sans-serif;font-size:100%;color:#004997;text-align:center; -webkit-font-smoothing: antialiased}
+#mainwrap, #footer{max-width:1680px;margin:0 auto;text-align:left;padding-bottom:1em}
+#contentarea, #header, #topmenu, #footer{width:100%;position:relative;clear:both}
+#leftcolumn, #rightcolumn{width:190px;height:auto;position:absolute;top:34px;overflow:hidden}
+#leftcolumn{left:0;padding:10px 0 0 10px} #rightcolumn{right:0}
+#centercolumn{margin:0 200px 4em 220px}
+img{border:0}
+ul{list-style-type:none}
+a{color:#0750ff;text-decoration:none} a:hover, #footer a:hover, .active{color:#e80028}
+.list-header, .table-header, .header{font-size:1.0625em;margin:5px 0 5px 3%;background:#fff;padding:0 0.2em;color:#e80028;text-align:left}
+table{border-collapse:collapse;margin:0 auto 0.5em auto} table, td, th, .list-container{border:solid 1px #d4d4d4}
+td, th{padding:5px;font-size:0.875em} .container{border-top:solid 2px #e9e9e9}
+th{background:#edffd4;color:#353535}
+.td-red td:last-child{color:#e80028} .td-red td:first-child{width:50%}
+.two-column{width:46%;float:left;text-align:left;margin:0 2% 10px 2%}
+.codes td:last-child, .codes th:last-child{text-align:center;font-weight:bold;color:#e80028;font-size:0.75em}
+.line td{padding:0 5px} .codes, .rank, .tz{width:96%}
+.codes, td.cur_c, h1, .column{text-align:left} .cur_c{color:#008521}
+.d_state span, .column span, .two-column span{color:#383838;font-size:96%;font-style:italic} span.black{color:#333;font-size:100%;font-style:normal}
+#logo{float:left;width:530px;height:50px;margin:3px 0} #logocw{position:absolute;top:3px;left:12px;width:120px;height:50px}
+#logo:after{content:'COUNTRIES-ofthe-WORLD.COM';position:absolute;top:11px;left:145px;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+color:#3e7eff;font-size:1.5em;line-height:1.4}
+#topmenu ul{width:100%;display:table;margin:0 0 10px 0}
+#topmenu li{display:table-cell;font-weight:bold;text-align:center;font-size:1em;line-height:1.8}
+#topmenu a, #current{height:1.8125em}
+#topmenu a{display:block;background:#0069fa;color:#fff;border-right:solid 1px #61b1e9}
+#topmenu a:hover, #topmenu #current{background:#c8e856;color:#000;border-color:#afe440} 
+.menu-toggle span{display:none;width:100%;height:100%;cursor:pointer}
+#leftmenu ul, #leftmenu-style div{text-transform:uppercase}
+#leftmenu li, #leftmenu-style div{font-size:0.625em;font-weight:bold;border-bottom:dotted 1px #aaa}
+#leftmenu-style div{font-size:0.6875em;color:#000;padding:22px 0 3px 4px;margin:0;border-bottom:solid 2px #c8e856}
+#leftmenu a, #leftmenu .active{display:block;padding:11px 4px 4px 4px}
+#leftmenu a:hover, #leftmenu .active{background:#eaffe0}
+.content-text{text-align:justify;margin:0 1% 0.125em;clear:both} .content-text a, .cc_more_info{text-decoration:underline}
+.content-text p, .content-text li, h1{color:#333;font:1.0625em/1.3 "TimesNewRomanPSMT", "Times New Roman", Times, serif;margin-bottom:0.375em}
+h1{font-weight:normal;font-size:2em;padding:10px 0;margin:0;line-height:1.1}
+.container{width:98%;float:left;text-align:center;margin:0.25em 1% 4em} .list-container{border-radius:5px}
+.column{float:left;margin:10px 2%;width:28%}
+.column li{font-size:0.875em;margin:5px 0;line-height:1.25;min-width:8em}
+li.letter, td.letter, .td-red td.letter, .codes td.letter{font:bold 1.0625em Tahoma, Helvetica, sans-serif;padding:10px 0 0 0.5em;color:#008a12;text-align:left}
+.grey{background:#fafafa}
+#footer{text-align:left;border-top:solid 3px #d1d1d1;padding:1.5em 0 6em 0;font-size:0.8125em;color:#383838} #footer div{float:left;margin-left:1em}
+#footer ul{display:table;float:right} #footer li{padding:0 1em 0.75em 0;display:table-cell;color:#e80028} #footer a{color:#383838}
+.cw_mainbanner{width:160px;height:600px;margin-top:60px}
+.cc_banner-wrapper{width:100%;min-width:300px;position:fixed;bottom:0;z-index:100;background:#666}
+.cc_container{text-align:center;margin:0.25em auto;display:table}
+.cc_message{font-size:0.9375em;display:table-cell;padding:0.75em 0 0.75em 0.5em;color:#fff}
+.cc_more_info{color:#fff;white-space:nowrap}
+.cc_btn{display:inline-block;cursor:pointer;font-size:0.9375em;vertical-align:middle;border-radius:4px;background:#333;padding:3px 20px;margin:auto 20px;color:#fff}
+.cc_btn:hover{background:#ffd400;color:#000}
+@media(min-width:1201px){#leftcolumn{width:205px;padding-left:1.3%} #centercolumn{margin:0 210px 4em 245px} #leftmenu li{font-size:0.6875em}}
+@media(min-width:1435px){body{font-size:18px} #logo{width:600px} .content-text p, .content-text li{font-size:19px} #leftcolumn{top:40px;width:240px}
+#centercolumn{margin:0 330px 4em 275px} #rightcolumn{top:38px;width:320px} #leftmenu li, #leftmenu-style div{font-size:12px} #topmenu li{font-size:18px}
+.cw_mainbanner{width:300px} h1{font-size:34px} .column li, td, th{font-size:16px}}
+@media(min-width:1599px){body{font-size:19px} .content-text p, .content-text li{font-size:20px} .column li, td, th{font-size:17px}
+#leftmenu li, #leftmenu-style div{font-size:13px} #topmenu li{font-size:19px} h1{font-size:36px}}
+@media(min-width:1800px){#leftcolumn{width:265px} #centercolumn{margin:0 340px 4em 310px} #leftmenu li, #leftmenu-style div{font-size:14px} .column li, td, th{font-size:18px}
+.content-text p, .content-text li{font-size:21px}}
+@media(max-width:1130px){.cc_message{text-align:left;padding:0.375em 2%}}
+@media(max-width:1200px){#leftcolumn, #rightcolumn{top:65px} #topmenu ul, #topmenu li{float:left;display:block} #topmenu li{width:24.99%} #topmenu a{border-bottom:solid 1px #61b1e9} #topmenu #current{border-bottom:solid 1px #afe440}}
+@media(max-width:1030px){#leftmenu li{font-size:0.6875em} #rightcolumn{position:relative;top:0;width:97%;margin:0 auto;text-align:center}
+#centercolumn{margin:0 2% 0 220px} .container{margin-bottom:0.5em} .column{width:27%;min-width:5.6em} .content-text{text-align:left} .content-text p, .content-text li{font-size:1.125em} #footer ul, #footer div{float:none;margin-left:2%}
+.cw_mainbanner{margin:2.5em auto;width:728px;height:120px}}
+@media(max-width:760px){#logo{width:100%;height:45px} #logocw{width:108px;height:45px;left:7px} #logo:after{left:125px} #centercolumn{margin:0 2% 0 3%;padding-top:42px} .rank{width:99%}
+#topmenu{position:absolute;z-index:1} #topmenu, #leftcolumn{width:99.7%;padding:0;top:0} #leftcolumn{left:0}
+.menu-toggle{height:37px;text-align:center;top:0;display:block;position:relative;z-index:1}
+#topmenu .menu-toggle{width:40%;left:60%} #leftcolumn .menu-toggle{width:60%} h1{text-align:center}
+#topmenu ul, #leftmenu{border:none;border-bottom:solid 1px #ccc;width:100%;display:none;padding:0.25em 0 1.5em 0;float:left;background:#ececec}
+#topmenu li{padding:0.75em 0} #topmenu li, #topmenu a, #topmenu a:hover, #topmenu #current{border:none;height:auto;background:none;width:100%}
+#topmenu li, #leftmenu li, #topmenu li#current{font-size:1em;display:block;margin:0;text-transform:uppercase;border-bottom:dotted 1px #aaa}
+#topmenu a{color:#0750ff} #topmenu a:hover, #topmenu #current{color:#e80028}
+#leftmenu-style{margin:0 3% 0 6%} #topmenu li:last-child{border:none} #leftmenu-style div{font-size:0.8125em}
+.menu-toggle span:before{background:#0069fa;font-size:1.375em;display:inline-block;font-weight:bold;color:#fff;height:27px;padding:5px 0;width:100%}
+#leftcolumn .menu-toggle span:before{content:"Main Menu";padding-left:8%;width:92%;text-align:left}
+#topmenu .menu-toggle span:before{content:"Sections";border-left:solid 1px #c2ddf5}
+.menu-toggle span.close:before{background:#c8e856;color:#000}
+.menu-toggle span.close{display:none} .menu-toggle span.open{display:inline-block}
+.cw_mainbanner{width:336px;height:280px} #footer{padding:1em 0 4.5em 0}
+.cc_message{display:inline;padding:0 1%;font-size:0.875em} .cc_btn{margin:3px 3px 3px 10px}}
+@media(max-width:570px){#logo, #logocw{height:33px} #logocw{width:79px} #logo:after{font-size:1.1875em;left:95px;line-height:1.1} .two-column, .codes{width:95.7%}}
+@media(max-width:395px){.cw_mainbanner{width:85%;height:250px}}
+@media(min-width:357px) and (max-width:435px){h1{font-size:2.25em}}
+@media(max-width:425px){.column{width:85%;margin:0 5% 10px 5%} .column li{font-size:1.0625em}}
+@media(max-width:409px){#logo, #logocw{height:28px} #logocw{width:67px} #logo:after{font-size:1.0625em;left:81px;top:8px}}
+@media(max-width:356px){#logo:after{font-size:15px;top:10px} #leftmenu li{font-weight:normal;font-size:0.8125em}
+.cw_mainbanner{width:250px} .cc_message, #footer{font-size:0.75em}}
+
+.content-text span{font-weight:bold} .content-text ul{margin-left:1em;list-style-type:circle} span.number{display:block;font-weight:normal}
+p.quantity{font-size:1.25em;padding:0.5em 0 0.5em 2%;border-left:solid 3px #75baef;background:#fafafa;color:#0069fa;text-align:left} span.count{font-weight:bold;color:#dc0a21}
+@media(max-width:1020px){.content-text ul{margin-left:0.9375em}}
+@media(max-width:400px){p.quantity{font-size:1.125em}}
+@media(max-width:359px){p.quantity{font-size:1em} span.number{font-size:1.125em}}
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<link rel="icon" href="/cwfavicon.png">
+</head>
+<body>
+<div id="mainwrap">
+<div id="header"><a href="/" id="logo">
+<svg id="logocw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50"><path fill="#ff7e00" d="m35.5 6c-2.49 1.44-3.49 5-3.49 5h-16.5c-2.99 0-2.99-5 0-5z"/><path fill="#9520ff" d="m29.5 17c-1.15 2-1.3 5-1.3 5h-26c-3 0-2.99-5 0-5z"/><path fill="#00cd00" d="m28.2 28s0.0352 3 1.3 5h-21c-3.15 0-3.12-5 0-5z"/><path fill="#ffc200" d="m32 39s0.775 3 3.49 5h-17c-2.99 0-2.99-5 0-5z"/><path d="m59.5 0c-13 0-25 10-25 25s12 25 25 25 20-6 25-16c-1-3-8-4-10-2-3 6-9 8-15 8s-15-5-15-15 9-15 15-15 10 1 15 8c2 2 9 1 10-2-4-10-12-16-25-16z" fill="#3e7eff"/><path d="m42 18 8 18c0.654 1.37 4.35 1.37 5 0l5.5-11 5.5 11c0.654 1.38 4.35 1.37 5 0l8-18c0-2-2-4-5-2l-5.5 13-5.5-13c-0.654-1.37-4.35-1.37-5 0l-5.5 13-5.5-13c-2-2-5 0.000001-5 2z" fill="#b9ec00"/><path d="m84.5 6c2.49 1.44 3.49 5 3.49 5h16.5c2.99 0 2.99-5 0-5z" fill="#ff7e00"/><path d="m90.5 17c1.15 2 1.3 5 1.3 5h26c3 0 2.99-5 0-5z" fill="#9520ff"/><path d="m91.8 28s-0.0352 3-1.3 5h21c3.15 0 3.12-5 0-5z" fill="#00cd00"/><path d="m88 39s-0.775 3-3.49 5h17c2.99 0 2.99-5 0-5z" fill="#ffc200"/></svg>
+</a></div>
+<div id="contentarea">
+<div id="topmenu">
+<div class="menu-toggle">
+<span class="open" id="topmenuopen"></span>
+<span class="close" id="topmenuclose"></span>
+</div>
+<ul id="topmenuul">
+<li><a href="continents-of-the-world.html">7 Continents</a></li>
+<li><a href="capitals-of-the-world.html">World Capitals</a></li>
+<li><a href="flags-of-the-world.html">World Flags</a></li>
+<li><a href="world-currencies.html">World Currencies</a></li>
+<li><a href="world-time-zones.html">Time Zones</a></li>
+<li><a href="list-of-country-calling-codes.html">Calling Codes</a></li>
+<li><a href="TLD-list.html">Country Domains</a></li>
+<li><a href="best-travel-places.html">Best Travel Places</a></li>
+</ul>
+</div>
+<div id="centercolumn">
+<div id="content">
+<div class="content-text">
+<h1>How many countries are&nbsp;in&nbsp;the&nbsp;world?</h1>
+<p class="quantity">Today, there are 197 countries in the world: <span class="number"><span class="count">193 UN members</span> + <span class="count">2 UN observers</span> + <span class="count">Taiwan</span> + <span class="count">Kosovo</span>.</span></p>
+<p>The United Nations, as the most influential international organization, is often considered the start point for the correct counting the total number. <span>All the 193 UN members are independent countries recognized worldwide</span>.</p>
+<p>Become a part of the United Nations is not so easy. First of all, the Security Council is voting and the consent of all 5 permanent members of the Council (the United States, the United Kingdom, France, Russia, and China) is needed for the adoption of the new candidate. After that, the UN General Assembly approves this decision by no less than the two-thirds of the votes. Such a complicated procedure ensures that all the accepted UN members have been recognized by the vast majority of other states and have established diplomatic relations with them.</p>
+<p><span>Two UN observers, Holy See (Vatican) and Palestine, are both countries</span> because the UN observer status confirms the certain degree of their international recognition. The Holy See maintains bilateral relations with the majority of the world through its 180 diplomatic missions in independent states and international organizations. Palestine nowadays is recognized by 137 countries.</p>
+<p>All other self-proclaimed entities are considered as "partially recognized countries". Some of them either do not control their own territory, like the Western Sahara, or are recognized only by 1-5 UN members and by partially recognized subjects like themselves. For example, the independence of the Northern Cyprus is confirmed only by Turkey; the Republic of Abkhazia has obtained acceptance of 4 members of the UN; the Nagorno-Karabakh Republic statehood is accepted only by three partially recognized states. The list may go on, but there are two exceptions:</p>
+<ul>
+<li><span>Taiwan is officially recognized by 15 countries (14 UN members and one UN observer)</span>. This self-governed territory with a population more of than 23 million people has all signs of statehood and plays the significant role in the region as one of the highly developed economies in Asia Pacific. It participates in the World Trade Organization (WTO) and the Asia-Pacific Economic Cooperation (APEC). Taiwan has its diplomatic missions (official and unofficial) in more than 100 states and maintains the unofficial bilateral relations with the United States, Canada, UK, European Union, Germany, France, Russia, India, Australia, Japan, Indonesia, Philippines, Brazil, Argentina, Mexico, Turkey, Saudi Arabia, South Africa, Nigeria and others.</li>
+<li><span>Kosovo is officially recognized by 98 UN member countries and by Taiwan</span>. It also has obtained the membership of the World Bank, the International Monetary Fund (IMF), the European Bank for Reconstruction and Development (EBRD).</li>
+</ul>
+<p>Such wide recognition of these two entities could be a basis to include Taiwan and Kosovo in the list of independent states. At the same time, China claims that Taiwan is a part of its internal territory, and Serbia does the same by insisting that Kosovo is its autonomous province.</p>
+<p>Nowadays there is no consensus on the issue of the total quantity of countries because still there is no universally agreed definition of "country" and there is no one single competent international body, which could correctly answer the question, "How many are there in the world?".</p>
+<p>All of the above is our own answer, which is based on the real practice of official and unofficial international relations existing today in the world.</p>
+</div>
+</div>
+</div>
+<div id="leftcolumn">
+<div class="menu-toggle">
+<span class="open" id="leftmenuopen"></span>
+<span class="close" id="leftmenuclose"></span>
+</div>
+<div id="leftmenu">
+<div id="leftmenu-style">
+<ul>
+<li class="active">How many countries?</li>
+<li><a href="all-countries.html">Countries of the World</a></li>
+</ul>
+<div>Countries by continent</div>
+<ul>
+<li><a href="countries-of-europe.html">Countries of Europe</a></li>
+<li><a href="countries-of-asia.html">Countries of Asia</a></li>
+<li><a href="countries-of-africa.html">Countries of Africa</a></li>
+<li><a href="countries-of-north-america.html">Countries of North America</a></li>
+<li><a href="countries-of-south-america.html">Countries of South America</a></li>
+<li><a href="countries-of-australia-and-oceania.html">Countries of Australia and Oceania</a></li>
+</ul>
+<div>Union of countries</div>
+<ul>
+<li><a href="european-union-countries.html">European Union countries</a></li>
+</ul>
+<div>World statistics</div>
+<ul>
+<li><a href="largest-countries.html">World's largest countries</a></li>
+<li><a href="smallest-countries.html">World's smallest countries</a></li>
+<li><a href="most-populous-countries.html">Most populous countries</a></li>
+<li><a href="richest-countries.html">World's richest countries</a></li>
+<li><a href="most-traded-currencies.html">Most traded currencies</a></li>
+</ul>
+<div>Global education</div>
+<ul>
+<li><a href="top-universities.html">World's top universities</a></li>
+<li><a href="online-colleges-usa.html">Best US online colleges</a></li>
+<li><a href="free-online-courses.html">Free online courses</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="rightcolumn">
+<!-- CW-MainBanner -->
+<ins class="adsbygoogle cw_mainbanner"
+     style="display:inline-block"
+     data-ad-client="ca-pub-7150466882207981"
+     data-ad-slot="4804321745"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+</div>
+<div id="footer">
+<ul><li><a href="privacy-and-disclaimer.html">Privacy and Disclaimer</a></li><li><a href="cookies-policy.html">Cookies Policy</a></li><li><a href="contact.html">Contact us</a></li></ul>
+<div>&copy; 2008–2020, www.countries-ofthe-world.com</div>
+</div>
+<script>var topOpen = document.getElementById('topmenuopen'); var topClose = document.getElementById('topmenuclose'); var leftOpen = document.getElementById('leftmenuopen'); var leftClose = document.getElementById('leftmenuclose'); topOpen.addEventListener("click", function(){document.getElementById('topmenuul').style.display='block'; document.getElementById('topmenuclose').style.display='block'; document.getElementById('leftmenu').style.display='none'; document.getElementById('leftmenuclose').style.display='none'; document.getElementById('leftmenuopen').style.display='block'; this.style.display='none';}); topClose.addEventListener("click", function(){document.getElementById('topmenuul').style.display='none'; document.getElementById('topmenuopen').style.display='block'; this.style.display='none';}); leftOpen.addEventListener("click", function(){document.getElementById('leftmenu').style.display='block'; document.getElementById('leftmenuclose').style.display='block'; document.getElementById('topmenuopen').style.display='block'; document.getElementById('topmenuclose').style.display='none'; document.getElementById('topmenuul').style.display='none'; this.style.display='none'}); leftClose.addEventListener("click", function(){document.getElementById('leftmenu').style.display='none'; document.getElementById('leftmenuopen').style.display='block'; this.style.display='none';});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-4251245-1', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'forceSSL', true); ga('send', 'pageview');</script>
+</body>
+</html>

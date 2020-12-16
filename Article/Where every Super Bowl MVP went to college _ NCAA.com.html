@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgYCUlJACQMDVVZVDgIF",licenseKey:"b4c08c65aa",applicationID:"103177932"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(21),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(22),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),c.xhrWrappable&&t(10),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(9),s=t(8),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=y.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,y.now()])}),a.on(m,function(t,n,e){this.bstStart=y.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){function r(t,n,e){var r=t[n];"function"==typeof r&&(t[n]=function(){var t=i(arguments),n={};o.emit(e+"before-start",[t],n);var a;n[m]&&n[m].dt&&(a=n[m].dt);var s=r.apply(this,t);return o.emit(e+"start",[t,a],s),s.then(function(t){return o.emit(e+"end",[null,t],s),t},function(t){throw o.emit(e+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(22),a=t(21);n.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,n){r(d[h],n,f),r(l[h],n,f)}),r(s,"fetch",c),o.on(c+"end",function(t,n){var e=this;if(n){var r=n.headers.get("content-length");null!==r&&(e.rxSize=r),o.emit(c+"done",[null,n],e)}else o.emit(c+"done",[t],e)}))},{}],7:[function(t,n,e){var r=t("ee").get("history"),o=t("wrap-function")(r);n.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,n,e){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],9:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],10:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,n,e){function r(t){if(!i(t))return null;var n=window.NREUM;if(!n.loader_config)return null;var e=(n.loader_config.accountID||"").toString()||null,r=(n.loader_config.agentID||"").toString()||null,s=(n.loader_config.trustKey||"").toString()||null;if(!e||!r)return null;var c=a.generateCatId(),f=a.generateCatId(),u=Date.now(),d=o(c,f,u,e,r,s);return{header:d,guid:c,traceId:f,timestamp:u}}function o(t,n,e,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:n,ti:e}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function i(t){var n=!1,e=!1,r={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(r=NREUM.init.distributed_tracing,e=!!r.enabled),e)if(t.sameOrigin)n=!0;else if(r.allowed_origins instanceof Array)for(var o=0;o<r.allowed_origins.length;o++){var i=s(r.allowed_origins[o]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){n=!0;break}}return e&&n}var a=t(19),s=t(13);n.exports={generateTracePayload:r,shouldGenerateTrace:i}},{}],12:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);n.aborted||(e.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):i(this,t),e.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime]))}}function o(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.parsedOrigin=c(n),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,n){t.params.status=n.status;var e=w(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){i(n,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=f(this.parsedOrigin);e&&e.header&&(n.setRequestHeader("newrelic",e.header),this.dt=e)}),u.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=m(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<l;s++)n.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),u.on("xhr-load-added",function(t,n){var e=""+p(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,n){var e=""+p(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],n)}),u.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],n)}),u.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,n){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)}),u.on("fetch-before-start",function(t){var n,e=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var r=f(this.parsedOrigin);if(r&&r.header){var o=r.header;if("string"==typeof t[0]){var i={};for(var a in e)i[a]=e[a];i.headers=new Headers(e.headers||{}),i.headers.set("newrelic",o),this.dt=r,t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&(t[0].headers.append("newrelic",o),this.dt=r)}})}},{}],13:[function(t,n,e){var r={};n.exports=function(t){if(t in r)return r[t];var n=document.createElement("a"),e=window.location,o={};n.href=t,o.port=n.port;var i=n.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=n.hostname||e.hostname,o.pathname=n.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!n.protocol||":"===n.protocol||n.protocol===e.protocol,s=n.hostname===document.domain&&n.port===e.port;return o.sameOrigin=a&&(!n.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],14:[function(t,n,e){function r(t,n){var e=t.responseType;return"json"===e&&null!==n?n:"arraybuffer"===e||"blob"===e||"json"===e?o(t.response):"text"===e||"document"===e||""===e||void 0===e?o(t.responseText):void 0}var o=t(16);n.exports=r},{}],15:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(21),s=t(22),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],16:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],17:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],18:[function(t,n,e){function r(t,n){var e=t.getEntries();e.forEach(function(t){"first-paint"===t.name?c("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&c("timing",["fcp",Math.floor(t.startTime)])})}function o(t,n){var e=t.getEntries();e.length>0&&c("lcp",[e[e.length-1]])}function i(t){if(t instanceof u&&!l){var n,e=Math.round(t.timeStamp);n=e>1e12?Date.now()-e:f.now()-e,l=!0,c("timing",["fi",e,{type:t.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,s,c=t("handle"),f=t("loader"),u=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),s=new PerformanceObserver(o);try{a.observe({entryTypes:["paint"]}),s.observe({entryTypes:["largest-contentful-paint"]})}catch(d){}}if("addEventListener"in document){var l=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(t){document.addEventListener(t,i,!1)})}}},{}],19:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],20:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],21:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],22:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],23:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){g[t]=m(t).concat(n)}function h(t,n){var e=g[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(21),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(21),u=t("ee"),d=t(20),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(15),t(18),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(23)},{}],"wrap-function":[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(22),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}]},{},["loader",2,12,4,3]);</script>
+<script type="text/javascript">var turner_metadata = {"page_name":"where every super bowl mvp went to college | ncaa.com","keywords":"super bowl, super bowl mvp, tom brady, alabama, rams, patriots, nick foles, joe montana","url":"https:\/\/www.ncaa.com\/news\/football\/article\/2020-02-02\/super-bowl-mvps-college","article_name":"where every super bowl mvp went to college","article_published_time":"2020-02-03t08:51:23z","article_modified_time":"2020-02-03t08:51:23z","article_tag":"super bowl, super bowl mvp, tom brady, alabama, rams, patriots, nick foles, joe montana","author":"mitchell northam | ncaa.com","business_unit":"ncaa","content_type":"article","division":"fbs","franchise":"article","gender":"men","node_id":"1522334","school":"university of georgia, university of michigan","section":"football-men-fbs","subsection":"article","sport":"football","sport_div":"football-fbs","thumbnail_url":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_large\/public-s3\/images\/2019-01-30\/brady-ward-swann%20sb%20mvps.jpg?h=d1c7066f&amp;itok=nsXSKOkC","date_created":"2020-02-02T22:41:00Z","date_published":"2020-02-03T08:51:23Z","date_modified":"2020-02-03T08:51:23Z"};</script>
+<link rel="canonical" href="https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college" />
+<meta name="description" property="description" content="A look at where every Super Bowl MVP went to college and which college has the most MVP&#039;s." />
+<meta name="abstract" content="A look at where every Super Bowl MVP went to college and which college has the most MVP&#039;s." />
+<meta name="keywords" content="Super Bowl, Super Bowl MVP, Tom Brady, Alabama, Rams, Patriots, Nick Foles, Joe Montana" />
+<meta name="twitter:image:alt" content="Patrick Mahomes was named Super Bowl LIV MVP. Here&#039;s a list of where all of the Super Bowl MVPs went to college." />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="dns-prefetch" href="//consent.truste.com" />
+<link rel="dns-prefetch" href="//agility.ncaa.com" />
+<link rel="preconnect" href="//cdn.cookielaw.org" />
+<link rel="preconnect" href="//consent.trustarc.com" />
+<link rel="preconnect" href="//static.chartbeat.com" />
+<link rel="preconnect" href="//ping.chartbeat.net" />
+<link rel="preconnect" href="//mabping.chartbeat.net" />
+<link rel="preload" href="/core/assets/vendor/jquery/jquery.min.js?v=3.4.1" as="script" type="application/javascript" />
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"NewsArticle","headline":"Where Patrick Mahomes and the other 53 Super Bowl MVPs went to college","url":"https:\/\/www.ncaa.com\/news\/football\/article\/2020-02-02\/super-bowl-mvps-college","dateCreated":"2020-02-02T22:41:00Z","datePublished":"2020-02-03T08:51:23Z","dateModified":"2020-02-03T08:51:23Z","publisher":{"@type":"Organization","name":"NCAA.com","logo":{"@type":"ImageObject","url":"https:\/\/www.ncaa.com\/modules\/custom\/casablanca_content\/img\/meta\/ncaa.60.png","width":61,"height":60}},"description":"A look at where every Super Bowl MVP went to college and which college has the most MVP's.","image":{"@type":"ImageObject","url":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_large\/public-s3\/images\/2019-01-30\/brady-ward-swann%20sb%20mvps.jpg?h=d1c7066f&amp;itok=nsXSKOkC"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.ncaa.com\/news\/football\/article\/2020-02-02\/super-bowl-mvps-college"},"thumbnailUrl":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/images\/2019-01-30\/brady-ward-swann%20sb%20mvps.jpg","articleSection":"article","author":{"@type":"Person","name":"Mitchell Northam | NCAA.com"},"creator":{"@type":"Person","name":"Mitchell Northam | NCAA.com"},"keywords":["super bowl","USC","georgia","Michigan","Tom Brady","Hines Ward","Lynn Swann","Nick Foles","georgia","michigan"]}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebPage","url":"https:\/\/www.ncaa.com\/news\/football\/article\/2020-02-02\/super-bowl-mvps-college","dateCreated":"2020-02-02T22:41:00Z","datePublished":"2020-02-03T08:51:23Z","dateModified":"2020-02-03T08:51:23Z","publisher":{"@type":"Organization","name":"NCAA.com","logo":{"@type":"ImageObject","url":"https:\/\/www.ncaa.com\/modules\/custom\/casablanca_content\/img\/meta\/ncaa.60.png","width":61,"height":60}},"headline":"Where Patrick Mahomes and the other 53 Super Bowl MVPs went to college","description":"A look at where every Super Bowl MVP went to college and which college has the most MVP's.","image":{"@type":"ImageObject","url":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_large\/public-s3\/images\/2019-01-30\/brady-ward-swann%20sb%20mvps.jpg?h=d1c7066f&amp;itok=nsXSKOkC"},"author":{"@type":"Person","name":"Mitchell Northam | NCAA.com"},"creator":{"@type":"Person","name":"Mitchell Northam | NCAA.com"},"thumbnailUrl":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_large\/public-s3\/images\/2019-01-30\/brady-ward-swann%20sb%20mvps.jpg?h=d1c7066f&amp;itok=nsXSKOkC","keywords":"Super Bowl, Super Bowl MVP, Tom Brady, Alabama, Rams, Patriots, Nick Foles, Joe Montana"}</script>
+<meta name="title" property="title" content="Where every Super Bowl MVP went to college | NCAA.com" />
+<meta name="url" property="url" content="https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college" />
+<meta name="image" property="image" content="https://www.ncaa.com/sites/default/files/public/styles/focal_point_large/public-s3/images/2019-01-30/brady-ward-swann%20sb%20mvps.jpg?h=d1c7066f&amp;itok=nsXSKOkC" />
+<meta name="og:image" property="og:image" content="https://www.ncaa.com/sites/default/files/public/styles/focal_point_large/public-s3/images/2019-01-30/brady-ward-swann%20sb%20mvps.jpg?h=d1c7066f&amp;itok=nsXSKOkC" />
+<meta name="og:title" property="og:title" content="Where every Super Bowl MVP went to college | NCAA.com" />
+<meta name="og:description" property="og:description" content="A look at where every Super Bowl MVP went to college and which college has the most MVP&#039;s." />
+<meta name="og:url" property="og:url" content="https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college" />
+<meta name="og:type" property="og:type" content="article" />
+<meta name="twitter:image" property="twitter:image" content="https://www.ncaa.com/sites/default/files/public/styles/focal_point_large/public-s3/images/2019-01-30/brady-ward-swann%20sb%20mvps.jpg?h=d1c7066f&amp;itok=nsXSKOkC" />
+<meta name="twitter:title" property="twitter:title" content="Where every Super Bowl MVP went to college | NCAA.com" />
+<meta name="twitter:description" property="twitter:description" content="A look at where every Super Bowl MVP went to college and which college has the most MVP&#039;s." />
+<meta name="twitter:url" property="twitter:url" content="https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college" />
+<meta name="twitter:site" property="twitter:site" content="@NCAA" />
+<meta name="twitter:card" property="twitter:card" content="summary_large_image" />
+<meta name="twitter:site:id" property="twitter:site:id" content="31122496" />
+<link rel="dns-prefetch" href="//fastlane.rubiconproject.com" />
+<link rel="dns-prefetch" href="//optimized-by.rubiconproject.com" />
+<link rel="dns-prefetch" href="//ads.rubiconproject.com" />
+<link rel="dns-prefetch" href="//aax.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="//c.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="//rtax.criteo.com" />
+<link rel="dns-prefetch" href="//static.criteo.net" />
+<link rel="dns-prefetch" href="//bidder.criteo.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+<link rel="dns-prefetch" href="//ib.adnxs.com" />
+<link rel="dns-prefetch" href="//prebid.adnxs.com" />
+<link rel="preconnect" href="https://data.ncaa.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="preconnect" href="https://i.turner.ncaa.com" />
+<link rel="preconnect" href="https://turnip.cdn.turner.com" />
+<link rel="prefetch" href="/themes/custom/bespin/assets/fonts/Geogrotesque-Md.woff" />
+<link rel="prefetch" href="/themes/custom/bespin/assets/fonts/Geogrotesque-SmBd.woff" />
+<link rel="prefetch" href="/themes/custom/bespin/assets/fonts/Geogrotesque-Rg.woff" />
+<link rel="prefetch" href="/themes/custom/bespin/assets/fonts/Geogrotesque-Bd.woff" />
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#007dc7" />
+<meta name="msapplication-TileColor" property="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" property="theme-color" content="#ffffff" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="amphtml" href="https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college?amp" />
+
+    <title>Where every Super Bowl MVP went to college | NCAA.com</title>
+    <link rel="stylesheet" media="all" href="/modules/custom/casablanca_franchise/css/franchise-banner.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_sports/css/sport-subnav.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/ajax-progress.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/autocomplete-loading.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/progress.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/resize.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/sticky-header.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tabledrag.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tree-child.module.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_libraries/livefyre/css/ncaa-livefyre.css?v=1" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_libraries/lazysizes/css/lazysizes.css?v=5.2.0" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_stax/css/layout/layout-public.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-newsletter.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-follow.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-related-links.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-ad-slots.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-article.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-graphic.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-links.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-live-video.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-gamecenter.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-ad.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_tiles/css/tile-base.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/core.css?v=1.12.1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/menu.css?v=1.12.1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/autocomplete.css?v=1.12.1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/datepicker.css?v=1.12.1" />
+<link rel="stylesheet" media="all" href="/modules/contrib/anchor_link/css/anchor_link.css?v=8.8.2" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_content/modules/casablanca_shortcodes/css/casablanca-shortcodes-icon.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_content/css/paragraphs.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_footer/css/footer.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_social/modules/casablanca_social_hanger/css/social-hanger.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_libraries/prettyselect/jquery.prettyselect.min.css?v=1.0.1" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_libraries/table_responsive/css/table-responsive.css?v=1.0.0" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_libraries/slick/css/slick.css?v=1.9.0" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_libraries/slick/css/slick-theme.css?v=1.9.0" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_articles/css/article-content.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_articles/css/article-related.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_core/css/gamePod.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_video/css/player-slate.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_video/css/video-embed.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_nav/css/ncaa-nav.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/theme.css?v=1.12.1" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_scoreboard/css/ncaa-conference-selector.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_scoreboard/css/ncaa-datenav.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/modules/custom/casablanca_scoreboard/css/ncaa-scoreboard.css?v=master-771" />
+<link rel="stylesheet" media="all" href="/themes/custom/bespin/css/main.css?v=master-771" />
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1522334","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"cdx":{"adobe":["perf-general"],"akamai":["perf-general"],"amazon_a9":["ads-general","ads-vendor"],"amazon_aws":["perf-general"],"appnexus":["perf-vendor"],"bluekai":["ads-general","ads-vendor"],"braze":[""],"chartbeat":["perf-general"],"cloud_front":["perf-general"],"comscore":["perf-vendor"],"conviva":["perf-general"],"criteo":["ads-general","ads-vendor"],"cws_pixel":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"dalton":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"dataxu":["ads-general"],"digitalcross":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"drupal":["required"],"ensighten":[""],"facebook_pixel":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor","social-general","social-vendor"],"floodlight":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"freewheel":["ads-general","ads-vendor"],"gigya":["person-general","person-vendor","social-general","social-vendor"],"google_dfp":["ads-general","ads-vendor"],"gtm":[""],"insight_pixel":["person-general","person-vendor","ads-general","ads-vendor"],"kochava":["ads-general"],"krux":["behavior-general","behavior-vendor","perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"looker":["behavior-general","behavior-vendor","perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor","social-general","social-vendor"],"moat":["ads-general","ads-vendor"],"mparticle":["person-general","person-vendor","ads-general","ads-vendor"],"new_relic":["perf-general"],"nielsen":["behavior-general","behavior-vendor","perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor","social-general","social-vendor"],"omniture":["perf-general"],"quantcast":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"samba":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"scorecard_research":["perf-vendor"],"simpli_fi":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"sportshub_tech":["perf-general"],"tracking_pixel":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor"],"turner_guid":["perf-general"],"twitter_pixel":["perf-general","perf-vendor","person-general","person-vendor","ads-general","ads-vendor","social-general","social-vendor"],"urban_airship":["perf-general"],"youtube":["behavior-general","person-general","ads-general","ads-vendor","social-general","social-vendor"]},"casablanca_analytics":{"one_trust_url":"https:\/\/cdn.cookielaw.org\/scripttemplates\/otSDKStub.js","one_trust_guid":"27c817ca-399c-4851-9dc1-5725121225d3","force_opt_out":false,"ensighten_url":"\/\/agility.ncaa.com\/turner\/ncaa-prod\/Bootstrap.js","enable_headline_testing":true},"core":{"build":"master-772","isPROD":true},"casablanca_draco_dfp":{"ad_manager":{"registries":["https:\/\/s.cdn.turner.com\/ads\/ncaa_3\/ncaa_article.js"],"test_mode":false,"dfp_ad_unit_map":"article","defer_queue_registry":false,"dfp_primary_sport":"football","dfp_franchise":""}},"video":{"video-player-1942450":{"adSection":"ncaa.com_main_articles","autoInit":true,"autoPlay":true,"contentEmbed":true,"chartbeat":true,"div":"video-player-1942450","initialPlaylist":[],"initialVideo":{"id":"\/video\/football\/2020-01-14\/di-fbs-football-championship-lsu-clemson","nid":"1942450","title":"LSU defeats Clemson 42-25 to win CFP National Championship","description":"Joe Burrow\u0027s five passing touchdowns carried LSU football to its first national title since 2007 in a 42-25 win over Clemson.","author":"tdinan","short_headline":"LSU defeats Clemson 42-25 to win CFP National Championship","thumbnail":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_large\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=lpxpljwT","thumbnails":{"small":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_small\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=6u8vsKCT","stax_small_content_tile":"https:\/\/www.ncaa.com\/_flysystem-style-redirect\/stax_small_content_tile\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=NLZCI61F","medium":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_medium\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=_6gOLSqe","stax_medium_content_tile":"https:\/\/www.ncaa.com\/_flysystem-style-redirect\/stax_medium_content_tile\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=pfDY-poj","large":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_large\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=lpxpljwT","stax_large_content_tile":"https:\/\/www.ncaa.com\/_flysystem-style-redirect\/stax_large_content_tile\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=scswJX64","x-large":"https:\/\/www.ncaa.com\/_flysystem-style-redirect\/focal_point_x_large\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f\u0026itok=nngp2rRE","raw":"https:\/\/www.ncaa.com\/_flysystem-style-redirect\/original\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?itok=cIe4xng_"},"streams":{"phone":"https:\/\/ncaa-vh.akamaihd.net\/i\/2020\/01\/14\/caption\/3989d9c5-9170-47a3-9692-5050ec59003f_3008132_,640x360_800,416x240_200,480x270_400,768x432_1500,.mp4.csmil\/master.m3u8","tablet":"https:\/\/ncaa-vh.akamaihd.net\/i\/2020\/01\/14\/caption\/3989d9c5-9170-47a3-9692-5050ec59003f_3008132_,768x432_1500,416x240_200,480x270_400,640x360_600,640x360_800,960x540_2500,1280x720_3500,.mp4.csmil\/master.m3u8","connected":"https:\/\/ncaa-vh.akamaihd.net\/i\/2020\/01\/14\/caption\/3989d9c5-9170-47a3-9692-5050ec59003f_3008132_,768x432_1500,416x240_200,480x270_400,640x360_600,640x360_800,960x540_2500,1280x720_3500,.mp4.csmil\/master.m3u8","hds":"https:\/\/ncaa-vh.akamaihd.net\/z\/2020\/01\/14\/caption\/3989d9c5-9170-47a3-9692-5050ec59003f_3008132_,768x432_1500,416x240_200,480x270_400,640x360_600,640x360_800,960x540_2500,1280x720_3500,.mp4.csmil\/manifest.f4m","hls":"https:\/\/ncaa-vh.akamaihd.net\/i\/2020\/01\/14\/caption\/3989d9c5-9170-47a3-9692-5050ec59003f_3008132_,768x432_1500,416x240_200,480x270_400,640x360_600,640x360_800,960x540_2500,1280x720_3500,.mp4.csmil\/master.m3u8","raw":"https:\/\/ht.cdn.turner.com\/ncaa\/big\/2020\/01\/14\/caption\/3989d9c5-9170-47a3-9692-5050ec59003f_3008132_1280x720_3500.mp4"},"duration":139,"duration_formatted":"2:19","created_timestamp":"1578980069","created_formatted":"Jan. 14, 2020","updated_timestamp":"1579021170","updated_formatted":"Jan. 14, 2020","related_game":[{"target_id":"166856","game":"1935789","game_url":"\/game\/football\/fbs\/2020\/01\/13\/clemson-lsu"}],"embeddable":"1","is_champ":false,"hide_controls":false,"franchises":[{"name":"fbschampionship","description":"FBS Championship","target_id":"47279","is_sponsored":true},{"name":"highlights","description":"Highlights","target_id":"2933","is_sponsored":false},{"name":"ncaa-video","description":"NCAA.com Video","target_id":"96871","is_sponsored":false}],"conferences":[{"name":"atlantic-coast","description":"Atlantic Coast","target_id":"2587"},{"name":"southeastern","description":"Southeastern","target_id":"2867"}],"schools":[{"name":"clemson","description":"Clemson","target_id":"673"},{"name":"lsu","description":"LSU","target_id":"1227"}],"tags":[{"name":"fbs","description":"fbs","target_id":"10411"},{"name":"College Football","description":"College Football","target_id":"7925"},{"name":"NCAA football","description":"NCAA football","target_id":"9945"},{"name":"CFP","description":"CFP","target_id":"27563"},{"name":"College Football Playoff","description":"College Football Playoff","target_id":"13045"},{"name":"LSU Football","description":"LSU Football","target_id":"14055"},{"name":"Joe Burrow","description":"Joe Burrow","target_id":"99747"},{"name":"clemson football","description":"clemson football","target_id":"23999"}],"academic_year":"2020","titleId":"\/video\/football\/2020-01-14\/di-fbs-football-championship-lsu-clemson","fw_group":"NCAA Videos \/ Football","source":"draco_video","sport":"football-fbs","display_sport":"FBS Football","division":"fbs","sport_with_gender_display":"Football","sport_root_display":"Football","schedule_expire":false,"schedule_publish":false},"initialVideoId":"","parentId":"1522334","playerId":"video-player-1942450","renderDiv":false,"site":"ncaa"}},"videoConfig":{"ad_server_base_url":"https:\/\/BEA4.v.fwmrm.net\/ad\/g\/1","fw_network_id":"48804","fw_profile":"turner_html5_pem","conviva_key":"489452d6d1239f12ff616bfe2f11aba0e64355ac","conviva_application_name":"NCAA - Web","conviva_gateway_url":"https:\/\/cws.conviva.com"},"subnav":{"divLinks":{"fcs":{"Home":"\/sports\/football\/fcs","Rankings":"\/rankings\/football\/fcs","Standings":"\/standings\/football\/fcs","Stats":"\/stats\/football\/fcs","Champ Info":"\/championships\/football\/fcs","Scores":"\/scoreboard\/football\/fcs","Bracket":"\/brackets\/football\/fcs","Video":"\/video\/football","History":"\/history\/football\/fcs","BROADCAST SCHEDULE":"http:\/\/web1.ncaa.org\/NCAATV\/exec\/query"},"d2":{"Home":"\/sports\/football\/d2","Rankings":"\/rankings\/football\/d2","Scores":"\/scoreboard\/football\/d2","Stats":"\/stats\/football\/d2","Bracket":"\/brackets\/football\/d2","Video":"\/video\/football","History":"\/history\/football\/d2","BROADCAST SCHEDULE":"http:\/\/web1.ncaa.org\/NCAATV\/exec\/query"},"d3":{"Home":"\/sports\/football\/d3","Rankings":"\/rankings\/football\/d3","Scores":"\/scoreboard\/football\/d3","Stats":"\/stats\/football\/d3","Bracket":"\/brackets\/football\/d3","Video":"\/video\/football","History":"\/history\/football\/d3","BROADCAST SCHEDULE":"http:\/\/web1.ncaa.org\/NCAATV\/exec\/query"}}},"LiveVideoTile":{"url":"https:\/\/data.ncaa.com\/casablanca\/live-today.json","sportDivMap":{"ncaa-d1":{"name":"ncaa-d1","description":"DI NCAA","division":"d1","gender":"men","sport":"ncaa"},"ncaa-d2":{"name":"ncaa-d2","description":"DII NCAA","division":"d2","gender":"men","sport":"ncaa"},"ncaa-d3":{"name":"ncaa-d3","description":"DIII NCAA","division":"d3","gender":"men","sport":"ncaa"},"baseball-d1":{"name":"baseball-d1","description":"DI Baseball","division":"d1","gender":"men","sport":"baseball"},"baseball-d2":{"name":"baseball-d2","description":"DII Baseball","division":"d2","gender":"men","sport":"baseball"},"baseball-d3":{"name":"baseball-d3","description":"DIII Baseball","division":"d3","gender":"men","sport":"baseball"},"basketball-men-d1":{"name":"basketball-men-d1","description":"DI Men\u0027s Basketball","division":"d1","gender":"men","sport":"basketball"},"basketball-men-d2":{"name":"basketball-men-d2","description":"DII Men\u0027s Basketball","division":"d2","gender":"men","sport":"basketball"},"basketball-men-d3":{"name":"basketball-men-d3","description":"DIII Men\u0027s Basketball","division":"d3","gender":"men","sport":"basketball"},"basketball-men-d4":{"name":"basketball-men-d4","description":null,"division":"d4","gender":"men","sport":"basketball"},"basketball-women-d1":{"name":"basketball-women-d1","description":"DI Women\u0027s Basketball","division":"d1","gender":"women","sport":"basketball"},"basketball-women-d2":{"name":"basketball-women-d2","description":"DII Women\u0027s Basketball","division":"d2","gender":"women","sport":"basketball"},"basketball-women-d3":{"name":"basketball-women-d3","description":"DIII Women\u0027s Basketball","division":"d3","gender":"women","sport":"basketball"},"beach-volleyball-d1":{"name":"beach-volleyball-nc","description":"NC Beach Volleyball","division":"nc","gender":"women","sport":"beach-volleyball"},"bowling-nc":{"name":"bowling-nc","description":"NC Bowling","division":"nc","gender":"women","sport":"bowling"},"cross-country-men-d1":{"name":"cross-country-men-d1","description":"DI Men\u0027s Cross Country","division":"d1","gender":"men","sport":"cross-country"},"cross-country-men-d2":{"name":"cross-country-men-d2","description":"DII Men\u0027s Cross Country","division":"d2","gender":"men","sport":"cross-country"},"cross-country-men-d3":{"name":"cross-country-men-d3","description":"DIII Men\u0027s Cross Country","division":"d3","gender":"men","sport":"cross-country"},"cross-country-women-d1":{"name":"cross-country-women-d1","description":"DI Women\u0027s Cross Country","division":"d1","gender":"women","sport":"cross-country"},"cross-country-women-d2":{"name":"cross-country-women-d2","description":"DII Women\u0027s Cross Country","division":"d2","gender":"women","sport":"cross-country"},"cross-country-women-d3":{"name":"cross-country-women-d3","description":"DIII Women\u0027s Cross Country","division":"d3","gender":"women","sport":"cross-country"},"fencing-nc":{"name":"fencing-nc","description":"NC Fencing","division":"nc","gender":"men","sport":"fencing"},"fieldhockey-d1":{"name":"fieldhockey-d1","description":"DI Field Hockey","division":"d1","gender":"women","sport":"fieldhockey"},"fieldhockey-d2":{"name":"fieldhockey-d2","description":"DII Field Hockey","division":"d2","gender":"women","sport":"fieldhockey"},"fieldhockey-d3":{"name":"fieldhockey-d3","description":"DIII Field Hockey","division":"d3","gender":"women","sport":"fieldhockey"},"football-fbs":{"name":"football-fbs","description":"FBS Football","division":"fbs","gender":"men","sport":"football"},"football-fcs":{"name":"football-fcs","description":"FCS Football","division":"fcs","gender":"men","sport":"football"},"football-d2":{"name":"football-d2","description":"DII Football","division":"d2","gender":"men","sport":"football"},"football-d3":{"name":"football-d3","description":"DIII Football","division":"d3","gender":"men","sport":"football"},"football-d5":{"name":"football-d5","description":null,"division":"d4","gender":"men","sport":"football"},"golf-men-d1":{"name":"golf-men-d1","description":"DI Men\u0027s Golf","division":"d1","gender":"men","sport":"golf"},"golf-men-d2":{"name":"golf-men-d2","description":"DII Men\u0027s Golf","division":"d2","gender":"men","sport":"golf"},"golf-men-d3":{"name":"golf-men-d3","description":"DIII Men\u0027s Golf","division":"d3","gender":"men","sport":"golf"},"golf-women-d1":{"name":"golf-women-d1","description":"DI Women\u0027s Golf","division":"d1","gender":"women","sport":"golf"},"golf-women-d2":{"name":"golf-women-d2","description":"DII Women\u0027s Golf","division":"d2","gender":"women","sport":"golf"},"golf-women-d3":{"name":"golf-women-d3","description":"DIII Women\u0027s Golf","division":"d3","gender":"women","sport":"golf"},"gymnastics-men-nc":{"name":"gymnastics-men-nc","description":"NC Men\u0027s Gymnastics","division":"nc","gender":"men","sport":"gymnastics"},"gymnastics-women-nc":{"name":"gymnastics-women-nc","description":"NC Women\u0027s Gymnastics","division":"nc","gender":"women","sport":"gymnastics"},"icehockey-men-d1":{"name":"icehockey-men-d1","description":"DI Men\u0027s Ice Hockey","division":"d1","gender":"men","sport":"icehockey"},"icehockey-men-d3":{"name":"icehockey-men-d3","description":"DIII Men\u0027s Ice Hockey","division":"d3","gender":"men","sport":"icehockey"},"icehockey-women-d1":{"name":"icehockey-women-nc","description":"NC Women\u0027s Ice Hockey","division":"nc","gender":"women","sport":"icehockey"},"icehockey-women-d3":{"name":"icehockey-women-d3","description":"DIII Women\u0027s Ice Hockey","division":"d3","gender":"women","sport":"icehockey"},"lacrosse-men-d1":{"name":"lacrosse-men-d1","description":"DI Men\u0027s Lacrosse","division":"d1","gender":"men","sport":"lacrosse"},"lacrosse-men-d2":{"name":"lacrosse-men-d2","description":"DII Men\u0027s Lacrosse","division":"d2","gender":"men","sport":"lacrosse"},"lacrosse-men-d3":{"name":"lacrosse-men-d3","description":"DIII Men\u0027s Lacrosse","division":"d3","gender":"men","sport":"lacrosse"},"lacrosse-women-d1":{"name":"lacrosse-women-d1","description":"DI Women\u0027s Lacrosse","division":"d1","gender":"women","sport":"lacrosse"},"lacrosse-women-d2":{"name":"lacrosse-women-d2","description":"DII Women\u0027s Lacrosse","division":"d2","gender":"women","sport":"lacrosse"},"lacrosse-women-d3":{"name":"lacrosse-women-d3","description":"DIII Women\u0027s Lacrosse","division":"d3","gender":"women","sport":"lacrosse"},"rifle-nc":{"name":"rifle-nc","description":"NC Rifle","division":"nc","gender":"men","sport":"rifle"},"rowing-d1":{"name":"rowing-d1","description":"DI Rowing","division":"d1","gender":"women","sport":"rowing"},"rowing-d2":{"name":"rowing-d2","description":"DII Rowing","division":"d2","gender":"women","sport":"rowing"},"rowing-d3":{"name":"rowing-d3","description":"DIII Rowing","division":"d3","gender":"women","sport":"rowing"},"skiing-nc":{"name":"skiing-nc","description":"NC Skiing","division":"nc","gender":"men","sport":"skiing"},"soccer-men-d1":{"name":"soccer-men-d1","description":"DI Men\u0027s Soccer","division":"d1","gender":"men","sport":"soccer"},"soccer-men-d2":{"name":"soccer-men-d2","description":"DII Men\u0027s Soccer","division":"d2","gender":"men","sport":"soccer"},"soccer-men-d3":{"name":"soccer-men-d3","description":"DIII Men\u0027s Soccer","division":"d3","gender":"men","sport":"soccer"},"soccer-women-d1":{"name":"soccer-women-d1","description":"DI Women\u0027s Soccer","division":"d1","gender":"women","sport":"soccer"},"soccer-women-d2":{"name":"soccer-women-d2","description":"DII Women\u0027s Soccer","division":"d2","gender":"women","sport":"soccer"},"soccer-women-d3":{"name":"soccer-women-d3","description":"DIII Women\u0027s Soccer","division":"d3","gender":"women","sport":"soccer"},"softball-d1":{"name":"softball-d1","description":"DI Softball","division":"d1","gender":"women","sport":"softball"},"softball-d2":{"name":"softball-d2","description":"Div II Softball","division":"d2","gender":"women","sport":"softball"},"softball-d3":{"name":"softball-d3","description":"Div III Softball","division":"d3","gender":"women","sport":"softball"},"swimming-men-d1":{"name":"swimming-men-d1","description":"DI Men\u0027s Swimming \u0026 Diving","division":"d1","gender":"men","sport":"swimming"},"swimming-men-d2":{"name":"swimming-men-d2","description":"DII Men\u0027s Swimming \u0026 Diving","division":"d2","gender":"men","sport":"swimming"},"swimming-men-d3":{"name":"swimming-men-d3","description":"DIII Men\u0027s Swimming \u0026 Diving","division":"d3","gender":"men","sport":"swimming"},"swimming-women-d1":{"name":"swimming-women-d1","description":"DI Women\u0027s Swimming \u0026 Diving","division":"d1","gender":"women","sport":"swimming"},"swimming-women-d2":{"name":"swimming-women-d2","description":"DII Women\u0027s Swimming \u0026 Diving","division":"d2","gender":"women","sport":"swimming"},"swimming-women-d3":{"name":"swimming-women-d3","description":"DIII Women\u0027s Swimming \u0026 Diving","division":"d3","gender":"women","sport":"swimming"},"tennis-men-d1":{"name":"tennis-men-d1","description":"DI Men\u0027s Tennis","division":"d1","gender":"men","sport":"tennis"},"tennis-men-d2":{"name":"tennis-men-d2","description":"DII Men\u0027s Tennis","division":"d2","gender":"men","sport":"tennis"},"tennis-men-d3":{"name":"tennis-men-d3","description":"DIII Men\u0027s Tennis","division":"d3","gender":"men","sport":"tennis"},"tennis-women-d1":{"name":"tennis-women-d1","description":"DI Women\u0027s Tennis","division":"d1","gender":"women","sport":"tennis"},"tennis-women-d2":{"name":"tennis-women-d2","description":"DII Women\u0027s Tennis","division":"d2","gender":"women","sport":"tennis"},"tennis-women-d3":{"name":"tennis-women-d3","description":"DIII Women\u0027s Tennis","division":"d3","gender":"women","sport":"tennis"},"trackfield-indoor-men-d1":{"name":"trackfield-indoor-men-d1","description":"DI Men\u0027s Track \u0026 Field (I)","division":"d1","gender":"men","sport":"trackfield-indoor"},"trackfield-indoor-men-d2":{"name":"trackfield-indoor-men-d2","description":"DII Men\u0027s Track \u0026 Field (I)","division":"d2","gender":"men","sport":"trackfield-indoor"},"trackfield-indoor-men-d3":{"name":"trackfield-indoor-men-d3","description":"DIII Men\u0027s Track \u0026 Field (I)","division":"d3","gender":"men","sport":"trackfield-indoor"},"trackfield-indoor-women-d1":{"name":"trackfield-indoor-women-d1","description":"DI Women\u0027s Track \u0026 Field (I)","division":"d1","gender":"women","sport":"trackfield-indoor"},"trackfield-indoor-women-d2":{"name":"trackfield-indoor-women-d2","description":"DII Women\u0027s Track \u0026 Field (I)","division":"d2","gender":"women","sport":"trackfield-indoor"},"trackfield-indoor-women-d3":{"name":"trackfield-indoor-women-d3","description":"DIII Women\u0027s Track \u0026 Field (I)","division":"d3","gender":"women","sport":"trackfield-indoor"},"trackfield-outdoor-men-d1":{"name":"trackfield-outdoor-men-d1","description":"DI Men\u0027s Track \u0026 Field (O)","division":"d1","gender":"men","sport":"trackfield-outdoor"},"trackfield-outdoor-men-d2":{"name":"trackfield-outdoor-men-d2","description":"DII Men\u0027s Track \u0026 Field (O)","division":"d2","gender":"men","sport":"trackfield-outdoor"},"trackfield-outdoor-men-d3":{"name":"trackfield-outdoor-men-d3","description":"DIII Men\u0027s Track \u0026 Field (O)","division":"d3","gender":"men","sport":"trackfield-outdoor"},"trackfield-outdoor-women-d1":{"name":"trackfield-outdoor-women-d1","description":"DI Women\u0027s Track \u0026 Field (O)","division":"d1","gender":"women","sport":"trackfield-outdoor"},"trackfield-outdoor-women-d2":{"name":"trackfield-outdoor-women-d2","description":"DII Women\u0027s Track \u0026 Field (O)","division":"d2","gender":"women","sport":"trackfield-outdoor"},"trackfield-outdoor-women-d3":{"name":"trackfield-outdoor-women-d3","description":"DIII Women\u0027s Track \u0026 Field (O)","division":"d3","gender":"women","sport":"trackfield-outdoor"},"volleyball-men-d1":{"name":"volleyball-men-nc","description":"NC Men\u0027s Volleyball","division":"nc","gender":"men","sport":"volleyball"},"volleyball-men-d3":{"name":"volleyball-men-d3","description":"DIII Men\u0027s Volleyball","division":"d3","gender":"men","sport":"volleyball"},"volleyball-women-d1":{"name":"volleyball-women-d1","description":"DI Women\u0027s Volleyball","division":"d1","gender":"women","sport":"volleyball"},"volleyball-women-d2":{"name":"volleyball-women-d2","description":"DII Women\u0027s Volleyball","division":"d2","gender":"women","sport":"volleyball"},"volleyball-women-d3":{"name":"volleyball-women-d3","description":"DIII Women\u0027s Volleyball","division":"d3","gender":"women","sport":"volleyball"},"waterpolo-men-d1":{"name":"waterpolo-men-nc","description":"NC Men\u0027s Water Polo","division":"nc","gender":"men","sport":"waterpolo"},"waterpolo-women-d1":{"name":"waterpolo-women-nc","description":"NC Women\u0027s Water Polo","division":"nc","gender":"women","sport":"waterpolo"},"waterpolo-women-d2":{"name":"waterpolo-women-d2","description":"D2 Women\u0027s Water Polo","division":"d2","gender":"women","sport":"waterpolo"},"wrestling-d1":{"name":"wrestling-d1","description":"DI Wrestling","division":"d1","gender":"men","sport":"wrestling"},"wrestling-d2":{"name":"wrestling-d2","description":"DII Wrestling","division":"d2","gender":"men","sport":"wrestling"},"wrestling-d3":{"name":"wrestling-d3","description":"DIII Wrestling","division":"d3","gender":"men","sport":"wrestling"}}},"game_config":{"game":{"1357554027":{"structured_data":"https:\/\/data.ncaa.com\/casablanca","type":"game","division_long":"FBS","division_short":"fbs","dataPath":"\/game\/3959666\/gameInfo.json","slug":"\/game\/3959666","away_team_logo":"https:\/\/i.turner.ncaa.com\/sites\/default\/files\/images\/logos\/schools\/bgd\/clemson.svg","home_team_logo":"https:\/\/i.turner.ncaa.com\/sites\/default\/files\/images\/logos\/schools\/bgd\/lsu.svg","custom_division":"CFP National Championship - Jan. 13","title":"LSU defeats Clemson for the national title","video_mp4_url":"","video_webm_url":"","img_location":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/stax_large_content_tile\/public-s3\/tile-images\/gamecenter\/Burrow-fist_0.jpg?h=04022b5e\u0026itok=Xl32Zyd8","img_type":"custom"}}},"countdown_time":1584309600,"scoreboardWidget":{"widgets":[{"id":"1720482","feedUrl":"https:\/\/data.ncaa.com\/casablanca\/scoreboard\/football\/fbs\/2019\/P\/scoreboard.json","title":"FBS Football","sport":"football","division":"fbs","rangeStart":"","rangeEnd":"","sourceType":"Regular Season","sortByTop25":true,"round":"showAll","year":"2019","month":"","day":"","week":"P"}],"multipleWidgets":false,"alwaysShowLabel":true,"widgetName":"FBS Football","rangeStart":"","rangeEnd":"","isHome":false},"liveSchedule":{"path":"https:\/\/data.ncaa.com\/casablanca\/live-today.json"},"json":["https:\/\/data.ncaa.com\/casablanca\/schedule\/football\/fbs\/today.json"],"user":{"uid":0,"permissionsHash":"e6fe709684412c36b762e2c38d7f3a0119646d577180e069017c7d5cf5fc6710"}}</script>
+
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.4.1"></script>
+<script src="/core/assets/vendor/underscore/underscore-min.js?v=1.8.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.8.2"></script>
+<script src="/core/misc/drupal.js?v=8.8.2"></script>
+<script src="/core/misc/drupal.init.js?v=8.8.2"></script>
+<script src="/modules/custom/casablanca_libraries/user-consent/js/min/user-consent.min.js?v=1.4.3"></script>
+<script src="/modules/custom/casablanca_core/js/dist/constants.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_core/js/dist/utils.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_analytics/js/dist/ncaa_consent.min.js?v=master-771"></script>
+
+  
+  <script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"true","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-d19d07f5-9efd-497a-930b-d02ad7aee10e","rua.cook":"false","rua.ims":"true","rua.ufprl":"false","rua.cfprl":"false"}]);</script>
+  <script>!function(){function o(n,i){if(n&&i)for(var r in i)i.hasOwnProperty(r)&&(void 0===n[r]?n[r]=i[r]:n[r].constructor===Object&&i[r].constructor===Object?o(n[r],i[r]):n[r]=i[r])}try{var n=decodeURIComponent("");if(n.length>0&&window.JSON&&"function"==typeof window.JSON.parse){var i=JSON.parse(n);void 0!==window.BOOMR_config?o(window.BOOMR_config,i):window.BOOMR_config=i}}catch(r){window.console&&"function"==typeof window.console.error&&console.error("mPulse: Could not parse configuration",r)}}();</script>
+  <script>!function(e){var a="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,a="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="QKVCC-2KZLS-FZQZ8-XWVBF-MG6F6",function(){function n(a){e.BOOMR_onload=a&&a.timeStamp||(new Date).getTime()}if(!e.BOOMR||!e.BOOMR.version&&!e.BOOMR.snippetExecuted){e.BOOMR=e.BOOMR||{},e.BOOMR.snippetExecuted=!0;var i,o,r,_=document.createElement("iframe");if(e[t])e[t]("load",n,!1);else if(e.attachEvent)e.attachEvent("onload",n);_.src="javascript:void(0)",_.title="",_.role="presentation",(_.frameElement||_).style.cssText="width:0;height:0;border:0;display:none;",r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(_,r);try{o=_.contentWindow.document}catch(O){i=document.domain,_.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",o=_.contentWindow.document}o.open()._l=function(){var e=this.createElement("script");if(i)this.domain=i;e.id="boomr-if-as",e.src=a+"QKVCC-2KZLS-FZQZ8-XWVBF-MG6F6",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(e)},o.write("<bo"+'dy onload="document._l();">'),o.close()}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var a="true"=="true"?1:0,t="",n="mqbgivyxzemr6xs7hjsq-f-0501a9bfd-clientnsv4-s.akamaihd.net",i={"ak.v":25,"ak.cp":"548492","ak.ai":parseInt("356633",10),"ak.ol":"0","ak.cr":10,"ak.ipv":4,"ak.proto":"h2","ak.rid":"627ab284","ak.r":36217,"ak.a2":a,"ak.m":"dscx","ak.n":"essl","ak.bpcip":"100.2.100.0","ak.cport":61504,"ak.gh":"23.59.251.68","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1583299173"};if(""!==t)i["ak.ruds"]=t;var o={i:!1,av:function(a){var t="http.initiator";if(a&&(!a[t]||"spa_hard"===a[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!o.i){var e=BOOMR.subscribe;e("before_beacon",o.av,null,null),e("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body class="path-node page-node-type-article">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="ncaa-root" class="layout-container">
+    <header role="header" class="header-main clearfix">
+                    <div class="top-banner">
+                <div class="dfp" id="ad_bnr_atf_01"></div><div id="ad_oop_float_01"></div>
+
+            </div>
+                        <div class="region region-header">
+                <div id="scoreboardWidgetWrapper">
+</div>
+
+                <nav id="ncaa-navigation" class="ncaa-navigation"><div id="nav-hamburger" class="hamburger-navigation line"><span></span><span></span><span></span></div><div class="main-navigation-inner"><a class="icon ncaa-main-logo" href="/">NCAA.com</a><div class="menu-live-container"><a href="/liveschedule" class="main-menu-item-live">Live Video</a></div><div class="drawer-navigation-inner"><ul class="main-navigation"><li class="menu-item-home"><a href="/" class="main-menu-item icon-home">Home</a></li><li><a href="/liveschedule" class="main-menu-item icon-live_video">Live Video</a></li><li class="menu-item-expandable"><span class="main-menu-item icon-sports expandable">Sports</span><div class="sub-nav"><div class="sports-nav"><div class="season"><h4>Fall</h4><ul><li><span class="sport-txt">Cross Country</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/cross-country-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/cross-country-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li class="no-gen"><a href="/sports/fieldhockey" class="sport-link">Field Hockey</a></li><li class="no-gen"><a href="/sports/football" class="sport-link">Football</a></li><li><span class="sport-txt">Soccer</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/soccer-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/soccer-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li class="no-gen"><a href="/sports/volleyball-women" class="sport-link">Volleyball - W</a></li><li class="no-gen"><a href="/sports/waterpolo-men" class="sport-link">Water Polo - M</a></li></ul></div><div class="season"><h4>Winter</h4><ul><li><span class="sport-txt">Basketball</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/basketball-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/basketball-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li class="no-gen"><a href="/sports/bowling" class="sport-link">Bowling</a></li><li class="no-gen"><a href="/sports/fencing" class="sport-link">Fencing</a></li><li><span class="sport-txt">Gymnastics</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/gymnastics-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/gymnastics-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li><span class="sport-txt">Ice Hockey</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/icehockey-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/icehockey-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li class="no-gen"><a href="/sports/rifle" class="sport-link">Rifle</a></li><li class="no-gen"><a href="/sports/skiing" class="sport-link">Skiing</a></li><li><span class="sport-txt">Swimming &amp; Diving</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/swimming-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/swimming-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li><span class="sport-txt">Track &amp; Field (I)</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/trackfield-indoor-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/trackfield-indoor-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li class="no-gen"><a href="/sports/wrestling" class="sport-link">Wrestling</a></li></ul></div><div class="season"><h4>Spring</h4><ul><li class="no-gen"><a href="/sports/baseball" class="sport-link">Baseball</a></li><li class="no-gen"><a href="/sports/beach-volleyball" class="sport-link">Beach Volleyball</a></li><li><span class="sport-txt">Golf</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/golf-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/golf-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li><span class="sport-txt">Lacrosse</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/lacrosse-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/lacrosse-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li class="no-gen"><a href="/sports/rowing" class="sport-link">Rowing</a></li><li class="no-gen"><a href="/sports/softball" class="sport-link">Softball</a></li><li><span class="sport-txt">Tennis</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/tennis-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/tennis-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li><span class="sport-txt">Track &amp; Field (O)</span><span class="sport-nav-carat"></span><div><span class="sport-gender"><a href="/sports/trackfield-outdoor-men"><span class="short">M</span><span class="full">Men</span></a></span><span class="sport-gender"><a href="/sports/trackfield-outdoor-women"><span class="short">W</span><span class="full">Women</span></a></span></div></li><li class="no-gen"><a href="/sports/volleyball-men" class="sport-link">Volleyball - M</a></li><li class="no-gen"><a href="/sports/waterpolo-women" class="sport-link">Water Polo - W</a></li></ul></div></div></div></li><li><a href="/video" class="main-menu-item icon-on_demand">Video</a></li><li><a href="/march-madness-live/watch?cid=mml2019_ncaa_main_nav" class="main-menu-item icon-march_madness_live">March Madness Live</a></li><li class="menu-item-expandable"><span class="main-menu-item icon-tickets expandable">Tickets</span><div class="sub-nav"><div class="tickets-nav"><div class="col"><h4>NCAA Championships</h4><ul><li><a href="/tickets" class="sport-link">NCAA Championships</a></li><li><a href="/tickets/basketball-men/d1" class="sport-link">Men&#039;s Basketball</a></li><li><a href="/tickets/basketball-women/d1" class="sport-link">Women&#039;s Basketball</a></li><li><a href="/tickets/icehockey-men/d1 " class="sport-link">Men&#039;s Ice Hockey</a></li><li><a href="/tickets/wrestling/d1" class="sport-link">Wrestling</a></li></ul></div><div class="col"><h4>Primesport Tickets
+            <span>Affiliate Offers</span></h4><ul class="primesport"><li><a href="https://bit.ly/NCAAMBBT" class="sport-link external">NCAA Tournament</a></li><li><a href="https://bit.ly/NCAAMENSFF" class="sport-link external">Final Four</a></li><li><a href="https://bit.ly/NCAAWrestle" class="sport-link external">NCAA Wrestling Championships</a></li><li><a href="https://bit.ly/NCAAWFF" class="sport-link external">Women’s Final Four</a></li><li><a href="https://bit.ly/NCAAFrozen" class="sport-link external">Men’s Frozen Four</a></li></ul></div></div></div></li><li class="menu-item-expandable"><span class="main-menu-item icon-schools expandable">Schools</span><div class="sub-nav"><div id="ncaa-nav-schools" class="schools-nav"><button class="school-search-goto">All Schools</button><div class="school-autocomplete"><div class="school-finder-container"><div class="svg-icon-glass"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.436-3.87 5.946 5.946 0 1 0-5.946 5.947 5.92 5.92 0 0 0 3.87-1.436l.247.256v.722L14.637 16 16 14.637l-4.565-4.574zm-5.489 0c-2.278 0-4.116-1.839-4.116-4.117S3.668 1.83 5.946 1.83s4.117 1.839 4.117 4.116-1.84 4.117-4.117 4.117z" fill="#fff" fill-rule="evenodd"/></svg></div><div class="js-form-item form-item js-form-type-textfield form-item- js-form-item- form-no-label"><input placeholder="Search all schools" class="school-finder form-text" data-action="redirect" type="text" size="60" maxlength="128" /></div></div></div><div class="trending"><h4>Trending Schools</h4><ul><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/duke.svg"><a href="/schools/duke">Duke</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/louisville.svg"><a href="/schools/louisville">Louisville</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/penn-st.svg"><a href="/schools/penn-st">Penn State</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/virginia.svg"><a href="/schools/virginia">Virginia</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/wisconsin.svg"><a href="/schools/wisconsin">Wisconsin</a></li></ul><ul><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/uconn.svg"><a href="/schools/uconn">Connecticut</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/north-carolina.svg"><a href="/schools/north-carolina">North Carolina</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/villanova.svg"><a href="/schools/villanova">Villanova</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/maryland.svg"><a href="/schools/maryland">Maryland</a></li><li><img class="school-icon lazyload" data-src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/south-carolina.svg"><a href="/schools/south-carolina">South Carolina</a></li></ul></div></div></div></li><li><a href="http://www.shopncaasports.com/source/BM-NCAAcom-edit-topnav" class="main-menu-item icon-shop" target="_blank">Shop</a></li></ul></div></div></nav>
+                
+<div class="trending_bar_container">
+    <div class="trending_bar ">
+
+        <div class="trending_bar__info trending_bar__wrapper">
+            <div class="trending_bar__name">
+                <h3 class="">TRENDING: </h3>
+            </div>
+
+                                    <div class="trending_bar__feed">
+                                            <span class="trending_bar__icon none"></span>
+                                                                <a href="https://www.ncaa.com/news/trackfield-indoor-men/article/2020-03-03/2020-ncaa-division-i-mens-and-womens-indoor-track-and?utm_campaign=trending"><p>🏆 DI track and field selections released</p></a>
+                </div>
+                            <div class="trending_bar__feed">
+                                            <span class="trending_bar__icon play_blue"></span>
+                                                                <a href="https://www.ncaa.com/video/basketball-men/2020-03-03/di-mbk-highlights-tennessee-kentucky?utm_campaign=trending"><p>Tennessee storms back to top No. 6 Kentucky</p></a>
+                </div>
+                            <div class="trending_bar__feed">
+                                            <span class="trending_bar__icon none"></span>
+                                                                <a href="https://www.ncaa.com/news/basketball-men/article/2020-03-03/how-virginia-basketball-can-still-win-acc?utm_campaign=trending"><p>🔊 Podcast: How UVA could *still* win the ACC</p></a>
+                </div>
+                            </div>
+    </div>
+</div>
+
+                <style>
+    </style>
+
+<div class="countdown_bar" style="background-color: #000000;">
+    <div class="countdown_bar__info countdown_bar__wrapper">
+        <div class="countdown_bar__title countdown_bar__wrapper">
+            <h3>Selection Sunday</h3>
+        </div>
+        <div class="countdown_bar__timer countdown_bar__wrapper">
+            <div class="countdown_bar__timer__days">
+                <span class="time"></span>
+                <p class="label">days</p>
+            </div>
+            <span class="clock_colon">:</span>
+            <div class="countdown_bar__timer__hours">
+                <span class="time"></span>
+                <p class="label">hrs</p>
+            </div>
+            <span class="clock_colon">:</span>
+            <div class="countdown_bar__timer__minutes">
+                <span class="time"></span>
+                <p class="label">min</p>
+            </div>
+            <span class="clock_colon">:</span>
+            <div class="countdown_bar__timer__seconds">
+                <span class="time"></span>
+                <p class="label">sec</p>
+            </div>
+        </div>
+    </div>
+    <div class="countdown_bar__wrapper countdown_bar__icon_button">
+                    <div class="countdown_bar__icon countdown_bar__wrapper">
+                <img src="https://www.ncaa.com/sites/default/files/public/nav/countdown/icons/SELECTION_SHOW_CBS_black.jpg" alt="">
+            </div>
+                <div class="countdown_bar__button countdown_bar__wrapper">
+            <div class="pre-state-button">
+                <a href="https://www.ncaa.com/news/basketball-men/selection-sunday-2020-time-dates-schedule?cid=2020_editorial_countdown_clock" class="button button--primary">
+                    Full schedule 
+                </a>
+            </div>
+            <div class="live-state-button">
+                <a href="" class="button button--primary">
+                    <span class="live-icon"></span>
+                    Watch live
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                <div data-drupal-messages-fallback class="hidden"></div>
+
+    </div>
+
+    </header>
+    <main role="main" class="clearfix">
+        <a id="main-content" tabindex="-1"></a>
+        <div id="ncaa-content" class="layout-content">
+                                <div id="block-bespin-content">
+    
+        
+            
+
+<nav class="sport-subnav content-header">
+    <div class="subnav-heading">
+        <h3>FBS</h3>
+        <h2 class="page-title">Football</h2>
+    </div>
+        <aside class="subnav-divisions">
+        <select id="subnav-division-selector" data-sport="football-fbs">
+                    <option value="fbs" selected="selected">FBS</option>
+                    <option value="fcs">FCS</option>
+                    <option value="d2">DII</option>
+                    <option value="d3">DIII</option>
+                </select>
+    </aside>
+        <div class="subnav-main">
+        <div id="subnav-flex-menu" class="subnav-menu-items">
+                                        <a href="/sports/football/fbs" data-menu-id="0" target="_self">Home</a>
+                                                        <a href="/scoreboard/football/fbs" data-menu-id="1" target="_self">Scores</a>
+                                                        <a href="/rankings/football/fbs" data-menu-id="2" target="_self">Rankings</a>
+                                                        <a href="/standings/football/fbs" data-menu-id="3" target="_self">Standings</a>
+                                                        <a href="/stats/football/fbs" data-menu-id="4" target="_self">Stats</a>
+                                                        <a href="/video/football" data-menu-id="5" target="_self">Video</a>
+                                                        <a href="/history/football/fbs" data-menu-id="6" target="_self">History</a>
+                                                        <a href="https://www.ncaa.com/news/football/article/2019-07-19/2019-20-college-football-bowl-game-schedule-dates-times-tv" data-menu-id="7" target="_blank">Bowls</a>
+                                        </div>
+        <div class="subnav-ellipsis" style="display: none;"></div>
+        <div id="subnav-overflow" class="overflow-menu"></div>
+        <hr class="divider"/>
+    </div>
+        </nav>
+
+    
+    
+    <style type="text/css">
+    .non-sponsorship-line {
+        border-bottom: 4px solid #818181!important;
+    }
+    .non-sponsor-content-ad {
+        border-top-color: #818181!important;
+    }
+    </style>
+    <figure class="franchise-block-container franchise-banner-nofranch">
+            <div class="non-sponsorship-line">
+                <div class="non-sponsor-content-ad">
+                    <div class="sponsor-text"  style="display: block">PRESENTED BY</div>
+                    <div class="dfp" id="ad_ns_atf_01"></div>
+                </div>
+            </div>
+    </figure>
+
+
+
+
+
+
+
+
+
+
+    <div class="layout--has-sidebar has-banner">
+        <article role="article" class="article-content clearfix layout--content-left">
+            <header>
+                                    <div class="article-flag"><img src="https://www.ncaa.com/modules/custom/casablanca_core/img/sportbanners/football.svg" alt="football-fbs flag" /></div>
+                                <div class="meta">
+                    <h4>Mitchell Northam | NCAA.com | February 3, 2020</h4>
+                    <h1 class="headline">Where every Super Bowl MVP went to college</h1>
+                </div>
+            </header>
+            <div class="article-body node__content">
+                <div class="primary-media">    <div class="paragraph paragraph--type--video paragraph--view-mode--primary">
+                                <script type="application/ld+json" name="metaScript">{"@context":"http:\/\/schema.org","@type":"VideoObject","headline":"LSU defeats Clemson 42-25 to win College Football Playoff National Championship","url":"https:\/\/www.ncaa.com\/video\/football\/2020-01-14\/di-fbs-football-championship-lsu-clemson","dateCreated":"2020-01-14T00:34:29Z","datePublished":"2020-01-14T11:59:30Z","dateModified":"2020-01-14T11:59:30Z","publisher":{"@type":"Organization","name":"NCAA.com","logo":{"@type":"ImageObject","url":"https:\/\/www.ncaa.com\/modules\/custom\/casablanca_content\/img\/meta\/ncaa.60.png","width":61,"height":60}},"name":"LSU defeats Clemson 42-25 to win College Football Playoff National Championship","uploadDate":"2020-01-14T00:34:29Z","duration":"PT0H02M20S","description":"Here are the college football programs with the most College Football Playoff wins and appearances since the format started in 2014.","image":{"@type":"ImageObject","url":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/styles\/focal_point_large\/public-s3\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f&itok=lpxpljwT"},"mainEntityOfPage":{"@type":"NewsArticle","@id":"https:\/\/www.ncaa.com\/news\/football\/article\/2020-02-02\/super-bowl-mvps-college"},"thumbnailUrl":"https:\/\/www.ncaa.com\/sites\/default\/files\/public\/thumbnails\/2020-01\/di-fbs-football-highlights-clemson-lsu.jpg","author":{"@type":"Organization","name":"NCAA.com"},"creator":{"@type":"Organization","name":"NCAA.com"},"keywords":["fbs","College Football","NCAA football","CFP","College Football Playoff","LSU Football","Joe Burrow","clemson football","clemson","lsu"]}</script>
+                <div id="video-player-1942450" class="player-container autoplay-on">
+            <a href="/video/football/2020-01-14/di-fbs-football-championship-lsu-clemson">
+                <div class="video-container">
+                    <div class="video-thumbnail">
+                        <img src="https://www.ncaa.com/sites/default/files/public/styles/focal_point_large/public-s3/thumbnails/2020-01/di-fbs-football-highlights-clemson-lsu.jpg?h=5b0fc93f&amp;itok=lpxpljwT">
+                    </div>
+                </div>
+            </a>
+        </div>
+                    <div class="video-headline"><span>LSU defeats Clemson 42-25 to win CFP National Championship</span></div>
+            </div>
+</div>
+                
+    <div class="ncaa-share-hanger">
+    <label>Share</label>
+    <ul>
+        <li>
+            <a id="social-share-facebook" data-url="https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college" data-shareto="facebook" class="sharebutton icon-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college" title="Share on Facebook" target="_blank">
+                <img src="/modules/custom/casablanca_social/modules/casablanca_social_hanger/img/social-facebook.svg" width="30px" height="30px" />
+            </a>
+        </li>
+        <li>
+            <a id="social-share-twitter" data-shareto="twitter" class="sharebutton icon-social-twitter" href="https://twitter.com/home?status=https://www.ncaa.com/news/football/article/2020-02-02/super-bowl-mvps-college" title="Share on Twitter" target="_blank">
+                <img src="/modules/custom/casablanca_social/modules/casablanca_social_hanger/img/social-twitter.svg" width="30px" height="30px" />
+            </a>
+        </li>
+    </ul>
+</div>
+                <div></div>
+                <div><!DOCTYPE html>
+<html><p>The Kansas City Chiefs and San Francisco 49ers&nbsp;played in Super Bowl LIV on Sunday, Feb. 2 in Miami, and all 106 roster members active for the Super Bowl were&nbsp;former student-athletes at either the NCAA Division I or&nbsp;II level.</p>
+
+<p>Texas Tech's Patrick Mahomes became the&nbsp;54th Super Bowl MVP in NFL history, as the Chiefs defeated the 49ers 31-20 for their first Super Bowl victory in 50 years. He is Texas Tech's first Super Bowl MVP winner.</p>
+
+<p>Super Bowl MVPs have come from colleges big and small, from the Division II ranks to powerhouses like Alabama. One has come from FCS school&nbsp;Delaware, and a few played their college football at Georgia.</p>
+
+<p>Chiefs quarterback Mahomes, a former Red Raider, earned the MVP honor after completing 26 of 42 passes for 286 yards, two&nbsp;touchdowns and two&nbsp;interceptions in Kansas City's victory.</p>
+
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">Proven. 💪<br>
+<br>
+🔴<a href="https://twitter.com/PatrickMahomes?ref_src=twsrc%5Etfw">@PatrickMahomes</a> | <a href="https://twitter.com/hashtag/WreckEm?src=hash&amp;ref_src=twsrc%5Etfw">#WreckEm</a>⚫️ <a href="https://t.co/nHo7A9GjZX">pic.twitter.com/nHo7A9GjZX</a></p>
+— Texas Tech Football (@TexasTechFB) <a href="https://twitter.com/TexasTechFB/status/1224170565256253440?ref_src=twsrc%5Etfw">February 3, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Here's a rundown of where each Super Bowl MVP played their college football.</p>
+
+<p><strong>2020 SUPER BOWL ROSTERS: <a href="https://www.ncaa.com/news/article/2020-01-30/2020-super-bowl-rosters-colleges-49ers-and-chiefs-players" target="_blank" title="">The colleges of 49ers and Chiefs players for Super Bowl LIV</a></strong></p>
+
+<table style="width: 100%;">
+	<thead>
+		<tr>
+			<th scope="col">Super Bowl</th>
+			<th scope="col">Player</th>
+			<th scope="col">NFL Team</th>
+			<th scope="col">Position</th>
+			<th scope="col">College</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>I</td>
+			<td>Bart Starr</td>
+			<td>Green Bay Packers</td>
+			<td>Quarterback</td>
+			<td>Alabama</td>
+		</tr>
+		<tr>
+			<td>II</td>
+			<td>Bart Starr</td>
+			<td>Green Bay Packers</td>
+			<td>Quarterback</td>
+			<td>Alabama</td>
+		</tr>
+		<tr>
+			<td>III</td>
+			<td>Joe Namath</td>
+			<td>New York Jets</td>
+			<td>Quarterback</td>
+			<td>Alabama</td>
+		</tr>
+		<tr>
+			<td>IV</td>
+			<td>Len Dawson</td>
+			<td>Kansas City Chiefs</td>
+			<td>Quarterback</td>
+			<td>Purdue</td>
+		</tr>
+		<tr>
+			<td>V</td>
+			<td>Chuck Howley</td>
+			<td>Dallas Cowboys</td>
+			<td>Linebacker</td>
+			<td>West Virginia</td>
+		</tr>
+		<tr>
+			<td>VI</td>
+			<td>Roger Staubach</td>
+			<td>Dallas Cowboys</td>
+			<td>Quarterback</td>
+			<td>Navy</td>
+		</tr>
+		<tr>
+			<td>VII</td>
+			<td>Jake Scott</td>
+			<td>Miami Dolphins</td>
+			<td>Safety</td>
+			<td>Georgia</td>
+		</tr>
+		<tr>
+			<td>VIII</td>
+			<td>Larry Csonka</td>
+			<td>Miami Dolphins</td>
+			<td>Fullback</td>
+			<td>Syracuse</td>
+		</tr>
+		<tr>
+			<td>IX</td>
+			<td>Franco Harris</td>
+			<td>Pittsburgh Steelers</td>
+			<td>Running back</td>
+			<td>Penn State</td>
+		</tr>
+		<tr>
+			<td>X</td>
+			<td>Lynn Swann</td>
+			<td>Pittsburgh Steelers</td>
+			<td>Wide receiver</td>
+			<td>Southern California</td>
+		</tr>
+		<tr>
+			<td>XI</td>
+			<td>Fred Biletnikoff</td>
+			<td>Oakland Raiders</td>
+			<td>Wide receiver</td>
+			<td>Florida State</td>
+		</tr>
+		<tr>
+			<td>XII</td>
+			<td>Randy White,<br>
+			Harvey Martin</td>
+			<td>Dallas Cowboys</td>
+			<td>Defensive linemen</td>
+			<td>Maryland,<br>
+			East Texas State</td>
+		</tr>
+		<tr>
+			<td>XIII</td>
+			<td>Terry Bradshaw</td>
+			<td>Pittsburgh Steelers</td>
+			<td>Quarterback</td>
+			<td>Louisiana Tech</td>
+		</tr>
+		<tr>
+			<td>XIV</td>
+			<td>Terry Bradshaw</td>
+			<td>Pittsburgh Steelers</td>
+			<td>Quarterback</td>
+			<td>Louisiana Tech</td>
+		</tr>
+		<tr>
+			<td>XV</td>
+			<td>Jim Plunkett</td>
+			<td>Oakland Raiders</td>
+			<td>Quarterback</td>
+			<td>Stanford</td>
+		</tr>
+		<tr>
+			<td>XVI</td>
+			<td>Joe Montana</td>
+			<td>San Francisco 49ers</td>
+			<td>Quarterback</td>
+			<td>Notre Dame</td>
+		</tr>
+		<tr>
+			<td>XVII</td>
+			<td>John Riggins</td>
+			<td>Washington Redskins</td>
+			<td>Running back</td>
+			<td>Kansas</td>
+		</tr>
+		<tr>
+			<td>XVIII</td>
+			<td>Marcus Allen</td>
+			<td>Los Angeles Raiders</td>
+			<td>Running back</td>
+			<td>Southern California</td>
+		</tr>
+		<tr>
+			<td>XIX</td>
+			<td>Joe Montana</td>
+			<td>San Francisco 49ers</td>
+			<td>Quarterback</td>
+			<td>Notre Dame</td>
+		</tr>
+		<tr>
+			<td>XX</td>
+			<td>Richard Dent</td>
+			<td>Chicago Bears</td>
+			<td>Defensive end</td>
+			<td>Tennessee State</td>
+		</tr>
+		<tr>
+			<td>XXI</td>
+			<td>Phil Simms</td>
+			<td>New York Giants</td>
+			<td>Quarterback</td>
+			<td>Morehead State</td>
+		</tr>
+		<tr>
+			<td>XXII</td>
+			<td>Doug Williams</td>
+			<td>Washington Redskins</td>
+			<td>Quarterback</td>
+			<td>Grambling State</td>
+		</tr>
+		<tr>
+			<td>XXIII</td>
+			<td>Jerry Rice</td>
+			<td>San Francisco 49ers</td>
+			<td>Wide receiver</td>
+			<td>Mississippi Valley State</td>
+		</tr>
+		<tr>
+			<td>XXIV</td>
+			<td>Joe Montana</td>
+			<td>San Francisco 49ers</td>
+			<td>Quarterback</td>
+			<td>Notre Dame</td>
+		</tr>
+		<tr>
+			<td>XXV</td>
+			<td>Ottis Anderson</td>
+			<td>New York Giants</td>
+			<td>Running back</td>
+			<td>Miami</td>
+		</tr>
+		<tr>
+			<td>XXVI</td>
+			<td>Mark Rypien</td>
+			<td>Washington Redskins</td>
+			<td>Quarterback</td>
+			<td>Washington State</td>
+		</tr>
+		<tr>
+			<td>XXVII</td>
+			<td>Troy Aikman</td>
+			<td>Dallas Cowboys</td>
+			<td>Quarterback</td>
+			<td>UCLA</td>
+		</tr>
+		<tr>
+			<td>XXVIII</td>
+			<td>Emmitt Smith</td>
+			<td>Dallas Cowboys</td>
+			<td>Running back</td>
+			<td>Florida</td>
+		</tr>
+		<tr>
+			<td>XXIX</td>
+			<td>Steve Young</td>
+			<td>San Francisco 49ers</td>
+			<td>Quarterback</td>
+			<td>BYU</td>
+		</tr>
+		<tr>
+			<td>XXX</td>
+			<td>Larry Brown</td>
+			<td>Dallas Cowboys</td>
+			<td>Cornerback</td>
+			<td>TCU</td>
+		</tr>
+		<tr>
+			<td>XXXI</td>
+			<td>Desmond Howard</td>
+			<td>Green Bay Packers</td>
+			<td>Kick returner</td>
+			<td>Michigan</td>
+		</tr>
+		<tr>
+			<td>XXXII</td>
+			<td>Terrell Davis</td>
+			<td>Denver Broncos</td>
+			<td>Running back</td>
+			<td>Georgia</td>
+		</tr>
+		<tr>
+			<td>XXXIII</td>
+			<td>John Elway</td>
+			<td>Denver Broncos</td>
+			<td>Quarterback</td>
+			<td>Stanford</td>
+		</tr>
+		<tr>
+			<td>XXXIV</td>
+			<td>Kurt Warner</td>
+			<td>St. Louis Rams</td>
+			<td>Quarterback</td>
+			<td>Northern Iowa</td>
+		</tr>
+		<tr>
+			<td>XXXV</td>
+			<td>Ray Lewis</td>
+			<td>Baltimore Ravens</td>
+			<td>Linebacker</td>
+			<td>Miami</td>
+		</tr>
+		<tr>
+			<td>XXXVI</td>
+			<td>Tom Brady</td>
+			<td>New England Patriots</td>
+			<td>Quarterback</td>
+			<td>Michigan</td>
+		</tr>
+		<tr>
+			<td>XXXVII</td>
+			<td>Dexter Jackson</td>
+			<td>Tampa Bay Buccaneers</td>
+			<td>Safety</td>
+			<td>Florida State</td>
+		</tr>
+		<tr>
+			<td>XXXVIII</td>
+			<td>Tom Brady</td>
+			<td>New England Patriots</td>
+			<td>Quarterback</td>
+			<td>Michigan</td>
+		</tr>
+		<tr>
+			<td>XXXIX</td>
+			<td>Deion Branch</td>
+			<td>New England Patriots</td>
+			<td>Wide receiver</td>
+			<td>Louisville</td>
+		</tr>
+		<tr>
+			<td>XL</td>
+			<td>Hines Ward</td>
+			<td>Pittsburgh Steelers</td>
+			<td>Wide receiver</td>
+			<td>Georgia</td>
+		</tr>
+		<tr>
+			<td>XLI</td>
+			<td>Peyton Manning</td>
+			<td>Indianapolis Colts</td>
+			<td>Quarterback</td>
+			<td>Tennessee</td>
+		</tr>
+		<tr>
+			<td>XLII</td>
+			<td>Eli Manning</td>
+			<td>New York Giants</td>
+			<td>Quarterback</td>
+			<td>Ole Miss</td>
+		</tr>
+		<tr>
+			<td>XLIII</td>
+			<td>Santonio Holmes</td>
+			<td>Pittsburgh Steelers</td>
+			<td>Wide receiver</td>
+			<td>Ohio State</td>
+		</tr>
+		<tr>
+			<td>XLIV</td>
+			<td>Drew Brees</td>
+			<td>New Orleans Saints</td>
+			<td>Quarterback</td>
+			<td>Purdue</td>
+		</tr>
+		<tr>
+			<td>XLV</td>
+			<td>Aaron Rodgers</td>
+			<td>Green Bay Packers</td>
+			<td>Quarterback</td>
+			<td>California</td>
+		</tr>
+		<tr>
+			<td>XLVI</td>
+			<td>Eli Manning</td>
+			<td>New York Giants</td>
+			<td>Quarterback</td>
+			<td>Ole Miss</td>
+		</tr>
+		<tr>
+			<td>XLVII</td>
+			<td>Joe Flacco</td>
+			<td>Baltimore Ravens</td>
+			<td>Quarterback</td>
+			<td>Delaware</td>
+		</tr>
+		<tr>
+			<td>XLVIII</td>
+			<td>Malcolm Smith</td>
+			<td>Seattle Seahawks</td>
+			<td>Linebacker</td>
+			<td>Southern California</td>
+		</tr>
+		<tr>
+			<td>XLIX</td>
+			<td>Tom Brady</td>
+			<td>New England Patriots</td>
+			<td>Quarterback</td>
+			<td>Michigan</td>
+		</tr>
+		<tr>
+			<td>50</td>
+			<td>Von Miller</td>
+			<td>Denver Broncos</td>
+			<td>Linebacker</td>
+			<td>Texas A&amp;M</td>
+		</tr>
+		<tr>
+			<td>LI</td>
+			<td>Tom Brady</td>
+			<td>New England Patriots</td>
+			<td>Quarterback</td>
+			<td>Michigan</td>
+		</tr>
+		<tr>
+			<td>LII</td>
+			<td>Nick Foles</td>
+			<td>Philadelphia Eagles</td>
+			<td>Quarterback</td>
+			<td>Arizona</td>
+		</tr>
+		<tr>
+			<td>LIII</td>
+			<td>Julian Edelman</td>
+			<td>New England Patriots</td>
+			<td>Wide receiver</td>
+			<td>Kent State</td>
+		</tr>
+		<tr>
+			<td>LIV</td>
+			<td>Patrick Mahomes</td>
+			<td>Kansas City Chiefs</td>
+			<td>Quarterback</td>
+			<td>Texas Tech</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><strong>2020 COLLEGE FOOTBALL PREVIEW: <a href="https://www.ncaa.com/news/football/article/2020-01-15/college-football-rankings-preseason-top-25-2020-season" target="_blank" title="">Our preseason top 25 rankings for next year</a></strong></p>
+
+<h3>By the numbers</h3>
+
+<p>Michigan - 5 (four for Tom Brady, one for Desmond Howard)</p>
+
+<p>Alabama - 3 (two for&nbsp;Bart Starr, one for&nbsp;Joe Namath)</p>
+
+<p>Georgia - 3 (one each for Jake Scott, Terrell Davis and Hines Ward)</p><div class="ncaa-dfp-dynamic"></div>
+
+<p>Notre Dame - 3 (all for Joe Montana)</p>
+
+<p>USC - 3 (one each for Lynn Swann, Marcus Allen and Malcolm Smith)</p>
+</html>
+</div>
+                                    <aside class="author-info"><p><em>Mitchell Northam is a graduate of Salisbury University. His work has been featured at the Atlanta Journal-Constitution, the Orlando Sentinel, SB Nation, USA Today, Bleacher Report, FanSided and the Delmarva Daily Times. He grew up on Maryland's Eastern Shore and is a member of APSE, USBWA and NASR. He's on Twitter at <a href="https://twitter.com/primetimemitch" target="_blank" title="">@primetimeMitch</a>.</em></p><p><em>The views on this page do not necessarily reflect the views of the NCAA or its member institutions.</em></p></aside>
+                
+                                <div class="article-related">
+                    <div class="article-related-wrapper">
+                                                <div class="article-related-slide">
+                            <div class="article-related-thumb">
+                                <img class="lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/focal_point_medium/public-s3/images/2020-02/Florida-baseball.jpeg?h=de273ef0&amp;itok=QHLkG7r8" alt=""/>
+                            </div>
+                            <div class="article-related-content">
+                                <div class="article-related-content-text">
+                                    <h3 class="article-related-title">SEC baseball preview: Reigning champion Vanderbilt to have plenty of challengers in loaded conference</h3>
+                                    <div class="article-related-summary">The SEC figures to be a heavyweight free-for-all once again, with seven teams in the top 11 of the D1Baseball Top 25, and as much depth as ever.</div>
+                                </div>
+                                <a class="article-related-cta" href="/news/baseball/article/2020-02-05/sec-baseball-preview-reigning-champion-vanderbilt-have-plenty?utm_campaign=article-carousel">READ MORE</a>
+                            </div>
+                        </div>
+                                                <div class="article-related-slide">
+                            <div class="article-related-thumb">
+                                <img class="lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/focal_point_medium/public-s3/images/2020-02/Bama-softball.jpeg?h=c5faa6b3&amp;itok=-8e_kceX" alt=""/>
+                            </div>
+                            <div class="article-related-content">
+                                <div class="article-related-content-text">
+                                    <h3 class="article-related-title">College softball top 25 preseason breakdown, by team</h3>
+                                    <div class="article-related-summary">Here are the facts to consider when breaking down the top 25 teams in college softball, according to D1Softball.com.</div>
+                                </div>
+                                <a class="article-related-cta" href="/news/softball/article/2020-02-04/college-softball-top-25-preseason-breakdown-team?utm_campaign=article-carousel">READ MORE</a>
+                            </div>
+                        </div>
+                                                <div class="article-related-slide">
+                            <div class="article-related-thumb">
+                                <img class="lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/focal_point_medium/public-s3/images/2020-01/Reid-Detmers-Louisville-baseball.jpeg?h=fee6ee24&amp;itok=uC591RcR" alt=""/>
+                            </div>
+                            <div class="article-related-content">
+                                <div class="article-related-content-text">
+                                    <h3 class="article-related-title">The top 150 pitchers in college baseball, according to D1Baseball analytics</h3>
+                                    <div class="article-related-summary">D1Baseball&#039;s analytics-based ranking of the top pitchers in college baseball is headlined by a bushel of preseason All-Americans, including UC Irvine’s Trenton Denholm.</div>
+                                </div>
+                                <a class="article-related-cta" href="/news/baseball/article/2020-01-30/top-150-pitchers-college-baseball-according-d1baseball-analytics?utm_campaign=article-carousel">READ MORE</a>
+                            </div>
+                        </div>
+                                            </div>
+                    <div class="article-related-dots"></div>
+                </div>
+                            </div>
+        </article>
+        <section class="stax-layout layout-size--sidebar"><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="ad" data-slot="1">
+            <aside class="tile-ad">
+    <h5>Advertisement</h5>
+    <div class="dfp" id="ad_rect_atf_01"></div>
+</aside>
+
+
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="gamecenter" data-slot="1">
+            <article class="tile-gamecenter not-rendered" data-config="1357554027"></article>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="live_video" data-slot="1">
+            <div class="liveVideoTile"></div>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="links" data-slot="1">
+            <div class="tile-links">
+    <ul class="tile-links-list">
+    <h2 class="links_title">Football News</h2>
+            <li class="title-link tile-link-article">
+                            <a href="/news/football/article/2019-09-22/college-footballs-9-winningest-teams">College football&#039;s 9 winningest teams</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/football/article/2020-02-28/players-flagged-targeting-may-be-able-remain-bench-area">Players flagged for targeting may be able to remain in bench area</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/football/article/2020-02-22/alabama-vs-auburn-time-stream-history-2019-iron-bowl">Alabama vs. Auburn: 2019 Iron Bowl time, stream, series history</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/article/2020-02-08/2020-xfl-rosters-complete-list-college-players-every-team">2020 XFL rosters: Complete list of college players on every team</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/football/article/2020-02-02/super-bowl-mvps-college">Where each Super Bowl MVP went to college</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/article/2020-02-02/2020-super-bowl-rosters-colleges-49ers-and-chiefs-players">2020 Super Bowl rosters: Colleges of 49ers and Chiefs players</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/article/2020-01-24/2020-senior-bowl-rosters-time-tv-channel">2020 Senior Bowl: Rosters, time, TV channel</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/football/article/2020-01-15/college-football-rankings-preseason-top-25-2020-season">College football rankings: Preseason Top 25 for the 2020 season</a>
+                    </li>
+            <li class="title-link tile-link-article">
+                            <a href="/news/football/article/2020-01-14/teams-most-college-football-playoff-wins-and-appearances">Teams with the most College Football Playoff wins and appearances</a>
+                    </li>
+            <li class="title-link tile-link-video">
+                            <a href="/video/football/2020-01-14/di-fbs-football-championship-lsu-clemson">LSU defeats Clemson 42-25 to win CFP National Championship</a>
+                    </li>
+        </ul>
+</div>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="graphic" data-slot="1">
+            <article class="tile-graphic tile-container">
+        <div class="tile-image-container with-cta" style="background-color: #f6f8fa;">
+                <a href="https://www.ncaa.com/news/football/article/2019-07-19/2019-20-college-football-bowl-game-schedule-dates-times-tv">
+                                    <img class="tile-image lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/stax_large_content_tile/public-s3/tile-images/graphic/GettyImages-1076415150.jpg?h=b3044cab&amp;itok=l7LNpTa1" alt=""/>
+                            </a>
+            </div>
+            <div class="tile-body-container">
+                        <a href='https://www.ncaa.com/news/football/article/2019-07-19/2019-20-college-football-bowl-game-schedule-dates-times-tv'>
+                            <h4 class="tile-cta">2019-20 bowl game results<span></span></h4>
+                        </a>
+                    </div>
+    </article>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="article" data-slot="1">
+            <article class="tile-article tile-container ">
+        <a href="/news/football/article/2019-10-05/13-best-walk-ons-college-football-history">
+        <div  class="tile-image-container  ratio16x9">
+                            <img class="tile-image lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/stax_large_content_tile/public-s3/tile-images/article/Baker-Mayfield_0.jpg?h=f1aba5cf&amp;itok=o2eyecV6" alt=""/>
+                    </div>
+    </a>
+        <a href="/news/football/article/2019-10-05/13-best-walk-ons-college-football-history">
+        <h2 class="tile-headline">13 of the best walk-ons in college football history</h2>
+    </a>
+    <ul class="tile-related-links"></ul>
+</article>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="article" data-slot="1">
+            <article class="tile-article tile-container ">
+        <a href="/news/football/article/2018-08-31/how-accurate-are-lee-corsos-picks-college-gameday-meet-man-who">
+        <div  class="tile-image-container  ratio16x9">
+                            <img class="tile-image lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/stax_large_content_tile/public-s3/images/2018-08-31/USATSI_9531382.jpg?h=7ce7a1f4&amp;itok=Fy2IE84W" alt=""/>
+                    </div>
+    </a>
+        <a href="/news/football/article/2018-08-31/how-accurate-are-lee-corsos-picks-college-gameday-meet-man-who">
+        <h2 class="tile-headline">How accurate are Lee Corso&#039;s picks on College GameDay? Meet the man who tracks them</h2>
+    </a>
+    <ul class="tile-related-links"></ul>
+</article>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="article" data-slot="1">
+            <article class="tile-article tile-container ">
+        <a href="/news/football/article/2019-10-15/longest-college-football-field-goal-what-we-know">
+        <div  class="tile-image-container  ratio16x9">
+                            <img class="tile-image lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/stax_large_content_tile/public-s3/tile-images/article/Ove_0.jpeg?h=dc1b05d8&amp;itok=gbcDNYAu" alt=""/>
+                    </div>
+    </a>
+        <div class="tile-info">
+                        <aside class="tile-schools">
+                        <span class="tile-school-logo">
+                <img src="https://i.turner.ncaa.com/sites/default/files/images/logos/schools/bgl/abilene-christian.svg"/>
+            </span>
+                    </aside>
+            </div>
+        <a href="/news/football/article/2019-10-15/longest-college-football-field-goal-what-we-know">
+        <h2 class="tile-headline">The longest college football field goal: What we know</h2>
+    </a>
+    <ul class="tile-related-links"></ul>
+</article>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="article" data-slot="1">
+            <article class="tile-article tile-container ">
+        <a href="/news/football/article/college-football-national-championship-history">
+        <div  class="tile-image-container  ratio16x9">
+                            <img class="tile-image lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/stax_large_content_tile/public-s3/tile-images/article/Burrow-smooches-trophy.jpeg?h=c016d63e&amp;itok=bS3llO1A" alt=""/>
+                    </div>
+    </a>
+        <a href="/news/football/article/college-football-national-championship-history">
+        <h2 class="tile-headline">College football national championship history</h2>
+    </a>
+    <ul class="tile-related-links"></ul>
+</article>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="article" data-slot="1">
+            <article class="tile-article tile-container ">
+        <a href="/news/football/article/2019-09-22/college-footballs-9-winningest-teams">
+        <div  class="tile-image-container  ratio16x9">
+                            <img class="tile-image lazyload" data-src="https://www.ncaa.com/sites/default/files/public/styles/stax_large_content_tile/public-s3/images/2019-01-10/Michigan-Football-Among-Winningest-Teams.jpg?h=2992ba0a&amp;itok=jnSbf6Rr" alt=""/>
+                    </div>
+    </a>
+        <a href="/news/football/article/2019-09-22/college-footballs-9-winningest-teams">
+        <h2 class="tile-headline">Here are college football&#039;s 9 all-time winningest teams</h2>
+    </a>
+    <ul class="tile-related-links"></ul>
+</article>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="follow" data-slot="1">
+            <div class="tile-follow">
+            <div class="follow-header-text">
+            <h2>Follow FBS Football</h2>
+        </div>
+        <div class="follow-row">
+                    <a href="https://www.facebook.com/NCAADIFootball/"><span class="follow-facebook"></span></a>
+                            <a href="https://twitter.com/ncaafootball"><span class="follow-twitter"></span></a>
+                            </div>
+</div>
+
+
+    </div>
+</div>
+</div><div class="stax-tier-outer">
+<div class="stax-tier-inner wrap one-across">
+    <div class="stax-tier-slot stax-tile" data-tile-type="newsletter" data-slot="1">
+            <div class="tile-newsletter">
+    <div class="tile-newsletter-bg">
+        <h3>Subscribe To Email Updates</h3>
+        <p>Enter your information to receive emails about offers, promotions from NCAA.com and our partners</p>
+
+        <label>Email Address</label>
+        <input type="email" name="newsletter-field">
+        <button class="tile-newsletter-signup submit-button blue-button" type="button">Sign Me Up</button>
+    </div>
+</div>
+
+
+    </div>
+</div>
+</div></section>
+</div>
+
+
+
+    </div>
+
+
+                    </div>
+
+            </main>
+    <footer role="footer" class="clearfix">
+                        <nav role="navigation" aria-labelledby="block-ncaafooternavigationmenu-menu" id="block-ncaafooternavigationmenu">
+            
+  <h2 class="visually-hidden" id="block-ncaafooternavigationmenu-menu">NCAA Footer Navigation Menu</h2>
+  
+
+        
+<div class="footer-ad clearfix">
+    <div class="footer-wrapper">
+                    <div id="ad_nfs_btf_01" class="dfp"></div>
+            <div id="ad_nfs_btf_02" class="dfp"></div>
+            <div id="ad_nfs_btf_03" class="dfp"></div>
+            </div>
+</div>
+<div class="footer clearfix">
+    <div class="footer-wrapper">
+                            
+                          <ul class="footer-menu clearfix">
+                                                                    <li class="footer--links">
+                <span class="footer-menu--link-category"> Featured Sections </span>
+                                                                
+                          <ul class="footer-menu clearfix footer--link">
+                                                                    <li class="footer-menu--link-item">
+                <a href="/march-madness" data-drupal-link-system-path="node/841330">March Madness</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="https://bracketchallenge.ncaa.com/">Bracket Challenge Game</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/video" data-drupal-link-system-path="video">Video</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/news/ncaa/article/2013-09-17/ncaa-championship-brackets" data-drupal-link-system-path="node/806746">Brackets</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/news/ncaa/article/2013-09-17/ncaa-rankings" data-drupal-link-system-path="node/806748">Rankings</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/newsletter-signup" data-drupal-link-system-path="newsletter-signup">Newsletters</a>
+                                          </li>
+                        </ul>
+                  
+                            </li>
+                                                        <li class="footer--links">
+                <span class="footer-menu--link-category"> Experience It Live </span>
+                                                                
+                          <ul class="footer-menu clearfix footer--link">
+                                                                    <li class="footer-menu--link-item">
+                <a href="/tickets" data-drupal-link-system-path="tickets">Championship Tickets</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/exchange" data-drupal-link-system-path="node/840977">NCAA Ticket Exchange</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="https://www.primesport.com/about/ncaaexp?utm_source=ncaa.com&amp;utm_medium=referral&amp;utm_campaign=ncaa_experience-ncaa_web_bottom_navigation">The NCAA Experience</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/travel">NCAA Travel</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/tickets/basketball-men/d1" data-drupal-link-system-path="node/831931">DI Men&#039;s Basketball Tickets</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/march-madness/schedule">March Madness Schedule</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="https://www.ncaa.com/ticket-terms">Ticket Terms</a>
+                                          </li>
+                        </ul>
+                  
+                            </li>
+                                                        <li class="footer--links">
+                <span class="footer-menu--link-category"> NCAA Championships </span>
+                                                                
+                          <ul class="footer-menu clearfix footer--link">
+                                                                    <li class="footer-menu--link-item">
+                <a href="/championships" data-drupal-link-system-path="championships">Championship Central</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/shop">Championship Store</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/final-four" data-drupal-link-system-path="node/841170">2020 Final Four</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/womensfinalfour">2020 Women&#039;s Final Four</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/frozenfour">2020 Frozen Four</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/cws">2020 Men&#039;s College World Series</a>
+                                          </li>
+                        </ul>
+                  
+                            </li>
+                                                        <li class="footer--links">
+                <span class="footer-menu--link-category"> About the NCAA </span>
+                                                                
+                          <ul class="footer-menu clearfix footer--link">
+                                                                    <li class="footer-menu--link-item">
+                <a href="http://www.ncaa.org/">NCAA.org</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="http://www.ncaahallofchampions.org/index.php">Hall of Champions</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="http://www.ncaa.org/student-athletes/future">Eligibility Center</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/news/ncaa/article/2011-02-25/corporate-champions-and-partners" data-drupal-link-system-path="node/807191">Corporate Champions &amp; Partners</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/media" data-drupal-link-system-path="node/841187">Broadcast Media and Services</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="http://on.ncaa.com/2pAbX4M">Careers in College Athletics</a>
+                                          </li>
+                                                        <li class="footer-menu--link-item">
+                <a href="/elite-90" data-drupal-link-system-path="node/841050">Elite 90</a>
+                                          </li>
+                        </ul>
+                  
+                            </li>
+                        </ul>
+                  
+                <div class="footer-submenu clearfix">
+            <ul class="footer-submenu">
+                <li class="footer-submenu"><a href="/contact-us">Feedback</a></li>
+                <li class="footer-submenu"><a href="/tos" target="_blank">Terms of Service</a></li>
+                <li class="footer-submenu"><a href="/closed-captioning">Accessibility and Closed Captioning</a></li>
+                <li class="footer-submenu">
+
+                    <a id="cnn_cnsnt_trst">
+                        <script type="text/javascript" src="//consent.truste.com/notice?domain=turner.com&c=cnn_cnsnt_trst&text=true&country=us"></script>
+                        </a><img src="https://i.cdn.turner.com/cnn/.e/img/3.0/global/misc/logo_ad_choices_footer.png" alt="" border="0" class="cnn_ie6png" height="12" style="margin:0pt 0pt 0pt 4px;" width="12"/>
+
+                </li>
+                <li class="footer-submenu"><a href="/privacy" target="_blank">Privacy Policy</a></li>
+                <li class="footer-submenu"><a href="/rss">RSS</a></li>
+                <li class="footer-submenu privacy-link"><a style="cursor:pointer;" class="do-not-sell-link">Do Not Sell My Personal Information</a></li>
+            </ul>
+        </div>
+        <a href="http://www.turner.com" class="footer-logo" target="_blank">Turner</a>
+        <div class="footer-copy">
+            &copy; 2020 NCAA | Turner Sports Interactive, Inc. <br>
+        NCAA.com is a part of Bleacher Report - Turner Sports Network, part of the Turner Sports and Entertainment Network.
+        </div>
+    </div>
+</div>
+
+  </nav>
+
+
+                        <div class="mobile-persistent-bottom">
+            <span id="bottom_sync">
+    <span id="fw_bottom_sync" class="_fwph">
+        <form id="_fw_form_fw_bottom_sync" style="display:none">
+            <input class="fw_responsive" type="hidden" name="_fw_input_fw_bottom_sync" id="_fw_input_fw_bottom_sync"
+                data-lvp="" data-mvp="" data-svp="slau=320x50_sync&w=320&h=50"
+                value="">
+        </form>
+        <span id="_fw_container_fw_bottom_sync" class="_fwac">
+            <div class="dfp" id="ad_bnr_atf_02"></div>
+        </span>
+    </span>
+</span>
+        </div>
+            </footer>
+</div>
+
+  </div>
+
+    
+    <script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.0"></script>
+<script src="/core/assets/vendor/backbone/backbone-min.js?v=1.2.3"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/data-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/disable-selection-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/form-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/labels-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/jquery-1-7-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/scroll-parent-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/tabbable-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/unique-id-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/version-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/escape-selector-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/focusable-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/ie-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/keycode-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/plugin-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/safe-active-element-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/safe-blur-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widget-min.js?v=1.12.1"></script>
+<script src="/modules/custom/casablanca_analytics/lib/cmp/cmp.stub.min.js?v=master-771"></script>
+<script src="//agility.ncaa.com/turner/ncaa-prod/Bootstrap.js"></script>
+<script src="//cdn.livefyre.com/Livefyre.js"></script>
+<script src="/modules/custom/casablanca_libraries/twitterwidgetjs/twitter-widgets.min.js?v=1.0.0"></script>
+<script src="/modules/custom/casablanca_core/js/dist/polyfills.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_core/js/dist/ncaaUserAgent.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_core/js/dist/external-link-fixer.min.js?v=master-771"></script>
+<script src="https://i.cdn.turner.com/ads/adfuel/ais/2.0/ncaa_3-ais.min.js"></script>
+<script src="https://i.cdn.turner.com/ads/adfuel/adfuel-2.0.min.js"></script>
+<script src="/modules/custom/casablanca_draco_dfp/js/dist/AdsManager.min.js?v=master-771"></script>
+<script src="/themes/custom/bespin/js/ad-check.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_libraries/lazysizes/lazysizes.min.js?v=5.2.0"></script>
+<script src="/modules/custom/casablanca_footer/js/dist/footer.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_social/modules/casablanca_social_hanger/js/dist/social-hanger.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_franchise/js/dist/franchise-banner-nofranch.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_libraries/prettyselect/jquery.prettyselect.min.js?v=1.0.1"></script>
+<script src="/modules/custom/casablanca_sports/js/dist/sport-subnav.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_libraries/table_responsive/js/min/table-responsive.min.js?v=1.0.0"></script>
+<script src="/modules/custom/casablanca_libraries/slick/slick.min.js?v=1.9.0"></script>
+<script src="/modules/custom/casablanca_articles/js/dist/article-related.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/js/dist/tile-newsletter.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/js/dist/tile-adslots.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/js/dist/tile-article.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/js/dist/tile-graphic.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/js/dist/tile-links.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_libraries/babel-polyfill/babel-polyfill.min.js?v=1.0.1"></script>
+<script src="/modules/custom/casablanca_tiles/js/dist/tile-live-video.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_libraries/moment/moment.min.js?v=2.24.0"></script>
+<script src="/modules/custom/casablanca_libraries/moment_timezone/moment-timezone-with-data-10-year-range.min.js?v=0.5.26"></script>
+<script src="/modules/custom/casablanca_libraries/handlebars/handlebars-v4.0.5.min.js?v=4.0.5"></script>
+<script src="/modules/custom/casablanca_core/js/dist/handlebarsHelpers.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/js/dist/tile-gamecenter.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/templates/compiled/tile_gamecenter_Game.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_tiles/templates/compiled/tile_gamecenter_Event.js?v=master-771"></script>
+<script src="https://turnip.cdn.turner.com/top/core/1.3.9/default/top.sdk.min.js"></script>
+<script src="/modules/custom/casablanca_video/pkg/player-templates.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_video/js/dist/handlebarsExt.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_libraries/progressbar/progressbar.min.js?v=1.0.1"></script>
+<script src="/modules/custom/casablanca_libraries/promise_polyfill/promise-polyfill.min.js?v=8.1.0"></script>
+<script src="/modules/custom/casablanca_video/pkg/PlayerController.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_video/js/dist/casablanca.video.embed.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_nav/js/dist/casablanca_nav_countdown_bar.min.js?v=master-771"></script>
+<script src="/modules/custom/casablanca_nav/js/dist/casablanca-nav.min.js?v=master-771"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/position-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/menu-min.js?v=1.12.1"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/autocomplete-min.js?v=1.12.1"></script>
+<script src="/modules/custom/casablanca_libraries/fuse/fuse.min.js?v=3.0.5"></script>
+<script src="/modules/custom/casablanca_schools/js/dist/autocomplete.min.js?v=master-771"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/datepicker-min.js?v=1.12.1"></script>
+<script src="/modules/custom/casablanca_scoreboard/js/dist/scoreboardWidget.min.js?v=master-771"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b4c08c65aa","applicationID":"103177932","transactionName":"MldQZkoDDUUAAk0NXwsdc1FMCwxYTiVLEUAEXm5cVwYGaiIOVxBCCl5eV0o+LVkFBG8NVRJxXVxMEAxaDQRLSQ4TW1dF","queueTime":0,"applicationTime":695,"atts":"HhBTEAIZHks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

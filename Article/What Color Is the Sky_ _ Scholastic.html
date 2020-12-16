@@ -1,0 +1,2796 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><script blzsys="1" type="text/javascript">//<![CDATA[
+function BlzDynamicImageLoader(registeredPollAfterOnload,expectedImageSourceCheck,responsiveScreenWidths,responsiveCell2GMaxWidth,responsiveCell3GMaxWidth,responsiveCell4GMaxWidth,loadDeferral,visibilityBuffer,legacyIOSVisibilityBuffer,imageFormats,skipHidden){var registeredImages=[];var responsiveScreenWidthIndex=-1;var loadComplete=false;var registerHandler=function(element,event,handler){if(undefined!==element.addEventListener){element.addEventListener(event,handler,false);}else{if(undefined!==element.attachEvent){element.attachEvent("on"+event,handler);}}};var unregisterHandler=function(element,event,handler){if(undefined!==element.removeEventListener){element.removeEventListener(event,handler,false);}else{if(undefined!==element.detachEvent){element.detachEvent("on"+event,handler);}}};var getWindowHeight=function(){if(undefined!==self.innerHeight){return self.innerHeight;}else{if(undefined!==document.documentElement&&undefined!==document.documentElement.clientHeight){return document.documentElement.clientHeight;}else{if(undefined!==document.body){return document.body.clientHeight;}}}};var getVerticalScrollPosition=function(){if(undefined!==document.documentElement&&document.documentElement.scrollTop){return document.documentElement.scrollTop;}else{if(undefined!==document.body){return document.body.scrollTop;}}};var isHidden=function(element){return skipHidden&&(element.offsetWidth<=0||element.offsetHeight<=0);};var getVerticalPosition=function(element){if(!element){return 0;}var verticalPosition=element.offsetTop;var parent=element;while(parent=parent.offsetParent){verticalPosition+=parent.offsetTop;}return verticalPosition;};var shouldLoadNow=function(img){switch(loadDeferral){case"onLoad":if(loadComplete){return true;}case"onVisible":return !isHidden(img)&&(getVerticalPosition(img)-getVerticalScrollPosition()-visibilityBuffer)<=getWindowHeight();case"instant":default:return true;}};var determineScreenWidthIndex=function(){var checkConnection=undefined!==navigator.connection&&undefined!=navigator.connection.type;var check2g=checkConnection&&(navigator.connection.type===navigator.connection.CELL_2G)&&-1!==responsiveCell2GMaxWidth;var check3g=checkConnection&&(check2g||navigator.connection.type===navigator.connection.CELL_3G)&&-1!==responsiveCell3GMaxWidth;var check4g=checkConnection&&(check2g||check3g||navigator.connection.type===navigator.connection.CELL_4G)&&-1!==responsiveCell4GMaxWidth;for(responsiveScreenWidthIndex=0;responsiveScreenWidthIndex<responsiveScreenWidths.length;++responsiveScreenWidthIndex){var currentWidth=responsiveScreenWidths[responsiveScreenWidthIndex];if(check2g&&responsiveCell2GMaxWidth<=currentWidth){break;}if(check3g&&responsiveCell3GMaxWidth<=currentWidth){break;}if(check4g&&responsiveCell4GMaxWidth<=currentWidth){break;}if(window.screen.availWidth<=currentWidth){break;}}};var loadImage=function(img,force){if(!img){return;}if(expectedImageSourceCheck&&force!=true){var currentSrc=img.getAttribute("src",true);if(currentSrc==null){currentSrc="";}if(currentSrc!="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAQAICRAEAOw=="){return;}}var source;var finalImage;var responsiveFormats;if(img.getAttribute("data-blzlqsrc")){finalImage=false;source=img.getAttribute("data-blzlqsrc");responsiveFormats=img.getAttribute("data-blzlqmsi");img.removeAttribute("data-blzlqsrc");img.removeAttribute("data-blzlqmsi");}else{finalImage=true;source=img.getAttribute("data-blzsrc");responsiveFormats=img.getAttribute("data-blzmsi");img.removeAttribute("data-blzsrc");img.removeAttribute("data-blzmsi");}if(null!==responsiveFormats&&responsiveFormats.length>responsiveScreenWidthIndex){var srcDotIndex=source.lastIndexOf(".");if(srcDotIndex>-1){source=source.substring(0,srcDotIndex)+"-"+responsiveScreenWidths[responsiveScreenWidthIndex]+"."+imageFormats[responsiveFormats.charAt(responsiveScreenWidthIndex)];}}if(!finalImage){var nextImageLoadHandler=function(){unregisterHandler(img,"load",nextImageLoadHandler);if(loadComplete){loadImage(img,true);}else{var nextImageDeferredLoadHandler=function(){unregisterHandler(window,"load",nextImageDeferredLoadHandler);loadImage(img,true);};registerHandler(window,"load",nextImageDeferredLoadHandler);}};registerHandler(img,"load",nextImageLoadHandler);}img.setAttribute("src",source);};var loadDynamicImages=function(){var deferredImages=[];for(var imageIndex=0;imageIndex<registeredImages.length;++imageIndex){var img=registeredImages[imageIndex];if(shouldLoadNow(img)){loadImage(img);}else{deferredImages.push(img);}}registeredImages=deferredImages;if(("onVisible"===loadDeferral||"onLoad"===loadDeferral)&&(registeredImages.length==0&&loadComplete)){unregisterHandler(window,"resize",loadDynamicImages);unregisterHandler(window,"scroll",loadDynamicImages);}};var registerDynamicImages=function(){registeredImages=[];for(var registeredImageIndex=0;registeredImageIndex<document.images.length;++registeredImageIndex){var img=document.images[registeredImageIndex];if(img.getAttribute("data-blzsrc")){registeredImages.push(img);}}};var repeatedRegisterAndCheck=function(){if(registeredPollAfterOnload||!loadComplete){registerDynamicImages();loadDynamicImages();}if(!loadComplete){setTimeout(repeatedRegisterAndCheck,100);}else{if(registeredPollAfterOnload){setTimeout(repeatedRegisterAndCheck,500);}}};determineScreenWidthIndex();setTimeout(repeatedRegisterAndCheck,100);if("onVisible"===loadDeferral||"onLoad"===loadDeferral){registerHandler(window,"resize",loadDynamicImages);registerHandler(window,"scroll",loadDynamicImages);}registerHandler(window,"load",function(){loadComplete=true;registerDynamicImages();loadDynamicImages();});repeatedRegisterAndCheck();}
+//]]></script><script blzsys="1" type="text/javascript">//<![CDATA[
+var aFEOTagsMap={};var aFeoOverrideAttrRead=function(tag,att,el){try{var pref="data-feo-orig-";if(el){if(!el.getAttribute(pref+att)){return;}}else{var els;if(tag in aFEOTagsMap){els=aFEOTagsMap[tag];}else{els=document.getElementsByTagName(tag);aFEOTagsMap[tag]=els;}for(var i=els.length-1;i>=0;i--){el=els[i];if(el.getAttribute(pref+att)){if(el.aFeoRealGetAttribute){return;}else{break;}}}if(i<0){return;}}el.aFeoRealGetAttribute=el.getAttribute;el.getAttribute=function(a,force){if(a==att&&!force){a=pref+a;}return this.aFeoRealGetAttribute(a);};Object.defineProperty(el,att,{get:function(){return this.aFeoRealGetAttribute(pref+att);}});}catch(err){}};
+//]]></script><script blzsys="1" type="text/javascript">var aFeoApplied=true;</script><script blzsys="1" type="text/javascript">//<![CDATA[
+BlzDynamicImageLoader(true,true,[128,240,320,480],-1,-1,-1,"onVisible",100,1000,["png","gif","jpg","webp","jxr","bmp","jp2"],true);
+//]]></script>
+<meta name="keywords" content="Kindergarten,Early Science,Science,Grade 1,Homework and Tests,Science and Technology,English,Homework and Studying Support,Lesson Plans,Observation,Charts and Graphs,Science Experiments and Projects,PreK"/>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/etc/designs/scholastic/teachers/favicon.ico"/>
+
+
+		<link rel="canonical" href="https://www.scholastic.com/teachers/lesson-plans/teaching-content/what-color-sky/"/>
+
+
+    <title>What Color Is the Sky? | Scholastic</title>
+    
+    
+        <meta name="description" content="Students observe, record, and describe colors and changes in the sky, including light refraction."/> 
+        <meta property="og:title" content="What Color Is the Sky? | Scholastic"/>
+        <meta property="og:description" content="Students observe, record, and describe colors and changes in the sky, including light refraction."/> 
+          
+		
+		
+			<meta property="og:url" content="http://www.scholastic.com/teachers/lesson-plans/teaching-content/what-color-sky/"/>
+		
+        <meta property="og:image" content="http://www.scholastic.com/"/>
+     
+	<meta name="pageType" content="content-lessonplanpage"/>
+	<meta name="cq:page" content="what-color-sky"/>
+	<meta name="contentType" content="Lesson Plan"/>
+	<meta name="primaryResourceType" content="Lesson Plans"/>
+	
+	<meta name="subject" content="books,science-and-technology,early-science,homework-and-studying-support,homework-and-tests,observation,science-experiments-and-projects"/>
+	<meta name="grades" content="prek,kindergarten,grade-1"/>
+	<meta name="teacher:path" content="/content/teachers/en/lesson-plans/teaching-content/what-color-sky.html"/>
+	<meta name="teacher:tagList" content="books,kindergarten,early-science,science,grade-1,homework-and-tests,science-and-technology,english,homework-and-studying-support,lesson-plans,observation,charts-and-graphs,prek,science-experiments-and-projects"/>
+	<meta name="teacher:currentDate" content="Tue, 11 Feb 2020 05:20:22 GMT"/>
+    
+    <meta name="robots" content="index, follow"/>
+    
+    
+	
+    
+    
+    
+    
+
+
+<!-- Production Environment data-lf-domain="{scholastic.fyre.co -->
+
+
+
+
+  <script type="text/javascript">
+	    function targetPageParams() {
+	    	return "date=2020-02-11&resourceType=scholastic/teachers/components/pagetypes/lessonplanpage&tag=books,kindergarten,early-science,science,grade-1,homework-and-tests,science-and-technology,english,homework-and-studying-support,lesson-plans,observation,charts-and-graphs,prek,science-experiments-and-projects&pageGrade=PreK–K,1–&userGrade=TBD&userGender=TBD&contextParam=TBD"; 
+	  }
+  </script>
+  
+	
+<script type="text/javascript">
+var DumbleData = {};
+DumbleData.data = {
+    omniture: {
+      domain: {
+        channel: 'teachers',
+        name: 'Teachers',
+        server: 'teachers'
+      },
+      page: {
+        gradeFilter: [],
+        name: '',
+        template: '',
+        coppaFlag: false,
+        type: ''
+      },
+      content: {
+          grade: '',
+          name: '',
+          subject: '',
+          type: '',
+          resourceTypePrimary: '',
+          resourceTypeSecondary: ''
+        },
+      author: {
+    	  name: '',
+    	  role: '',
+    	  authorurl: '',
+      },
+      search: {
+        filters: [],
+        results: 0,
+        sort: '',
+        term: '',
+        view: '',
+        pagination: ''
+      },
+      self: {
+        implementation: 'teachers',
+        version: '1.0.0'
+      },
+      user: {
+        commerce: {
+          cartStatus: 0,
+          stores: []
+        },
+        grades: [],
+        loggedInStatus: 0,
+        role: '',
+        spsid: '',
+        is3MinSessionValid: false,
+        is5MinSessionValid: false,
+        is10MinSessionValid: false
+      },
+      product: {
+        productISBN: "",
+        productionOption: '',
+        productTitle: "What Color Sky ",
+        productDescription: "",
+        productGrades: "",
+        productURL: "",
+        productSubjects: "",
+        productAvailability: "",
+        productImageThumbNail: "",
+        productCoverImage: "",
+        productFormat: "",
+        productListPrice: "$",
+        productListPriceRaw: "",
+        productSeriesNumber: "",
+        productSeriesName: "",
+        productContributorDetails: "",
+        productAvailabilityText: "",
+        productCartButtonText: "",
+        productInventory: "",
+        productReadingLevel: "Guided Reading:N/A | LEXILE MEASURE:N/A | Grade Level Equivalent:N/A | DRA:N/A",
+        productGuidedReadingLevel: "N/A",
+        productEnglishLexileLevel: "N/A",
+        productGradeLevelEquivalent: "N/A",
+        productDRALevel: "N/A",
+        productSalePrice: "$",
+        productSalePriceRaw: ""
+      }
+    }
+  };
+  DumbleData.setPageData = function(){
+    var $metadataName = document.querySelector('meta[name="cq:page"]'),
+      $metadataTemplate = document.querySelector('meta[name="pageType"]');
+
+    if($metadataName){
+      DumbleData.data.omniture.page.name = $metadataName.attributes['content'].value;
+      
+    }
+    if($metadataTemplate){
+      DumbleData.data.omniture.page.template = $metadataTemplate.attributes['content'].value;
+      if(DumbleData.data.omniture.page.template == 'content-printabledetailspage' || DumbleData.data.omniture.page.template == 'content-slideshowdetailspage'){
+    	  DumbleData.data.omniture.page.type = 'content'; 
+    	  DumbleData.data.omniture.page.name =  'content detail:'+ DumbleData.data.omniture.page.name;
+      }
+      if(DumbleData.data.omniture.page.template == 'content-slideshowdetailspage' && $('.slideshow-module-content').length > 0){ 
+          var coppaWrapperCheck = $('.slideshow-module-content').attr('data-coppawrapper');
+    	  if( coppaWrapperCheck ){
+				DumbleData.data.omniture.page.coppaFlag=true;
+          }
+		}
+    }
+  };
+  
+  DumbleData.setContentData = function(){
+	    var $metadataContentType = document.querySelector('meta[name="contentType"]'),
+	    	$metadataName = document.querySelector('meta[name="cq:page"]'),
+	    	$metadataGrades = document.querySelector('meta[name="grades"]'),
+	      $metadataPrimaryType = document.querySelector('meta[name="primaryResourceType"]'),
+	      $metadataSecondaryType = document.querySelector('meta[name="secondaryResourceType"]'),
+	      $metadataSubject = document.querySelector('meta[name="subject"]');
+	    
+	    if($metadataName){
+	        DumbleData.data.omniture.content.name = $metadataName.attributes['content'].value;
+	      }
+	    
+	    if($metadataContentType){
+	      DumbleData.data.omniture.content.type = $metadataContentType.attributes['content'].value;
+	    }
+
+	    if($metadataPrimaryType){
+	      DumbleData.data.omniture.content.resourceTypePrimary = $metadataPrimaryType.attributes['content'].value;
+	    }
+	    
+	    if($metadataSecondaryType){
+	      DumbleData.data.omniture.content.resourceTypeSecondary = $metadataSecondaryType.attributes['content'].value;
+	    }
+	    
+	    if($metadataSubject){
+		      DumbleData.data.omniture.content.subject = $metadataSubject.attributes['content'].value;
+		}
+	    
+	    if($metadataGrades){
+		      DumbleData.data.omniture.content.grade = $metadataGrades.attributes['content'].value;
+		}
+	  };
+      DumbleData.setProductWorkId = function() {
+    var workIdMeta = document.querySelector('meta[property="workID"]');
+    if(workIdMeta) {
+      DumbleData.data.omniture.product['workID'] = workIdMeta.attributes['content'].value;
+    }
+  };
+  DumbleData.setAuthorDetails = function() {
+	    var authorName = document.querySelector('meta[name="authorName"]');
+	    var authorRole = document.querySelector('meta[name="authorRole"]');
+	    var authorURL = document.querySelector('meta[name="authorURL"]');
+	    if(authorName) {
+	      DumbleData.data.omniture.author.name = authorName.attributes['content'].value;
+	    }
+	    if(authorRole) {
+	      DumbleData.data.omniture.author.role = authorRole.attributes['content'].value;
+		}
+	    if(authorURL) {
+	      DumbleData.data.omniture.author.authorurl = authorURL.attributes['content'].value;
+	    }
+	  };
+
+  DumbleData.setSponsorData = function() {
+    var $metadataSponsorName = document.querySelector('meta[name="sponsorName"]'),
+        $metadataSponsorType = document.querySelector('meta[name="sponsorType"]');
+
+    if($metadataSponsorName || $metadataSponsorType) {
+      DumbleData.data.omniture['sponsor'] = {}
+    }
+
+    if($metadataSponsorName){
+      DumbleData.data.omniture.sponsor['name'] = $metadataSponsorName.attributes['content'].value;
+    }
+    
+    if($metadataSponsorType){
+      DumbleData.data.omniture.sponsor['type'] = $metadataSponsorType.attributes['content'].value;
+    }
+
+  };
+
+  DumbleData.init = function(){
+    DumbleData.setPageData();
+    DumbleData.setContentData();
+    DumbleData.setProductWorkId();
+    DumbleData.setAuthorDetails();
+    DumbleData.setSponsorData();
+  };
+  DumbleData.init();
+  window.dumbleData = DumbleData.data;
+</script>
+
+  <script type="text/javascript">
+	(function() {
+		var channel = "teachers";
+		document.write("<scr" + "ipt id='schheadtag' src='//ltm.scholastic.com/ltm/headtag/" + document.location.hostname + "/" + channel + "'></scr" + "ipt>");
+	}());
+  </script>
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/etc/designs/scholastic/teachers/clientlibs/core.min.css" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    if(googletag) {
+        googletag.cmd = googletag.cmd || [];
+    }
+    (function () {
+        var gads = document.createElement("script");
+        gads.async = true;
+        gads.type = "text/javascript";
+        var useSSL = "https:" == document.location.protocol;
+        gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+        var node = document.getElementsByTagName("script")[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+
+    window['adrum-start-time']= new Date().getTime();
+</script>
+ 
+<script src="/etc/designs/scholastic/teachers/clientlibs/core/scripts/adrum.js"></script>
+
+<script type='text/javascript'>
+    
+    var googleDefinedSlots = JSON.parse('{\x22slots\x22:[{\x22unitPath\x22:\x22\/306842\/Scholastic.com\/Teacher\/LessonPlan\x22,\x22size\x22:\x22[[728, 90], [1080, 486], [970, 66]]\x22,\x22divId\x22:\x2228\x22},{\x22unitPath\x22:\x22\/306842\/Scholastic.com\/Teacher\/LessonPlan\x22,\x22size\x22:\x22[[728, 90], [1080, 486], [970, 66]]\x22,\x22divId\x22:\x2229\x22},{\x22unitPath\x22:\x22\/306842\/Scholastic.com\/Teacher\/LessonPlan\x22,\x22size\x22:\x22[728, 90]\x22,\x22divId\x22:\x2230\x22},{\x22unitPath\x22:\x22\/306842\/Scholastic.com\/Teacher_Mobile\/LessonPlan\x22,\x22size\x22:\x22[300, 50]\x22,\x22divId\x22:\x2248\x22}]}');
+    if(googletag && googletag.cmd) {
+        googletag.cmd.push(function () {
+
+        	if(googleDefinedSlots.slots) {
+        		googleDefinedSlots.slots.forEach(function(entry) {
+                    googletag.defineSlot(entry.unitPath, JSON.parse(entry.size), entry.divId).addService(googletag.pubads());
+        		});
+        	}
+
+            googletag.pubads().collapseEmptyDivs(true);
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().setTargeting('subject', []).setTargeting('grade', []).setTargeting('pageid', 'a947b8af-0dd4-4b23-82ee-b0eff2f2f539');  
+            googletag.enableServices();
+
+        });
+    }
+
+</script>
+
+
+<meta name="polar" content="true"/>
+
+	<script type="text/javascript" id="polarjs" data-subjecttag="scholastic:subject/science-and-technology/science-experiments-and-projects,scholastic:subject/school-life/homework-and-tests,scholastic:subject/science-and-technology,scholastic:subject/science-and-technology/scientific-method-and-process/observation,scholastic:subject/teaching-and-education/teacher-tips-and-strategies/homework-and-studying-support,scholastic:subject/early-learning/early-science" data-gradetag="grade-1,prek,kindergarten" src="/etc/designs/scholastic/teachers/clientlibs/global.js"></script>
+    <script type="text/javascript" data-currentpagepath='/content/teachers/en/lesson-plans/teaching-content/what-color-sky' src='/teachers/data-pages/polar/detail-data.polar.detail.lessonplanpage.js'></script>
+<script>bazadebezolkohpepadr="1141437512"</script><script type="text/javascript" src="https://www.scholastic.com/akam/11/4408f621" defer></script></head>
+    <body class="sticky_footer"><div><link rel="stylesheet" href="/etc/designs/cs/brightcove/shared.min.css" type="text/css">
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/jquery.min.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/utils.min.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/jquery/granite.min.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/foundation/clientlibs/jquery.min.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/foundation/clientlibs/shared.min.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/clientlibs/granite/lodash/modern.min.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/cq/personalization/clientlib/personalization/kernel.min.js"></script>
+<script type="text/javascript">
+    $CQ(function() {
+        CQ_Analytics.SegmentMgr.loadSegments("\/etc\/segmentation\/teachers");
+        CQ_Analytics.ClientContextUtils.init("\/etc\/clientcontext\/teachers", "\/content\/teachers\/en\/lesson\u002Dplans\/teaching\u002Dcontent\/what\u002Dcolor\u002Dsky");
+
+        
+    });
+</script>
+</div>
+<div><script type="text/javascript">
+    $CQ(function() {
+        CQ_Analytics.SegmentMgr.loadSegments("\/etc\/segmentation\/teachers");
+
+        
+    });
+</script>
+</div>
+<div>
+	<aside class="main-sidebar nav ">		
+	<section class="sidebar">
+    <script type="text/javascript">
+    	window.oldDomain = "";
+        (function () {
+            window.sch = window.sch || {};
+            sch.teachers = sch.teachers || {};
+            sch.teachers.menu = sch.teachers.menu || {};
+            sch.teachers.menu.templateName = "lessonplanpage";
+            sch.teachers.datapage = sch.teachers.datapage || {};
+            sch.teachers.datapage.flyoutContentPathLP1 = "/teachers/data-pages/flyout/lessons-and-ideas";
+            sch.teachers.datapage.flyoutContentPathBA1 = "/teachers/data-pages/flyout/books-and-authors";
+            sch.teachers.datapage.flyoutContentPathTT1 = "/teachers/data-pages/flyout/teachers-tool-kit";
+            sch.teachers.datapage.flyoutContentPathSA1 = "/teachers/data-pages/flyout/student-activities";
+            sch.teachers.datapage.flyoutContentPathAU1 = "/teachers/data-pages/flyout/about-us";
+            sch.teachers.shop = sch.teachers.shop || {};
+            sch.teachers.shop.isDWEnabled = "true";
+            sch.teachers.shop.getCartUrl = "https://shop.scholastic.com/on/demandware.store/Sites-tso-us-Site/default/Cart-CartSummaryJSONP";
+            sch.teachers.shop.addToCartUrl = "https://shop.scholastic.com/on/demandware.store/Sites-tso-us-Site/default/Cart-AddItemToCartJSONP";
+        })();
+    </script>
+
+    <div class="sidebar-header">
+        <div class="logo">
+            <a href="http://www.scholastic.com/home/" target="_self">
+                <img data-feo-orig-src="/content/dam/scholastic/teachers/image/homepage/logos/scholastic-logo.png" alt="logo" src="/feo-cdn/b/f/gvOmlcQqY.webp" data-blzexdl="1"/><script blzsys="1" type="text/javascript">aFeoOverrideAttrRead('img', 'src')</script>
+            </a>
+        </div>
+    </div>
+    <div class="audience skyblue hidden-lg hidden-md" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <div class="burger-container"><span class="sidebar-button icon-burger pull-left" data-toggle="collapse" data-target="#submenu" aria-expanded="false" aria-controls="submenu"></span></div>
+            <div class="audience-selected"><span id="option-selected">Teachers</span></div>
+    </div>
+    <div id="collapseMobile" class="sidebar-content " hidden>
+        
+            <div class="sch-tab-leftnav-col collapse in" id="submenu">
+                <div data-element-linkname="v-nav" class="navigation-logo-placeholder hidden-xs hidden-sm">
+	        <a data-element-linkname="v-nav_teachers-logo" href="/teachers/home.html" target="_blank">
+		      <img data-feo-orig-src="/content/dam/scholastic/teachers/image/homepage/teachers-logo.png" alt="site-logo" src="/feo-cdn/T/Z/3pYEc8-74.webp" class="img-responsive" data-blzexdl="1"/><script blzsys="1" type="text/javascript">aFeoOverrideAttrRead('img', 'src')</script>
+		    </a>
+        </div>
+            
+                <div class="navigation-top-div-section">
+                <div class="divider nav-top-div"></div>
+                 </div>
+                <ul data-element-linkname="v-nav" class="navigation-top-section navigation-push-bottom">
+                    <li>
+
+
+
+    <a data-element-linkname="v-nav_teachers_home" href="/teachers/home.html" target="_self" class="sidebar-submenu-link normal">
+        Teachers Home
+    </a>
+
+</li>
+                
+                    <li>
+
+    <a data-element-linkname="v-nav_lessons_and_ideas" id="flyout-lessons-and-ideas2" href="/teachers/lessons-and-ideas.html" target="_self" data-flyout-target="#flyout-lessons-and-ideas" class="sidebar-submenu-link normal" data-third-flyout="#flyout-lessons-and-ideas3" data-second-flyout="#flyout-lessons-and-ideas1" data-toggle="collapse" data-target="#collapseflyout-lessons-and-ideas" aria-expanded="false" aria-controls="collapseflyout-lessons-and-ideas">
+        Lessons and Ideas
+    </a>
+     <div class="sidebar-submenu collapse" id="collapseflyout-lessons-and-ideas">
+        <div class="triangle-down"></div>
+        <!-- flyout-lessons-and-ideas -->
+            
+                <ul class="lessonAndIdeas-mobLink">
+                </ul>
+            
+            <!-- books and authors -->
+            
+
+            <!-- teachers toolkit -->
+            
+
+            <!-- student activities -->
+            
+
+            <!-- about us -->
+            
+    </div> 
+
+
+
+</li>
+                
+                    <li>
+
+    <a data-element-linkname="v-nav_books_and_authors" id="flyout-books-and-authors2" href="/teachers/books-and-authors.html" target="_self" data-flyout-target="#flyout-books-and-authors" class="sidebar-submenu-link normal" data-third-flyout="#flyout-books-and-authors3" data-second-flyout="#flyout-books-and-authors1" data-toggle="collapse" data-target="#collapseflyout-books-and-authors" aria-expanded="false" aria-controls="collapseflyout-books-and-authors">
+        Books and Authors
+    </a>
+     <div class="sidebar-submenu collapse" id="collapseflyout-books-and-authors">
+        <div class="triangle-down"></div>
+        <!-- flyout-lessons-and-ideas -->
+            
+            <!-- books and authors -->
+            
+                <ul class="booksAndAuthors-mobLink">
+                </ul>
+            
+
+            <!-- teachers toolkit -->
+            
+
+            <!-- student activities -->
+            
+
+            <!-- about us -->
+            
+    </div> 
+
+
+
+</li>
+                
+                    <li>
+
+
+
+    <a data-element-linkname="v-nav_top_teaching_blog" href="/teachers/top-teaching-blog.html" target="_self" class="sidebar-submenu-link normal">
+        Top Teaching Blog
+    </a>
+
+</li>
+                
+                    <li>
+
+    <a data-element-linkname="v-nav_teachers_toolkit" id="flyout-teachers-toolkit2" href="/teachers/professional-development.html" target="_self" data-flyout-target="#flyout-teachers-toolkit" class="sidebar-submenu-link normal" data-third-flyout="#flyout-teachers-toolkit3" data-second-flyout="#flyout-teachers-toolkit1" data-toggle="collapse" data-target="#collapseflyout-teachers-toolkit" aria-expanded="false" aria-controls="collapseflyout-teachers-toolkit">
+        Teacher&#39;s Tool Kit
+    </a>
+     <div class="sidebar-submenu collapse" id="collapseflyout-teachers-toolkit">
+        <div class="triangle-down"></div>
+        <!-- flyout-lessons-and-ideas -->
+            
+            <!-- books and authors -->
+            
+
+            <!-- teachers toolkit -->
+            
+                <ul class="teachersToolkit-mobLink">
+                </ul>
+            
+
+            <!-- student activities -->
+            
+
+            <!-- about us -->
+            
+    </div> 
+
+
+
+</li>
+                
+                    <li>
+
+    <a data-element-linkname="v-nav_student_activities" id="flyout-student-activities2" href="/teachers/student-activities.html" target="_self" data-flyout-target="#flyout-student-activities" class="sidebar-submenu-link normal" data-third-flyout="#flyout-student-activities3" data-second-flyout="#flyout-student-activities1" data-toggle="collapse" data-target="#collapseflyout-student-activities" aria-expanded="false" aria-controls="collapseflyout-student-activities">
+        Student Activities
+    </a>
+     <div class="sidebar-submenu collapse" id="collapseflyout-student-activities">
+        <div class="triangle-down"></div>
+        <!-- flyout-lessons-and-ideas -->
+            
+            <!-- books and authors -->
+            
+
+            <!-- teachers toolkit -->
+            
+
+            <!-- student activities -->
+            
+                <ul class="studentActivities-mobLink">
+                </ul>
+            
+
+            <!-- about us -->
+            
+    </div> 
+
+
+
+</li>
+                </ul>
+            
+            <div class="sch-left-nav-middle-sec">
+            
+                <ul class="navigation-middle-section">
+                    <li>
+
+
+
+    <a data-element-linkname="v-nav_teacher_store" href="https://shop.scholastic.com/" target="_self" class="sidebar-submenu-link normal">
+        The Teacher Store
+    </a>
+
+</li>
+                </ul>
+            
+
+            
+                <ul class="navigation-bottom-section">
+                    <li>
+
+
+
+    <a data-element-linkname="v-nav_book_clubs" href="https://clubs2.scholastic.com/" target="_self" class="sidebar-submenu-link ">
+        Book Clubs
+    </a>
+
+</li>
+                
+                    <li>
+
+
+
+    <a data-element-linkname="v-nav_book_fairs" href="http://www.scholastic.com/bookfairs/" target="_self" class="sidebar-submenu-link ">
+        Book Fairs
+    </a>
+
+</li>
+                
+                    <li>
+
+
+
+    <a data-element-linkname="v-nav_scholastic_education" href="http://teacher.scholastic.com/products/education/" target="_self" class="sidebar-submenu-link ">
+        Scholastic Education
+    </a>
+
+</li>
+                
+                    <li>
+
+
+
+    <a data-element-linkname="v-nav_classroom_magazines" href="http://classroommagazines.scholastic.com/" target="_self" class="sidebar-submenu-link ">
+        Classroom Magazines
+    </a>
+
+</li>
+                </ul>
+            
+
+            
+                <ul class="navigation-bottom-section navigation-bottom-about-us">
+                    <li class="divider"></li>
+                </ul>
+                <ul class="navigation-aboutus-section" id="aboutus-container">
+                    <li id="about-us-link">
+
+    <a data-element-linkname="v-nav_about_us" id="flyout-about-us2" href="http://www.scholastic.com/aboutscholastic/" target="_self" data-flyout-target="#flyout-about-us" class="sidebar-submenu-link red" data-third-flyout="#flyout-about-us3" data-second-flyout="#flyout-about-us1" data-toggle="collapse" data-target="#collapseflyout-about-us" aria-expanded="false" aria-controls="collapseflyout-about-us">
+        About Us
+    </a>
+     <div class="sidebar-submenu collapse" id="collapseflyout-about-us">
+        <div class="triangle-down"></div>
+        <!-- flyout-lessons-and-ideas -->
+            
+            <!-- books and authors -->
+            
+
+            <!-- teachers toolkit -->
+            
+
+            <!-- student activities -->
+            
+
+            <!-- about us -->
+            
+                <ul class="aboutUs-mobLink-headLinks">
+                </ul>
+                <ul class="social-icon-ul-mob">
+                    <li class="aboutUs-mobLink-socialIcons">
+                        <div class="mob-icon-container">
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="col-xs-12 col-sm-6 col-md-6 mob-policy">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 mob-terms">
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <p class="disclaimer-mob">TM ® & © 2016 Scholastic Inc. All Rights Reserved.</p>
+                    </li>
+                </ul>
+            
+    </div> 
+
+
+
+</li>
+                </ul>
+            
+            <ul class="logout-area">
+            </ul>
+            </div>
+            </div>
+            
+            
+        <div id="sch-tab-leftnav-content" class="">
+                
+            </div>
+    </div>
+</section>
+</aside>
+
+</div>
+<div>
+	<div>
+<div></div>
+	<script type="text/javascript">
+        (function () {
+            window.sch = window.sch || {};
+            sch.teachers = sch.teachers || {};
+			sch.teachers.registerLogin = sch.teachers.registerLogin || {
+				aboutYou: {
+					titleAbout: "",
+					buttonAboutLabel: ""
+				}, identification: {
+					titleIdentification: "",
+					teacherIconPath: "",
+					parentIconPath: "",
+					kidIconPath: "",
+					administratorIconPath: ""
+				}, loginAndRegister: {
+					titleLogin: "",
+					facebookIcon: "",
+					facebookButtonTitle: "",
+					twitterIcon: "",
+					twitterButtonTitle: "",
+					loginButtonLabel: "",
+					titleRegister: "",
+					emailIcon: "",
+					emailButtonTitle: ""
+				}, password: {
+					titlePassword: "",
+					buttonPasswordLabel: ""
+				}, school: {
+					titleSchool: "",
+					buttonSchoolLabel: ""
+				}, welcome: {
+					titleWelcome: "",
+					text1: "",
+					text2: "",
+					buttonStartLabel: "",
+					buttonLaterLabel: ""
+				}
+			};
+        })();
+    </script>
+</div>
+
+</div>
+<div>
+	
+</div>
+<div>
+	<div class="my-scholastic saved-components">
+	<div class="overlay ov-saved ov-create-list" id="ov-create-list">
+    <i class="icon-close"></i>
+    <div class="content">
+        <div class="col-xs-12 title">
+            <h2>Create a List</h2>
+        </div>
+        <div class="col-xs-12 info">
+            <h3 class="col-xs-12 no-gutter">List Name</h3>
+            <input class="col-xs-12 no-gutter create-list-name" type="text" id="new-list-name" placeholder="My New List"/>
+            <button class="button button-purple create-list-save">Save</button>
+        </div>
+<!--            <input type="button"
+                    value="Back" />-->
+    </div>
+</div>
+
+	<div class="overlay ov-saved ov-rename-list" id="ov-rename-list">
+        <i class="icon-close"></i>
+        <div class="content">
+            <div class="rename-save-list">
+                <div class="rename-save-list-left">
+                    <div class="rename-save-list-title visible-xs">
+                        <span class="img-circle rename-save-list-heart">
+                            <i class="icon-heart"></i>
+                        </span>
+                        Rename this List
+                    </div>
+                    <div class="rename-list-card">
+                        <div class="card-content">
+                            <div class="image">
+                                <div class="img-mask"></div>
+                                <div class="button-container">
+                                    <button class="button round button-purple-white"><i class="icon-related1"></i></button>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span id="rename-list-title" class="list-title"></span>
+                                <span id="rename-list-size" class="list-items"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rename-save-list-right">
+                    <div class="rename-save-list-title hidden-xs">
+                        <span class="img-circle rename-save-list-heart">
+                            <i class="icon-heart"></i>
+                        </span> Rename this list
+                    </div>
+                    <div class="rename-save-list-details">
+                        <h3>List Name</h3>
+                        <input class="rename-save-list-name" id="rename-save-list-name" type="text" placeholder="Rename this List"/>
+                        <a href="#" class="rename-save-list-delete">Delete from selected List</a>
+                    </div>
+                    <button class="button button-purple rename-save-list-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="overlay ov-saved ov-save-into-list" id="ov-save-into-list">
+    <i class="icon-close"></i>
+    <div class="content">
+        <input type="hidden" id="item-selected"/>
+        <div class="save-into-list">
+            <div class="rename-save-list-left">
+                <div class="rename-save-list-title visible-xs">
+                    <span class="img-circle rename-save-list-heart"><i class="icon-heart"></i></span>
+                    <span class="rename-save-list-left-title">Save to</span>
+                </div>
+                <div class="save-list-card">
+                    <div class="card-content">
+                        <div class="image">
+                            <div class="img-mask">
+                                <img id="edit-item-image-src" src="" alt=""/>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <span id="edit-item-category" class="item-category"></span>
+                            <span id="edit-item-title" class="item-title"></span>
+                            <div class="row hidden-xs display-grades">
+                                <div class="col-xs-12 no-gutter box">
+                                    <div class="col-xs-12 no-gutter box-detail">
+                                        <div class="box-title">
+                                            <h3>Grades</h3>
+                                        </div>
+                                        <h2 id="edit-item-grades"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rename-save-list-right step">
+                <div class="rename-save-list-title hidden-xs">
+                    <span class="img-circle rename-save-list-heart"><i class="icon-heart"></i></span> Save to:
+                </div>
+                <div class="rename-save-list-lists">
+                    <div class="item-list-container">
+                        <div id="edit-item-item-list" class="item-list"></div>
+                        <a href="#" class="rename-save-list-delete-item">Delete from selected List</a>
+                    </div>
+                </div>
+                <div class="rename-save-list-create-save">
+                    <button class="button button-purple-white save-button">Save</button>
+                    <button class="button button-white-purple create-button">Create a List</button>
+                    <span class="clear"></span>
+                </div>
+            </div>
+            <div class="rename-save-list-right step">
+                <div class="rename-save-list-title hidden-xs">
+                    <span class="img-circle rename-save-list-heart"><i class="icon-heart"></i></span> Create a list
+                </div>
+                <div class="rename-save-list-new-list">
+                    <input class="rename-save-list-new-list-name" id="new-list-name-2" type="text" placeholder="My New List"/>
+                </div>
+                <div class="rename-save-list-back-save">
+                    <button class="button button-purple-white save-button">Save</button>
+                    <button class="button button-white-purple back-button">Back</button>
+                    <span class="clear"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- List of favorite lists when show in save to -->
+<script id="hbt-list-item3" type="text/x-handlebars-template">
+    <div class="item">
+        <input type="checkbox" name="user_list" {{savedTabListSelected selectedInt}} id="list-{{listId}}" data-list-id="{{listId}}"/>
+        <label class="checkbox" for="list-{{listId}}">{{listName}}</label>
+    </div>
+</script>
+
+<!-- My Lists cards -->
+<script id="hbt-list-item" type="text/x-handlebars-template">
+    <div class="card list-card col-xs-12 col-sm-4">
+        <div class="list-card-content col-xs-12 no-gutter">
+            <div class="image col-xs-6 col-sm-12 no-gutter">
+                {{#if imageUrl}}
+                <div class="img-mask">
+                    <img src="{{imageUrl}}" />
+                </div>
+                {{/if}}
+            </div>
+            <div class="info col-xs-6 col-sm-12 no-gutter">
+                <a href="{{url}}?list_id={{listId}}" target="_self" class="list-title">{{listName}}</a>
+                <span class="list-items">0 Items</span>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- Edit Card -->
+<script id="hbt-list-item2" type="text/x-handlebars-template">
+    <div class="card list-item-card col-xs-12 col-sm-4" id="list_item_{{itemId}}">
+        <div class="item-card-content">
+            <div class="image">
+                {{#if imageUrl}}
+                <img src="{{imageUrl}}" alt=""/>
+                {{/if}}
+                <button class="button round button-purple-white button-edit-item show-favorite-overlay" data-item-id="{{itemId}}">
+                    <i class="icon-pencil"></i>
+                </button>
+            </div>
+            <div class="info">
+                <h3 class="col-xs-12 title">{{category}}</h3>
+                <h2 class="col-xs-12 title">{{title}}</h2>
+                <div class="col-xs-12 box no-gutter">
+                    <div class="col-xs-12 no-gutter box-detail">
+                        <div class="box-title">
+                            <h3>Grades</h3>
+                        </div>
+                        <h2>{{grades}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- Favorite Lists (Cards) -->
+<script id="hbt-list-favorite" type="text/x-handlebars-template">
+    <div class="card list-card col-xs-12 col-sm-4">
+        <div class="list-card-content col-xs-12 no-gutter">
+            <div class="image col-xs-6 col-sm-12 no-gutter">
+                {{#if image}}
+                <div class="img-mask">
+                    <img src="{{image}}" alt=""/>
+                </div>
+                {{/if}}
+            </div>
+            <div class="info col-xs-6 col-sm-12 no-gutter">
+                <a href="#{{path}}" target="_self" class="list-title">
+                    {{name}}
+                </a>
+
+                <span class="list-items">{{count}} Item{{plural}}</span>
+            </div>
+        </div>
+    </div>
+</script>
+
+	<div>
+	<script type="text/javascript">
+		(function() {
+			window.sch = window.sch || {};
+			sch.teachers = sch.teachers || {};
+			sch.teachers.saved = sch.teachers.saved || {};
+
+			//-- Create a new list
+			sch.teachers.saved.createAListUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favlistbox";
+			//-- Rename a list
+			sch.teachers.saved.renameThisListUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favlistbox";
+
+			//-- List all lists
+			sch.teachers.saved.listItemsUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favlistbox.social.json";
+
+			//-- List all list (For show dialog save)
+			sch.teachers.saved.listByItemUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favlistbox.social.json";
+
+			//-- Remove a list
+			sch.teachers.saved.deleteThisListUrl = "/content/usergenerated/asi/jcr/content/teachers/en/services/favorite/jcr:content/parsys/favlistbox";
+
+			//-- Cards inside a list
+			sch.teachers.saved.listDetailUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favoriteslist.social.json";
+
+			//-- Counter cards for lists
+			sch.teachers.saved.listOfFavoriteCounterUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favlistbox";
+
+			//-- Get info about which list a card is registered
+			sch.teachers.saved.itemDetailUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favoriteslist";
+
+			//-- Save a favorite into a list
+			sch.teachers.saved.saveToUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favoriteslist";
+
+			//-- Delete a favorite from a list
+			sch.teachers.saved.deleteFromUrl = "/content/teachers/en/services/favorite/jcr:content/parsys/favoriteslist";
+
+			//-- Get the info of a card
+			sch.teachers.saved.infoCardUrl = "/bin/scholastic/teachers/saved/toTeacherObject.json";
+
+		})();
+	</script>
+</div>
+
+</div>
+
+</div>
+<div>
+	
+</div>
+<div>
+	
+
+</div>
+<div>
+	<div id="main" class="home_page lesson-plan-homepage">
+		
+		<div class="wraper background-blue-to-light-blue">
+		
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+        
+        
+        <div class="global-nav">
+<link rel="stylesheet" href="https://shop.scholastic.com/etc/designs/scholastic-corporate/clientlibs/vendor.min.css" type="text/css"/>
+<style>
+@media only screen and (min-width: 960px){
+   .sch-profile-icon-container:not(.no-profile-hover):hover {
+       background-color: #50aafc;
+  }
+}
+@media only screen and (max-width: 959px){
+   .sch-profile-icon-container:not(.no-profile-hover):hover {
+       background-color: #d90000;
+  }
+}
+  
+ .sch-global-LoggedIn {
+   background-color: grey;
+}
+.sch-global-LoggedInOnHover {
+   color: #50aafc !important;
+   background-color: #ffffff !important;
+}
+.sch-global-search-prefilter-item {
+   color: #9a7cc5 !important;
+}
+.sch-global-search-prefilter-item:hover,
+.sch-global-search-prefilter-item:focus {
+   color: #ffffff !important;
+   background-color: #9a7cc5 !important;
+}
+.sch-global-search-prefilter-background {
+   background-color: #ffffff !important;
+}
+.sch-cart-container:not(.no-hover):hover,.sch-cart-container:not(.no-hover):focus, .sch-cart-icon-hover {
+     background-color: #50aafc;
+}
+</style>
+<div class="sch-global-modal-megamenu-backdrop"></div>
+<div class="sch-global-modal-profile-backdrop"></div>
+<div class="sch-global-modal-cart-backdrop"></div>
+<div class="sch-global-search-modal-backdrop"></div>
+<div class="sch-global-menu-container " data-loggedout="#757575" data-loggedouthover="#FFFFFF" data-sch-url="https://shop.scholastic.com/" data-sch-profileLinksUrl="https://account.scholastic.com/">
+	
+    <div class="sch-global-menu">
+        <div class="row sch-global-menu-item sch-container">
+            
+			<!--Search Starts-->
+               <div data-element-linkname="search" class="sch-search-container col-md-9 col-sm-12 col-xs-12">
+                    
+                        <div class="teachers-search section"><script type="text/ng-template" id="customPopupGlobalTeachersTemplate.html">
+  <div class="custom-popup-wrapper global-search-form"
+     style="display: block;"
+     ng-show="isOpen() && !moveInProgress"
+     aria-hidden="{{!isOpen()}}">
+    <div ng-repeat="match in matches" role="option" ng-if="match.model.type==='total'">
+      <p ng-if="match.model.model==0">No Result Found</p>
+      <p ng-if="match.model.model>0">Suggested Searches</p>
+      <a ng-click="$event.preventDefault(); $parent.$parent.$parent.$parent.getAllURL(query, $parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.name)" target="_self" ng-if="match.model.isCorrect===true">
+        <span><i class="fa fa-search" aria-hidden="true"></i></span>
+        <span class="highlight-black">{{query}}</span>
+     </a>
+      <a ng-click="$event.preventDefault(); $parent.$parent.$parent.$parent.getAllURL(query, $parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.name)" ng-href="javascript:void(0)" target="_self" ng-if="match.model.model>0">
+        <span><i class="fa fa-search" aria-hidden="true"></i></span>
+       <span class="highlight-black">{{match.model.term}}</span>
+        in 
+       <span class="highlight-purple" ng-bind-html="$parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.name"></span> 
+       ({{match.model.model | number: fractionSize}})
+     </a>
+    </div>
+    <div ng-repeat="match in matches" role="option" ng-if="match.model.type==='facet' && (match.label==='teachers_ss_dp' || match.label==='subject_ss_dp') && $parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.name !== 'Books'" class="typeahead_group">
+       <div ng-if="$parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.value==='books' && match.label==='subject_ss_dp' && match.model.isCorrect===true" ng-repeat="facet in match.model.model.myArrayList | orderBy:'-myHashMap.count' | limitTo: 3">
+        <a ng-click="$event.preventDefault(); $parent.$parent.$parent.$parent.$parent.getFacetURL(match.label, facet.myHashMap.value || facetValue, query)" ng-href="javascript:void(0)" target="_self">
+          <span><i class="fa fa-search" aria-hidden="true"></i></span>
+          <span class="highlight-black">{{match.model.term}}</span> in <span class="highlight-purple" ng-bind-html="facet.myHashMap.value | facetValue"></span> ({{facet.myHashMap.count | number: fractionSize}})
+        </a>
+      </div>
+       <div ng-if="$parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.value==='books' && match.label==='subject_ss_dp' && match.model.isCorrect===false" ng-repeat="facet in match.model.model.myArrayList | orderBy:'-myHashMap.count' | limitTo: 4">
+        <a ng-click="$event.preventDefault(); $parent.$parent.$parent.$parent.$parent.getFacetURL(match.label, facet.myHashMap.value || facetValue, query)" ng-href="javascript:void(0)" target="_self">
+          <span><i class="fa fa-search" aria-hidden="true"></i></span>
+          <span class="highlight-black">{{match.model.term}}</span> in <span class="highlight-purple" ng-bind-html="facet.myHashMap.value | facetValue"></span> ({{facet.myHashMap.count | number: fractionSize}})
+        </a>
+      </div>
+      <div ng-if="$parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.value!=='books' && match.label==='teachers_ss_dp' && match.model.isCorrect===true" ng-repeat="facet in match.model.model.myArrayList | orderBy:'-myHashMap.count' | limitTo: 3">
+        <a ng-click="$event.preventDefault(); $parent.$parent.$parent.$parent.$parent.getFacetURL(match.label, facet.myHashMap.value || facetValue, query)" target="_self">
+          <span><i class="fa fa-search" aria-hidden="true"></i></span>
+          <span class="highlight-black">{{match.model.term}}</span> in <span class="highlight-purple" ng-bind-html="facet.myHashMap.value | facetValue"></span> ({{facet.myHashMap.count | number: fractionSize}})
+        </a>
+      </div>
+      <div ng-if="$parent.$parent.$parent.$parent.SearchResults.selectedPrefilterOption.value!=='books' && match.label==='teachers_ss_dp' && match.model.isCorrect===false" ng-repeat="facet in match.model.model.myArrayList | orderBy:'-myHashMap.count' | limitTo: 4">
+        <a ng-click="$event.preventDefault(); $parent.$parent.$parent.$parent.$parent.getFacetURL(match.label, facet.myHashMap.value || facetValue, query)" target="_self">
+          <span><i class="fa fa-search" aria-hidden="true"></i></span>
+          <span class="highlight-black">{{match.model.term}}</span> in <span class="highlight-purple" ng-bind-html="facet.myHashMap.value | facetValue"></span> ({{facet.myHashMap.count | number: fractionSize}})
+        </a>
+      </div>
+    </div>
+  </div>
+</script>
+<search-form>
+  <div ng-cloak class="global-nav-search-widget" is-book-wizard="{{teacherSearchPrefilter.value=='books'}}" teachers-global-search-form tch-search-all-label="All" tch-search-bookwizard-label="Book Wizard" all-search-placeholder="What are you looking for?" bookwizard-search-placeholder="Search by title, author, or keyword" tch-search-page-url="/content/teachers/en/search-results.html" tch-bookwizard-page-url="/content/teachers/en/bookwizard.html" is-book-template="false">
+    <form action="/teachers/search-results.html" id="teachersGlobalSearchForm" class="search-form" ng-submit="validateForm($event,teacherSearchPrefilter.value);" book-reading-level>
+    <input name="search" type="hidden" value="1"/>
+    <input name="filters" type="hidden" value=""/>
+    <input type="hidden" name="prefilter" ng-if="teacherSearchPrefilter.value=='books'" value="books"/>
+    <div class="prefilter">
+      <div class="search-btn-grp">
+        <div class="all-grades-menu pre-filter-menu dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" ng-click="openPrefilterDropdown()">
+          <span class="prefilter-selected-val">{{teacherSearchPrefilter.name}}</span>
+          <span class="angle-down-grades"><i class="fa fa-angle-down" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8">
+            <path fill="#2BA0FF" fill-rule="nonzero" d="M.9.667a.506.506 0 0 0-.752 0 .561.561 0 0 0 0 .76l5.477 5.906a.506.506 0 0 0 .752 0l5.476-5.906a.553.553 0 0 0 .147-.38.553.553 0 0 0-.147-.38.506.506 0 0 0-.752 0l-5.1 5.5L.9.668z"/>
+          </svg>
+          </i>
+          </span>
+          </button>
+          <ul class="dropdown-menu sch-global-search-prefilter-background">
+            <li><a href="javascript:void(0)" data-element-linkname="search_all" ng-click="teacherSearchPrefilter.name='All';teacherSearchPrefilter.value='';changeFormUrl('/content/teachers/en/search-results.html');closeModalBackdrop();" class="sch-global-search-prefilter-item">All</a></li>
+            <li><a href="javascript:void(0);" data-element-linkname="search_book-wizard" ng-click="teacherSearchPrefilter.name='Book Wizard';teacherSearchPrefilter.value='books';changeFormUrl('/content/teachers/en/bookwizard.html');closeModalBackdrop();" class="sch-global-search-prefilter-item">Book Wizard</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="input-area" id="globalSearchInputHolder">
+      <input class="form-control" type="text" name="text" ng-model="asyncSelected" placeholder="{{globalSearchPlaceholder}}" uib-typeahead="data as data.label for data in getTypeaheadData($viewValue)" typeahead-loading="loadingLocations" typeahead-focus-first="false" typeahead-no-results="noResults" ng-value="SearchResults.queryParams.text" typeahead-popup-template-url="customPopupGlobalTeachersTemplate.html" typeahead-on-select="SearchResults.submitParentForm($item, $model, $label, $event, this)" autocomplete="off" typeahead-wait-ms="100" typeahead-min-length="2" maxlength="90" typeahead-is-open="typeaheadOpened" typeahead-opened/>
+    </div>
+    <span class="global-go-button" ng-click="seachGo($event,teacherSearchPrefilter.value)">
+      <a href="javascript:void(0)" class="global-btn-go" target="_self">
+        <img data-feo-orig-src="/etc/designs/scholastic/teachers/clientlibs/components/teachers-search/images/go-icon.png" src="/feo-cdn/R/K/50h2cz4lU.webp" class="global-btn-go" data-blzexdl="1"/><script blzsys="1" type="text/javascript">aFeoOverrideAttrRead('img', 'src')</script>
+      </a>
+    </span>
+     </form>
+  </div>
+</search-form>
+<search-results data-search-results-teachers></search-results></div>
+
+
+                    
+               </div>
+			<!--Search Ends-->
+            <!--Profile Starts-->
+            <div data-element-linkname="userprofile" class="sch-profile-icon-container col-md-push-1 col-md-1 col-sm-1 col-xs-1">
+			</div>
+            <!--Profile Ends-->
+            <!--Cart Starts-->
+            <div data-element-linkname="minicart" class="col-md-push-1 col-md-1 col-sm-1 col-xs-1 sch-cart-container" data-cart-icon-hover="#FFFFFF" data-cart-icon="#757575">
+               <div class="sch-cart-icon-container">
+               <div class="sch-global-cart-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23">
+				    <g fill="none" fill-rule="evenodd" stroke="#757575">
+				        <path fill="#757575" fill-rule="nonzero" stroke-width=".65" d="M25.914 3.92a.425.425 0 0 0-.339-.177H5.81l-.846-2.661a.446.446 0 0 0-.306-.293L.524.012a.423.423 0 0 0-.512.331c-.055.24.087.48.315.537l3.9.72.846 2.656c.01.053.023.106.05.149l3.282 8.16a.414.414 0 0 0-.06.129L7.757 16l1.584 3h6.845v-.911H9.34l-.935-.919.673-3.93H22.6a.425.425 0 0 0 .411-.316l2.976-8.62a.474.474 0 0 0-.073-.384zm-3.64 8.457H9.243l-3.15-7.723h18.925l-2.742 7.723z"/>
+				        <circle cx="6.5" cy="19.5" r="2.75" stroke-width="1.5"/>
+				        <circle cx="19.5" cy="19.5" r="2.75" stroke-width="1.5"/>
+				    </g>
+				</svg>
+				</div>
+               </div>
+                
+                <div class="teachers-minicart section">
+<div class="sch-global-cart-container" style="display:none;" data-shop-url="https://shop.scholastic.com/on/demandware.store/Sites-tso-us-Site/default/Cart-AjaxCartView">
+      <div class="sch-global-cartheader">The Teacher Store Cart</div>
+	  <div class="sch-minicart-content">
+	  </div>
+	  <div class="sch-checkout-section">
+	   <div class="wishlist-link-wrapper clearfix">
+        <a class="wishlist-link" href="https://account.scholastic.com/my-scholastic/profile/my-wishlist.html">view wishlist</a>
+	      <div class="sch-cart-total"><span class="sch-cart-totalPriceText">Total: </span><span class="sch-cart-totalPriceAmt"></span></div>
+	   </div>
+	   <button class="sch-cart-checkout-btn">
+	   <div class="btn-text">Checkout Now</div>
+	   <div class="btn-sub-text">in the Teachers Store</div>
+      </button>
+	  </div>
+</div>
+<div class="sch-global-cart-alert" style="display:none;" data-shop-url="https://shop.scholastic.com/on/demandware.store/Sites-tso-us-Site/default/Cart-AjaxCartView">
+      <div class="sch-global-cartheader">The Teacher Store Cart</div>
+	  <div class="sch-minicart-content">
+	  </div>
+	  <div class="sch-checkout-section">
+	   <button class="sch-cart-checkout-btn">
+	   <div class="btn-text">Checkout Now</div>
+	   <div class="btn-sub-text">in the Teachers Store</div>
+      </button>
+	  </div>
+</div>
+</div>
+
+
+            </div>
+            <!--Cart Ends -->
+            <!--Megamenu Starts -->
+            <div class="sch-megamenu-container"></div>
+            <!--Megamenu Ends -->
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://shop.scholastic.com/etc/designs/scholastic-corporate/clientlibs/vendor.min.js"></script>
+
+
+<script type="text/javascript" src="https://shop.scholastic.com/etc/designs/scholastic-corporate/clientlibs/components/renderglobalmenu.min.js"></script>
+</div>
+
+    
+
+</div>
+
+    
+
+
+			<div>
+				
+
+ <header class="lesson-plan-header background-inherit">
+    
+    
+    <div class="row_wraper">
+        <section>
+            <div class="col-md-3 col-sm-6">
+                <div class="ribbon">
+                    <h3 class="text-center">Lesson Plan</h3>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="header-content">
+            <div id="dktp" class="hidden-xs hidden-sm"></div>
+            <div class="col-md-6">
+                <div class="description">
+                    
+                    <h1 class="title">What Color Is the Sky?</h1>
+                   	<h2 class="subtitle">
+                   		
+                   		
+                   	</h2>
+                    <p class="author hidden-xs"><!--
+                    --><!--
+                        --><!--
+                        -->By <!--
+                        --><!--
+                        --><!--
+                        --><!--
+                        --><a href="/teachers/contributors/site-contributors/steven-hicks.html" target="_self" class="contrianchor"><!--
+                            --><span class="contributor-authors"><!--
+                                --><!--
+                                --> Steven<!--
+                                --><!--
+                                --> Hicks<!--
+                            --></span><!--
+                        --></a><!--
+                    --><!--
+                --></p>
+                </div>
+                <div class="info">
+                    <div>
+                        <p class="text">Grades</p>
+                        
+                        <p class="number">
+                            PreK–K, 
+                            1–2</p>
+                    </div>
+                    <div>
+                        <p class="text">Duration</p>
+                        
+                        <p class="number">8
+                            <span class="measures">DAYS</span></p>
+                    </div>
+                </div>
+                <div class="objective hidden-xs">
+                    <h4>Overview</h4>
+                    
+	                    <span>
+	                    	<p><p>Students explore the colors and changes in the sky by observing the refraction of light through a prism and recording the day and night sky over a week’s time.</p>
+</p>
+	                    </span>
+                </div>
+                <div class="links row mobile_center">
+                    <button class="button round button-purple button-utility show-favorite-overlay"  data-item-id="/content/teachers/en/lesson-plans/teaching-content/what-color-sky.html">
+                        <i class="icon-heart"></i>
+                    </button>
+                    <button class="button round button-purple button-utility social-button" data-url="http://www.scholastic.com/teachers/lesson-plans/teaching-content/what-color-sky.html" data-text="Check out What Color Is the Sky? via @Scholastic" data-hashtags="Lesson Plan" data-description="What Color Is the Sky? | Scholastic.com">
+                        <i class="icon-share"></i>
+                    </button>
+                    <button class="button round button-purple button-utility social-shared-email" data-email-subject="From scholastic.com: What Color Is the Sky?" data-email-body="What Color Is the Sky?" data-shared-url="http://www.scholastic.com/teachers/lesson-plans/teaching-content/what-color-sky.html">
+                        <i class="icon-message"></i>
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                
+
+                
+
+
+                <div class="resources">
+                    <h3 class="title">Quick links to lesson materials:</h3>
+                    <section class="row header-card-container" id="header-cards">
+                        <div>
+                            
+                            
+                                <div class="col-md-6 col-sm-6 header-card">
+                                    <div class="resource featured-asset">
+                                        <a href="#" class="resource-card" data-featured_object="featured-asset">
+                                            <div class="title">
+                                                <p class="small">1 Item</p>
+                                                <p>Reproducible</p>
+                                            </div>
+                                            
+                                                <div class="thumb lessonPlan-bgcolor-ran">
+                                                    <img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAQAICRAEAOw==" data-blzsrc="/content/dam/teachers/lesson-plans/migrated-featured-files/theskyforaweek.qxd.pdf.schimagerendition.140.100.png" onerror="this.src='/content/dam/scholastic/teachers/image/assets/book-detail/Placeholder-Card-180x180.png.tchimagerendition.xs.150.150.png'" onabort="this.src='/content/dam/scholastic/teachers/image/assets/book-detail/Placeholder-Card-180x180.png.tchimagerendition.xs.150.150.png'"/>
+                                                </div>
+                                            
+                                            
+                                        </a>
+                                    </div>
+                                </div>
+                            
+
+                            
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- /.resources -->
+            </div>
+            <div class="header-row-up"></div>
+        </section>
+    </div>
+    
+    
+ </header>
+ 
+
+			</div>
+			
+			
+			
+			<div></div>
+			
+			<div class="lesson-plan">
+				<div class="lesson-plan-description">
+					<div class="row_wraper">
+						<div class="col-sm-12 col-md-3 nav1">
+							<div>
+								<div class="sidebar">
+    <i class="big-icon icon-"></i>
+    
+    
+    <h3 class="title-left">Teach This Lesson</h3>
+</div>
+
+							</div>
+							<div class="hidden-xs">
+								<div>
+    
+
+</div>
+
+							</div>
+							<div id="left-anchor-menu" class="hidden-xs"></div>
+						</div>
+
+						<div class="col-sm-12 col-md-9 main-text lesson-plan ">
+							<div>
+								<div id="anchorLink-container">
+	<div class="desktop-device hidden-xs hidden-sm"></div>
+    <p class="anchor-link">
+		<a id="aC1" class="anchor-link-navigation" href="#C1">
+			Preinstructional Planning <i class="icon-right pull-right"></i>
+		</a>
+	</p>
+    <p>
+        <a id="aC2" class="anchor-link-navigation" href="#C2">
+            During Instruction <i class="icon-right pull-right"></i>
+        </a>
+    </p>
+    <p>
+        <a id="aC3" class="anchor-link-navigation" href="#C3">
+            Post Instructional <i class="icon-right pull-right"></i>
+        </a>
+    </p>
+    
+	    <div id="C1" class="anchor-content-title strong hidden-xs">Preinstructional Planning</div>
+	    <h3>Objectives</h3>
+	    <div class="anchor_content" readmore-less-height="50" readmore-max-height="50">
+	        <div class="internal_content">
+	            <p><strong>Students will:</strong></p>
+<ol>
+	<li>Distinguish the colors from the sun&rsquo;s white light.</li>
+	<li>Observe changes in the sky during the day and night and across time.</li>
+	<li>Record and describe changes in the sky.</li>
+	<li>Understand events in temporal order using days of the week.</li>
+</ol>
+
+	        </div>
+	    </div>
+	    <hr class="anchor_line"/>
+	    
+	    
+	    
+	    <h3>Lesson Resources</h3>
+	    <div class="anchor-sub-content">
+	        <p><h3>Materials</h3>
+<ul>
+	<li>Small plastic or acrylic mirrors, one per student pair</li>
+	<li>Pieces of 4- by 4-inch white cardboard for each student pair</li>
+	<li>Water</li>
+	<li>Plastic shoebox or dish tub for each team</li>
+	<li>Globe</li>
+	<li>Flashlight</li>
+	<li>Two different colored push pins</li>
+	<li><a href="/content/dam/teachers/lesson-plans/migrated-files-in-body/TheSkyForAWeek.qxd.pdf" target="_blank">The Sky for a Week Recording Book</a> (PDF)</li>
+	<li>Clipboards</li>
+	<li>Pencils and crayons</li>
+	<li>Writing paper</li>
+	<li>And a sunny day</li>
+</ul>
+<h3>Set Up and Prepare</h3>
+<ol>
+	<li>Fill plastic shoeboxes or tubs 2/3 full with water and set outside.</li>
+	<li>For each pair:
+		<blockquote style="margin-top:0; margin-bottom:0;">Cut a piece&nbsp;4- by 4-inch white cardboard<br />
+			Small mirror</blockquote>
+	</li>
+	<li>Gather writing paper and clipboards for each student (or a hard surface on which to write).</li>
+	<li>Place one push pin in the globe where the children live and one on the opposite side</li>
+	<li>Copy and staple The Sky for the Week Recording Book</li>
+</ol>
+</p>
+	    </div>
+	    <hr class="anchor_line"/>
+	    
+	    <div class="anchor-sub-content">
+	        <p></p>
+	    </div>
+	    <div id="C2" class="anchor-content-title strong1">During Instruction</div>
+	    
+	    <div class="anchor_content" readmore-less-height="50" readmore-max-height="50">
+	        <div class="internal_content">
+	            <h3>Directions</h3>
+<h4>Day 1</h4>
+<p><b>Step 1:</b> Gather students in a circle and ask if anyone knows why the sky is blue. Accept all answers. Remind them that the sun gives us both heat and light. Ask if anyone can tell you the color of the sun&rsquo;s light. Let students know that the sun&rsquo;s light is white, but in that white light are all the colors of the rainbow. We see blue because that color is scattered more throughout the sky than any other color. Tell students that today, as scientists, they are going to separate the colors from the white light. Ask them to suggest ideas on how to do this. Accept all answers.</p>
+<p><b>Step 2:</b> Take students outside on a sunny day and divide into pairs. Distribute the mirrors and white cardboard pieces. Tell the children that in order to separate the white light of the sun, they will need to make a prism using the water and the mirror. Demonstrate this while holding the mirror under water, facing directly towards the sun. Show them how you hold the paper above and in front of the mirror, moving the paper and mirror until the reflected light from the prism shines on the paper.</p>
+<p><b>Step 3:</b> Allow science partners (using the same partners from <a href="www.scholastic.com/teachers/lesson-plan/what-earth-earth">Lesson Two</a>) to explore making their prism and observing the colored spectrum of light. You may want to work with small groups after letting students explore.</p>
+<p><b>Step 4:</b> Ask the science partners to each record their observations and write about what they did.</p>
+<h4>Day 2</h4>
+<p><b>Step 1:</b> Review the experiment you did the previous day. What did the sky look like? Does it look the same today? Will it look the same tomorrow? Three days from now? How will it look tonight? What kinds of things do we see in the sky during the day? What kinds of things do we see in the sky at night? Tell students that the sky may look different from day to day and from night to night. The earth takes one day to spin as it travels around the sun. Demonstrate with a flashlight and globe how the earth spins and the light from the sun (flashlight) shines on us. With the two push pins, show when one part of earth is dark (night), another is light (day).</p>
+<p><b>Step 2:</b> Tell students that meteorologists are scientists that observe the sky in order to forecast the weather. Tell them they are going to be meteorologists and observe the sky for 1 week. Distribute The Sky for a Week Recording Books and optional clipboards or provide a hard surface on which to write.</p>
+<p><b>Step 3:</b> Go outside. Invite students to observe the sky for a few minutes and record observations.</p>
+<p><b>Step 4:</b> Send home The Sky for a Week Recording Books for homework and have students record the sky at night, paying close attention to the moon. You may want to check the weather to make sure the moon is visible. Ask them to return their recording books each day so that they can record the sky during the day in school.</p>
+<h4>Days 3-8</h4>
+<p><b>Step 1:</b> Check The Sky for a Week Recording Books each day and record observations about the sky during the day. Have children share any interesting observations they made about the night sky.</p>
+<h3>&nbsp;</h3>
+<h3>Supporting All Learners</h3>
+<p>Pair students heterogeneously in the experiment for Day One. Assist student teams as needed. Encourage children to label their pictures with words or beginning letters of words. Take dictation for students not yet able to write.</p>
+<h3>Lesson Extensions</h3>
+<p>Invite parents for a culminating event where students present their observations.</p>
+<h3>Home Connection</h3>
+<p>Have students cut out pictures of the sky from magazines and newspapers and make a sky collage with their parents.</p>
+<h3>Assignments</h3>
+<ol>
+	<li>Refract light from the sun.</li>
+	<li>Record observations of the sky over time.</li>
+</ol>
+<h3>Evaluation</h3>
+<ol>
+	<li>Were students able to manipulate the mirror and cardboard to refract light?</li>
+	<li>Were they able to work in partners?</li>
+	<li>How did they record the sky during the week?</li>
+	<li>How might you do this lesson differently next time?</li>
+</ol>
+
+	        </div>
+	    </div>
+	    <hr class="anchor_line"/>
+	    
+	    <div class="anchor-sub-content">
+	        <p></p>
+	    </div>
+	    
+	    
+	    <div class="anchor-sub-content">
+	        <p></p>
+	    </div>
+	    
+	    
+	    <div class="anchor-sub-content">
+	        <p class="lesson_plan_p"></p>
+	    </div>
+	    
+	    
+	    <div class="anchor-sub-content">
+	        <p></p>
+	    </div>
+	    
+	    
+	    <div class="anchor-sub-content">
+	        <p></p>
+	    </div>
+	    
+	    
+	    <div class="anchor-sub-content">
+	        <p></p>
+	    </div>
+	    <div id="C3" class="anchor-content-title strong1">Post Instructional</div>
+	    
+	    
+	    <div class="anchor_content" readmore-less-height="50" readmore-max-height="50">
+	        <div class="internal_content">
+	            
+	        </div>
+	    </div>
+	    
+	    <h3 class="anchor-sub-content-title">Lesson Assessment</h3>
+	    <div class="anchor-sub-content">
+	        <p><p>Check to see how students recorded their observations.</p>
+<p>&nbsp;</p>
+</p>
+	    </div>
+	    <hr class="anchor_line"/>
+		
+	    <div class="anchor-sub-content">
+	        <p></p>
+	    </div>
+	    
+</div>
+
+							</div>
+							<div class="lesson-plan-featured hidden-sm hidden-md">
+								<div class="featured section"><div id="featured-book" class="activity-featured_content clearfix featured-cards featured-book background-inherit">
+    <!-- REPRODUCIBLES -->
+    
+
+    <!-- ASSETS -->
+    
+
+    <!-- CRAFTS -->
+    
+
+    <!-- LESSON PLANS -->
+    
+
+    <!-- SLIDESHOWS -->
+    
+
+    <!-- VIDEO -->
+    
+
+    <!-- COLLECTIONS -->
+    
+    
+    <!-- ACTIVITY -->
+    
+    
+    <!-- DEFAULT -->
+    
+</div>
+
+
+<!-- Overlay PDF -->
+<div class="modal scholastic-overlay" id="pdfOverlayFree" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header-outside-body">
+                    <div>
+                        <div class="modal-header-title">
+                            <span>--</span>
+                        </div>
+                        <div class="modal-header-options">
+                            <ul>
+                                <li>
+                                    <button class="button round button-purple-white button-utility button-shared">
+                                        <i class="icon-download"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="button round button-purple-white button-utility">
+                                        <i class="icon-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body-pdf">
+                <!-- Content -->
+                <iframe type="application/pdf" class="pdf-container" data-url-pdf="https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf" frameborder="0" scrolling="no">
+                    <p>
+                        View not found. <a href="#">Download the PDF from here</a>
+                    </p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="featured section"><div id="featured-activity" class="activity-featured_content clearfix featured-cards featured-activity background-inherit">
+    <!-- REPRODUCIBLES -->
+    
+
+    <!-- ASSETS -->
+    
+
+    <!-- CRAFTS -->
+    
+
+    <!-- LESSON PLANS -->
+    
+
+    <!-- SLIDESHOWS -->
+    
+
+    <!-- VIDEO -->
+    
+
+    <!-- COLLECTIONS -->
+    
+    
+    <!-- ACTIVITY -->
+    
+    
+    <!-- DEFAULT -->
+    
+</div>
+
+
+<!-- Overlay PDF -->
+<div class="modal scholastic-overlay" id="pdfOverlayFree" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header-outside-body">
+                    <div>
+                        <div class="modal-header-title">
+                            <span>--</span>
+                        </div>
+                        <div class="modal-header-options">
+                            <ul>
+                                <li>
+                                    <button class="button round button-purple-white button-utility button-shared">
+                                        <i class="icon-download"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="button round button-purple-white button-utility">
+                                        <i class="icon-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body-pdf">
+                <!-- Content -->
+                <iframe type="application/pdf" class="pdf-container" data-url-pdf="https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf" frameborder="0" scrolling="no">
+                    <p>
+                        View not found. <a href="#">Download the PDF from here</a>
+                    </p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="featured section"><div id="featured-slideshow" class="activity-featured_content clearfix featured-cards featured-slideshow background-inherit">
+    <!-- REPRODUCIBLES -->
+    
+
+    <!-- ASSETS -->
+    
+
+    <!-- CRAFTS -->
+    
+
+    <!-- LESSON PLANS -->
+    
+
+    <!-- SLIDESHOWS -->
+    
+
+    <!-- VIDEO -->
+    
+
+    <!-- COLLECTIONS -->
+    
+    
+    <!-- ACTIVITY -->
+    
+    
+    <!-- DEFAULT -->
+    
+</div>
+
+
+<!-- Overlay PDF -->
+<div class="modal scholastic-overlay" id="pdfOverlayFree" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header-outside-body">
+                    <div>
+                        <div class="modal-header-title">
+                            <span>--</span>
+                        </div>
+                        <div class="modal-header-options">
+                            <ul>
+                                <li>
+                                    <button class="button round button-purple-white button-utility button-shared">
+                                        <i class="icon-download"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="button round button-purple-white button-utility">
+                                        <i class="icon-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body-pdf">
+                <!-- Content -->
+                <iframe type="application/pdf" class="pdf-container" data-url-pdf="https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf" frameborder="0" scrolling="no">
+                    <p>
+                        View not found. <a href="#">Download the PDF from here</a>
+                    </p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="featured section"><div id="featured-asset" class="activity-featured_content clearfix featured-cards featured-asset background-inherit">
+    <!-- REPRODUCIBLES -->
+    
+
+    <!-- ASSETS -->
+    <div class="col-xs-12 no-gutter featured-container">
+        <div class="header asset">
+            <i class="main-icon icon-printables hidden-xs"></i>
+            <div class="text">
+                <p></p>
+                <h4>Featured Reproducible</h4>
+            </div>
+        </div>
+        
+            <div class="showroom-content showroom-content-asset col-xs-12 no-gutter">
+                <div class="col-xs-3">
+                    <div class="row">
+                        <a class="overlayImgBtn" href="/content/dam/teachers/lesson-plans/migrated-featured-files/theskyforaweek.qxd.pdf" target="_self">
+                            
+                                <img src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAQAICRAEAOw==" data-blzsrc="/content/dam/teachers/lesson-plans/migrated-featured-files/theskyforaweek.qxd.pdf.schimagerendition.140.100.png"/>
+                            
+                            
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="/content/dam/teachers/lesson-plans/migrated-featured-files/theskyforaweek.qxd.pdf" target="_self">
+                                <h2 class="showroom-title">The Sky for a Week Recording Book</h2>
+                            </a>
+                            <hr class="hidden-xs hidden-sm"/>
+                        </div>
+                    </div>
+                    <div class="hidden-xs hidden-sm">
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+    <!-- CRAFTS -->
+    
+
+    <!-- LESSON PLANS -->
+    
+
+    <!-- SLIDESHOWS -->
+    
+
+    <!-- VIDEO -->
+    
+
+    <!-- COLLECTIONS -->
+    
+    
+    <!-- ACTIVITY -->
+    
+    
+    <!-- DEFAULT -->
+    
+</div>
+
+
+<!-- Overlay PDF -->
+<div class="modal scholastic-overlay" id="pdfOverlayFree" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header-outside-body">
+                    <div>
+                        <div class="modal-header-title">
+                            <span>--</span>
+                        </div>
+                        <div class="modal-header-options">
+                            <ul>
+                                <li>
+                                    <button class="button round button-purple-white button-utility button-shared">
+                                        <i class="icon-download"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="button round button-purple-white button-utility">
+                                        <i class="icon-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body-pdf">
+                <!-- Content -->
+                <iframe type="application/pdf" class="pdf-container" data-url-pdf="https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf" frameborder="0" scrolling="no">
+                    <p>
+                        View not found. <a href="#">Download the PDF from here</a>
+                    </p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="featured section"><div id="featured-craft" class="activity-featured_content clearfix featured-cards featured-craft background-inherit">
+    <!-- REPRODUCIBLES -->
+    
+
+    <!-- ASSETS -->
+    
+
+    <!-- CRAFTS -->
+    
+
+    <!-- LESSON PLANS -->
+    
+
+    <!-- SLIDESHOWS -->
+    
+
+    <!-- VIDEO -->
+    
+
+    <!-- COLLECTIONS -->
+    
+    
+    <!-- ACTIVITY -->
+    
+    
+    <!-- DEFAULT -->
+    
+</div>
+
+
+<!-- Overlay PDF -->
+<div class="modal scholastic-overlay" id="pdfOverlayFree" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header-outside-body">
+                    <div>
+                        <div class="modal-header-title">
+                            <span>--</span>
+                        </div>
+                        <div class="modal-header-options">
+                            <ul>
+                                <li>
+                                    <button class="button round button-purple-white button-utility button-shared">
+                                        <i class="icon-download"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="button round button-purple-white button-utility">
+                                        <i class="icon-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body-pdf">
+                <!-- Content -->
+                <iframe type="application/pdf" class="pdf-container" data-url-pdf="https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf" frameborder="0" scrolling="no">
+                    <p>
+                        View not found. <a href="#">Download the PDF from here</a>
+                    </p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="featured section"><div id="featured-book-list" class="activity-featured_content clearfix featured-cards featured-book-list background-inherit">
+    <!-- REPRODUCIBLES -->
+    
+
+    <!-- ASSETS -->
+    
+
+    <!-- CRAFTS -->
+    
+
+    <!-- LESSON PLANS -->
+    
+
+    <!-- SLIDESHOWS -->
+    
+
+    <!-- VIDEO -->
+    
+
+    <!-- COLLECTIONS -->
+    
+    
+    <!-- ACTIVITY -->
+    
+    
+    <!-- DEFAULT -->
+    
+</div>
+
+
+<!-- Overlay PDF -->
+<div class="modal scholastic-overlay" id="pdfOverlayFree" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header-outside-body">
+                    <div>
+                        <div class="modal-header-title">
+                            <span>--</span>
+                        </div>
+                        <div class="modal-header-options">
+                            <ul>
+                                <li>
+                                    <button class="button round button-purple-white button-utility button-shared">
+                                        <i class="icon-download"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="button round button-purple-white button-utility">
+                                        <i class="icon-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body-pdf">
+                <!-- Content -->
+                <iframe type="application/pdf" class="pdf-container" data-url-pdf="https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf" frameborder="0" scrolling="no">
+                    <p>
+                        View not found. <a href="#">Download the PDF from here</a>
+                    </p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="featured section"><div id="featured-video" class="activity-featured_content clearfix featured-cards featured-video background-inherit">
+    <!-- REPRODUCIBLES -->
+    
+
+    <!-- ASSETS -->
+    
+
+    <!-- CRAFTS -->
+    
+
+    <!-- LESSON PLANS -->
+    
+
+    <!-- SLIDESHOWS -->
+    
+
+    <!-- VIDEO -->
+    
+
+    <!-- COLLECTIONS -->
+    
+    
+    <!-- ACTIVITY -->
+    
+    
+    <!-- DEFAULT -->
+    
+</div>
+
+
+<!-- Overlay PDF -->
+<div class="modal scholastic-overlay" id="pdfOverlayFree" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <div class="modal-header-outside-body">
+                    <div>
+                        <div class="modal-header-title">
+                            <span>--</span>
+                        </div>
+                        <div class="modal-header-options">
+                            <ul>
+                                <li>
+                                    <button class="button round button-purple-white button-utility button-shared">
+                                        <i class="icon-download"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="button round button-purple-white button-utility">
+                                        <i class="icon-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body-pdf">
+                <!-- Content -->
+                <iframe type="application/pdf" class="pdf-container" data-url-pdf="https://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf" frameborder="0" scrolling="no">
+                    <p>
+                        View not found. <a href="#">Download the PDF from here</a>
+                    </p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+							</div>
+						</div>
+					</div>
+					<div class="row_wraper">
+						<div>
+							
+
+						</div>
+					</div>
+					<div class="row_wraper">
+						<div>
+							
+
+						</div>
+					</div>
+				</div>
+                <div class="googlead">
+                    
+<input type='hidden' id='ad_divId' name='ad_divId' value="29"/>
+<div id='29' class='desktop_and_tablet google-ads googleads-background-transparent'>
+	<script type='text/javascript'>
+		var divId = document.getElementById('ad_divId').value;
+		if(googletag && googletag.cmd) {
+			googletag.cmd.push(function() {
+				googletag.display(divId);
+			});
+		}
+	</script>
+</div>
+
+
+                </div>
+				<div class="lesson-plan-cards blue-gradient background-inherit">
+					<section class="lesson-plan-related-books remove-padding-related-subjects">
+						<div class="background-lesson-gradient background-inherit">
+							<section class="related-subjects activity-related-subjects activity-detail_blue background-inherit">
+	<div class="row_wraper related-subjects-inner">
+		<div class="col-sm-4 col-md-3">
+			<div class="title">
+				<i class="icon icon-glasses"></i>
+				<div class="strong1">Related Subjects</div>
+			</div>
+		</div>
+		<div class="col-sm-8 col-md-9">
+			<div id="related-subjects" class="subjects">
+				<a href="#" target="_self">Early Science</a>
+			
+				<a href="#" target="_self">Homework and Studying Support</a>
+			
+				<a href="#" target="_self">Homework and Tests</a>
+			
+				<a href="#" target="_self">Observation</a>
+			
+				<a href="#" target="_self">Science Experiments and Projects</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+						</div>
+
+						<div>
+							<div>
+	<div class="teachers-trending activity-unit_plan from-this-unit background-inherit">
+		<div class="row_wraper">
+			<div class="col-xs-12 col-md-3 trending-title">
+				<i class="icon-unit_plan"></i>
+				
+				<div class="strong1">Part of These Unit Plans</div>
+			</div>
+			<div id="trending-slides-fromunitplan" class="trending-slides-fromunitplan">
+                <div u="slides" class="slides recent-article">
+                    
+                        <div class="card card-container col-xs-12 light col-sm-push-2 col-md-push-2 col-sm-4">
+							
+    <article class="post card-body">
+    <div class="content-card-container lesson-unit-card">
+        <div class="card-image">
+            <a href="/teachers/unit-plans/teaching-content/look-look-down.html" target="_self">
+                <picture>
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="/content/dam/teachers/lesson-plans/migrated-featured-images/march05_unit_kids_sky.jpg.tchimagerendition.m.490.367.png" media="(min-width: 320px) and (max-width: 719px)"/>
+                    <source srcset="/content/dam/teachers/lesson-plans/migrated-featured-images/march05_unit_kids_sky.jpg.tchimagerendition.m.490.367.png" media="(min-device-width: 719px) and (max-device-width: 719px)"/>
+
+                    <!--[if IE 9]></video><![endif]-->
+                    <img srcset="/content/dam/teachers/lesson-plans/migrated-featured-images/march05_unit_kids_sky.jpg.tchimagerendition.xs.290.218.png" alt="card_image"/>
+                </picture>
+                
+            </a>
+        </div>
+        <div class="card-content  hasDescription">
+            <div class="primary-resource ">
+                Unit Plan
+            </div>
+            <a href="/teachers/unit-plans/teaching-content/look-look-down.html" target="_self">
+            <div class="card-title">
+                Look Up! Look Down!
+            </div>
+            </a>
+            <div class="description hasDescription">
+                <p>Students examine soil, create a prism, and make their own landforms in this environmental unit plan about geology, landforms, and the atmosphere.</p>
+
+            </div>
+            <div class="card-footer clearfix">
+                <div class="grades col-xs-6 seperator">
+                    <span class="grades-text">Grade</span>
+                    <div class="grade-value">
+                       PreK-K
+                    </div>
+                </div>
+                <div class="duration col-xs-6">
+                    <span class="duration-text">Duratio</span><span class="duration-text grades-s">n</span>
+                    <div class="duration-value">4 Weeks</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </article>
+
+    
+
+                        </div>
+                    
+                
+                    
+                        <div class="card card-container col-xs-12 light col-sm-push-2 col-md-push-2 col-sm-4">
+							
+    <article class="post card-body">
+    <div class="content-card-container lesson-unit-card">
+        
+        <div class="card-content no-image hasDescription">
+            <div class="primary-resource ">
+                Unit Plan
+            </div>
+            <a href="/teachers/unit-plans/teaching-content/water-works-wonders.html" target="_self">
+            <div class="card-title">
+                Water Works Wonders: Introducing Water and Its Forms
+            </div>
+            </a>
+            <div class="description hasDescription">
+                <p>Present students with an in-depth introduction to water in all its forms.<br />
+</p>
+
+            </div>
+            <div class="card-footer clearfix">
+                <div class="grades col-xs-6 seperator">
+                    <span class="grades-text">Grade</span>
+                    <div class="grade-value">
+                       PreK-K
+                    </div>
+                </div>
+                <div class="duration col-xs-6">
+                    <span class="duration-text">Duratio</span><span class="duration-text grades-s">n</span>
+                    <div class="duration-value">4 Weeks</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </article>
+
+    
+
+                        </div>
+                    
+                </div>
+            </div>
+            <div u="navigator" class="jssorb10 on-top light mobile-only" style="bottom: 75px; right: 0; left: 0; width: 200px;">
+					<div u="prototype"></div>
+				</div>
+			<!-- <div id="trending-slides" class="trending-slides">
+				<div u="slides" class="slides"
+					data-sly-list.unitPlan=",">
+					<div
+						class="col-xs-12 card-container
+						col-sm-push-2 col-md-push-1
+						col-sm-4
+					">
+						<div class="card light">
+							<i class="love-it show-favorite-overlay"
+								data-item-id=""></i>
+							<div class="content" data-url=""
+								data-image=""
+								data-text="">
+								<div
+									class="col-xs-12 no-gutter
+										col-sm-12">
+									<img src=""
+										data-sly-test="true"
+										class="picture" alt="" />
+								</div>
+								<div
+									class="col-xs-12 no-gutter
+										col-sm-12">
+
+									<a href=""
+										class="blocked
+									   		  ">
+										<h3 class="title"></h3>
+										<h2 class="title"></h2> <span class="hidden-xs short-description"></span>
+									</a>
+									<div class="col-xs-12 box">
+										<div class="col-xs-6 no-gutter"
+											data-sly-test="">
+											<div class="box-title">
+												<h3>Grades</h3>
+											</div>
+											<h2 data-sly-list="">
+												
+												<sly data-sly-test="true">, </sly>
+											</h2>
+										</div>
+										<div class="col-xs-6 no-gutter"
+											data-sly-test="true">
+											<div class="box-title">
+												<h3>Grades</h3>
+											</div>
+											<h2>
+												N/A
+											</h2>
+										</div>
+										<div class="col-xs-6 no-gutter"
+											data-sly-test="">
+											<div class="box-title">
+												<h3>Duration</h3>
+											</div>
+											<h2>
+												 <span></span>
+											</h2>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div u="navigator" class="jssorb10 on-top light mobile-only"
+					style="bottom: 75px; right: 0; left: 0; width: 200px;">
+					<div u="prototype"></div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</div>
+						</div>
+
+						<div>
+							<div>
+    
+</div>
+
+						</div>
+
+						<div class="background-lesson-gradient background-inherit">
+							
+
+<div class="book-container teachers-trending background-light-green-to-light-blue-with-fold background-inherit">
+
+ 
+  <div class="row">
+	<div data-ajax-component data-url="/teachers/lesson-plans/teaching-content/what-color-sky/_jcr_content/relatedContent.ajax.html"
+         
+         class="acs-ajax-component">
+    	
+    </div>
+  </div>
+
+</div>
+						</div>
+
+						<div>
+							
+  
+    
+        <div>
+            
+               
+                
+        </div>
+    
+    
+
+						</div>
+
+
+						<div class="flipbook section">
+							<div>
+    
+</div>
+						</div>
+
+						<div>
+							<div>
+     <div>
+		<div class="book-container book-container-grey breaker">
+			<img data-blzlqsrc="/feo-cdn/6/6/BQyrn9hZY.webp" data-feo-orig-src="/content/dam/scholastic/teachers/image/assets/hp-magnif-glass.png" src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAQAICRAEAOw==" data-blzsrc="/feo-cdn/g/7/KLsrtJrqc.webp" class="corp-magnif"/><script blzsys="1" type="text/javascript">aFeoOverrideAttrRead('img', 'src')</script>
+			<div class="row_wraper for-search-wraper">
+				<form action="/teachers/search-results.html">
+					<input type="hidden" name="search" value="1"/>
+					<input type="hidden" name="filters"/>
+					<h2 class="breaker-title for-search">
+						<i class="icon icon-search"></i>
+						<textarea rows="1" placeholder="Can&#39;t Find What You&#39;re Looking For?" name="text"></textarea>
+					</h2>
+
+					<input class="button button-red breaker-search-link" type="submit" value="SEARCH"/>
+				</form>
+			</div>
+		</div>
+</div>
+</div>
+<div class="bottom-container background-white"></div>
+						</div>
+					</section>
+
+					<div>
+						
+<input type='hidden' id='ad_divId' name='ad_divId' value="28"/>
+<div id='28' class='desktop_and_tablet google-ads googleads-background-transparent'>
+	<script type='text/javascript'>
+		var divId = document.getElementById('ad_divId').value;
+		if(googletag && googletag.cmd) {
+			googletag.cmd.push(function() {
+				googletag.display(divId);
+			});
+		}
+	</script>
+</div>
+
+
+					</div>
+					<div>
+						
+<input type='hidden' id='ad_divId' name='ad_divId' value="28"/>
+<div id='28' class='desktop_and_tablet google-ads googleads-background-transparent'>
+	<script type='text/javascript'>
+		var divId = document.getElementById('ad_divId').value;
+		if(googletag && googletag.cmd) {
+			googletag.cmd.push(function() {
+				googletag.display(divId);
+			});
+		}
+	</script>
+</div>
+
+
+					</div>
+					<div>
+						
+<input type='hidden' id='ad_divId' name='ad_divId' value="48"/>
+<div id='48' class='mobile google-ads googleads-background-transparent'>
+	<script type='text/javascript'>
+		var divId = document.getElementById('ad_divId').value;
+		if(googletag && googletag.cmd) {
+			googletag.cmd.push(function() {
+				googletag.display(divId);
+			});
+		}
+	</script>
+</div>
+
+
+					</div>
+					
+					<div>
+						<footer class="global_footer s_close book-container">
+    <div class="footer">
+        <div class="privacy_policy">
+            <div class="s_fluid_container">
+                <a href="http://www.scholastic.com/privacy.htm" target="_self">
+                    Privacy Policy
+                </a>
+                <a href="http://www.scholastic.com/terms.htm" target="_self">
+                    Terms of Use
+                </a>
+            </div>
+        </div>
+
+        <div class="sticky_footer_btn">
+            <div class="s_container"><h5>TM ® &amp; © 2020 Scholastic Inc. All Rights Reserved.</h5></div>
+        </div>
+    </div>
+</footer>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal scholastic-overlay quickresources-modal" id="quickResources" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header clearfix">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+				</div>
+				<div class="modal-body"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+			
+	<div id="flyout-my-scholastic" class="flyout flyout-blue">
+    
+    <div class="flyout-header">
+        <strong></strong>
+    </div>
+    <div class="flyout-body">
+        <div class="flyout-user">
+            <h4 class="flyout-user-name">Susan Cheyney</h4>
+            <span class="flyout-user-grades">GRADES: 1-2</span>
+        </div>
+	
+<!--	<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/my-scholastic-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+	</div>	-->
+    </div>
+</div>
+
+	<div class="left-nav-margin-left">
+<div id="flyout-lessons-and-ideas3" class="sch-large-scn-fix-width flyout"></div>
+<div class="sch-container sch-flyout-conatiner">
+<div id="flyout-lessons-and-ideas" class="flyout sch-flyout-item flyout-grey col-md-4">
+    <div class="flyout-header">
+        <strong></strong>
+    </div>
+    <div class="flyout-body">
+	    <div class="links">
+			<ul></ul>
+		</div>
+		<!--<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+		</div>
+		<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+		</div>-->
+    </div>
+</div>
+<div id="flyout-lessons-and-ideas1" class="flyout-content flyout-grey-content sch-flyout-item col-md-5">
+	<div class="close-head"></div> 
+	<a target="" class="flyClose"></a>
+	<div class="flyout-header sec-flyout-title">
+        <strong></strong>
+    </div>
+</div>
+</div>
+</div>
+        <div class="left-nav-margin-left">
+<div id="flyout-books-and-authors3" class="sch-large-scn-fix-width flyout"></div>
+<div class="sch-container sch-flyout-conatiner">
+<div id="flyout-books-and-authors" class="flyout sch-flyout-item flyout-grey col-md-4">
+    <div class="flyout-header">
+        <strong></strong>
+    </div>
+    <div class="flyout-body">
+    	<div class="links">
+			<ul></ul>
+		</div>
+	<!--	<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+		</div>
+		<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+		</div>-->
+    </div>
+</div>
+<div id="flyout-books-and-authors1" class="flyout-content flyout-grey-content sch-flyout-item col-md-5">
+	<div class="close-head"></div> 
+	<a target="" class="flyClose"></a>
+	<div class="flyout-header sec-flyout-title">
+        <strong></strong>
+    </div>
+</div>
+</div>
+</div>
+        <div class="left-nav-margin-left">
+<div id="flyout-teachers-toolkit3" class="sch-large-scn-fix-width flyout"></div>
+<div class="sch-container sch-flyout-conatiner">
+<div id="flyout-teachers-toolkit" class="flyout sch-flyout-item flyout-grey col-md-4">
+    <div class="flyout-header">
+        <strong></strong>
+    </div>
+    <div class="flyout-body">
+	    <div class="links">
+			<ul></ul>
+		</div>
+<!--	<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+	</div>
+	<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+	</div>-->
+    </div>
+</div>
+<div id="flyout-teachers-toolkit1" class="flyout-content flyout-grey-content sch-flyout-item col-md-5">
+	<div class="close-head"></div> 
+	<a target="" class="flyClose"></a>
+	<div class="flyout-header sec-flyout-title">
+        <strong></strong>
+    </div>
+</div>
+</div>
+</div>
+        <div class="left-nav-margin-left">
+<div id="flyout-student-activities3" class="sch-large-scn-fix-width flyout"></div>
+<div class="sch-container sch-flyout-conatiner">
+<div id="flyout-student-activities" class="flyout sch-flyout-item flyout-grey col-md-4">
+	<div class="flyout-header">
+        <strong></strong>
+    </div>
+    <div class="flyout-body">
+		<div class="links">
+			<ul></ul>
+		</div>
+<!--	<div
+		data-sly-test="">	
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+	</div>
+	<div
+		data-sly-test="">
+		<h2></h2>
+		<ul
+			data-sly-list.link=""
+			data-sly-use.menuLink="templates/lesson-ideas-link.html">
+			<li data-sly-call=""></li>
+		</ul>
+	</div>-->
+    </div>
+</div>
+<div id="flyout-student-activities1" class="flyout-content flyout-grey-content sch-flyout-item col-md-5">
+	<div class="close-head"></div> 
+	<a target="" class="flyClose"></a>
+	<div class="flyout-header sec-flyout-title">
+        <strong></strong>
+    </div>
+</div>
+</div>
+</div>
+	<div class="left-nav-margin-left">
+<div id="flyout-about-us3" class="sch-large-scn-fix-width flyout"></div>
+<div class="sch-container sch-flyout-conatiner">
+<div id="flyout-about-us" class="flyout sch-flyout-item flyout-grey col-md-4">
+
+        <div class="flyout-header">
+            <strong>About Us</strong>
+        </div>
+        <div class="flyout-body">
+            <div class="links">
+                    <ul>
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    
+                            <!-- <li data-sly-call=""></li> -->
+                    </ul>
+                    <!-- <ul class="footer-list"
+                            data-sly-test="false"
+                            data-sly-list.link=""
+                            data-sly-use.menuLink="templates/about-us-link.html">
+                            <li data-sly-call=""></li>
+                            <div class="divider"></div>
+                    </ul> -->
+            </div>
+
+            <!-- <div class="links"
+                    data-sly-test="true">
+                    <ul
+                            data-sly-test="true"
+                            data-sly-list.link=",,"
+                            data-sly-use.menuLink="templates/about-us-link.html">
+                            <li data-sly-call=""></li>
+                    </ul>
+                    <div class="flyout-image"
+                        data-sly-test="false">
+                        <img alt="About Us"
+                            src="" />
+                    </div>
+                    <ul class="footer-list"
+                            data-sly-test="true"
+                            data-sly-list.link=""
+                            data-sly-use.menuLink="templates/about-us-link.html">
+                            <li data-sly-call=""></li>
+                    </ul>
+            </div> 
+            <div class="divider"></div>
+            <div class="links social"
+                    data-sly-test="true">
+                    <ul
+                            data-sly-test="true"
+                            data-sly-list.link=",,,"
+                            data-sly-use.menuLink="templates/about-us-link.html">
+                            <li data-sly-call=""></li>
+                    </ul>
+                    <ul class="footer-list"
+                            data-sly-test="false"
+                            data-sly-list.link=""
+                            data-sly-use.menuLink="templates/about-us-link.html">
+                            <li data-sly-call=""></li>
+                    </ul>
+            </div>
+            <div class="divider"></div>
+            <div class="links copy"
+                    data-sly-test="true">
+                    <ul
+                            data-sly-test="true"
+                            data-sly-list.link=","
+                            data-sly-use.menuLink="templates/about-us-link.html">
+                            <li data-sly-call=""></li>
+                    </ul>
+                    <ul class="footer-list"
+                            data-sly-test="false"
+                            data-sly-list.link=""
+                            data-sly-use.menuLink="templates/about-us-link.html">
+                            <li data-sly-call=""></li>
+                    </ul>
+
+                    <div data-sly-test="false">
+                            
+                    </div>
+            </div>-->
+        </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+	document.getElementsByTagName("body")[0].setAttribute("class", "sticky_footer");
+</script>
+<div class="cloudservice testandtarget"></div>
+
+
+<!-- <div 
+	data-sly-resource="clientcontext"  >
+</div>
+<div 
+	data-sly-resource="clientcontext">
+</div> -->
+
+
+    
+<script type="text/javascript" src="/etc/designs/scholastic/teachers/clientlibs/core.min.js"></script>
+
+
+
+
+<div>
+ 
+    
+<script type="text/javascript" src="/etc/designs/scholastic/teachers/clientlibs/vendor/login.min.js"></script>
+
+
+
+</div>
+<script type="text/javascript" src="//ltm.scholastic.com/ltm/resources/tag/footer.js"></script>
+
+<noscript><img src="https://www.scholastic.com/akam/11/pixel_4408f621?a=dD05MzBhNjMwYjYyNDgxMjhkMmYzMGJjYjcyNjRmMWRjZTI4ZTczMjU3JmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript></body>
+</html>

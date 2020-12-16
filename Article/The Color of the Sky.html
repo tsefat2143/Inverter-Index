@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="renderer" content="webkit">
+   
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <meta name="HandheldFriendly" content="true"/>
+   
+    <meta name="MobileOptimized" content="320"/>
+   
+    <meta name="screen-orientation" content="portrait"/>
+    
+    <meta name="x5-orientation" content="portrait"/>
+    
+    <meta name="full-screen" content="yes"/>
+  
+    <meta name="x5-fullscreen" content="true"/>
+    
+    <meta name="browsermode" content="application"/>
+   
+    <meta name="x5-page-mode" content="app"/>  <link href="//m.scirp.org/themes/css/font-awesome.css" rel="stylesheet" />
+  <link href="//m.scirp.org/themes/css/media-queries.css" rel="stylesheet" type="text/css">
+  <link href="//m.scirp.org/themes/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="//m.scirp.org/themes/css/home.css" rel="stylesheet" type="text/css" />
+  <link href="//m.scirp.org/themes/css/component.css" rel="stylesheet" type="text/css">
+  <script src="//m.scirp.org/themes/js/jquery.js"></script>
+  <script src="//m.scirp.org/themes/js/modernizr.custom.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W2J35JD');
+</script>
+<!-- End Google Tag Manager -->
+
+  <script type="text/javascript">
+  function switchItem(tag){
+   var s1 = document.getElementById('s1');
+   var s2 = document.getElementById('s2');
+   var s3 = document.getElementById('s3');
+   if(tag=='all'){
+    s1.style.display = '';
+    s2.style.display = 'none';
+    s3.style.display = 'none';
+   }
+   else{
+    s1.style.display = 'none';
+    s2.style.display = '';
+    s3.style.display = '';
+   }
+  }
+  
+  function pushInformation(type,paper,journalid){
+	   var sj = "";
+	   var u = navigator.userAgent;
+	   if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+		   sj = "Android";
+	   } else if (u.indexOf('iPhone') > -1 || u.indexOf('iOS') > -1) {
+		   sj = "iOS";
+	   } else if (u.indexOf('Windows Phone') > -1) {//winphone
+		   sj = "winphone";  
+	   } else if (u.indexOf('BlackBerry') > -1) {
+		   sj = "BlackBerry";  
+	   } else if (u.indexOf('Windows') > -1) {
+		   sj = "Windows";  
+	   } else{
+		   sj = "others";
+	   }
+	   
+	  	$.ajax({
+			type:'post',
+			url:'//m.scirp.org//journal/pushInformation.action',
+			dataType:'json',
+			data:"pid="+paper+"&type="+type+"&sj="+sj+"&journalid="+journalid,
+			success:function(data){
+					
+				
+			}
+		});
+	   
+   }
+  </script>
+  <script type="text/javascript">
+	$(document).ready(function($){
+	
+		$('#journals_share').click(function(){
+			$('#loadingDiv').show();
+			$('#loadingDiv').height($(document).height());
+			$('#popup').slideDown();
+		})
+		$('#embedding .close').click(function(){
+			$('#loadingDiv').hide();
+			$('#popup').slideUp();
+		})
+try{
+	var canonicalHref = $('link[rel=canonical]').attr("href");
+		if(canonicalHref.indexOf('?')>1){
+			$('div#logo.box .logo a:last').attr("href", canonicalHref+'&jsback=false');
+		}else{
+			$('div#logo.box .logo a:last').attr("href", canonicalHref+'?jsback=false');
+			}
+}catch(e){
+}
+	
+		
+	
+	});
+	</script>
+	
+<meta name="title" content="The Color of the Sky" />
+<meta name="keywords" content="Sky Color; Rayleigh Extinction; Ozone; Aerosols; Radiative Transfer; Spectral Analysis" />
+<meta name="description" content="The color of the sky in day-time and at twilight is studied by means of spectroscopy, which provides an unambiguous way to understand and quantify why a sky is blue, pink, or red. The colors a daylight sky can take primarily owe to Rayleigh extinction and ozone absorption. Spectra of the sky illuminated by the sun can generally be represented by a generic analytical expression which involves the Rayleigh function , ozone absorption, and, to a lesser extend, aerosol extinction. This study is based on a representative sample of spectra selected from a few hundred observations taken in different places, times, and dates, with a portable fiber spectrometer." />
+<meta name="citation_journal_title" content="Atmospheric and Climate Sciences" />
+<meta name="citation_publisher" content="Scientific Research Publishing" />
+<meta name="citation_authors" content="Frederic Zagury," />
+
+<meta name="citation_author" content="Frederic  Zagury" />
+
+<meta name="citation_title" content="The Color of the Sky" />
+<meta name="citation_volume" content="2" />
+<meta name="citation_date" content="2012-11-02" />
+<meta name="citation_year" content="2012" />
+
+<meta name="citation_doi" content="10.4236/acs.2012.24045" />
+<meta name="citation_issnPrint" content="2160-0414" />
+<meta name="citation_issnOnline" content="2160-0422" />
+<meta name="citation_abstract" content="The Color of the Sky" />
+
+<meta name="citation_pdf_url" content="https://www.scirp.org/Journal/PaperDownload.aspx?paperID=24294" />
+<meta name="fulltext_pdf" content="https://www.scirp.org/journal/PaperDownload.aspx?paperID=24294" />
+
+
+
+
+
+<meta name="citation_abstract_html_url" content="https://m.scirp.org/papers/abstract/24294" />
+<meta name="citation_fulltext_html_url" content="https://m.scirp.org/papers/24294" />
+<meta name="fulltext_html" content="https://www.scirp.org/journal/PaperInformation.aspx?paperID=24294" />
+<meta name="citation_xml_url" content="https://file.scirp.org/xml/24294.xml" />
+<meta name="fulltext_xml" content="https://file.scirp.org/xml/24294.xml" />
+<meta name="citation_issue" content="4" />
+<meta name="citation_online_date" content="2012-11-02" />
+<meta name="citation_firstpage" content="720" />
+<meta name="citation_lastpage" content="726" />
+
+
+
+
+
+
+
+<meta name="dc.title" content="The Color of the Sky" />
+<meta name="dc.creator" content="Frederic  Zagury" />
+<meta name="dcterms.issued" content="2012-11-02" />
+<meta name="dc.description" content="The color of the sky in day-time and at twilight is studied by means of spectroscopy, which provides an unambiguous way to understand and quantify why a sky is blue, pink, or red. The colors a daylight sky can take primarily owe to Rayleigh extinction and ozone absorption. Spectra of the sky illuminated by the sun can generally be represented by a generic analytical expression which involves the Rayleigh function , ozone absorption, and, to a lesser extend, aerosol extinction. This study is based on a representative sample of spectra selected from a few hundred observations taken in different places, times, and dates, with a portable fiber spectrometer." />
+<meta name="dc.source" content="Atmospheric and Climate Sciences" />
+<meta name="dc.format" content="text/html" />
+<meta name="dc.publisher" content="Scientific Research Publishing" />
+<meta name="dc.date" content="2012-11-02" />
+<meta name="dc.type" content="Article" />
+<meta name="dc.identifier" content="10.4236/acs.2012.24045" />
+<meta name="dc.language" content="en" />
+<meta name="dc.issued" content="2012-11-02" />
+
+<meta name="prism.issnPrint" content="2160-0414" />
+<meta name="prism.issnOnline" content="2160-0422" />
+<meta name="prism.publicationName" content="Atmospheric and Climate Sciences" />
+<meta name="prism.publicationDate" content="2012-11-02" />
+<meta name="prism.volume" content="2" />
+<meta name="prism.number" content="4" />
+<meta name="prism.section" content="Article" />
+<meta name="prism.doi" content="10.4236/acs.2012.24045" />
+<meta name="prism.startingPage" content="510" />
+
+<meta name="Author" content="Scientific Research Publishing" />
+
+<meta name="dc.rights" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by/4.0/" />
+<meta name="dc.rights" content="(c) 2015 by author(s) and Scientific Research Publishing Inc." /></head>
+
+<script type="text/javascript" src="//html.scirp.org/mathjax/2.7.2/MathJax.js?config=MML_HTMLorMML"></script>
+    
+<link rel="canonical" href="//www.scirp.org/journal/paperinformation.aspx?paperid=24294" />
+    
+    <title>The Color of the Sky</title>
+  
+
+  
+  
+  <script type="text/javascript">
+	  function onloadPushInformation(type,paper,journalid){
+	    paper ='24294';
+	    journalid=$("#journalId").val();
+	   var sj = "";
+	   var u = navigator.userAgent;
+	   if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+		   sj = "Android";
+	   } else if (u.indexOf('iPhone') > -1 || u.indexOf('iOS') > -1) {
+		   sj = "iOS";
+	   } else if (u.indexOf('Windows Phone') > -1) {
+		   sj = "winphone";  
+	   } else if (u.indexOf('BlackBerry') > -1) {
+		   sj = "BlackBerry";  
+	   } else if (u.indexOf('Windows') > -1) {
+		   sj = "Windows";  
+	   } else{
+		   sj = "others";
+	   }
+	   type = "1";
+	  	$.ajax({
+			type:'post',
+			url:'//m.scirp.org//journal/pushInformation.action',
+			dataType:'json',
+			data:"pid="+paper+"&type="+type+"&sj="+sj+"&journalid="+journalid,
+			success:function(data){
+					
+				
+			}
+		});
+	   
+  }
+	  window.onload=onloadPushInformation;
+  </script>
+  
+  <script type="text/javascript">
+	  $(document).ready(function(){
+		  $(".imgMarkCss").click(function(){
+		  	window.open($(this).attr("src"));
+		  });
+	  }); 		
+  </script>
+  </head>
+  <body class="cbp-spmenu-push">
+  				<div class="cbp-spmenu cbp-spmenu-vertical2 cbp-spmenu-right2" id="cbp-spmenu-s2">
+<form action="//m.scirp.org/s/searchPaper.action" method="get" onsubmit="if(kw.value=='Search Title,Keywords,Author,etc.'||kw.value==''){return false;}">
+                <div id="input" class="s_input"><input type="text" class="text" name="kw" onblur="if(this.value==''){this.value='Search Title,Keywords,Author,etc.';this.style.color='#aaa'}" 
+                onfocus="if(this.value=='Search Title,Keywords,Author,etc.'){this.value='';this.style.color='#aaa'}" value="Search Title,Keywords,Author,etc." 
+                style="font-size:0.875em;outline:none; width:170px; height:2.5em; padding:0 5px;  line-height:2em; border:#e56952 1px solid; border-radius:5px; background:#fff; color:#aaa;"><button id="label"><i class="fa fa-search"></i></button></div>
+</form>
+                <nav class="cbp-spmenu-nav">
+                    <a href="http://m.scirp.org/"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>
+                    <a href="http://blog.scirp.org/" target="_blank"><i class="fa fa-edit"></i>&nbsp;&nbsp;Blog</a>
+                    <a href="http://papersubmission.scirp.org/login.jsp?sub=true" target="_blank"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Submit</a>
+                    <a href="//www.scirp.org/Careers/index.aspx" target="_blank"><i class="fa fa-cog"></i>&nbsp;&nbsp;Services</a>
+                    <a href="//m.scirp.org/s/searchPaper.action" ><i class="fa fa-files-o"></i>&nbsp;&nbsp;Articles</a>
+                    <a href="//www.scirp.org/book/Index.aspx" target="_blank"><i class="fa fa-book"></i>&nbsp;&nbsp;Book</a>
+                    <a href="//www.scirp.org/Conference/Index.aspx" target="_blank"><i class="fa fa-users"></i>&nbsp;&nbsp;Conferences</a>
+                    <a href="#" id="menu_back"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+                </nav>
+                </div>			<div id='root'>
+   <div class='box' id='header'>
+   				<!--<div class='box' id='oa'>
+                	<div class="oa">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="right" valign="middle"><img src="//m.scirp.org/themes/images/oa.png">
+                            </td>
+                          </tr>
+                      </table>
+                     </div>
+                </div>
+                <div class='box' id='sideBut'>
+                <table width="100%" height="65px" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center" valign="middle"><section class="buttonset" id="showLeftPush"><img src="//m.scirp.org/themes/images/menu.png"></section></td>
+                  </tr>
+                </table>
+                </div>
+                <div class='box' id='logo'>
+                	<div class="logo">
+                      <table width="100%" height="65px" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center" valign="middle"><a href="//m.scirp.org/index.html"><img src="//m.scirp.org/themes/images/srp_logo.png"></a>
+                            </td>
+                          </tr>
+                      </table>
+                     </div>
+                </div>
+                
+                <div class='box' id='searchBar'>
+                    <div id="navigation-bar" class="clearfix">
+                        <table width="100%" height="65px" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center" valign="middle"><section class="buttonset" id="showRightPush"><img src="//m.scirp.org/themes/images/search_nav.png"></section></td>
+                          </tr>
+                        </table>
+                    </div>
+                </div>-->
+                
+          <div class='box' id='logo'>
+                	<div class="logo">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="left" valign="middle"><a href="//m.scirp.org/index.html"><img src="//m.scirp.org/themes/images/srp_logo2.png"></a></td>
+                            <td width="20" rowspan="2"></td>
+                            <td align="right" valign="middle"><section class="buttonset" id="showRightPush"><img src="//m.scirp.org/themes/images/search_nav21.png"></section></td>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="middle"><a href="//www.scirp.org/journal/OpenAccess.aspx"><img src="//m.scirp.org/themes/images/oa2.png"></a></td>
+                            <td align="right" valign="middle"><a href="//www.scirp.org?jsback=false" target="_blank"><i class="fa fa-desktop"></i></a></td>
+                          </tr>
+                      </table>
+                     </div>
+                </div>
+                <!--<div class='box' id='oa'>
+                	<div class="oa">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      	  <tr>
+                            <td align="center" valign="top"><img src="//m.scirp.org/themes/images/oa.png"></td>
+                          </tr>
+                      </table>
+                     </div>
+                </div>-->
+                
+            </div>
+            
+            <div class='box' id='nav'>
+<!--             <div class='box' id="nav_jou"><div class="nav_j">Journals by</div> </div>-->
+                <div class='box' id='nav_left'>
+                  <div class="nav_l" ><a id="nav_1" href="//m.scirp.org/journal/subject.html" >Journals by Subject</a></div>
+                </div>
+                <div class='box' id='nav_right'>
+                  <div class="nav_r" ><a id="nav_r" href="//m.scirp.org/journal/title.html">Journals by Title</a></div>
+                </div>
+                <div class="clear"></div>
+                
+            </div>            
+     
+            
+            <div class='box' id='recent_t_paper'><a href="javascript:history.go(-1);"><i class="fa fa-angle-left"></i></a>&nbsp;<span><a href="//m.scirp.org/journal/ACS">ACS</a> &nbsp;<a href="//m.scirp.org/journals/ACS/2263">Vol.2 No.4
+								, October 2012</a></span></div>
+            <div class='box' id='recent_paper_con'>
+            
+           
+              <div id="paper_con_title"><span>The Color of the Sky</span></div>
+              
+           <input type="text" id="journalId" value="492" style="display: none;"/>
+           
+              <div id="paper_con_aut" class="cl02 paper_con_text"><span style=" font-style:italic; margin-right:0.625em; color:#333; line-height:1em; font-size:1.25em;">Author(s)</span>
+             			<a href="//m.scirp.org/s/searchPaper.action?kw=Frederic+Zagury&sf=au">Frederic  Zagury</a>
+ 						
+             	       
+             	
+             
+              </div>
+             
+              <!-- aff -->
+              <div id="paper_con_aff" class="cl02 paper_con_text"><span style=" font-style:italic; margin-right:0.625em; color:#333; line-height:2em; font-size:1.25em;">Affiliation(s)</span><br>
+           		
+		             		<a href="//m.scirp.org/s/searchPaper.action?kw=Departmentof+The+History+of+Science%2C+Harvard+University%2C+02138+Cambridge%2C+USA&sf=af">Departmentof The History of Science, Harvard University, 02138 Cambridge, USA.</a></br>
+	             		
+	             		
+             			
+             
+              </div>
+              <!-- abstract -->
+              <div id="paper_con_abs" class="cl02 paper_con_text"><span style="  font-style:italic; margin-right:0.625em; color:#333; line-height:2em; font-size:1.25em;">ABSTRACT</span><br>
+              	<span>The color of the sky in day-time and at twilight is studied by means of spectroscopy, which provides an unambiguous way to understand and quantify why a sky is blue, pink, or red. The colors a daylight sky can take primarily owe to Rayleigh extinction and ozone absorption. Spectra of the sky illuminated by the sun can generally be represented by a generic analytical expression which involves the Rayleigh function <img  ="border-bottom:medium none;border-left:medium none;border-top:medium none;border-right:medium none;" src="http://chart.googleapis.com/chart?cht=tx&amp;chl=R%5Cinfty%20%5Cfrac%7B1%7D%7B%5Clambda%204_%7B%7D%7De%5E%7B%5Cfrac%7B-a%7D%7B%5Clambda%204_%7B%7D%7D%7D" />, ozone absorption, and, to a lesser extend, aerosol extinction. This study is based on a representative sample of spectra selected from a few hundred observations taken in different places, times, and dates, with a portable fiber spectrometer.</span>
+              </div>
+               <!-- keyWords -->
+              	<div id="paper_con_key" class="cl02 paper_con_text"><span style=" font-style:italic; margin-right:0.625em; color:#333; line-height:2em; font-size:1.25em;">KEYWORDS</span><br>
+              		<a href="//m.scirp.org/s/searchPaper.action?kw=Sky+Color%3B+Rayleigh+Extinction%3B+Ozone%3B+Aerosols%3B+Radiative+Transfer%3B+Spectral+Analysis&sf=kw">Sky Color; Rayleigh Extinction; Ozone; Aerosols; Radiative Transfer; Spectral Analysis</a>
+              		
+              	</div>
+              
+               <!-- 全文 -->
+              	<div id="paper_con_html" class="cl02 paper_con_text"><span style=" font-style:italic; margin-right:0.625em; color:#333; line-height:2em; font-size:1.25em;"></span><br>
+              	</div>
+              
+              <!-- Cite_paper -->
+              <div id="paper_con_ctp" class="cl02 paper_con_text"><span style=" font-style:italic; margin-right:0.625em; color:#333; line-height:2em; font-size:1.25em;">Cite this paper</span><br>
+              
+F. Zagury, &quot;The Color of the Sky,&quot; <i>Atmospheric and Climate Sciences</i>, Vol. 2 No. 4, 2012, pp. 510-517. doi: 10.4236/acs.2012.24045.              </div>
+              
+              
+              <div id="paper_con_ref" class="cl02 paper_con_text"><span style=" font-style:italic; margin-right:0.625em; color:#333; line-height:2em; font-size:1.25em;">References</span><br>
+               	[1] &nbsp;	 L. Rayleigh, “On the Light from the Sky, Its Polarization and Color,” Philosophical Magazine, Vol. 41, 1871, pp. 107-120.</br></br>
+               	[2] &nbsp;	 L. Rayleigh, “On the Transmission of Light through an Atmosphere Containing Small Particles in Suspension and on the Origin of the Blue of the Sky,” Philosophical Magazine, Vol. 47, 1899, pp. 375-384.</br></br>
+               	[3] &nbsp;	 A. Lallemand, “Sur la Polarisation et la Fluorescence de I’Atmosphère,” Comptes Rendus de I’Académie des Sciences, Vol. 75, 1872, pp. 707-711.</br></br>
+               	[4] &nbsp;	 W. N. Hartley, “On the Absorption of Solar Rays by Atmospheric Ozone,” Journal of the Chemical Society, Vol. 39, 1881, pp. 111-128.</br></br>
+               	[5] &nbsp;	 J. Chappuis, “Sur le Spectre d’Absorption de I’Ozone,” Comptes Rendus de I’Académie des Sciences, Vol. 91, 1880, pp. 985-986.</br></br>
+               	[6] &nbsp;	 J. Chappuis, “Etude Spectroscopique de I’Ozone,” Comptes Rendus de I’Académie des Sciences, Vol. 11, No. 2, 1882, pp. 137-186.</br></br>
+               	[7] &nbsp;	 P. Brimblecombe, “Aerosols and Air Pollution in Art,” Proceedings of the Symposium on the History of Aerosol Science, Wien, 31 August-2 September 2000, pp. 11-24.</br></br>
+               	[8] &nbsp;	 R. B. Husar, “Atmospheric Aerosol Science before 1900,” Proceedings of the Symposium on the History of Aerosol Science, Wien, 31 August-2 September 2000, pp. 25-36.</br></br>
+               	[9] &nbsp;	 H. C. van de Hulst, “A Historical Sketch of Light Scattering by Small Particle,” Proceedings of the Symposium on the History of Aerosol Science, Wien, 31 August-2 September 2000, pp. 69-76.</br></br>
+               	[10] &nbsp;	 R. L. Lee, W. Meyer and G. Hoeppe, “Atmospheric Ozone and Colors of the Antarctic Twilight Sky,” Applied Optics, Vol. 50, No. 28, 2011, pp. 162-171.
+doi:10.1364/AO.50.00F162</br></br>
+               	[11] &nbsp;	 E. O. Hulburt, “Explanation of the Brightness and Color of the Sky, Particularly the Twilight Sky,” Journal of the Optical Society of America, Vol. 43, No. 2, 1953, pp. 113-118. doi:10.1364/JOSA.43.000113</br></br>
+               	[12] &nbsp;	 G. V. Rozenberg, “Twilight: A Study in Atmospheric Optics,” Plenum Press, New York, 1966.</br></br>
+               	[13] &nbsp;	 J. V. Dave and C. L. Mateer, “The Effect of Stratospheric Dust on the Color of the Twilight Sky,” Journal of Geophysical Research, Vol. 73, No. 22, 1968, pp. 6897-6913. doi:10.1029/JB073i022p06897</br></br>
+               	[14] &nbsp;	 C. N. Adams, G. N. Plass and G. W. Kattawar, “The Influence of Ozone and Aerosols on the Brightness and Color of the Twilight Sky,” Journal of Atmospheric Science, Vol. 31, No. 6, 1974, pp. 1662-1674.
+doi:10.1175/1520-0469(1974)031<1662:TIOOAA>2.0.CO;2</br></br>
+               	[15] &nbsp;	 E. J. McCartney, “Optics of the Atmosphere,” John Wiley and Sons, New York, 1976.</br></br>
+               	[16] &nbsp;	 C. F. Bohren and A. B. Fraser, “Color of the Sky,” Physics Teacher, Vol. 23, No. 5, 1985, pp. 267-272. 
+doi:10.1119/1.2341808</br></br>
+               	[17] &nbsp;	 O. R. Wulf, A. F. Moore and E. H. Melvin, “Note: The Atmospheric Ozone Absorption in the Visible Spectrum,” Astrophysical Journal, Vol. 79, 1934, pp. 270-272.
+doi:10.1086/143534</br></br>
+               	[18] &nbsp;	 D. C. Giancoli, “Physics for Scientists and Engineers Upper Saddle River,” Pearson Prentice Hall, Upper Saddle River, 2008.</br></br>
+               	[19] &nbsp;	 F. Zagury and M. Fujii, “Spectral Analysis of Red Scattered Sunlight at Sunrise,” New Astronomy, Vol. 8, No. 6, 2003, pp. 549-556. doi:10.1016/S1384-1076(03)00048-4</br></br>
+               	[20] &nbsp;	 F. Zagury and F. Goutail, “Spectral Analysis of Extinguished Sunlight,” New Astronomy, Vol. 8, No. 6, 2003, pp. 537-548. doi:10.1016/S1384-1076(03)00047-2</br></br>
+               	[21] &nbsp;	 F. Patat, O. S. Ugolnikov and O. V. Postylyakov, “TUBVRI Twilight Sky Brightness at ESO-Paranal,” Astronomy and Astrophysics, Vol. 455, No. 1, 2006, pp. 385-393. doi:10.1051/0004-6361:20064992</br></br>
+               	[22] &nbsp;	 R. Fosbury, G. Koch and J. Koch, “Ozone: Twilit Skies, and (exo-)Planet Transits,” The Messenger, Vol. 143, 2011, pp. 27-31.</br></br>
+               	[23] &nbsp;	 M. Sneep and W. Ubachs, “Direct Measurement of the Rayleigh Scattering Cross Section in Various Gases,” Journal of Quantitative and Spectroscopic Radiative Transfer, Vol. 92, No. 3, 2005, pp. 293-310.
+doi:10.1016/j.jqsrt.2004.07.025</br></br>
+               	[24] &nbsp;	 A. Angstrom, “Techniques of Determining the Turbidity of the Atmosphere,” Tellus, Vol. 13, No. 2, 1961, pp. 214-223. doi:10.1111/j.2153-3490.1961.tb00078.x</br></br>
+               	[25] &nbsp;	 G. E. Shaw, J. A. Reagan and B. M. Herman, “Investigations of Atmospheric Extinction Using Direct Solar Radiation Measurements Made with a Multiple Wavelength Radiometer,” Journal of Applied Meteorology, Vol. 12, No. 2, 1973, pp. 374-380.
+doi:10.1175/1520-0450(1973)012<0374:IOAEUD>2.0.CO;2</br></br>
+               	[26] &nbsp;	 G. Thuillier, et al., “The Solar Spectral Irradiance from 200 to 2400 nm as Measured by the SOLSPEC Spectrometer from the ATLAS and EURECA Missions,” Solar Physics, Vol. 214, No. 1, 2003, pp. 1-22. 
+doi:10.1023/A:1024048429145</br></br>
+				</div>
+ 			
+
+
+
+			   <div class="more_but"><button id="more" onclick="moreBill()">View more +</button></div>
+               <div class="down_but"><button id="download" ><a href="//www.scirp.org/journal/PaperDownload.aspx?paperID=24294" onclick="pushInformation(0,24294,492)">Download as PDF (1681KB)</a></button></div>
+            </div>
+            
+            <link href="//m.scirp.org/themes/css/html.css" rel="stylesheet" type="text/css" />
+            <script type="text/javascript" src="https://www.scirp.org/js/lazyload.js?timestamp=201903141618568947"></script>
+            <script type="text/javascript" src="https://www.scirp.org/js/ref.js?timestamp=201903141618568947"></script>
+            <script type="text/javascript" src="https://html.scirp.org/mathjax/2.7.2/MathJax.js?config=MML_HTMLorMML"></script>
+            <script type="text/javascript">
+                $(function() {
+                    $(".lazy").lazyload();
+                });
+            </script> 
+			<script>
+			    var oP = document.getElementById('paper_con_ref');
+			    var oBtn = document.getElementById('more');
+			    var allContent = oP.innerHTML;                   //存放所有内�?
+			    oP.innerHTML = oP.innerHTML.substr(0,500);        //截取�?00个字�?
+			    oBtn.onclick=function(){
+			        oP.innerHTML = allContent;                    //显示所有内�?
+					over = document.getElementById("more");
+			        over.innerHTML = "End";
+					var more = document.getElementById("more");
+					more.disabled=true;
+			    }
+			</script>
+
+
+ 
+
+
+
+
+   
+   
+   <div class="box" id="foot_bg">
+   <div class='box' id='share'>
+                <div class='box' id='s_space_l'>&nbsp;</div>
+                <div class='box' id='share_m'>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                 
+					<td align="center"> 
+					<a href="https://www.facebook.com/pages/Scientific-Research-Publishing/495692727119674" target="_blank"><button><i class="fa fa-facebook"  data-cmd="fbook" ></i></button></a>
+					</td>
+                    <td align="center">  <a href="https://twitter.com/Scirp_Papers" target="_blank"><button><i class="fa fa-tumblr"></i></button></a></td>
+                    <td align="center">  <a href="http://www.linkedin.com/company/scientific-research-publishing-inc.-usa" target="_blank"><button><i class="fa fa-linkedin"></i></button></a></td>
+                    <td align="center">  <a href="http://e.weibo.com/scirp" target="_blank"><button><i class="fa fa-weibo"></i></button></a></td>
+                    <td align="center">  <a href="https://plus.google.com/+ScirpOrg-Scientific-Research-Publishing/posts" target="_blank"><button><i class="fa fa-google-plus"></i></button></a></td>
+                    <td align="center">  <a href="http://wpa.qq.com/msgrd?v=3&uin=1655362766&site=qq&menu=yes"><button><i class="fa fa-qq"></i></button></a></td>
+                    <td align="center">  <a href="#" target="_blank"><button><i class="fa fa-weixin"></i></button></a></td>
+                  </tr>
+                </table>
+                </div>
+                <div class='box' id='s_space_r'>&nbsp;</div>
+            </div>
+            <div class='box' id='footer'>
+                <div class='box' id='foot_link'> <a href="//www.scirp.org/AboutUs/Index.aspx" target="_blank">About&nbsp;SCIRP</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//www.scirp.org/sitemap/index.xml" target="_blank">Sitemap</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//www.scirp.org/news/Index.aspx" target="_blank">News</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//www.scirp.org/AboutUs/Jobs.aspx" target="_blank">Jobs</a><br /><a href="//www.scirp.org?jsback=false" target="_blank">Full Site</a></div>
+                <div class='box' id='copyright'>Copyright &#169; 2019 Scientific Research Publishing Inc. All Rights Reserved.</div>
+            </div>
+            </div>
+            
+            
+            <script>
+            function weixinAddContact(name){
+			WeixinJSBridge.invoke("addContact", {webtype: "1",username: name}, function(e) {
+				WeixinJSBridge.log(e.err_msg);
+				//e.err_msg:add_contact:added 
+				//e.err_msg:add_contact:cancel 
+				//e.err_msg:add_contact:ok 
+				if(e.err_msg == 'add_contact:added' || e.err_msg == 'add_contact:ok'){
+				    
+				}
+			})
+		};
+            </script>
+<!--            
+ <script>
+window._bd_share_config = {
+		common : {		
+			bdText:"(SCIRP: http://www.scirp.org) is an academic publisher of open access journals. It also publishes academic books and conference proceedings. SCIRP currently has more than 200 open access journals in the areas of science, technology and medicine.",
+			bdPic:"http://papersubmission.scirp.org/images/logo_scirp.gif"
+			},
+		share : [{
+			"tag" : "share_1",
+			"bdSize" : 32
+			
+		}],image : [{
+			
+			
+		}],
+		selectShare : [{
+			"bdContainerClass" : "share_1"
+		}]
+	}
+
+	//����Ϊjs���ز���
+	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ -->          </div>   
+        
+        <a href="#0" class="cd-top">Top</a>
+    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+		<script src="//m.scirp.org/themes/js/classie.js"></script>
+        <script src="//m.scirp.org/themes/js/search.js"></script>
+        <script src="//m.scirp.org/themes/js/main.js"></script>
+		<script>
+	
+			var //menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+				//showLeftPush = document.getElementById( 'showLeftPush' ),
+				showRightPush = document.getElementById( 'showRightPush' ),
+				menu_back = document.getElementById( 'menu_back' ),
+				body = document.body;
+
+//			showLeftPush.onclick = function() {
+//				classie.toggle( this, 'active' );
+//				classie.toggle( body, 'cbp-spmenu-push-toright' );
+//				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+//				disableOther( 'showLeftPush' );
+//			};
+				menu_back.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toleft' );
+				classie.toggle( menuRight, 'cbp-spmenu-open' );
+				disableOther( 'showRightPush' );
+			};
+			showRightPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toleft' );
+				classie.toggle( menuRight, 'cbp-spmenu-open' );
+				disableOther( 'showRightPush' );
+			};
+			function disableOther( button ) {
+//				if( button !== 'showLeftPush' ) {
+//					classie.toggle( showLeftPush, 'disabled' );
+//				}
+				if( button !== 'showRightPush' ) {
+					classie.toggle( showRightPush, 'disabled' );
+				}
+			}
+			var menu = '';
+			if(menu!=''){
+				$("#subnav>ul>li").each(function(){
+					 if($(this).text()==menu){
+						$(this).addClass("menuselect");
+						 }else{
+							$(this).removeClass("menuselect");
+							 }
+					});
+				}
+		</script>        
+      
+        
+  </body>
+</html>

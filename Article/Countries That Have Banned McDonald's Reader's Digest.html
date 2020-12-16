@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYOVVdSGwYBVVJSBwIB",licenseKey:"bab150296b",applicationID:"51130036"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(21),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(22),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),c.xhrWrappable&&t(10),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(9),s=t(8),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=y.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,y.now()])}),a.on(m,function(t,n,e){this.bstStart=y.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){function r(t,n,e){var r=t[n];"function"==typeof r&&(t[n]=function(){var t=i(arguments),n={};o.emit(e+"before-start",[t],n);var a;n[m]&&n[m].dt&&(a=n[m].dt);var s=r.apply(this,t);return o.emit(e+"start",[t,a],s),s.then(function(t){return o.emit(e+"end",[null,t],s),t},function(t){throw o.emit(e+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(22),a=t(21);n.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,n){r(d[h],n,f),r(l[h],n,f)}),r(s,"fetch",c),o.on(c+"end",function(t,n){var e=this;if(n){var r=n.headers.get("content-length");null!==r&&(e.rxSize=r),o.emit(c+"done",[null,n],e)}else o.emit(c+"done",[t],e)}))},{}],7:[function(t,n,e){var r=t("ee").get("history"),o=t("wrap-function")(r);n.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,n,e){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],9:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],10:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,n,e){function r(t){if(!i(t))return null;var n=window.NREUM;if(!n.loader_config)return null;var e=(n.loader_config.accountID||"").toString()||null,r=(n.loader_config.agentID||"").toString()||null,s=(n.loader_config.trustKey||"").toString()||null;if(!e||!r)return null;var c=a.generateCatId(),f=a.generateCatId(),u=Date.now(),d=o(c,f,u,e,r,s);return{header:d,guid:c,traceId:f,timestamp:u}}function o(t,n,e,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:n,ti:e}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function i(t){var n=!1,e=!1,r={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(r=NREUM.init.distributed_tracing,e=!!r.enabled),e)if(t.sameOrigin)n=!0;else if(r.allowed_origins instanceof Array)for(var o=0;o<r.allowed_origins.length;o++){var i=s(r.allowed_origins[o]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){n=!0;break}}return e&&n}var a=t(19),s=t(13);n.exports={generateTracePayload:r,shouldGenerateTrace:i}},{}],12:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);n.aborted||(e.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):i(this,t),e.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime]))}}function o(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.parsedOrigin=c(n),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,n){t.params.status=n.status;var e=w(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){i(n,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=f(this.parsedOrigin);e&&e.header&&(n.setRequestHeader("newrelic",e.header),this.dt=e)}),u.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=m(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<l;s++)n.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),u.on("xhr-load-added",function(t,n){var e=""+p(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,n){var e=""+p(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],n)}),u.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],n)}),u.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,n){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)}),u.on("fetch-before-start",function(t){var n,e=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var r=f(this.parsedOrigin);if(r&&r.header){var o=r.header;if("string"==typeof t[0]){var i={};for(var a in e)i[a]=e[a];i.headers=new Headers(e.headers||{}),i.headers.set("newrelic",o),this.dt=r,t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&(t[0].headers.append("newrelic",o),this.dt=r)}})}},{}],13:[function(t,n,e){var r={};n.exports=function(t){if(t in r)return r[t];var n=document.createElement("a"),e=window.location,o={};n.href=t,o.port=n.port;var i=n.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=n.hostname||e.hostname,o.pathname=n.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!n.protocol||":"===n.protocol||n.protocol===e.protocol,s=n.hostname===document.domain&&n.port===e.port;return o.sameOrigin=a&&(!n.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],14:[function(t,n,e){function r(t,n){var e=t.responseType;return"json"===e&&null!==n?n:"arraybuffer"===e||"blob"===e||"json"===e?o(t.response):"text"===e||"document"===e||""===e||void 0===e?o(t.responseText):void 0}var o=t(16);n.exports=r},{}],15:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(21),s=t(22),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],16:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],17:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],18:[function(t,n,e){function r(t,n){var e=t.getEntries();e.forEach(function(t){"first-paint"===t.name?c("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&c("timing",["fcp",Math.floor(t.startTime)])})}function o(t,n){var e=t.getEntries();e.length>0&&c("lcp",[e[e.length-1]])}function i(t){if(t instanceof u&&!l){var n,e=Math.round(t.timeStamp);n=e>1e12?Date.now()-e:f.now()-e,l=!0,c("timing",["fi",e,{type:t.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,s,c=t("handle"),f=t("loader"),u=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),s=new PerformanceObserver(o);try{a.observe({entryTypes:["paint"]}),s.observe({entryTypes:["largest-contentful-paint"]})}catch(d){}}if("addEventListener"in document){var l=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(t){document.addEventListener(t,i,!1)})}}},{}],19:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],20:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],21:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],22:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],23:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){g[t]=m(t).concat(n)}function h(t,n){var e=g[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(21),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(21),u=t("ee"),d=t(20),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(15),t(18),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(23)},{}],"wrap-function":[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(22),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}]},{},["loader",2,12,4,3]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Countries That Have Banned McDonald&#039;s | Reader&#039;s Digest</title>
+<meta property="fb:pages" content="45598662525" />
+		
+
+<!-- BEGIN Salesforce DMP ControlTag for "tmbi.com" -->
+<script class='kxct' data-id='s9xpab5u5' data-timing='async' data-version='3.0' type='text/javascript'>
+window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+  (function(){
+    var k=document.createElement('script');k.type='text/javascript';k.async=true;
+    k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/s9xpab5u5.js';
+    var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+  }());
+</script>
+<!-- END Salesforce DMP ControlTag -->
+
+<script class='kxint' data-namespace='trustedmediabrandsinc' type='text/javascript'>
+window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+(function(){
+  function retrieve(n){
+    var k= 'kx'+'trustedmediabrandsinc_'+n, ls=(function(){
+      try {
+        return window.localStorage;
+      } catch(e) {
+        return null;
+      }
+    })();
+    if (ls) {
+        return ls[k] || '';
+    } else if (navigator.cookieEnabled) {
+        var m = document.cookie.match(k+'=([^;]*)');
+        return (m && unescape(m[1])) || '';
+    } else {
+        return '';
+    }
+  }
+  Krux.user = retrieve('user');
+  Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
+})();
+</script>
+<!-- This site is optimized with the Yoast SEO Premium plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The fast-food chain has a complicated history with several countries. Here&#039;s why McDonald&#039;s is banned in Iceland, Bolivia, and seven other nations."/>
+<link rel="canonical" href="https://www.rd.com/advice/travel/countries-banned-mcdonalds/" />
+<link rel="publisher" href="https://plus.google.com/+readersdigest"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="9 Countries That Have Banned McDonald&#039;s" />
+<meta property="og:description" content="The fast-food chain has a complicated history with several countries. Here&#039;s why McDonald&#039;s is banned in Iceland, Bolivia, and seven other nations." />
+<meta property="og:url" content="https://www.rd.com/advice/travel/countries-banned-mcdonalds/" />
+<meta property="og:site_name" content="Reader&#039;s Digest" />
+<meta property="article:publisher" content="https://www.facebook.com/ReadersDigest" />
+<meta property="article:tag" content="Travel &amp; Vacations" />
+<meta property="article:section" content="Travel" />
+<meta property="og:image" content="https://www.rd.com/wp-content/uploads/2018/01/01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim.jpg" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="683" />
+<meta property="og:image:alt" content="Mcdonalds" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="The fast-food chain has a complicated history with several countries. Here&#039;s why McDonald&#039;s is banned in Iceland, Bolivia, and seven other nations." />
+<meta name="twitter:title" content="9 Countries That Have Banned McDonald&#039;s" />
+<meta name="twitter:site" content="@readersdigest" />
+<meta name="twitter:image" content="https://www.rd.com/wp-content/uploads/2018/01/01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim.jpg" />
+<meta name="twitter:creator" content="@readersdigest" />
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//www.gstatic.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//js-agent.newrelic.com' />
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel="alternate" type="rss2" title="Reader&#039;s Digest &raquo; Feed" href="https://www.rd.com/feed/" />
+<link rel="alternate" type="rss2" title="Reader&#039;s Digest &raquo; Comments Feed" href="https://www.rd.com/comments/feed/" />
+<link rel='stylesheet' id='owl-style-css'  href='https://www.rd.com/wp-content/plugins/tmbi-recirc-module/css/owl-carousel-min.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-theme-default-style-css'  href='https://www.rd.com/wp-content/plugins/tmbi-recirc-module/css/owl-theme-default-min.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='re-circ-style-css'  href='https://www.rd.com/wp-content/plugins/tmbi-recirc-module/css/re-circ.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.rd.com/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='opinionStage_poll_oswp_style_css_set-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/gutenberg/poll/dist/blocks.style.build.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='opinionStage_trivia_oswp_style_css_set-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/gutenberg/trivia/dist/blocks.style.build.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='opinionStage_personality_oswp_style_css_set-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/gutenberg/personality/dist/blocks.style.build.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='opinionStage_survey_oswp_style_css_set-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/gutenberg/survey/dist/blocks.style.build.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='opinionStage_slideshow_oswp_style_css_set-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/gutenberg/slideshow/dist/blocks.style.build.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='opinionStage_form_oswp_style_css_set-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/gutenberg/form/dist/blocks.style.build.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-styles-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='listicle-editor-styles-css'  href='https://www.rd.com/wp-content/plugins/rd-listicle/css/editor-style-listicle.css?ver=1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='newsletter-css'  href='https://www.rd.com/wp-content/plugins/rd-newsletters/css/newsletter.css?ver=3.6' type='text/css' media='all' />
+<link rel='stylesheet' id='swiftype-facets-css'  href='https://www.rd.com/wp-content/plugins/swiftype-search/Search/../assets/facets.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='gpt-ads-style-css'  href='https://www.rd.com/wp-content/plugins/tmbi-ad-stack/css/helper.css?ver=2.2.18' type='text/css' media='all' />
+<link rel='stylesheet' id='content-card-inserter-css-css'  href='https://www.rd.com/wp-content/plugins/tmbi-content-card/css/content-card-inserter.css?ver=1.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-css-css'  href='https://www.rd.com/wp-content/plugins/tmbi-dropcap/css/style.css?ver=1.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='fancy-inline-recirc-css'  href='https://www.rd.com/wp-content/plugins/tmbi-fancy-inline-recirc/css/inline-fancy-recirc.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='styles-css'  href='https://www.rd.com/wp-content/plugins/tmbi-video-preview/css/styles.css?ver=0.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-icomoon-css'  href='https://www.rd.com/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1.7' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-toc-css'  href='https://www.rd.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=1.7' type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}div#ez-toc-container {width: 100%;}
+</style>
+<link rel='stylesheet' id='tohv2-child-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato%3A400%2C400i%2C700%2C700i%7COpen+Sans%3A400%2C400i%2C600%2C600i%2C700%2C700i&#038;ver=3.8.06' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://www.rd.com/wp-includes/css/dashicons.min.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-icons-styles-css'  href='https://www.rd.com/wp-content/themes/tmbi-theme-v3/custom-icons-styles.css?ver=3.8.06' type='text/css' media='all' />
+<link rel='stylesheet' id='rdv2-child-theme-css'  href='https://www.rd.com/wp-content/themes/tmbi-theme-v3/rd-above-the-fold.min.css?ver=3.8.06' type='text/css' media='all' />
+<link rel='stylesheet' id='swiftype-css'  href='https://www.rd.com/wp-content/plugins/swiftype-search/Search/../assets/autocomplete.css?ver=5.0.3' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ga_custom_dimension = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-js-listicle/js/js-listicle-feature.js?ver=1.1.6'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-sticky-feature/js/sticky-plugin.js?ver=1.0.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-sticky-feature/js/sticky-custom.js?ver=1.0.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var moat_intelligence = {"mi":"1000"};
+/* ]]> */
+</script>
+<script async type='text/javascript' src='https://z.moatads.com/tmbiyieldheader910374028064/moatheader.js?ver=1.0.3'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/js/wp-js-hooks.js?ver=1.3'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-moat-yield-intelligence-tool/js/moat-timeout.js?ver=1.0.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var digitalData = {"page":{"theme":"tmbi-theme-v3","sitename":"rd","pageName":"rd:Travel:Advice:video listicle:9 Countries That Have Banned McDonald's","content":{"contentName":"9 Countries That Have Banned McDonald's","tmbiBrand":"rd-com","contentID":381865,"wpContentID":"","contentType":"video listicle","category":"fun, travel","tags":"Travel &amp; Vacations","contentCost":"0","publishedDate":"2018-01-18","modifiedDate":"2020-01-03","image":{"licensorName":"Shutterstock","credits":"TY Lim\/Shutterstock"},"author":"Meghan Jones","authorRole":"editor","listicleEvent":true,"slideShowSingle":true,"slideTotal":10,"affiliateDisclaimer":""},"subCategory":"Travel","subsubCategory":"Advice","category":{"subCategory":"Travel","subsubCategory":"Advice","pageType":"fun, travel"}}};
+/* ]]> */
+</script>
+<script async type='text/javascript' src='https://assets.adobedtm.com/launch-EN610ea377c05e4527a189aad8c4be4a89.js?ver=1.4.11'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ix_header_bidder_data = {"ix-desktop-url":"\/\/js-sec.indexww.com\/ht\/p\/184414-82921100256406.js","ix-mobile-url":"\/\/js-sec.indexww.com\/ht\/p\/184414-175280077214067.js"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-ix-header-bidder/js/ix-header-bidder.js?ver=1.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var referrers_list = {"aol.com":"aol.com","besthealth.ca":"besthealth.ca","bing.com":"bing.com","businessinsider.com":"businessinsider.com","com.google":"com.google","com.google.android.gm":"com.google.android.gm","com.google.android.googlequicksearchbox":"com.google.android.googlequicksearchbox","com.pinterest":"com.pinterest","constructionprotips.com":"constructionprotips.com","duckduckgo.com":"duckduckgo.com","facebook.com":"facebook.com","m.facebook.com":"m.facebook.com","familyhandyman.com":"familyhandyman.com","flipboard.com":"flipboard.com","from.flipboard.com":"from.flipboard.com","foxnews.com":"foxnews.com","gmail.com":"gmail.com","google.ca":"google.ca","google.co.in":"google.co.in","google.co.uk":"google.co.uk","google.com":"google.com","google.com.au":"google.com.au","google.com.ph":"google.com.ph","google.ie":"google.ie","instagram.com":"instagram.com","l.facebook.com":"l.facebook.com","linkedin.com":"linkedin.com","linkin.bio":"linkin.bio","live.com":"live.com","mail.yahoo.com":"mail.yahoo.com","msn.com":"msn.com","nativeapp.toutiao.com":"nativeapp.toutiao.com","newsbreakapp.com":"newsbreakapp.com","outbrain.com":"outbrain.com","outlook.com":"outlook.com","paid.outbrain.com":"paid.outbrain.com","pinterest.com":"pinterest.com","rd.com":"rd.com","readersdigest.ca":"readersdigest.ca","reddit.com":"reddit.com","selection.readersdigest.ca":"selection.readersdigest.ca","smartnews.com":"smartnews.com","t.co":"twitter.com","taboola.com":"taboola.com","tasteofhome.com":"tasteofhome.com","thehealthy.com":"thehealthy.com","twitter.com":"twitter.com","yahoo.com":"yahoo.com","search.yahoo.com":"search.yahoo.com","zergnet.com":"zergnet.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-referral-tracking/js/referral-tracking.js?ver=1.0.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/cookie.min.js?ver=1.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/jquery-plugins/jquery.inview.custom.min.js?ver=1.3'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/js-utils/js-utils.js?ver=1.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/js-utils/js-sizes.js?ver=1.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-parsely-multisite/js/dynamic-tracker.js?ver=1.0.4'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-taboola/js/rd-taboola-loader.js?ver=0.2.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-ad-stack/js/tmbi-media-net-bidder.js?ver=2.2.18'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tmbi_ad_data = {"property":"6178","siteId":"rdg","pageType":"listicle","template":"listicle","urlPath":"\/advice\/travel\/countries-banned-mcdonalds\/","keywords":"travel-amp-vacations","category":"food,advice","topic":"fun,travel","header_bidders_timeout":"1000","_gfc":"","should_use_batch_SRA":"","ad_slots":{"sponsor-logo":{"slotUrl":"sponsor","sizes":{"mobile":[[4,4]],"tablet":[[4,4]],"desktop":[[4,4]],"large_screen":[[4,4]]},"targeting":{"tf":["atf"],"pos":["sponsor"],"location":[""]},"supported_types":[]},"ad-sidebar-top":{"slotUrl":"rail_1","sizes":{"mobile":[],"tablet":[],"desktop":[[300,250]],"large_screen":[[300,250]]},"targeting":{"tf":["atf"],"pos":"rail_1","location":["rail"]},"supported_types":[]},"mobile_prearticle":{"slotUrl":"prearticle","sizes":{"mobile":[[320,50]],"tablet":[],"desktop":[],"large_screen":[]},"targeting":{"tf":["atf"],"pos":["prearticle"],"location":["top"]},"supported_types":[]},"prearticle":{"slotUrl":"prearticle","sizes":{"mobile":[],"tablet":[[728,90]],"desktop":[[970,250],[970,90],[728,90]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]},"targeting":{"tf":["atf"],"pos":["prearticle"],"location":["top"]},"supported_types":[],"change_size":{"homepage":{"mobile":[],"tablet":[[320,50]],"desktop":[[728,90]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]},"recipedetail":{"mobile":[],"tablet":[[728,90]],"desktop":[[970,250],[970,90],[728,90],[3,3]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]},"category":{"mobile":[],"tablet":[[300,250],[320,50]],"desktop":[[728,90]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]},"archive":{"mobile":[],"tablet":[[300,250],[320,50]],"desktop":[[728,90]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]},"projectdetail":{"mobile":[],"tablet":[[320,50]],"desktop":[[728,90]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]},"videocategory":{"mobile":[],"tablet":[[728,90]],"desktop":[[970,250],[970,90],[728,90],[300,250]],"large_screen":[[970,250],[970,90],[728,90],[300,250]]},"listicle":{"mobile":[],"tablet":[[728,90],[640,360],[3,3]],"desktop":[[970,250],[970,90],[728,90],[3,3]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]}}},"leaderboard":{"slotUrl":"oop","sizes":{"mobile":[],"tablet":[],"desktop":[[1,1]],"large_screen":[[1,1]]},"targeting":{"tf":["btf"],"pos":["oop"],"location":["oop"]},"supported_types":[]},"div-gpt-ad-1370019314148-25":{"slotUrl":"prearticle","sizes":{"mobile":[],"tablet":[[320,50]],"desktop":[[728,90],[3,3]],"large_screen":[[970,250],[970,90],[728,90],[3,3]]},"targeting":{"tf":["atf"],"pos":["prearticle"],"location":["top"]},"supported_types":["listicle"]},"div-gpt-ad-1370019314148-20":{"slotUrl":"oop","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[1,1]]},"targeting":{"tf":["btf"],"pos":["oop"],"location":["oop"]},"supported_types":["listicle"]},"div-gpt-ad-1370019314148-02":{"slotUrl":"rail_1","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[300,250]]},"targeting":{"tf":["atf"],"pos":"rail_1","location":["rail"]},"supported_types":["listicle"]},"listicle-top-adunit-lazy":{"slotUrl":"content_1","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["atf"],"pos":"content_1","location":["top"]},"supported_types":["listicle"]},"div-gpt-ad-1370019314148-04":{"slotUrl":"rail_2","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600]]},"targeting":{"tf":["atf"],"pos":"rail_2","location":["rail"]},"supported_types":["listicle"]},"listicle-middle-adunit-lazy":{"slotUrl":"content_2","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["atf"],"pos":"content_2","location":["middle"]},"supported_types":["listicle"]},"sidebar-ad":{"slotUrl":"railscroll","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":["railscroll"],"location":["rail"]},"supported_types":["listicle"],"scroll_type":"rail"},"listicle-scroll-adunit-lazy":{"slotUrl":"scroll","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":["scroll"],"location":["bottom"]},"supported_types":["listicle"],"scroll_type":"scroll"},"ad-sidebar-middle":{"slotUrl":"rail_2","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600]]},"targeting":{"tf":["atf"],"pos":"rail_2","location":["rail"]},"supported_types":["listicle","article","recipe","projectdetail"]},"oop-adhesive":{"slotUrl":"oop","sizes":{"mobile":[[320,50]],"tablet":[[320,50]],"desktop":[],"large_screen":[]},"targeting":{"tf":["btf"],"pos":["oop"],"location":["oop"]},"supported_types":["listicle"]},"rail_1":{"slotUrl":"rail_1","sizes":{"mobile":[],"tablet":[],"desktop":[[300,250]],"large_screen":[[300,250]]},"targeting":{"tf":["atf"],"pos":"rail_1","location":["rail"]},"supported_types":[]},"rail_2":{"slotUrl":"rail_2","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600]]},"targeting":{"tf":["atf"],"pos":"rail_2","location":["rail"]},"supported_types":["listicle"]},"content_1":{"slotUrl":"content_1","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["atf"],"pos":"content_1","location":["top"]},"supported_types":["listicle"]},"content_2":{"slotUrl":"content_2","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["atf"],"pos":"content_2","location":["middle"]},"supported_types":["listicle"]},"content_3":{"slotUrl":"content_3","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_3","location":["bottom"]},"supported_types":["listicle"]},"content_4":{"slotUrl":"content_4","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_4","location":["bottom"]},"supported_types":["listicle"]},"content_5":{"slotUrl":"content_5","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_5","location":["bottom"]},"supported_types":["listicle"]},"content_6":{"slotUrl":"content_6","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_6","location":["bottom"]},"supported_types":["listicle"]},"content_7":{"slotUrl":"content_7","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_7","location":["bottom"]},"supported_types":["listicle"]},"content_8":{"slotUrl":"content_8","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_8","location":["bottom"]},"supported_types":["listicle"]},"content_9":{"slotUrl":"content_9","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_9","location":["bottom"]},"supported_types":["listicle"]},"content_10":{"slotUrl":"content_10","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_10","location":["bottom"]},"supported_types":["listicle"]},"content_11":{"slotUrl":"content_11","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_11","location":["bottom"]},"supported_types":["listicle"]},"content_12":{"slotUrl":"content_12","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_12","location":["bottom"]},"supported_types":["listicle"]},"content_13":{"slotUrl":"content_13","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_13","location":["bottom"]},"supported_types":["listicle"]},"content_14":{"slotUrl":"content_14","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_14","location":["bottom"]},"supported_types":["listicle"]},"content_15":{"slotUrl":"content_15","sizes":{"mobile":[[300,250],[320,50],[3,3]],"tablet":[[300,250],[320,50],[3,3]],"desktop":[[728,90],[3,3],[300,250]],"large_screen":[[970,550],[970,250],[970,90],[728,90],[3,3],[300,250]]},"targeting":{"tf":["btf"],"pos":"content_15","location":["bottom"]},"supported_types":["listicle"]},"rail_3":{"slotUrl":"rail_3","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_3","location":["rail"]},"supported_types":["listicle"]},"rail_4":{"slotUrl":"rail_4","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_4","location":["rail"]},"supported_types":["listicle"]},"rail_5":{"slotUrl":"rail_5","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_5","location":["rail"]},"supported_types":["listicle"]},"rail_6":{"slotUrl":"rail_6","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_6","location":["rail"]},"supported_types":["listicle"]},"rail_7":{"slotUrl":"rail_7","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_7","location":["rail"]},"supported_types":["listicle"]},"rail_8":{"slotUrl":"rail_8","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_8","location":["rail"]},"supported_types":["listicle"]},"rail_9":{"slotUrl":"rail_9","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_9","location":["rail"]},"supported_types":["listicle"]},"rail_10":{"slotUrl":"rail_10","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_10","location":["rail"]},"supported_types":["listicle"]},"rail_11":{"slotUrl":"rail_11","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_11","location":["rail"]},"supported_types":["listicle"]},"rail_12":{"slotUrl":"rail_12","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_12","location":["rail"]},"supported_types":["listicle"]},"rail_13":{"slotUrl":"rail_13","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_13","location":["rail"]},"supported_types":["listicle"]},"rail_14":{"slotUrl":"rail_14","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_14","location":["rail"]},"supported_types":["listicle"]},"rail_15":{"slotUrl":"rail_15","sizes":{"mobile":[],"tablet":[],"desktop":[],"large_screen":[[160,600],[300,250],[300,600],[300,1050]]},"targeting":{"tf":["btf"],"pos":"rail_15","location":["rail"]},"supported_types":["listicle"]}},"options":{"dfp_property":"","dfp_site_id":"","dfp_exclude_pages":"44773,536374,590970,90883,10505,1317472","dfp_lazy_load_offset_article":"200","dfp_lazy_load_offset_article_mobile":"200","dfp_lazy_load_offset_category":"200","dfp_lazy_load_offset_category_mobile":"200","dfp_lazy_load_offset_homepage":"200","dfp_lazy_load_offset_homepage_mobile":"200","dfp_lazy_load_offset_joke":"200","dfp_lazy_load_offset_joke_mobile":"200","dfp_lazy_load_offset_listicle":"200","dfp_lazy_load_offset_listicle_mobile":"200","dfp_lazy_load_offset_projectdetail":"200","dfp_lazy_load_offset_projectdetail_mobile":"200","dfp_lazy_load_offset_recipedetail":"200","dfp_lazy_load_offset_recipedetail_mobile":"200","dfp_lazy_load_offset_slideshow":"200","dfp_lazy_load_offset_slideshow_mobile":"200","dfp_lazy_load_offset_videocategory":"200","dfp_lazy_load_offset_videocategory_mobile":"200","dfp_lazy_load_offset_heavy":"200","dfp_lazy_load_offset_heavy_mobile":"200","dfp_exclude_leaderboard_ad_pages":"","media_net_bidder":"1","dfp_tracking_code_id":"utm, trkid, fbcld","ad_index_bidder":"1","ad_amazon_bidder":"2","dfp_refresh_ad_status":"1","dfp_refresh_ad_inview_status":"1","dfp_refresh_ad_timer":"31","dfp_refresh_ad_count":"10","arbitrage_dfp_refresh_ad_timer":"31","arbitrage_dfp_refresh_ad_count":"4"},"lazy_load_inview_offset":{"mobile":"200","desktop":"200"},"contentID":"381865","platform":"desktop","ad_unit_two":"","overrides":[],"global_targeting":{"pt":"listicle","tax0":"rdg","tax1":"food,advice","tax2":"fun,travel","tax3":"travel-amp-vacations","platform":"desktop","sponsors":["no_value"],"source":["original_to_tmbi"],"mag_issue_date":["no_value"],"tmbi_first_associated":["rd.com"],"author":["mjones2017"],"gs_cat":["gs_food","gs_food_estab","gs_entertain_books","gs_business"]},"tracking_codes":["utm"," trkid"," fbcld"]};
+var krux_data = {"page":{"category":"food,advice","topic":"fun,travel","keyword":"travel-amp-vacations","contentid":381865,"author":"Meghan Jones","gs_categories":["gs_food","gs_food_estab","gs_entertain_books","gs_business"],"source":"originaltotmbi","tmbi_first_associated":"rdcom"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-ad-stack/js/tmbi-ad-stack.js?ver=2.2.18'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-amazon-a9/js/amazon-lib.js?ver=1.9.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-amazon-a9/js/tmbi-amazon-a9.js?ver=1.9.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-amazon-a9/js/tmbi-a9-video.js?ver=1.9.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-content-card/js/remove-hyperlink.js?ver=1.0.3'></script>
+<script async type='text/javascript' src='//s.ntv.io/serve/load.js?ver=1.4'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-nativo/js/nativo-custom.js?ver=1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pinterest_tid = {"tid":"2613599177006"};
+/* ]]> */
+</script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-pinterest-pixels/js/pinterest-pixels.js?ver=1.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Redirect_To_Arbitrage_Settings = {"post_type":["None"],"referer":["None"],"device_type":["None"],"msn_query_paramater":"refmsn","yahoo_query_paramater":"refyahoo","pinterest_query_paramater":"refpin"};
+var site = "rd";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-redirect-to-arbitrage/js/redirect-to-arbitrage.js?ver=1.0.7'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-video-preview/js/vtt.min.js?ver=0.0.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-video-preview/js/custom-script.js?ver=0.0.2'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/slinky.min.js?ver=3.8.06'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/jokes-share-button.js?ver=3.8.06'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var swiftypeParams = {"engineKey":"dPhdjmxNQyxfzhQEvsAu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/swiftype-search/Search/../assets/install_swiftype.min.js?ver=5.0.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var fb_app_id = {"app_id":"1460464994268018"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/fb-sdk/js/fb-sdk.js?ver=1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var fb_pixel_data = {"fb_pixel_id":"1468910830064549"};
+/* ]]> */
+</script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-fb-retargeting-pixel/js/facebook-retargeting-tag.js?ver=1.0.1'></script>
+<link rel='https://api.w.org/' href='https://www.rd.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.rd.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.rd.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel='shortlink' href='https://www.rd.com/?p=381865' />
+<link rel="alternate" type="application/json+oembed" href="https://www.rd.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.rd.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&#038;format=xml" />
+		<style>
+		.getty.aligncenter {
+			text-align: center;
+		}
+		.getty.alignleft {
+			float: none;
+			margin-right: 0;
+		}
+		.getty.alignleft > div {
+			float: left;
+			margin-right: 5px;
+		}
+		.getty.alignright {
+			float: none;
+			margin-left: 0;
+		}
+		.getty.alignright > div {
+			float: right;
+			margin-left: 5px;
+		}
+		</style>
+		
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','gaplusu');
+
+                                                            gaplusu('create', 'UA-17041328-1', 'auto');
+                    
+                                                                gaplusu('require', 'displayfeatures');
+                    
+                    gaplusu('send', 'pageview');
+                
+                            </script>
+
+		<meta property="fb:app_id" content="1460464994268018" />
+<script type="application/ld+json">
+{"@context":"https:\/\/schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-1\/"},{"@type":"ListItem","position":2,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-2\/"},{"@type":"ListItem","position":3,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-3\/"},{"@type":"ListItem","position":4,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-4\/"},{"@type":"ListItem","position":5,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-5\/"},{"@type":"ListItem","position":6,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-6\/"},{"@type":"ListItem","position":7,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-7\/"},{"@type":"ListItem","position":8,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-8\/"},{"@type":"ListItem","position":9,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-9\/"},{"@type":"ListItem","position":10,"url":"https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/#card-10\/"}]}
+</script>
+<link rel="api" href="https://www.rd.com/wp-json/wp/v2/listicle/381865?_embed">
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var connatix_token = {"token":"35ac28fb-90b3-4ddf-b91b-597a2af9f615"};
+	/* ]]> */
+	</script>
+<script type="application/ld+json">
+{
+    "@context": "https:\/\/schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https:\/\/www.rd.com\/",
+                "name": "RD.COM"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https:\/\/www.rd.com\/advice\/",
+                "name": "Advice"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https:\/\/www.rd.com\/advice\/travel\/",
+                "name": "Travel"
+            }
+        }
+    ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https:\/\/schema.org",
+    "@type": "BlogPosting",
+    "headline": "9 Countries That Have Banned McDonald's",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/"
+    },
+    "description": "The fast-food chain has a complicated history with several countries. Here's why McDonald's is banned in Iceland, Bolivia, and seven other nations.",
+    "datePublished": "2018-11-05T14:20:17Z",
+    "dateModified": "2020-01-03T15:20:12Z",
+    "author": [
+        {
+            "@type": "Person",
+            "name": "Meghan Jones"
+        }
+    ],
+    "image": [
+        {
+            "@type": "ImageObject",
+            "url": "https:\/\/www.rd.com\/wp-content\/uploads\/2018\/01\/01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim-1200x675.jpg",
+            "width": 1200,
+            "height": 675
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https:\/\/www.rd.com\/wp-content\/uploads\/2018\/01\/01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim-1200x900.jpg",
+            "width": 1200,
+            "height": 900
+        },
+        {
+            "@type": "ImageObject",
+            "url": "https:\/\/www.rd.com\/wp-content\/uploads\/2018\/01\/01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim-1200x1200.jpg",
+            "width": 1200,
+            "height": 1200
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Reader&#039;s Digest",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/rd.com\/wp-content\/themes\/rdus-child\/images\/RD_Logo_OneLine_60x335.png",
+            "width": 335,
+            "height": 60
+        }
+    },
+    "url": "https:\/\/www.rd.com\/advice\/travel\/countries-banned-mcdonalds\/",
+    "dateCreated": "2018-11-05T14:20:17Z",
+    "articleSection": "Travel",
+    "creator": [
+        {
+            "@type": "Person",
+            "name": "Meghan Jones"
+        }
+    ],
+    "keywords": [
+        "Travel &amp; Vacations"
+    ]
+}
+</script>
+<meta name="pageName" content = "9 Countries That Have Banned McDonald's">
+<meta name="contentId" content = "381865">
+<link rel="icon" href="https://www.rd.com/wp-content/uploads/2018/10/NEWRDicon10.9.18-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://www.rd.com/wp-content/uploads/2018/10/NEWRDicon10.9.18.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.rd.com/wp-content/uploads/2018/10/NEWRDicon10.9.18.png" />
+<meta name="msapplication-TileImage" content="https://www.rd.com/wp-content/uploads/2018/10/NEWRDicon10.9.18.png" />
+		<style type="text/css" id="wp-custom-css">
+			.single .center {
+    text-align:left;
+}
+.single .image-credit {
+    padding-top: 8px;
+    padding-bottom: 2em;
+    font-size: 13px;
+    color: #8e8e8e;
+    font-weight: 400;
+}
+.header-logo {
+background-image: url(https://www.rd.com/wp-content/uploads/2018/10/rd-header-logo-gma-1.png);
+}
+.sticky .header-logo {
+background-image: url(https://www.rd.com/wp-content/uploads/2018/10/rd-sticky-logo-gma-1.png);
+}
+.site-footer .footer-logo {
+background-image: url(https://www.rd.com/wp-content/uploads/2018/10/rd-footer-logo-gma-1.png);
+} 
+
+.listicle-page figure,
+.recipe-template-default figure {
+  overflow: hidden;
+}
+.listicle-page p.listicle-image-wrapper,
+.recipe-template-default p.listicle-image-wrapper{
+  overflow: hidden;
+  padding: 0;
+}
+
+/* WPDT-9054 */
+body.term-327977 > div.site-container > div.hero,
+body.term-327977 > div.site-container > div.footer-cta {
+	background-image: url('https://www.rd.com/wp-content/uploads/2019/10/CHH.jpg') !important;
+}
+
+/* WPDT-9625 */
+@media only screen and (max-width: 767px) {
+	.header-top-mobile {
+    margin-top: 44px;
+	}
+}		</style>
+	</head>
+<body class="listicle-template-default single single-listicle postid-381865 header-full-width full-width-content single-collection collection list-view"><div class="site-container"><section><span class="screen-reader-text">Skip links</span><ul class="genesis-skip-link"><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul></section>
+<div class="white-out"></div>
+
+	<div class="sticky-recipe-header sticky">
+
+		<div class="share-stick-wrapper">
+			<a data-analytics-metrics='{"link_name":"share","link_module":"content engagement","link_pos":"share - sticky unit"}'
+			   id="sm-recipe-social-share-header" class="srf-link" href="javascript: void(0)">
+				<div class="social-srf-container">
+					<i class="dashicons dashicons-share"></i>
+				</div>
+				<div class="share-text">Share</div>
+			</a>
+			<a data-analytics-metrics='{"link_name":"facebook","link_module":"content engagement","link_pos":"facebook - sticky unit"}' id="sm-recipe-facebook-header" class="srf-link adobe-tracking" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&t9+Countries+That+Have+Banned+McDonald%26%238217%3Bs=&v=3','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)" style="display: none;">
+				<div class="srf-container srf-facebook">
+					<i class="dashicons dashicons-facebook"></i>
+					<span id="recipe-facebook-sticky">Share on Facebook</span>
+				</div>
+			</a><a data-analytics-metrics='{"link_name":"pinterest","link_module":"content engagement","link_pos":"share - sticky unit"}' id="sm-recipe-pinterest-header" class="srf-link adobe-tracking" onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&media=http%3A%2F%2Fwww.rd.com%2Fwp-content%2Fuploads%2F2018%2F01%2F01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim.jpg&description=9+Countries+That+Have+Banned+McDonald%26%238217%3Bs','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)" style="display: none;">
+				<div class="srf-container srf-pinterest">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 172 172" width="21px" height="21px"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="normal" font-size="none" text-anchor="start" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="#c92228"></path><g fill="#ffffff"><g id="surface1"><path d="M86,1.24038c-46.79868,0 -84.75962,37.96094 -84.75962,84.75962c0,35.86779 22.30108,66.46394 53.77584,78.84195c-0.12921,-2.89423 -0.12921,-17.90805 10.3107,-62.69111c1.39544,-14.93629 -0.54267,-20.23377 -0.54267,-26.43569c0,-14.08354 7.3131,-17.05529 11.60276,-17.05529c6.09856,0 14.49699,2.32572 14.49699,12.14543c0,11.24099 -9.17367,14.21274 -9.17367,14.21274c0,0 -0.64604,2.86838 -1.42128,10.85337c-0.7494,8.01081 2.45493,16.69351 15.50481,16.69351c20.93149,0 24.16166,-29.07151 24.16166,-37.08233c0,-11.03425 -8.08835,-33.46454 -33.23197,-33.46454c-33.51622,0 -39.27885,30.02764 -39.27885,38.03846c0,3.4369 0.93029,9.48377 1.57632,12.0679c6.33113,1.03365 5.6851,9.69051 2.97176,12.14544c-2.9976,2.71334 -18.47656,5.94351 -18.47656,-28.01202c0,-32.32753 28.8131,-48.99519 54.11178,-48.99519c24.08413,0 50.28726,16.61599 50.28726,48.60757c0,28.58053 -20.51803,51.0625 -42.09555,51.0625c-12.94651,0 -19.82031,-10.67247 -19.82031,-10.67247c0,10.0006 -18.34735,44.31791 -20.69892,48.6851c9.53546,3.69531 19.87199,5.8143 30.69952,5.8143c46.82452,0 84.75962,-37.9351 84.75962,-84.75962c0,-46.82452 -37.96094,-84.75962 -84.75962,-84.75962z"></path></g></g><path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="none"></path><path d="M86,168.56c-45.59663,0 -82.56,-36.96337 -82.56,-82.56v0c0,-45.59663 36.96337,-82.56 82.56,-82.56v0c45.59663,0 82.56,36.96337 82.56,82.56v0c0,45.59663 -36.96337,82.56 -82.56,82.56z" fill="none"></path><path d="M0,172v-172h172v172z" fill="none"></path><path d="M3.44,168.56v-165.12h165.12v165.12z" fill="none"></path><path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="none"></path><path d="M86,168.56c-45.59663,0 -82.56,-36.96337 -82.56,-82.56v0c0,-45.59663 36.96337,-82.56 82.56,-82.56v0c45.59663,0 82.56,36.96337 82.56,82.56v0c0,45.59663 -36.96337,82.56 -82.56,82.56z" fill="none"></path></g></svg>
+					<span id="recipe-pinterest-sticky">Save on Pinterest</span>
+				</div>
+			</a><a data-analytics-metrics='{"link_name":"twitter","link_module":"content engagement","link_pos":"share - sticky unit"}' id="sm-recipe-twitter-header" class="srf-link adobe-tracking" onClick="window.open('https://twitter.com/share?url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&amp;text=9+Countries+That+Have+Banned+McDonald%26%238217%3Bs&amp;hashtags=','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)" style="display: none;">
+				<div class="srf-container srf-twitter">
+					<i class="dashicons dashicons-twitter"></i>
+					<span id="recipe-twitter-sticky">Tweet this</span>
+				</div>
+			</a><a data-analytics-metrics='{"link_name":"email","link_module":"content engagement","link_pos":"share - sticky unit"}' id="sm-recipe-email-header" class="srf-link adobe-tracking" onClick="window.open('mailto:?subject=9 Countries That Have Banned McDonald&#8217;s&amp;body=9 Countries That Have Banned McDonald&#8217;s %0D%0A %0D%0Ahttps://www.rd.com/advice/travel/countries-banned-mcdonalds/?_cmp=stf%0D%0A%0D%0AHappy Reading, %0D%0AYour friends at Reader\'s Digest  %0D%0A %0D%0A-- %0D%0A %0D%0AFor more great content sign up for our newsletter https://bit.ly/2MpTW1M');" href="javascript: void(0)" style="display: none;">
+				<div class="srf-container srf-email">
+					<i class="dashicons dashicons-email"></i>
+					<span id="recipe-twitter-sticky">Email</span>
+				</div>
+			</a><a id="next_content_link" onclick="set_local_data(event,false);" class="srf-link next-button" href="#">
+        <div class="srf-container next">
+            <span>Next</span>
+            <span class="dashicons dashicons-arrow-right-alt2" aria-hidden="true"></span>
+        </div>
+	</a>
+		</div>
+	<div class="sticky-social-share-menu" style="display:none;">
+		<div class="arrow-up"></div>
+		<div class="toh-sharing social-sharing post recipe-sticky"><div class="social-share">						<a data-analytics-metrics='{"link_name":"facebook","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="fb-share" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&t9+Countries+That+Have+Banned+McDonald%27s=&v=3','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)"><img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/facebook-letter-logo.svg" alt="facebook" width /></a> 							<a data-analytics-metrics='{"link_name":"flipboard","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="flipboard-share" data-flip-widget="shareflip" href="https://flipboard.com"><img src="https://cdn.flipboard.com/badges/flipboard_mrrw.png" /></a><script src="https://cdn.flipboard.com/web/buttons/js/flbuttons.min.js" type="text/javascript"></script>
+													<a data-analytics-metrics='{"link_name":"twitter","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="twitter-share" onClick="window.open('https://twitter.com/share?url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&amp;text=9+Countries+That+Have+Banned+McDonald%27s&amp;hashtags=','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)"><img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/twitter-logo.svg" alt="twitter" /></a> 							<a data-analytics-metrics='{"link_name":"pinterest","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="pinterest-share" onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&media=http%3A%2F%2Fwww.rd.com%2Fwp-content%2Fuploads%2F2018%2F01%2F01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim.jpg&description=9+Countries+That+Have+Banned+McDonald%27s','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)"><img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/pinterest-social-visual-website-logotype.svg" alt="Pinterest"/></a> 						<a data-analytics-metrics='{"link_name":"email","link_module":"content engagement","link_pos":"social share-left sticky nav"}'  id="email_a_friend" onClick="window.open('mailto:?subject=9 Countries That Have Banned McDonald\'s&body=I thought you might like this...%0D%0A %0D%0A9 Countries That Have Banned McDonald\'s %0D%0A %0D%0Ahttps%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F%3F_cmp%3Dstf %0D%0A %0D%0AHappy Reading, %0D%0AYour friends at Reader\'s Digest %0D%0A %0D%0A-- %0D%0A %0D%0AFor more great content sign up for our newsletter https://bit.ly/2MpTW1M','_self')" href="javascript: void(0)" > <img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/envelope.svg" alt="Email" /></a> </div></div>	</div>
+	</div>
+
+
+<header class="site-header"><div class="wrap">	<div class="desktop-upper-wrapper  ">
+		<div id="subscribe-to-magazine"><a data-analytics-metrics='{"link_name":"subscribe","link_module":"header","link_pos":"secondary navigation"}' class="subscribe-header-cta" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IW7ADU101"><img class="subscribe-logo" alt="Subscribe" src="https://www.rd.com//wp-content/themes/tmbi-theme-v3/images/nl-subscribe-mag.png"></a></div>	</div>
+	<!-- .desktop-upper-wrapper -->
+
+	<button id="toh-menu-toggle" class="toh-menu-toggle" aria-expanded="false" aria-controls="toh-menu-wrapper">
+		<div class="toh-menu-icon" aria-hidden="true">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="menu-close">Menu</div>
+		<div class="menu-open">Close</div>
+	</button>
+	<!-- .toh-menu-toggle -->
+
+	<div class="toh-menu-wrapper" id="toh-menu-wrapper" aria-hidden="true">
+
+		<div class="toh-site-menu-wrapper">
+			<div class="menu-hamburger-menu-container"><ul id="menu-hamburger-menu" class="toh-site-menu"><li id="menu-item-59934" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="https://www.rd.com/health/">Health</a>
+<ul class="sub-menu">
+	<li id="menu-item-120486" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Health:Diabetes","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/diabetes/">Diabetes</a></li>
+	<li id="menu-item-59937" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Diet &amp; Weight Loss","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/health/diet-weight-loss/">Diet &#038; Weight Loss</a></li>
+	<li id="menu-item-59933" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Everyday Wellness","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/health/wellness/">Everyday Wellness</a></li>
+	<li id="menu-item-59940" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Healthy Eating","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/health/healthy-eating/">Healthy Eating</a></li>
+	<li id="menu-item-59939" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Health Care","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/health/healthcare/">Health Care</a></li>
+	<li id="menu-item-59938" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Fitness","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/health/fitness/">Fitness</a></li>
+	<li id="menu-item-59936" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Conditions","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/health/conditions/">Conditions</a></li>
+	<li id="menu-item-228841" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Beauty","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/beauty/">Beauty</a></li>
+</ul>
+</li>
+<li id="menu-item-49567" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor menu-item-has-children"><a href="https://www.rd.com/food/">Food</a>
+<ul class="sub-menu">
+	<li id="menu-item-92880" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor current-menu-parent current-listicle-parent"><a data-analytics-metrics='{"link_name":"Food:Food Fun &amp; News","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/food/fun/">Food Fun &#038; News</a></li>
+	<li id="menu-item-92881" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Food:Recipes &amp; Cooking","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/food/recipes-cooking/">Recipes &#038; Cooking</a></li>
+</ul>
+</li>
+<li id="menu-item-49662" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor menu-item-has-children"><a href="https://www.rd.com/advice/">Advice</a>
+<ul class="sub-menu">
+	<li id="menu-item-57249" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Parenting","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/parenting/">Parenting</a></li>
+	<li id="menu-item-88579" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Pets","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/pets/">Pets</a></li>
+	<li id="menu-item-66657" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Home","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/home/">Home</a></li>
+	<li id="menu-item-57251" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Relationships","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/relationships/">Relationships</a></li>
+	<li id="menu-item-57250" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Saving Money","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/saving-money/">Saving Money</a></li>
+	<li id="menu-item-49643" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor current-menu-parent current-listicle-parent"><a data-analytics-metrics='{"link_name":"Advice:Travel","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/travel/">Travel</a></li>
+	<li id="menu-item-57252" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Work &amp; Career","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/work-career/">Work &#038; Career</a></li>
+</ul>
+</li>
+<li id="menu-item-144129" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Culture","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/culture/">Culture</a></li>
+<li id="menu-item-49646" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="https://www.rd.com/true-stories/">True Stories</a>
+<ul class="sub-menu">
+	<li id="menu-item-78205" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"True Stories:Share Your 100-Word Story","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/stories/">Share Your 100-Word Story</a></li>
+	<li id="menu-item-49641" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Love Stories","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/love/">Love Stories</a></li>
+	<li id="menu-item-49640" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Inspiring Stories","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/inspiring/">Inspiring Stories</a></li>
+	<li id="menu-item-49642" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Amazing Survival Stories","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/survival/">Amazing Survival Stories</a></li>
+</ul>
+</li>
+<li id="menu-item-65988" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="https://www.rd.com/jokes/">Jokes</a>
+<ul class="sub-menu">
+	<li id="menu-item-80085" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Submit Your Joke","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/submit-joke/">Submit Your Joke</a></li>
+	<li id="menu-item-117768" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Funny Stuff","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/funny-stuff/">Funny Stuff</a></li>
+	<li id="menu-item-92142" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Knock-Knock Jokes","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/knock-knock/">Knock-Knock Jokes</a></li>
+	<li id="menu-item-92143" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Corny Jokes","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/corny/">Corny Jokes</a></li>
+	<li id="menu-item-92144" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Funny One-Liners","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/one-liners/">Funny One-Liners</a></li>
+	<li id="menu-item-65991" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Riddles","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/riddles/">Riddles</a></li>
+	<li id="menu-item-65990" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Cartoons","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/cartoons/">Cartoons</a></li>
+	<li id="menu-item-324267" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Cartoon Submissions","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/cartoon-submissions/">Cartoon Submissions</a></li>
+	<li id="menu-item-65989" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:All Funny Jokes","link_module":"header","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/">All Funny Jokes</a></li>
+</ul>
+</li>
+<li id="menu-item-766816" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Videos","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/videos/">Videos</a></li>
+<li id="menu-item-51252" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Sweepstakes and Prizes","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/sweepstakes-prizes/">Sweepstakes and Prizes</a></li>
+<li id="menu-item-225934" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag"><a data-analytics-metrics='{"link_name":"Contests","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/sweepstakes-prizes/">Contests</a></li>
+<li id="menu-item-49696" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Shop","link_module":"header","link_pos":"main navigation"}' href="http://www.readersdigeststore.com/">Shop</a></li>
+<li id="menu-item-569470" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Subscribe","link_module":"header","link_pos":"main navigation"}' href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&amp;cds_page_id=212947&amp;cds_response_key=IW7ADU101">Subscribe</a></li>
+<li id="menu-item-569472" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Newsletters","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/newsletters">Newsletters</a></li>
+<li id="menu-item-1308248" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"About Us","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/about-readers-digest/">About Us</a></li>
+<li id="menu-item-1116226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">Follow Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-1116227" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Follow Us:Facebook","link_module":"header","link_pos":"drop down navigation"}' href="https://www.facebook.com/ReadersDigest/">Facebook</a></li>
+	<li id="menu-item-1116232" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Follow Us:Pinterest","link_module":"header","link_pos":"drop down navigation"}' href="https://www.pinterest.com/readersdigest/">Pinterest</a></li>
+	<li id="menu-item-1116233" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Follow Us:Instagram","link_module":"header","link_pos":"drop down navigation"}' href="https://www.instagram.com/readersdigest/">Instagram</a></li>
+	<li id="menu-item-1116235" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Follow Us:Twitter","link_module":"header","link_pos":"drop down navigation"}' href="https://twitter.com/readersdigest/">Twitter</a></li>
+</ul>
+</li>
+</ul></div>		</div>
+		<!-- .toh-site-menu-wrapper -->
+				<!-- .toh-secondary-menu -->
+	</div>
+	<!-- .toh-menu-wrapper -->
+
+	<a data-analytics-metrics='{"link_name":"home logo","link_module":"header","link_pos":"secondary navigation"}' href="https://www.rd.com" class="header-logo"><span class="screen-reader-text">Home</span></a>
+		<!-- .header-logo -->
+<div class="menu-desktop-focus-menu-container"><ul id="menu-desktop-focus-menu" class="focus-menu"><li id="menu-item-1249567" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"The Healthy","link_module":"header","link_pos":"main navigation"}' href="https://www.thehealthy.com/">The Healthy</a></li>
+<li id="menu-item-569474" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor"><a data-analytics-metrics='{"link_name":"Food","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/food/">Food</a></li>
+<li id="menu-item-569400" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor"><a data-analytics-metrics='{"link_name":"Advice","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/advice/">Advice</a></li>
+<li id="menu-item-569403" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Culture","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/culture/">Culture</a></li>
+<li id="menu-item-569412" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/true-stories/">True Stories</a></li>
+<li id="menu-item-569414" class="menu-item menu-item-type-post_type_archive menu-item-object-joke"><a data-analytics-metrics='{"link_name":"Jokes","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/jokes/">Jokes</a></li>
+<li id="menu-item-569413" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Videos","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/videos/">Videos</a></li>
+</ul></div>		<!-- .focus-menu -->
+
+
+	<div class="toh-search-form">
+		<form data-analytics-metrics='{"link_name":"search","link_module":"header","link_pos":"search bar"}' action="https://www.rd.com/" id="toh-search-form-wrapper">
+			<label for="search" class="screen-reader-text">Search</label>
+			<input type="text" id="search" name="s" />
+			<button class="submit_search"></button>
+			<div class="close-btn"><span class="dashicons dashicons-no"></span> </div>
+		</form>
+		<button class="toh-search-button" id="toh-search-toggle"><span class="screen-reader-text">Toggle Search</span></button>
+	</div>
+	<!-- .toh-search-form -->
+
+
+<div id="subscribe-to-magazine-sticky">
+			<a data-analytics-metrics='{"link_name":"subscribe","link_module":"header","link_pos":"secondary navigation"}' href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IW7ADU101" class="subscribe-header-cta appears-on-stick">
+			<img class="subscribe-logo" src="https://www.rd.com/wp-content/themes/tmbi-theme-v3/images/subscribe-to-the-mag-rd-sticky.png"  alt="Subscribe">
+		</a>
+	</div>
+	<!-- .subscribe-header-cta.appears-on-stick END logged-out users -->
+
+</div></header><div class="header-banner-container"><a data-analytics-metrics='{"link_name":"Do you live in the Nicest Place in America?","link_module":"header","link_pos":"internal promotion"}' href="https://www.10best.com/awards/travel/readers-digest-nicest/" target="_blank"><span class="header-banner-text">Do you live in the Nicest Place in America?<span class="chevron">&rsaquo;</span></span></a></div><div class="site-inner">
+<!-- Ad Start:BILLBOARD_PLACEMENT -->
+<div class="ad-wrapper mobile_billboard" data-ad="mobile_prearticle" >
+<div id='div-gpt-ad-1370019314148-05' style='display:none; margin: 0 auto;' class='ad-container'>
+</div>
+</div>
+<!-- Ad End:BILLBOARD_PLACEMENT -->
+
+<!-- Ad Start:BEFORE_CONTENT_PLACEMENT -->
+<div class="ad-wrapper ad-leaderboard" data-ad="prearticle" >
+<div id='div-gpt-ad-1370019314148-25' style='display:none; margin: 0 auto;' class='ad-container'>
+</div>
+</div>
+<!-- Ad End:BEFORE_CONTENT_PLACEMENT -->
+
+<!-- Ad Start:LEADER_BOARD_PLACEMENT -->
+<div class="ad-wrapper-sticky" data-ad="leaderboard" >
+<div id='div-gpt-ad-1370019314148-20' style='display:none; margin: 0 auto;' class='ad-container'>
+</div>
+</div>
+<!-- Ad End:LEADER_BOARD_PLACEMENT -->
+<div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-381865 listicle type-listicle status-publish has-post-thumbnail category-fun category-travel tag-travel-vacations source-original tmbi_first_associated-rd-com entry"><p id="breadcrumbs"><span><a property="v:title" rel="v:url" href="https://www.rd.com/" >RD.COM</a> <span class="dashicons dashicons-arrow-right-alt2"></span> <a property="v:title" rel="v:url" href="https://www.rd.com/advice/" >Advice</a> <span class="dashicons dashicons-arrow-right-alt2"></span> <a property="v:title" rel="v:url" href="https://www.rd.com/advice/travel/" >Travel</a></span></p><header class="entry-header"><div class="toh-sharing social-sharing post recipe-sticky"><div class="social-share">						<a data-analytics-metrics='{"link_name":"facebook","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="fb-share" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&t9+Countries+That+Have+Banned+McDonald%27s=&v=3','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)"><img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/facebook-letter-logo.svg" alt="facebook" width /></a> 							<a data-analytics-metrics='{"link_name":"flipboard","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="flipboard-share" data-flip-widget="shareflip" href="https://flipboard.com"><img src="https://cdn.flipboard.com/badges/flipboard_mrrw.png" /></a><script src="https://cdn.flipboard.com/web/buttons/js/flbuttons.min.js" type="text/javascript"></script>
+													<a data-analytics-metrics='{"link_name":"twitter","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="twitter-share" onClick="window.open('https://twitter.com/share?url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&amp;text=9+Countries+That+Have+Banned+McDonald%27s&amp;hashtags=','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)"><img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/twitter-logo.svg" alt="twitter" /></a> 							<a data-analytics-metrics='{"link_name":"pinterest","link_module":"content engagement","link_pos":"social share-left sticky nav"}' id="pinterest-share" onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F&media=http%3A%2F%2Fwww.rd.com%2Fwp-content%2Fuploads%2F2018%2F01%2F01_macdonalds_countries-that-have-banned-mcdonald-s_678182368-editorial-ty-lim.jpg&description=9+Countries+That+Have+Banned+McDonald%27s','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)"><img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/pinterest-social-visual-website-logotype.svg" alt="Pinterest"/></a> 						<a data-analytics-metrics='{"link_name":"email","link_module":"content engagement","link_pos":"social share-left sticky nav"}'  id="email_a_friend" onClick="window.open('mailto:?subject=9 Countries That Have Banned McDonald\'s&body=I thought you might like this...%0D%0A %0D%0A9 Countries That Have Banned McDonald\'s %0D%0A %0D%0Ahttps%3A%2F%2Fwww.rd.com%2Fadvice%2Ftravel%2Fcountries-banned-mcdonalds%2F%3F_cmp%3Dstf %0D%0A %0D%0AHappy Reading, %0D%0AYour friends at Reader\'s Digest %0D%0A %0D%0A-- %0D%0A %0D%0AFor more great content sign up for our newsletter https://bit.ly/2MpTW1M','_self')" href="javascript: void(0)" > <img src="https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/./images/envelope.svg" alt="Email" /></a> </div></div></header><div class="entry-content" id="collection-wrapper">			<a data-analytics-metrics='{"link_name":"view as slideshow","link_module":"slideshows","link_pos":"header"}' class="listicle-switch -slideshow" href="https://www.rd.com/advice/travel/countries-banned-mcdonalds/">
+				<i class="fa fa-caret-square-o-right"></i> View as slideshow			</a>
+			<section class="listicle-page-group-container">
+<div class="listicle-page-container">
+<h1 class="entry-title">9 Countries That Have Banned McDonald&#8217;s</h1>
+<div id="sponsor_ad_section">
+<div id ="sponsor-ad-1353055731" class = "ad-wrapper" data-ad="sponsor-logo"></div>
+</div>
+<div class="byline-row-wraper">
+<div class="byline-wraper">
+<div class="byline"><img class="avatar" src="https://www.rd.com/wp-content/uploads/2019/06/20190325_RD.comHEADSHOT_Meghan1703-1.jpg"><span class="post-author"><a href="https://www.rd.com/author/mjones2017/">Meghan Jones</a></span><span class="post-author-position"></span><span class="update-date-wraper"></span></div>
+</div>
+</div>
+<div class="dek">
+<h2>Despite what you might think, the fast-food giant is not loved the whole world over.</h2>
+</div>
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-1/" id="card-1/" ></a></div>
+<h2>McBanned</h2>
+<div class="jwplayer" id="jwpl5e5f1a266ad80" style="background: url(https://content.jwplatform.com/thumbs/z5TlKZsN.jpg) no-repeat center center; min-width: 320px; min-height: 240px;"></div>
+<p>In the United States, you can barely be 100 miles from a McDonald&#8217;s. Because of this, it might come as a surprise that some countries don&#8217;t have a single one. But it&#8217;s true; everything from economic collapse to political strife has resulted in these nations being free of the Golden Arches. Here is <a href="https://www.rd.com/food/fun/farthest-away-from-mcdonalds/">exactly how far you can be from a McDonalds in the U.S. </a></p>
+<h2></div>
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-2/" id="card-2/" ></a></div>
+</h2>
+<h2>Bermuda</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385957 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-760x506.jpg" alt="Bermuda" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/02_bermuda_countries-that-have-banned-mcdonald-s_603729377-editorial-andrew-f-kazmierski-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"Shutterstock","credits":"Andrew F. Kazmierski\/Shutterstock"}' data-image-analytics='{"licensorName":"Shutterstock","credits":"Andrew F. Kazmierski\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">Andrew F. Kazmierski/Shutterstock</span></span></p>
+<p>Until 1995, there was only one McDonald&#8217;s restaurant on this Caribbean island. Now, there are zero. The country has a law banning foreign fast-food joints that has been in place since the 1970s. McDonald&#8217;s, however, managed to find a loophole in 1985 by building a Mickey D&#8217;s on a U.S. Naval Air Station. That station closed in 1995, however, and the McDonald&#8217;s closed with it. According to <a href="https://mic.com/articles/104348/the-four-countries-mc-donald-s-couldn-t-conquer#.ZqiqNzIXf" target="_blank" rel="noopener">mic.com</a>, the franchise took another crack at breaking into Bermuda in 1999, but this time, the law won out. Don&#8217;t miss <a href="https://www.rd.com/food/fun/mcdonalds-secret-menu-you-need-to-know-about/">these items on the McDonald&#8217;s secret menu</a>. </div>
+</div>
+<aside class="ad-wrapper">
+<div class="sidebar-sticky-wrapper">
+<div class="ad-wrapper ad-sidebar-top adunit-lazy" data-ad="rail_1">
+<div id='div-gpt-ad-1370019314148-02' style='display:none; margin: 0 auto;' class='ad-container'>
+</div>
+</div>
+<div class="CMRightRail-AD"></div>
+</div>
+</aside>
+</section>
+<div id="listicle-between-cards-ad-1" class="listicle-scroll-adunit-lazy" data-ad="content_1" data-targeting='{"pos":"content_1"}'></div>
+<section class="listicle-page-group-container">
+<div class="listicle-page-container">
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-3/" id="card-3/" ></a></div>
+<h2>Iran</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385960 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-760x506.jpg" alt="Iran" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/03_iran_countries-that-have-banned-mcdonald-s_505715608-editorial-kanisorn-pringthongfoo-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"Shutterstock","credits":"Kanisorn Pringthongfoo\/Shutterstock"}' data-image-analytics='{"licensorName":"Shutterstock","credits":"Kanisorn Pringthongfoo\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">Kanisorn Pringthongfoo/Shutterstock</span></span></p>
+<p>In recent years, relations between this Middle Eastern country and the United States have been tense to say the least, and Western franchises like McDonald&#8217;s have been collateral damage. There hasn&#8217;t been a set of Golden Arches in Iran since 1979. However, that hasn&#8217;t stopped people from wondering whether the chain could eventually make a comeback. Further complicating matters, Iran has created its own McDonald&#8217;s substitute, Mash Donald&#8217;s. You won&#8217;t believe <a href="https://www.rd.com/culture/international-brand-names/">what these familiar products are called in foreign countries</a>.</p>
+</div>
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-4/" id="card-4/" ></a></div>
+<h2>Macedonia</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385963 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-760x506.jpg" alt="Macedonia" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/04_macedonia_countries-that-have-banned-mcdonald-s_479597398-saiko3p-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"shutterstock","credits":"saiko3p\/Shutterstock"}' data-image-analytics='{"licensorName":"shutterstock","credits":"saiko3p\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">saiko3p/Shutterstock</span></span></p>
+<p>This small European nation, located in the Balkans, used to have a few McDonald&#8217;s restaurants; seven, to be exact, with several of them in the nation&#8217;s capital, Skopje. In 2013, the person running the Macedonian McDonald&#8217;s lost their license, causing all seven stores to permanently close. Rumor has it that the Macedonian franchisee and the European CEO of McDonald&#8217;s had a falling-out. Learn which European nation has <a href="https://www.rd.com/advice/travel/most-expensive-mcdonalds-world/">the most expensive McDonald&#8217;s in the world</a>.</p>
+</div>
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-5/" id="card-5/" ></a></div>
+<h2>Yemen</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385966 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-760x506.jpg" alt="Yemen" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/05_yemen_countries-that-have-banned-mcdonald-s_246814537-mohannad-khatib-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"Shutterstock","credits":"Mohannad Khatib\/Shutterstock"}' data-image-analytics='{"licensorName":"Shutterstock","credits":"Mohannad Khatib\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">Mohannad Khatib/Shutterstock</span></span></p>
+<p>On one hand, this Middle Eastern nation&#8217;s economy is a little shaky, so McDonald&#8217;s doesn&#8217;t believe that opening restaurants there would be &#8220;economically viable.&#8221; On the other, extremists in Yemen have threatened militant action against any McDonald&#8217;s that dares show its arches in the country. Yikes! Did you know that <a href="https://www.rd.com/food/fun/mcdonalds-golden-arches-sexual-meaning/">the McDonald&#8217;s arches might have a secret scandalous meaning?</a></p>
+</div>
+</div>
+<aside class="ad-wrapper">
+<div class="sidebar-sticky-wrapper">
+<div class="ad-wrapper ad-sidebar-middle adunit-lazy" data-ad="rail_2">
+<div id='div-gpt-ad-1370019314148-04' style='display:none;' class='ad-container'>
+</div>
+</div>
+</div>
+</aside>
+</section>
+<div id="listicle-between-cards-ad-2" class="listicle-scroll-adunit-lazy" data-ad="content_2" data-targeting='{"pos":"content_2"}'></div>
+<section class="listicle-page-group-container">
+<div class="listicle-page-container">
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-6/" id="card-6/" ></a></div>
+<h2>Montenegro</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385969 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-760x506.jpg" alt="Montenegro" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/06_montenegro_countries-that-have-banned-mcdonald-s_221786749-oleg_p-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"shutterstock","credits":"Oleg_P\/Shutterstock"}' data-image-analytics='{"licensorName":"shutterstock","credits":"Oleg_P\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">Oleg_P/Shutterstock</span></span></p>
+<p>In 2003, McDonald&#8217;s bought a tiny store in this tiny nation; it was just a &#8220;mobile McDonald&#8217;s,&#8221; opened with the hope that it could lead to something more permanent. Though many people embraced Mickey D&#8217;s food in all its greasiness, the government teamed up with local businesses to prevent Ronald McDonald from making a permanent home in Montenegro. Since then, the franchise has kept its McDistance. Here are some <a href="https://www.rd.com/culture/mcdonalds-facts-trivia/">mind-blowing facts about McDonald&#8217;s. </a></p>
+</div>
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-7/" id="card-7/" ></a></div>
+<h2>North Korea</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385972 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-760x506.jpg" alt="North-Korma" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/07_north-korea_countries-that-have-banned-mcdonald-s_253792525-editorial-viktoria-gaman-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"Shutterstock","credits":"Viktoria Gaman\/Shutterstock"}' data-image-analytics='{"licensorName":"Shutterstock","credits":"Viktoria Gaman\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">Viktoria Gaman/Shutterstock</span></span></p>
+<p>Unsurprisingly, this totalitarian regime is pretty averse to American businesses, and McDonald&#8217;s is no exception. <a href="https://www.telegraph.co.uk/news/worldnews/asia/northkorea/8650099/North-Koreas-elite-defies-international-sanctions-ban-by-importing-McDonalds.html" target="_blank" rel="noopener">According to the<em> Telegraph</em></a>, though, some elite members of the North Korean government have had McGoodies smuggled into the country from South Korea for their own personal consumption. Find out which <a href="https://www.rd.com/health/wellness/ingredients-banned-in-other-countries/">U.S. ingredients are banned in other countries</a>.</p>
+</div>
+<div id="listicle_nativo1"></div>
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-8/" id="card-8/" ></a></div>
+<h2>Zimbabwe</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385974 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-760x506.jpg" alt="Zimbabwe" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/08_zimbabwe_countries-that-have-banned-mcdonald-s_153346895-ulrich-mueller-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"shutterstock","credits":"Ulrich Mueller\/Shutterstock"}' data-image-analytics='{"licensorName":"shutterstock","credits":"Ulrich Mueller\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">Ulrich Mueller/Shutterstock</span></span></p>
+<p>In 2000, McDonald&#8217;s was in the midst of an attempt to introduce itself to this African nation when it suffered a massive economic collapse. (Zimbabwe, not McDonald&#8217;s.) The McDonald&#8217;s folks promptly backpedaled, and Zimbabwe has remained Mickey-D-Free. There is buzz that it may try again in the near future, but McDonald&#8217;s International Franchising claims that there&#8217;s no concrete plan. Can you guess <a href="https://www.rd.com/food/fun/state-capital-without-mcdonalds/">which U.S. capital city doesn&#8217;t have a McDonald&#8217;s?</a> (Yes, there&#8217;s only one!)</p>
+</div>
+</div>
+<aside class="ad-wrapper">
+<div class="sidebar-sticky-wrapper">
+<div id="listicle-between-cards-ad-1364295771" class="adunit-lazy sidebar-ad" data-ad="rail_3" data-targeting='{"pos":"rail_3"}'></div>
+</div>
+</aside>
+</section>
+<div id="listicle-between-cards-ad-3" class="listicle-scroll-adunit-lazy" data-ad="content_3" data-targeting='{"pos":"content_3"}'></div>
+<section class="listicle-page-group-container">
+<div class="listicle-page-container">
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-9/" id="card-9/" ></a></div>
+<h2>Bolivia</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385976 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-760x506.jpg" alt="Bolivia" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/09_bolivia_countries-that-have-banned-mcdonald-s_388425028-sunsinger-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"shutterstock","credits":"sunsinger\/Shutterstock"}' data-image-analytics='{"licensorName":"shutterstock","credits":"sunsinger\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">sunsinger/Shutterstock</span></span></p>
+<p>While McDonald&#8217;s isn&#8217;t outright banned in this South American nation, the last Mickey D&#8217;s in Bolivia closed in 2002, ending a tense relationship between the fast-food giant and the nation&#8217;s government and citizens. According to the Daily Meal, McDonald&#8217;s failed there because the people of Bolivia didn&#8217;t want to flock to a massive corporation to buy burgers. And the current Bolivian president made his feelings about the franchise very clear, claiming that it is &#8220;not interested in the health of human beings, only in earnings and corporate profits.&#8221; Ouch. Regardless of how you feel about McDonald&#8217;s, you should probably <a href="https://www.rd.com/food/fun/never-drink-mcdonalds-coffee/">avoid ordering <em>this </em>drink there</a> for health reasons.</p>
+</div>
+<div class="listicle-page">
+<div class='listicle-page_card-number'><a name="card-10/" id="card-10/" ></a></div>
+<h2>Iceland</h2>
+<p><img class="aligncenter size-listicle-full wp-image-385977 cms-admin-image-300" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-original-src="https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-760x506.jpg" alt="Iceland" width="640" height="426" data-original-srcset="https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-568x379.jpg 568w, https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2018/01/10_iceland_countries-that-have-banned-mcdonald-s_640338985-keongdagreat-15x10.jpg 15w" sizes="(max-width: 481px) 480px,(max-width: 769px) 700px,(min-width: 1024px) and (max-width: 1024px) 1024px,(min-width: 1025px) 700px, 100vw" data-image-analytics='{"licensorName":"shutterstock","credits":"KeongDaGreat\/Shutterstock"}' data-image-analytics='{"licensorName":"shutterstock","credits":"KeongDaGreat\/Shutterstock"}' /><span class="credits-overlay"><span class="image-credit">KeongDaGreat/Shutterstock</span></span></p>
+<p>Like Zimbabwe, Iceland suffered a major economic crash that crushed McDonald&#8217;s prospects in this island country. Unlike Zimbabwe, though, Iceland <em>had </em>McDonald&#8217;s before the 2009 crash, in its capital city. Rumor has it, though, that the government of Iceland wasn&#8217;t that happy to have Happy Meals in the first place, since Iceland is an incredibly health-conscious nation. Despite all that, though, there&#8217;s a chance Iceland could leave this list in the near future. According to <a href="http://icelandmag.visir.is/article/mcdonalds-coming-iceland-fast-food-giant-has-development-plans-iceland" target="_blank" rel="noopener">Iceland Mag</a>, McDonald&#8217;s has &#8220;development plans&#8221; under way there. Next, learn <a href="https://www.rd.com/culture/coolest-mcdonalds-locations/">the coolest McDonald&#8217;s locations around the world. </a></p>
+<p><em>[Sources: <a href="https://www.thedailymeal.com/travel/10-countries-banned-mcdonalds-slideshow/slide-1" target="_blank" rel="noopener">The Daily Meal</a>, <a href="https://www.telegraph.co.uk/travel/lists/the-countries-that-banned-mcdonalds/" target="_blank" rel="noopener">The Telegraph</a>]</em></div>
+</div>
+<aside class="ad-wrapper">
+<div class="sidebar-sticky-wrapper">
+<div id="listicle-between-cards-ad-1889019697" class="adunit-lazy sidebar-ad" data-ad="rail_4" data-targeting='{"pos":"rail_4"}'></div>
+</div>
+</aside>
+</section>
+<link rel="prerender" href="https://www.rd.com/advice/travel/countries-banned-mcdonalds/2/" />
+</div><div class="syndicated-post-info"><img src="https://placehold.it/32x22" alt="" /><a href="#">Originally Published on sitename.com</a></div><footer class="entry-footer">			<h4 class="author-extended-meta__title"><span></span></h4>
+		
+		<div class="author-extended-meta">
+
+			<img class="author-extended-meta__avatar" src="https://www.rd.com/wp-content/uploads/2019/06/20190325_RD.comHEADSHOT_Meghan1703-1.jpg">
+			<div class="author-extended-meta__name"><a href="https://www.rd.com/author/mjones2017/">Meghan Jones</a>
+				<div class="author-extended-meta__role"></div>
+			</div>
+			<div class="author-extended-meta__description">
+				Meghan Jones is a Staff Writer for RD.com who has been writing since before she could write. She graduated from Marist College with a Bachelor of Arts in English and has been writing for Reader's Digest since 2017. In spring 2017, her creative nonfiction piece "Anticipation" was published in Angles literary magazine. She is a proud Hufflepuff and member of Team Cap.				<!-- <a href="https://www.rd.com/author/mjones2017/" class="author-extended-meta__view-author">view author</a> -->
+			</div>
+		</div>
+
+		<div class="entry-copyright"><span class="byline source"></span></div><div id="oop_adhesive"><div id ="oop_adhesive-2791965267" class = "ad-wrapper oop_adhesive" data-ad="oop-adhesive"></div></div></footer></article><h2 class="screen-reader-text">Reader Interactions</h2><section class="taboola"><div class="taboola-container">
+<div id="taboola-below-slideshow-thumbnails"></div>
+</div><aside class="ad-wrapper"><div class="sidebar-sticky-wrapper"><div id="listicle-between-cards-ad-2083107420" class="adunit-lazy sidebar-ad" data-ad="rail_4" data-targeting='{"pos":"rail_4"}'></div></div></aside></section></main></div></div><footer class="site-footer"><div class="wrap"><div class="footer-left">
+		<div class="toh-newsletter footer-mobile">
+		<div class="toh-newsletter-cta-wrapper">
+			<div class="toh-newsletter-cta-description">
+				Enjoy the BEST stories, advice & jokes!			</div>
+			<a data-analytics-metrics='{"link_name":"subscribe","link_module":"footer","link_pos":"navigation"}' href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IW7ADU101">
+				<img class="subscribe-logo" src="https://www.rd.com//wp-content/themes/tmbi-theme-v3/images/nl-subscribe-mag.png" >
+			</a>
+		</div>
+	</div>
+		<div class="footer-left-top">
+		<div class="footer-logo-social">
+			<a data-analytics-metrics='{"link_name":"footer logo","link_module":"navigation","link_pos":"footer"}' class="footer-logo" href="https://www.rd.com"></a>
+			<ul id="menu-footer-social" class="footer-social-links"><li id="menu-item-397208" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"facebook","link_module":"footer","link_pos":"follow us"}' href="https://www.facebook.com/ReadersDigest"><i class="fa fa-facebook-square"></i></a></li>
+<li id="menu-item-397211" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"twitter","link_module":"footer","link_pos":"follow us"}' href="https://twitter.com/readersdigest"><i class="fa fa-twitter"></i></a></li>
+<li id="menu-item-397212" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"pinterest","link_module":"footer","link_pos":"follow us"}' href="https://www.pinterest.com/readersdigest/"><i class="fa fa-pinterest"></i></a></li>
+<li id="menu-item-397215" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"youtube","link_module":"footer","link_pos":"follow us"}' href="https://www.youtube.com/readersdigest"><i class="fa fa-youtube"></i></a></li>
+<li id="menu-item-397217" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"instagram","link_module":"footer","link_pos":"follow us"}' href="https://instagram.com/readersdigest"><i class="fa fa-instagram"></i></a></li>
+<li id="menu-item-397221" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"newsletter signup","link_module":"footer","link_pos":"follow us"}' href="https://www.rd.com/newsletters"><i class="fa fa-envelope"></i></a></li>
+</ul>		</div>
+		<ul id="menu-footer-site-links" class="footer-site-links"><li id="menu-item-569435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-569435"><a href="https://www.rd.com/health/" data-analytics-metrics='{"link_name":"Health","link_module":"footer","link_pos":"navigation"}'>Health</a></li>
+<li id="menu-item-569438" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor menu-item-569438"><a href="https://www.rd.com/food/" data-analytics-metrics='{"link_name":"Food","link_module":"footer","link_pos":"navigation"}'>Food</a></li>
+<li id="menu-item-569441" class="menu-item menu-item-type-taxonomy menu-item-object-category current-listicle-ancestor menu-item-569441"><a href="https://www.rd.com/advice/" data-analytics-metrics='{"link_name":"Advice","link_module":"footer","link_pos":"navigation"}'>Advice</a></li>
+<li id="menu-item-569442" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-569442"><a href="https://www.rd.com/culture/" data-analytics-metrics='{"link_name":"Culture","link_module":"footer","link_pos":"navigation"}'>Culture</a></li>
+</ul><ul class="footer-site-links"><li id="menu-item-569443" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-569443"><a href="https://www.rd.com/true-stories/" data-analytics-metrics='{"link_name":"True Stories","link_module":"footer","link_pos":"navigation"}'>True Stories</a></li>
+<li id="menu-item-569444" class="menu-item menu-item-type-post_type_archive menu-item-object-joke menu-item-569444"><a href="https://www.rd.com/jokes/" data-analytics-metrics='{"link_name":"Jokes","link_module":"footer","link_pos":"navigation"}'>Jokes</a></li>
+<li id="menu-item-569448" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-569448"><a href="https://www.rd.com/sweepstakes-prizes/" data-analytics-metrics='{"link_name":"Contests","link_module":"footer","link_pos":"navigation"}'>Contests</a></li>
+<li id="menu-item-569450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-569450"><a href="https://www.readersdigeststore.com/" data-analytics-metrics='{"link_name":"Shop","link_module":"footer","link_pos":"navigation"}'>Shop</a></li>
+</ul>	</div>
+
+	<div class="toh-newsletter footer-mobile">
+		<div class="toh-newsletter-title">Sign Up for Our Newsletters</div>
+		<form action="https://www.rd.com/newsletters/" method="post"  data-analytics-metrics='{"link_name":"newsletter signup","link_module":"newsletter signup","link_pos":"footer"}'>
+			<input class="toh-footer-nl" type="text" name="EmailAddress" placeholder="Email Address">
+			<input type="hidden" id="footer_email_nonce" name="footer_email_nonce" value="8e8f7f1713" /><input type="hidden" name="_wp_http_referer" value="/advice/travel/countries-banned-mcdonalds/" />			<button type="submit" name="submit" class="toh-sign-up-btn">
+				Sign up			</button>
+		</form>
+	</div>
+
+	<div class="footer-left-bottom">
+		<div class="footer-menu-label">Our Brands</div>
+		<ul id="menu-our-brands" class="footer-brand-links"><li id="menu-item-569453" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Taste of Home","link_module":"navigation","link_pos":"footer"}' href="https://www.tasteofhome.com">Taste of Home</a></li>
+<li id="menu-item-569456" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"The Family Handyman","link_module":"navigation","link_pos":"footer"}' href="https://www.familyhandyman.com">The Family Handyman</a></li>
+<li id="menu-item-569457" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Birds &amp; Blooms","link_module":"navigation","link_pos":"footer"}' href="https://www.birdsandblooms.com">Birds &#038; Blooms</a></li>
+</ul><ul id="menu-footer-global-links" class="footer-global-links"><li id="menu-item-569416" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"LifeRich Publishing","link_module":"header","link_pos":"main navigation"}' href="https://www.liferichpublishing.com/">LifeRich Publishing</a></li>
+<li id="menu-item-569418" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"MediaKit","link_module":"header","link_pos":"main navigation"}' href="https://www.trustedmediabrands.com/brands/readers-digest/">MediaKit</a></li>
+<li id="menu-item-1308263" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"About Us","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/about-readers-digest/">About Us</a></li>
+<li id="menu-item-569421" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Contact Us","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/contact-us">Contact Us</a></li>
+<li id="menu-item-569423" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Customer Service","link_module":"header","link_pos":"main navigation"}' href="https://w1.buysub.com/pubs/RD/RDA/index.jsp?cds_page_id=69616&amp;cds_mag_code=RDA">Customer Service</a></li>
+<li id="menu-item-569425" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Terms of Use","link_module":"header","link_pos":"main navigation"}' href="https://www.rd.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-569427" class="privacy-policy menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Privacy Policy","link_module":"header","link_pos":"main navigation"}' href="https://www.trustedmediabrands.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-569429" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Your CA Privacy Rights","link_module":"header","link_pos":"main navigation"}' href="https://www.trustedmediabrands.com/ca-privacy-notice/">Your CA Privacy Rights</a></li>
+<li id="menu-item-1397687" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Do Not Sell My Info \u2013 CA Residents","link_module":"header","link_pos":"main navigation"}' href="https://www.trustedmediabrands.com/ccpa-form-ca-residents/">Do Not Sell My Info – CA Residents</a></li>
+<li id="menu-item-569432" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"About Ads","link_module":"header","link_pos":"main navigation"}' href="https://www.trustedmediabrands.com/privacy-policy/#advertising">About Ads</a></li>
+</ul>		<div class="footer-copyright">&copy; 2020 Trusted Media Brands, Inc.</div>
+	</div>
+</div>
+<div class="footer-right footer-desktop">
+	
+
+<div class="newsletter-signup-content-widget -footer">
+
+	
+	<div class="newsletter-signup-content-widget__body">
+
+		
+		<h3 class="newsletter-signup-content-widget__title">Sign Up for Our Newsletters</h3>
+
+		<div class="newsletter-signup-content-widget__byline">
+			Get articles sent right to your inbox		</div>
+
+		<div class="newsletter-signup-content-widget__form">
+						<form action="https://www.rd.com/newsletters/" method="post"  data-analytics-metrics='{"link_name":"newsletter signup","link_module":"newsletter signup","link_pos":"footer"}'>
+				<input class="toh-footer-nl" type="text" name="EmailAddress" placeholder="Email Address">
+				<input type="hidden" id="footer_email_nonce" name="footer_email_nonce" value="8e8f7f1713" /><input type="hidden" name="_wp_http_referer" value="/advice/travel/countries-banned-mcdonalds/" />				<button type="submit" name="submit" class="toh-sign-up-btn">
+					Sign up				</button>
+			</form>
+		</div>
+	</div>
+
+		<div class="newsletter-signup-content-widget__footer">
+
+		<div class="newsletter-signup-content-widget__tagline">Enjoy the BEST stories, advice & jokes!</div>
+
+		<div class="newsletter-signup-content-widget__subscribe-link">
+			<a href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IW7ADU101" data-analytics-metrics='{"link_name":"Subscribe link","link_module":"footer","link_pos":"magazine subscription"}'>
+				<img src="https://www.rd.com/wp-content/themes/tmbi-theme-v3/images/nl-subscribe-mag.png" >
+			</a>
+
+		</div>
+	</div>
+	
+</div>
+
+</div>
+</div></footer></div><link rel="dns-prefetch" href="//ads.intentiq.com" />
+<link rel="dns-prefetch" href="//api.intentiq.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//cdn.taboola.com" />
+<link rel="dns-prefetch" href="//netstorage.taboola.com" />
+<link rel="dns-prefetch" href="//trc.taboola.com" />
+<link rel="dns-prefetch" href="//completion.amazon.com" />
+<link rel="dns-prefetch" href="//g-ecx.images-amazon.com" />
+<link rel="dns-prefetch" href="//s3.amazonaws.com" />
+<link rel="dns-prefetch" href="//imasdk.googleapis.com" />
+<link rel="dns-prefetch" href="//s.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="//c.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="//api.bounceexchange.com" />
+<link rel="dns-prefetch" href="//static.parsely.com" />
+<link rel="dns-prefetch" href="//player.mediabong.net" />
+<link rel="dns-prefetch" href="//api.dmcdn.net" />
+<link rel="dns-prefetch" href="//acsalemedia.com" />
+<link rel="dns-prefetch" href="//dsum-sec.casalemedia.com" />
+<link rel="dns-prefetch" href="//ssum.acsalemedia.com" />
+<link rel="dns-prefetch" href="//oo.moatads.com" />
+<link rel="dns-prefetch" href="//geo.moatads.com" />
+<link rel="dns-prefetch" href="//mb.acsalemedia.com" />
+<link rel="dns-prefetch" href="//adserver-us.adtech.advertising.com" />
+<link rel="dns-prefetch" href="//ads.rubiconproject.com" />
+<link rel="dns-prefetch" href="//apex.go.sonobi.com" />
+<link rel="dns-prefetch" href="//go.sonobi.com" />
+<link rel="dns-prefetch" href="//mtrx.go.sonobi.com" />
+<link rel="dns-prefetch" href="//ib.adnxs.com" />
+<link rel="dns-prefetch" href="//trustedmediabrands.sc.omtrdc.net" />
+<img style="display:none;width:1px;" src="https://secure.leadback.advertising.com/adcedge/lb?site=695501&betr=readersdigest=[+]visit[720],ltlb[8760]" width="1" height="1" border="0">
+<img style="display:none;width:1px;border-style:none;" height="1" width="1" alt="" src="//insight.adsrvr.org/track/evnt/?adv=mgekeuu&ct=0:mowvn17k&fmt=3"/>
+
+<!-- START Parse.ly Include: Standard -->
+<div id="parsely-root" style="display: none">
+<span id="parsely-cfg" data-parsely-site="rd.com"></span>
+</div>
+<script type="text/javascript">
+(function(s, p, d) {
+var h=d.location.protocol, i=p+"-"+s,
+e=d.getElementById(i), r=d.getElementById(p+"-root"),
+u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+:"static."+p+".com";
+if (e) return;
+e = d.createElement(s); e.id = i; e.async = true;
+e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script>
+<!-- END Parse.ly Include: Standard -->
+<noscript>
+<p>
+<img src="https://sb.scorecardresearch.com/p?c1=2&c2=6034767&cv=2.0&cj=1" height="1" width="1" alt="*">
+</p>
+</noscript>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=2613599177006&noscript=1" />
+</noscript>
+
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1468910830064549&ev=PageView&noscript=1"/></noscript>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var next_content = [{"id":1463389,"link":"https:\/\/www.rd.com\/advice\/foods-to-avoid-before-flying\/","title":"7 Foods You Should Avoid Before Flying","content_type":"listicle"},{"id":1480251,"link":"https:\/\/www.rd.com\/advice\/travel\/national-park-spring-wildflowers\/","title":"The Best National Parks to Visit for Spring Wildflowers","content_type":"listicle"},{"id":1476429,"link":"https:\/\/www.rd.com\/advice\/last-minute-spring-break-ideas\/","title":"12 Best Last-Minute Spring Break Ideas","content_type":"listicle"},{"id":1474601,"link":"https:\/\/www.rd.com\/advice\/travel\/strange-things-allowed-through-security\/","title":"The 13 Strangest Things Allowed Through Airport Security","content_type":"listicle"},{"id":1475517,"link":"https:\/\/www.rd.com\/advice\/travel\/most-difficult-national-parks-to-visit-in-north-america\/","title":"The Most Difficult National Parks to Visit in North America","content_type":"listicle"},{"id":328232,"link":"https:\/\/www.rd.com\/advice\/travel\/items-banned-from-disney\/","title":"18 Things You Didn&#8217;t Know Were Banned from Disney Parks","content_type":"listicle"},{"id":852091,"link":"https:\/\/www.rd.com\/advice\/travel\/secret-location-every-state\/","title":"The Coolest Secret Location in Each State","content_type":"listicle"},{"id":1448180,"link":"https:\/\/www.rd.com\/advice\/travel\/facts-about-europe-you-probably-havent-heard-yet\/","title":"14 Facts About Europe You Probably Haven&#8217;t Heard Yet","content_type":"listicle"},{"id":662829,"link":"https:\/\/www.rd.com\/advice\/travel\/last-minute-getaway-every-state\/","title":"The Best Last-Minute Getaway in Every State","content_type":"listicle"},{"id":859574,"link":"https:\/\/www.rd.com\/advice\/things-never-leave-car-in-winter\/","title":"20 Things You Should Never Leave in Your Car During Winter","content_type":"listicle"}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-next-content/js/next-content.js?ver=1.0.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-recirc-module/js/owl-carousel-min.js?ver=2.0.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-recirc-module/js/re-circ.js?ver=2.0.1'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/md5.js?ver=1.2'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/sha1.js?ver=1.2'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/sha256.js?ver=1.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-ad-pixel-controller/js/rocketfuel-ads.js?ver=1.8'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-ad-pixel-controller/js/dpm-tags.js?ver=1.3'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-adobe-dtm/js/adobe_dtm.js?ver=1.4.11'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-listicle/js/image-mute.js?ver=1.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var NSF = {"ajaxurl":"https:\/\/www.rd.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-newsletters/js/newsletter-signup.js?ver=3.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rd_taboola = [{"mode":"thumbnails-a","container":"taboola-below-slideshow-thumbnails","placement":"rdg-food-below listicle Thumbnails","target_type":"mix"},{"0":"hybrid-text-links-g","container":"taboola-below-article-text-links","placement":"Below Article Text Links","target_type":"mix"},{"mode":"thumbnails-h","container":"taboola-native-gallery-thumbnails","placement":"Native Gallery Thumbnails","target_type":"mix"},{"mode":"organic-thumbnails-a","container":"taboola-read-next-link-thumbnails-1","placement":"Jokes Recirculation 1x1 Slot 1","target_type":"mix"},{"mode":"organic-thumbnails-a","container":"taboola-read-next-link-thumbnails-2","placement":"Jokes Recirculation 1x1 Slot 2","target_type":"mix"}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-taboola/js/rd-taboola-gallery.js?ver=0.2.1'></script>
+<script type='text/javascript' src='https://api.dmcdn.net/all.js?ver=5.0.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rd_dm_videos = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-video/inc/players/../js/dm-player.js?ver=1.0.7'></script>
+<script type='text/javascript' src='https://z.moatads.com/jwplayerplugin0938452/moatplugin.js?ver=5.0.3'></script>
+<script type='text/javascript' src='//cdn.watchingthat.net/wtat.plugin-jw.min.js?ver=5.0.3'></script>
+<script type='text/javascript' src='https://content.jwplatform.com/libraries/wjcpcdaI.js?ver=5.0.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jw_settings = {"jw_videos":[{"player_id":"jwpl5e5f1a266ad80","video_id":"z5TlKZsN","sticky":"true","autoplay":"viewable","mute":"true","comscore":"true","ads":"true","native":"false","autoplay_mobile":"true","autopause":"true","autopause_mobile":"true","view":"0.80","jwp_sticky_offset":"50","jwp_sticky_mobile_offset":"15","jwp_sticky_mobile":"false","tab_pause":"true","embed_video":"false"}],"advertising_settings":{"requestTimeout":"20000","vastLoadTimeout":"12000","loadVideoTimeout":"15000","maxRedirects":"4","vpaidmode":"enabled","preloadAds":"true","autoplayadsmuted":"true","bids":{"settings":{"mediationLayerAdServer":"dfp","bidTimeout":"6000"},"bidders":[{"name":"SpotX","id":235491},{"name":"Telaria","id":"1gch3-d7omg","pubid":"1gch3","type":"OpenRTB"},{"name":"EMX","id":"65258","pubid":"1118","type":"OpenRTB"}]}},"is_video_content_type":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-video/inc/players/../js/jw-player.js?ver=1.2.9'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js?ver=8.0.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/smart-images/smart-images.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/public/js/shortcodes.js?ver=19.6.24'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rd_bx = {"script_id":"948"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-bx/js/smart-tag.js?ver=1.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-comscore-mmx/js/comscore-mmx.js?ver=1.0.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/js/krux-tracking.js?ver=1.0.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sticky_data = {"full_width_ad":"#listicle-between-cards-ad-1","prev_element":"section","is_article":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-custom-social-share/js/social-share-sticky.js?ver=1.0.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var listicle_social_settings = {"social_data":{"listicle_facebook":"facebook","listicle_twitter":"facebook","listicle_pinterest":"pinterest","listicle_google":"facebook","listicle_msn":"facebook","listicle_aol":"facebook","listicle_yahoo":"facebook","listicle_flipboard":"facebook","listicle_social_share_referrer":"true"}};
+var article_social_settings = {"social_data":{"article_facebook":"facebook","article_twitter":"facebook","article_pinterest":"facebook","article_google":"facebook","article_msn":"facebook","article_aol":"facebook","article_yahoo":"facebook","article_flipboard":"facebook","article_social_share_referrer":"true"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-recipe-social-share-referrer/js/social-share.js?ver=1.0.5'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-salesforce-dmp/js/krux-click-traking.js?ver=0.0.6'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/js/eu-checker.js?ver=1.0.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-salesforce-dmp/js/krux-consent.js?ver=0.0.6'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=2.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var genesisSampleL10n = {"mainMenu":"Menu","subMenu":"Menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/responsive-menu.js?ver=3.8.06'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/aalb-image.js?ver=3.8.06'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/enquire.js?ver=3.8.06'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/blurred-image.js?ver=3.8.06'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var google_analytics_plus = {"ga_id":"UA-17041328-1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/script.min.js?ver=3.8.06'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/tmbi-theme-v3/js/jquery.touchSwipe.min.js?ver=3.8.06'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-speed-curve-rum-tracking/js/speed-curve.js?ver=1.0.1'></script>
+<script async type='text/javascript' src='https://cdn.speedcurve.com/js/lux.js?id=128112127&#038;ver=1.0.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LUX_label = "www.rd.com.Listicle.381865";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-speed-curve-rum-tracking/js/custom-script.js?ver=1.0.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/wp-embed.min.js?ver=5.0.3'></script>
+
+<script type="text/javascript">
+if(typeof _satellite !== "undefined"){
+  _satellite.pageBottom()
+}
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bab150296b","applicationID":"51130036","transactionName":"M1BUY0YAC0ZWUxVaXQoad1RACApbGEMIXVUIUBtUWw0JUFRECFxc","queueTime":0,"applicationTime":1587,"atts":"HxdXFQ4aGEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>

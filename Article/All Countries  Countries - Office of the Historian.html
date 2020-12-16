@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html data-template="pages:app-root" lang="en" data-app="">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="history.state.gov 3.0 shell">
+        <meta name="creator" content="">
+        <link href="/resources/images/favicon.ico" rel="shortcut icon">
+        <link href="/resources/css/all.css" rel="stylesheet" type="text/css">
+        <title>All Countries - Countries - Office of the Historian</title>
+    </head>
+    <body id="body">
+        <header class="hsg-header" data-template="app:fix-links">
+            <section class="hsg-grid hsg-header-inner">
+                <div class="container hsg-header-content">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <a href="/">
+                                <img src="/resources/images/Office-of-the-Historian-logo_500x168.jpg" class="img-responsive" width="400" alt="Office of the Historian">
+                            </a>
+                        </div>
+                        <div class="col-sm-5">
+                            
+                                <div class="searchbox">
+                                    <form action="/search" method="get" class="main-form" id="navigationSearchForm">
+                                        <p class="form-group">
+                                            <!-- Search: -->
+                                            <input type="text" size="15" name="q" placeholder="Search..." class="form-control" id="search-box">
+                                            <button type="submit" class="hsg-link-button search-button btn">
+                                                <i class="hsg-search-button-icon"></i>
+                                            </button>
+                                        </p>
+                                    </form>
+                                </div>
+                            
+                        </div>
+                     </div>
+                </div>
+            </section>
+        </header>
+
+        <nav role="navigation" class="hsg-nav navbar navbar-default" data-template="app:fix-links">
+            <div class="container hsg-nav-content">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Menu</span>
+                        <i class="fa fa-bars"></i>
+                        <span class="toggle-text">Menu</span>
+                    </button><!--<a data-template="config:app-title" class="navbar-brand" href="./index.html">App Title</a>-->
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="/" shape="rect">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/historicaldocuments" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span>Historical Documents</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/historicaldocuments">
+                                        <em>Foreign Relations of the United States</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/historicaldocuments/about-frus">About the <em>Foreign Relations</em> Series</a>
+                                </li>
+                                <li>
+                                    <a href="/historicaldocuments/status-of-the-series">Current Status of the <em>Foreign Relations</em> Series</a>
+                                </li>
+                                <li>
+                                    <a href="/historicaldocuments/frus-history">History of the <em>Foreign Relations</em> Series</a>
+                                </li>
+                                <li>
+                                    <a href="/historicaldocuments/ebooks">Ebooks Initiative</a>
+                                </li>
+                                <li>
+                                    <a href="/historicaldocuments/quarterly-releases">Quarterly Releases</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="index_nav" class="dropdown">
+                            <a href="/departmenthistory" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span>Department History</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/departmenthistory">Overview</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/timeline">Administrative Timeline</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/people/secretaries">Biographies
+                                        of the Secretaries of State</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/people/principals-chiefs">Principal Officers and Chiefs of
+                                        Mission</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/travels/secretary">Travels of the Secretary of State</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/travels/president">Travels of the President</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/visits">Visits by Foreign Heads of State</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/wwi">World War I and the Department</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/buildings">Buildings of the Department of State</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/diplomatic-couriers">U.S. Diplomatic Couriers</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="countries_nav" class="dropdown">
+                            <a href="/countries" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span>Guide to Countries</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/countries">Guide to Country Recognition and Relations</a>
+                                </li>
+                                <li>
+                                    <a href="/countries/archives">World Wide Diplomatic Archives Index</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="resources_nav" class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span>More Resources</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/tags">Browse Resources by Subject Tag</a>
+                                </li>
+                                <li>
+                                    <a href="/conferences">Conferences</a>
+                                </li>
+                                <li>
+                                    <a href="/about/contact-us">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="/developer">Developer Resources &amp; APIs</a>
+                                </li>
+                                <li>
+                                    <a href="/education">Educational Resources</a>
+                                </li>
+                                <li>
+                                    <a href="/about/faq">Frequently Asked Questions</a>
+                                </li>
+                                <li>
+                                    <a href="/milestones">Key Milestones</a>
+                                </li>
+                                <li>
+                                    <a href="/open">Open Government Initiative</a>
+                                </li>
+                                <li>
+                                    <a href="/departmenthistory/short-history">A Short History of the Department</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/about" shape="rect">
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hsg-main">
+            <section class="hsg-grid hsg-main-inner">
+                <div class="container hsg-main-content">
+                    <main id="content">
+    <div data-template="countries:load-countries">
+                            <div id="static-title" class="hidden">All Countries - Countries</div>
+                            <div class="row">
+            <div class="hsg-breadcrumb-wrapper">
+                <ol class="breadcrumb" data-template="app:fix-links">
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="/countries">Countries</a>
+                    </li>
+                    <li>
+                        <a href="/countries/all">All Countries</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+                            <div class="row">
+            <div class="hsg-width-two-thirds">
+                <div id="content-inner" data-template="app:fix-links" class="lists">
+                    <h1>All Countries</h1>
+                    <div class="row">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h3>A</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/afghanistan">Afghanistan</a></li>
+                                                        <li><a href="/countries/albania">Albania</a></li>
+                                                        <li><a href="/countries/algeria">Algeria</a></li>
+                                                        <li><a href="/countries/andorra">Andorra</a></li>
+                                                        <li><a href="/countries/angola">Angola</a></li>
+                                                        <li><a href="/countries/antigua-barbuda">Antigua and Barbuda</a></li>
+                                                        <li><a href="/countries/argentina">Argentina</a></li>
+                                                        <li><a href="/countries/armenia">Armenia</a></li>
+                                                        <li><a href="/countries/australia">Australia</a></li>
+                                                        <li><a href="/countries/austria">Austria</a></li>
+                                                        <li><a href="/countries/austrian-empire">Austrian Empire</a></li>
+                                                        <li><a href="/countries/azerbaijan">Azerbaijan</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>B</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/baden">Baden*</a></li>
+                                                        <li><a href="/countries/bahamas">Bahamas, The</a></li>
+                                                        <li><a href="/countries/bahrain">Bahrain</a></li>
+                                                        <li><a href="/countries/bangladesh">Bangladesh</a></li>
+                                                        <li><a href="/countries/barbados">Barbados</a></li>
+                                                        <li><a href="/countries/bavaria">Bavaria*</a></li>
+                                                        <li><a href="/countries/belarus">Belarus</a></li>
+                                                        <li><a href="/countries/belgium">Belgium</a></li>
+                                                        <li><a href="/countries/belize">Belize</a></li>
+                                                        <li><a href="/countries/benin">Benin (Dahomey)</a></li>
+                                                        <li><a href="/countries/bolivia">Bolivia</a></li>
+                                                        <li><a href="/countries/bosnia-herzegovina">Bosnia and Herzegovina</a></li>
+                                                        <li><a href="/countries/botswana">Botswana</a></li>
+                                                        <li><a href="/countries/brazil">Brazil</a></li>
+                                                        <li><a href="/countries/brunei">Brunei</a></li>
+                                                        <li><a href="/countries/brunswick-luneburg">Brunswick and Lüneburg</a></li>
+                                                        <li><a href="/countries/bulgaria">Bulgaria</a></li>
+                                                        <li><a href="/countries/burkina-faso">Burkina Faso (Upper Volta)</a></li>
+                                                        <li><a href="/countries/burma">Burma</a></li>
+                                                        <li><a href="/countries/burundi">Burundi</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>C</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/cape-verde">Cabo Verde</a></li>
+                                                        <li><a href="/countries/cambodia">Cambodia</a></li>
+                                                        <li><a href="/countries/cameroon">Cameroon</a></li>
+                                                        <li><a href="/countries/canada">Canada</a></li>
+                                                        <li><a href="/countries/cayman-islands">Cayman Islands, The</a></li>
+                                                        <li><a href="/countries/central-african-republic">Central African Republic</a></li>
+                                                        <li><a href="/countries/central-american-federation">Central American Federation*</a></li>
+                                                        <li><a href="/countries/chad">Chad</a></li>
+                                                        <li><a href="/countries/chile">Chile</a></li>
+                                                        <li><a href="/countries/china">China</a></li>
+                                                        <li><a href="/countries/colombia">Colombia</a></li>
+                                                        <li><a href="/countries/comoros">Comoros</a></li>
+                                                        <li><a href="/countries/congo-free-state">Congo Free State, The</a></li>
+                                                        <li><a href="/countries/costa-rica">Costa Rica</a></li>
+                                                        <li><a href="/countries/cote-divoire">Cote d’Ivoire (Ivory Coast)</a></li>
+                                                        <li><a href="/countries/croatia">Croatia</a></li>
+                                                        <li><a href="/countries/cuba">Cuba</a></li>
+                                                        <li><a href="/countries/cyprus">Cyprus</a></li>
+                                                        <li><a href="/countries/czech-republic">Czechia</a></li>
+                                                        <li><a href="/countries/czechoslovakia">Czechoslovakia</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>D</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/congo-democratic-republic">Democratic Republic of the Congo</a></li>
+                                                        <li><a href="/countries/denmark">Denmark</a></li>
+                                                        <li><a href="/countries/djibouti">Djibouti</a></li>
+                                                        <li><a href="/countries/dominica">Dominica</a></li>
+                                                        <li><a href="/countries/dominican-republic">Dominican Republic</a></li>
+                                                        <li><a href="/countries/parma">Duchy of Parma, The*</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>E</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/german-democratic-republic">East Germany (German Democratic Republic)</a></li>
+                                                        <li><a href="/countries/ecuador">Ecuador</a></li>
+                                                        <li><a href="/countries/egypt">Egypt</a></li>
+                                                        <li><a href="/countries/el-salvador">El Salvador</a></li>
+                                                        <li><a href="/countries/equatorial-guinea">Equatorial Guinea</a></li>
+                                                        <li><a href="/countries/eritrea">Eritrea</a></li>
+                                                        <li><a href="/countries/estonia">Estonia</a></li>
+                                                        <li><a href="/countries/swaziland">Eswatini</a></li>
+                                                        <li><a href="/countries/ethiopia">Ethiopia</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>F</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/federal-government-germany">Federal Government of Germany (1848-49)*</a></li>
+                                                        <li><a href="/countries/fiji">Fiji</a></li>
+                                                        <li><a href="/countries/finland">Finland</a></li>
+                                                        <li><a href="/countries/france">France</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>G</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/gabon">Gabon</a></li>
+                                                        <li><a href="/countries/gambia">Gambia, The</a></li>
+                                                        <li><a href="/countries/georgia">Georgia</a></li>
+                                                        <li><a href="/countries/germany">Germany</a></li>
+                                                        <li><a href="/countries/ghana">Ghana</a></li>
+                                                        <li><a href="/countries/grand-duchy-tuscany">Grand Duchy of Tuscany, The*</a></li>
+                                                        <li><a href="/countries/greece">Greece</a></li>
+                                                        <li><a href="/countries/grenada">Grenada</a></li>
+                                                        <li><a href="/countries/guatemala">Guatemala</a></li>
+                                                        <li><a href="/countries/guinea">Guinea</a></li>
+                                                        <li><a href="/countries/guinea-bissau">Guinea-Bissau</a></li>
+                                                        <li><a href="/countries/guyana">Guyana</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>H</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/haiti">Haiti</a></li>
+                                                        <li><a href="/countries/hanover">Hanover*</a></li>
+                                                        <li><a href="/countries/hanseatic-republics">Hanseatic Republics*</a></li>
+                                                        <li><a href="/countries/hawaii">Hawaii*</a></li>
+                                                        <li><a href="/countries/hesse">Hesse*</a></li>
+                                                        <li><a href="/countries/holy-see">Holy See</a></li>
+                                                        <li><a href="/countries/honduras">Honduras</a></li>
+                                                        <li><a href="/countries/hungary">Hungary</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>I</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/iceland">Iceland</a></li>
+                                                        <li><a href="/countries/india">India</a></li>
+                                                        <li><a href="/countries/indonesia">Indonesia</a></li>
+                                                        <li><a href="/countries/iran">Iran</a></li>
+                                                        <li><a href="/countries/iraq">Iraq</a></li>
+                                                        <li><a href="/countries/ireland">Ireland</a></li>
+                                                        <li><a href="/countries/israel">Israel</a></li>
+                                                        <li><a href="/countries/italy">Italy</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>J</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/jamaica">Jamaica</a></li>
+                                                        <li><a href="/countries/japan">Japan</a></li>
+                                                        <li><a href="/countries/jordan">Jordan</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>K</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/kazakhstan">Kazakhstan</a></li>
+                                                        <li><a href="/countries/kenya">Kenya</a></li>
+                                                        <li><a href="/countries/kingdom-of-yugoslavia">Kingdom of Serbia/Yugoslavia*</a></li>
+                                                        <li><a href="/countries/kiribati">Kiribati</a></li>
+                                                        <li><a href="/countries/korea">Korea</a></li>
+                                                        <li><a href="/countries/kosovo">Kosovo</a></li>
+                                                        <li><a href="/countries/kuwait">Kuwait</a></li>
+                                                        <li><a href="/countries/kyrgyzstan">Kyrgyzstan</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>L</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/laos">Laos</a></li>
+                                                        <li><a href="/countries/latvia">Latvia</a></li>
+                                                        <li><a href="/countries/lebanon">Lebanon</a></li>
+                                                        <li><a href="/countries/lesotho">Lesotho</a></li>
+                                                        <li><a href="/countries/lew-chew">Lew Chew (Loochoo)*</a></li>
+                                                        <li><a href="/countries/liberia">Liberia</a></li>
+                                                        <li><a href="/countries/libya">Libya</a></li>
+                                                        <li><a href="/countries/liechtenstein">Liechtenstein</a></li>
+                                                        <li><a href="/countries/lithuania">Lithuania</a></li>
+                                                        <li><a href="/countries/luxembourg">Luxembourg</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <h3>M</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/madagascar">Madagascar</a></li>
+                                                        <li><a href="/countries/malawi">Malawi</a></li>
+                                                        <li><a href="/countries/malaysia">Malaysia</a></li>
+                                                        <li><a href="/countries/maldives">Maldives</a></li>
+                                                        <li><a href="/countries/mali">Mali</a></li>
+                                                        <li><a href="/countries/malta">Malta</a></li>
+                                                        <li><a href="/countries/marshall-islands">Marshall Islands</a></li>
+                                                        <li><a href="/countries/mauritania">Mauritania</a></li>
+                                                        <li><a href="/countries/mauritius">Mauritius</a></li>
+                                                        <li><a href="/countries/mecklenburg-schwerin">Mecklenburg-Schwerin*</a></li>
+                                                        <li><a href="/countries/mecklenburg-strelitz">Mecklenburg-Strelitz*</a></li>
+                                                        <li><a href="/countries/mexico">Mexico</a></li>
+                                                        <li><a href="/countries/micronesia">Micronesia</a></li>
+                                                        <li><a href="/countries/moldova">Moldova</a></li>
+                                                        <li><a href="/countries/monaco">Monaco</a></li>
+                                                        <li><a href="/countries/mongolia">Mongolia</a></li>
+                                                        <li><a href="/countries/montenegro">Montenegro</a></li>
+                                                        <li><a href="/countries/morocco">Morocco</a></li>
+                                                        <li><a href="/countries/mozambique">Mozambique</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>N</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/namibia">Namibia</a></li>
+                                                        <li><a href="/countries/nassau">Nassau*</a></li>
+                                                        <li><a href="/countries/nauru">Nauru</a></li>
+                                                        <li><a href="/countries/nepal">Nepal</a></li>
+                                                        <li><a href="/countries/netherlands">Netherlands, The</a></li>
+                                                        <li><a href="/countries/new-zealand">New Zealand</a></li>
+                                                        <li><a href="/countries/nicaragua">Nicaragua</a></li>
+                                                        <li><a href="/countries/niger">Niger</a></li>
+                                                        <li><a href="/countries/nigeria">Nigeria</a></li>
+                                                        <li><a href="/countries/north-german-confederation">North German Confederation*</a></li>
+                                                        <li><a href="/countries/north-german-union">North German Union*</a></li>
+                                                        <li><a href="/countries/macedonia">North Macedonia</a></li>
+                                                        <li><a href="/countries/norway">Norway</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>O</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/oldenburg">Oldenburg*</a></li>
+                                                        <li><a href="/countries/oman">Oman</a></li>
+                                                        <li><a href="/countries/orange-free-state">Orange Free State*</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>P</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/pakistan">Pakistan</a></li>
+                                                        <li><a href="/countries/palau">Palau</a></li>
+                                                        <li><a href="/countries/panama">Panama</a></li>
+                                                        <li><a href="/countries/papal-states">Papal States*</a></li>
+                                                        <li><a href="/countries/papua-new-guinea">Papua New Guinea</a></li>
+                                                        <li><a href="/countries/paraguay">Paraguay</a></li>
+                                                        <li><a href="/countries/peru">Peru</a></li>
+                                                        <li><a href="/countries/philippines">Philippines</a></li>
+                                                        <li><a href="/countries/piedmont-sardinia">Piedmont-Sardinia*</a></li>
+                                                        <li><a href="/countries/poland">Poland</a></li>
+                                                        <li><a href="/countries/portugal">Portugal</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>Q</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/qatar">Qatar</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>R</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/genoa">Republic of Genoa*</a></li>
+                                                        <li><a href="/countries/korea-south">Republic of Korea (South Korea)</a></li>
+                                                        <li><a href="/countries/congo-republic">Republic of the Congo</a></li>
+                                                        <li><a href="/countries/romania">Romania</a></li>
+                                                        <li><a href="/countries/russia">Russia</a></li>
+                                                        <li><a href="/countries/rwanda">Rwanda</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>S</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/saint-kitts-nevis">Saint Kitts and Nevis</a></li>
+                                                        <li><a href="/countries/saint-lucia">Saint Lucia</a></li>
+                                                        <li><a href="/countries/saint-vincent-grenadines">Saint Vincent and the Grenadines</a></li>
+                                                        <li><a href="/countries/samoa">Samoa</a></li>
+                                                        <li><a href="/countries/san-marino">San Marino</a></li>
+                                                        <li><a href="/countries/sao-tome-and-principe">Sao Tome and Principe</a></li>
+                                                        <li><a href="/countries/saudi-arabia">Saudi Arabia</a></li>
+                                                        <li><a href="/countries/schaumburg-lippe">Schaumburg-Lippe*</a></li>
+                                                        <li><a href="/countries/senegal">Senegal</a></li>
+                                                        <li><a href="/countries/serbia">Serbia</a></li>
+                                                        <li><a href="/countries/seychelles">Seychelles</a></li>
+                                                        <li><a href="/countries/sierra-leone">Sierra Leone</a></li>
+                                                        <li><a href="/countries/singapore">Singapore</a></li>
+                                                        <li><a href="/countries/slovakia">Slovakia</a></li>
+                                                        <li><a href="/countries/slovenia">Slovenia</a></li>
+                                                        <li><a href="/countries/solomon-islands">Solomon Islands, The</a></li>
+                                                        <li><a href="/countries/somalia">Somalia</a></li>
+                                                        <li><a href="/countries/south-africa">South Africa</a></li>
+                                                        <li><a href="/countries/south-sudan">South Sudan</a></li>
+                                                        <li><a href="/countries/spain">Spain</a></li>
+                                                        <li><a href="/countries/sri-lanka">Sri Lanka</a></li>
+                                                        <li><a href="/countries/sudan">Sudan</a></li>
+                                                        <li><a href="/countries/suriname">Suriname</a></li>
+                                                        <li><a href="/countries/sweden">Sweden</a></li>
+                                                        <li><a href="/countries/switzerland">Switzerland</a></li>
+                                                        <li><a href="/countries/syria">Syria</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>T</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/tajikistan">Tajikistan</a></li>
+                                                        <li><a href="/countries/tanzania">Tanzania</a></li>
+                                                        <li><a href="/countries/texas">Texas*</a></li>
+                                                        <li><a href="/countries/thailand">Thailand</a></li>
+                                                        <li><a href="/countries/timor-leste">Timor-Leste</a></li>
+                                                        <li><a href="/countries/togo">Togo</a></li>
+                                                        <li><a href="/countries/tonga">Tonga</a></li>
+                                                        <li><a href="/countries/trinidad-and-tobago">Trinidad and Tobago</a></li>
+                                                        <li><a href="/countries/tunisia">Tunisia</a></li>
+                                                        <li><a href="/countries/turkey">Turkey</a></li>
+                                                        <li><a href="/countries/turkmenistan">Turkmenistan</a></li>
+                                                        <li><a href="/countries/tuvalu">Tuvalu</a></li>
+                                                        <li><a href="/countries/two-sicilies">Two Sicilies*</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>U</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/uganda">Uganda</a></li>
+                                                        <li><a href="/countries/ukraine">Ukraine</a></li>
+                                                        <li><a href="/countries/soviet-union">Union of Soviet Socialist Republics*</a></li>
+                                                        <li><a href="/countries/united-arab-emirates">United Arab Emirates, The</a></li>
+                                                        <li><a href="/countries/united-kingdom">United Kingdom, The</a></li>
+                                                        <li><a href="/countries/uruguay">Uruguay</a></li>
+                                                        <li><a href="/countries/uzbekistan">Uzbekistan</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>V</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/vanuatu">Vanuatu</a></li>
+                                                        <li><a href="/countries/venezuela">Venezuela</a></li>
+                                                        <li><a href="/countries/vietnam">Vietnam</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>W</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/wurttemberg">Württemberg*</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>Y</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/yemen">Yemen</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>Z</h3>
+                                                    <ul>
+                                                        <li><a href="/countries/zambia">Zambia</a></li>
+                                                        <li><a href="/countries/zimbabwe">Zimbabwe</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                </div>
+            </div>
+            <aside class="hsg-width-one-third">
+                <div class="hsg-panel" data-template="app:fix-links">
+                    <div class="hsg-panel-heading">
+                        <h2 class="hsg-sidebar-title">Countries</h2>
+                    </div>
+                    <div class="hsg-panel-body">
+                        <p>
+                            <a href="/countries">Countries</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hsg-panel" data-template="app:fix-links">
+                    <div class="hsg-panel-heading">
+                        <h3 class="hsg-sidebar-title">Related Resources</h3>
+                    </div>
+                    <div class="hsg-panel-body">
+                        <p>
+                            <a href="/countries/archives">World Wide Diplomatic Archives
+                                Index</a>
+                        </p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+                        </div>
+</main>
+                </div>
+            </section>
+        </div>
+
+        <footer class="hsg-footer" data-template="app:fix-links">
+            <section class="hsg-grid hsg-footer-top">
+                <div class="container">
+                    <nav class="row">
+                        <ul class="hsg-footer-list">
+                            <h4>Learn more</h4>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/search">Search</a></li>
+                            <li><a href="/about/faq">FAQ</a></li>
+                        </ul>
+
+                        <ul class="hsg-footer-list">
+                            <h4>Topics</h4>
+                            <li><a href="/historicaldocuments/">Historical Documents</a></li>
+                            <li><a href="/departmenthistory/">Department History</a></li>
+                            <li><a href="/countries/">Countries</a></li>
+                        </ul>
+                        <ul class="hsg-footer-list">
+                            <h4>Contact</h4>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/about/contact-us">Contact Us</a></li>
+                        </ul>
+
+                        <ul class="hsg-footer-list">
+                            <h4>Policies</h4>
+                            <li><a href="https://www.state.gov/misc/207091.htm">Accessibility Statement</a></li>
+                            <li><a href="https://www.state.gov/misc/415.htm">Privacy Policy</a></li>
+                            <li><a href="https://www.state.gov/misc/152386.htm">External Link Policy</a></li>
+                            <li><a href="https://www.state.gov/misc/87529.htm">Copyright Information</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="hsg-grid hsg-footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <address class="col-xs-12 col-sm-12 col-md-12">
+                            <h4>Office of the Historian, Foreign Service Institute <br> <a href="http://www.state.gov">United States Department of State</a></h4>
+                            <p><a href="mailto:history@state.gov">history@state.gov</a></p>
+                            <p>Phone: 202-955-0200</p>
+                            <p>Fax: 202-955-0268</p>
+                        </address>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+        <script src="/resources/scripts/app.all.js" type="text/javascript" async></script>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-23344799-1']);
+          _gaq.push(['_setDomainName', 'history.state.gov']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {{
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          }})();
+        </script>
+        <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+        <script type="text/javascript" async src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOS" id="_fed_an_ua_tag"></script>
+    </body>
+</html>

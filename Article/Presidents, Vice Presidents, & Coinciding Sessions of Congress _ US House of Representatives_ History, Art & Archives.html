@@ -1,0 +1,1329 @@
+
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"9993044f26","applicationID":"435608300","transactionName":"Z1xRYBQHCxYFAEQNCl4WfmIlSSgEChZRCDFRW19RJQkLERYMXAgAQhZ6WgIDHQ==","queueTime":0,"applicationTime":142,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"9993044f26",applicationID:"435608300"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+	<meta http-equiv="imagetoolbar" content="false" />
+	<meta name="viewport" content="width=device-width" />
+
+    
+        <meta property="og:title" content="Presidents, Vice Presidents, &amp;amp; Coinciding Sessions of Congress | US House of Representatives: History, Art &amp; Archives" />
+        <meta property="og:description" content="From 1789 until 1933, the terms of President and Vice President and the term of the Congress coincided, beginning on March 4 and ending on March 3. This changed when the 20th amendment to the Constitution was adopted in 1933. Beginning in 1934, the convening date for Congress became January 3 (unless Congress by law appoints a different day), and beginning in 1937 the starting date for the presidential term became January 20. Because of this change, the number of Congresses overlapping with a presidential term increased from two to three, although the third only overlaps by a few weeks.Places where the President and Congress meet:Presidential VetoesState of the UnionElectoral College Fast FactsImpeachmentJoint Meetings, Joint Sessions, &amp;amp; Inaugurations" />
+        <meta property="og:image" content="https://historycms2.house.gov/assets/41544.jpeg" />
+        <meta property="og:url" content="https://history.house.gov/Institution/Presidents-Coinciding/Presidents-Coinciding/" />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@USHouseHistory" />
+        <meta property="twitter:title" content="Presidents, Vice Presidents, &amp;amp; Coinciding Sessions of Congress | US House of Representatives: History, Art &amp; Archives" />
+        <meta property="twitter:description" content="From 1789 until 1933, the terms of President and Vice President and the term of the Congress coincided, beginning on March 4 and ending on March 3. This changed when the 20th amendment to the Constitution was adopted in 1933. Beginning in 1934, the convening date for Congress became January 3 (unless Congress by law appoints a different day), and beginning in 1937 the starting date for the presidential term became January 20. Because of this change, the number of Congresses overlapping with a presidential term increased from two to three, although the third only overlaps by a few weeks.Places where the President and Congress meet:Presidential VetoesState of the UnionElectoral College Fast FactsImpeachmentJoint Meetings, Joint Sessions, &amp;amp; Inaugurations" />
+        <meta property="twitter:image" content="https://historycms2.house.gov/assets/41544.jpeg" />
+
+
+    
+    
+<title>
+
+
+Presidents, Vice Presidents, &amp; Coinciding Sessions of Congress         |     
+
+    
+    US House of Representatives: History, Art & Archives
+</title>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="/_css/reset.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/common.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/960_24_col.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/layout.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/type.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/replace.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/callouts.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/debug.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/jquery-ui/jquery-ui.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_mediaelement/mediaelementplayer.min.css?nc=030320200756" />
+<link rel="stylesheet" type="text/css" href="/_css/carousel2.css?nc=030320200756" />
+
+
+    
+
+	<link rel="shortcut icon" href="/_images/favicon.ico" />
+	<link rel="icon" type="image/png" href="/_images/favicon.png" />
+
+
+
+<script type="text/javascript" src="/_js/swfobject.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/jquery-3.4.1.min.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/jquery.tablesorter.min.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/jquery.hoverIntent.minified.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/jquery.scrollTo.min.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/jquery-ui.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_mediaelement/mediaelement-and-player.min.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_openseadragon/openseadragon.min.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/UTIL.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/UTIL.MATH.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/OHH.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/OHH.smallviewer.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/OHH.largeviewer.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/OHH.flowplayer.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/OHH.seadragon.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/OHH.meganav.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/jquery.unobtrusive-ajax.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/OHH.carousel.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_gsap/TweenMax.min.js?nc=030320200756"></script>
+<script type="text/javascript" src="/_js/ohh-carousel2.js?nc=030320200756"></script>
+
+
+
+    <script type="text/javascript">
+        var OHH = OHH || {};
+        OHH.current_congress = 116;
+    </script>
+
+	<script type="text/javascript">
+		if (typeof addthis_config == "undefined") {
+			addthis_config = { /*pubid: 'XXX',*/ ui_delay: 200, ui_click: true };
+		}
+	</script>
+    <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js"></script>
+            
+
+    
+    <link href="/_css/layout-general-detail.css?nc=030320200756" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+    div.manual-table {
+        clear:both;
+    }
+</style>
+
+
+    
+    
+
+<script rel="stylesheet" src="/_js/jquery.metadata.js?nc=030320200756" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+		$(".manual-table-not-sortable table th").addClass("{sorter: false}");
+
+
+        //OW-300, Sort by Ordinals in Charts
+        //
+        //fix up the congress columns so they sort correctly
+        $('.manual-table-sortable').each(function() {
+            var $tbl = $(this);
+            
+            //get the congress column
+            var col = $tbl.attr('data-congress-column');
+
+            if (col) {
+                //col--;
+                console.log('here');
+                var $tds = $tbl.find('tbody tr:nth-child(' + col + ')');
+
+                $tbl.find('tbody tr').each(function() {
+                    var $tr = $(this);
+                    
+                    var $td = $tr.find('td:nth-child(' + col + ')');
+                    var val = parseInt($td.text());
+                    $td.attr('sort', val);
+                });
+            }
+        });
+
+
+
+        try {
+            
+            //OW-210, CSS Not Applying to Non Sortable Tables
+            //Changed selector so striping is also applied to non-sortable tables 
+            $(".manual-table table").tablesorter({
+			    widgets: ["zebra"],
+                textExtraction: function(node) { 
+                    // extract data from markup and return it  
+                    var sort = $(node).attr("sort");
+
+                    if (sort != undefined && sort != false) {
+                        return sort;
+                    } else {
+                        return $(node).text();
+                    }
+                } 
+            });
+
+		    $(".manual-table-sortable table th").css({
+			    cursor: "pointer"
+		    });
+        } catch(e) {
+            //do nothing
+        }
+    });
+
+</script>
+
+
+
+    
+    
+
+
+        <link rel="stylesheet" href="/_css/print.css?nc=030320200756" media="print" />
+
+    <link href="/_css/mobile.css?ns=030320200756" rel="stylesheet" type="text/css" />
+    <script src="/_js/OHH.mobile.js?ns=030320200756"></script>
+
+</head>
+
+
+
+<body class="
+    debug base two-col-bottom-solid general-detail 
+ section-institution">
+	<div class="header-wrap">
+		<div class="header-bar">
+            <div class="inner">
+                <a href="/" class="replace logo_history_art_archives">United States House of Representatives: History, Art, &amp; Archives</a>
+                    
+                
+
+
+
+<ul class="header-menu menu inline">
+                <li><a href="/Map/Mapping-Congress/">Map</a></li>
+                <li><a href="/Blog/OHH-Blog/">Blog</a></li>
+                <li><a href="/Media/">Multimedia</a></li>
+                        <li><a href="/About/">About</a></li>
+</ul>
+
+                
+<form action="/Search" class="search-box" method="post">                    <fieldset>
+                        <legend class="visuallyhidden">Search the website</legend>
+                        <input name="Term" type="text" class="search-keywords" value="" name="search" title="Keywords" />
+                        <input name="Command" type="submit" class="search-submit replace sprite button btn_search_icon" value="Search" />
+                    </fieldset>
+</form>                <div class="congressional-link">
+                    
+
+
+                </div>
+            </div>
+ 		</div>
+		
+
+        
+
+
+
+
+<div class="main-menu">
+    <div class="inner">
+
+        
+        <ul class="menu inline">
+                    <li class="main-menu-1"><a href="/Institution/" class="replace menu_institution">Institution</a></li>
+                    <li class="main-menu-2"><a href="/People/" class="replace menu_people">People</a></li>
+                    <li class="main-menu-3"><a href="/Exhibitions-and-Publications/" class="replace menu_exhibitions_publications">Exhibitions &amp; Publications</a></li>
+                    <li class="main-menu-4"><a href="/Collection/" class="replace menu_collections">Collections</a></li>
+                    <li class="main-menu-5"><a href="/Oral-History/" class="replace menu_oral_history">Oral History</a></li>
+                    <li class="main-menu-6"><a href="/Education/" class="replace menu_education">Education</a></li>
+                    <li class="main-menu-7"><a href="/Records-and-Research/" class="replace menu_records_research">Records &amp; Research</a></li>
+        </ul>
+
+        
+        
+		    <div class="meganav meganav-1 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/Congressional-Overview/Profiles/1st/">Congressional Profiles</a></li>
+                    <li><a href="/HistoricalHighlight/Search/">Historical Highlights</a></li>
+                    <li><a href="/Institution/Origins-Development/Origins-Development/">Origins &amp; Development: From the Constitution to the Modern House</a></li>
+                    <li><a href="/Elections/">Elections &amp; Vacancies</a></li>
+                    <li><a href="/Institution/Seniority/House-Service-Seniority/">House Service &amp; Seniority</a></li>
+                    <li><a href="/Institution/Apportionment/Apportionment/">Congressional Apportionment</a></li>
+                    <li><a href="/Institution/Electoral-College/Electoral-College/">Electoral College Fast Facts</a></li>
+                    <li><a href="/Institution/Firsts-Milestones/Firsts-Milestones/">Firsts &amp; Milestones</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+                    <li><a href="/Institution/Party-Divisions/Party-Divisions/">Party Divisions</a></li>
+                    <li><a href="/Institution/Session-Dates/Session-Dates/">Session Dates of Congress</a></li>
+                    <li><a href="/Institution/Saturday-Sunday/Saturday-Sunday/">Saturday &amp; Sunday Legislative Days</a></li>
+                    <li><a href="/Institution/Joint-Sessions/Joint-Sessions/">Joint Meetings, Joint Sessions, &amp; Inaugurations</a></li>
+                    <li><a href="/Institution/Presidents-Coinciding/Presidents-Coinciding/">Presidents, Vice Presidents, &amp; Coinciding Sessions of Congress</a></li>
+                    <li><a href="/Institution/Presidential-Vetoes/Presidential-Vetoes/">Presidential Vetoes</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+                    <li><a href="/Institution/Gold-Medal/Gold-Medal-Recipients/">Congressional Gold Medal Recipients</a></li>
+                    <li><a href="/Institution/Funerals/Chamber-Funerals/">Funerals in the House Chamber</a></li>
+                    <li><a href="/Institution/Foreign-Leaders/Foreign-Leaders/">Foreign Leaders and Dignitaries Who Have Addressed the U.S. Congress</a></li>
+                    <li><a href="/Institution/Lie-In-State/Lie-In-State-Honor/">Individuals Who Have Lain in State or Honor</a></li>
+                    <li><a href="/Institution/SOTU/State-of-the-Union/">State of the Union</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Desk-Assignments/Desk-Assignments/">Desk Assignments</a></li>
+                    <li><a href="/Institution/House-Calendars/House-Calendars/">Calendars of the House of Representatives</a></li>
+                    <li><a href="/Institution/Resumes-of-Congressional-Activity/Resumes-Of-Congressional-Activitity/">Résumés Of Congressional Activitity</a></li>
+		</ul>
+    </div>
+
+
+                    <div class="featured">
+                        <h2 class="replace title_graphic_featured_meganav">Featured</h2>
+                            <div class="callout-image-box">
+                                    <a href="/HistoricalHighlight/Search/">
+                                        <img alt="Search Historical Highlights of the House" src="https://historycms2.house.gov/assets/41413.jpeg?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/HistoricalHighlight/Search/">Search Historical Highlights of the House</a></h3>
+                            </div>
+                            <div class="callout-image-box">
+                                    <a href="/Institution/Foreign-Leaders/Foreign-Leaders/">
+                                        <img alt="Learn about Foreign Leader Addresses" src="https://historycms2.house.gov/assets/15032421143.asset?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/Institution/Foreign-Leaders/Foreign-Leaders/">Learn about Foreign Leader Addresses</a></h3>
+                            </div>
+
+                    </div>
+            </div>
+		    <div class="meganav meganav-2 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/People/Search/">People Search</a></li>
+                    <li><a href="/Map/Mapping-Congress/">Mapping Congress</a></li>
+                    <li><a href="/People/Office/Speakers-Intro/">Speakers of the House</a></li>
+                    <li><a href="/People/Office/Majority-Leaders/">Majority Leaders</a></li>
+                    <li><a href="/People/Office/Minority-Leaders/">Minority Leaders</a></li>
+                    <li><a href="/People/Office/Democratic-Whips/">Democratic Whips</a></li>
+                    <li><a href="/People/Office/Republican-Whips/">Republican Whips</a></li>
+                    <li><a href="/People/Office/Democratic-Caucus-Chairmen/">Democratic Caucus Chairmen</a></li>
+                    <li><a href="/People/Office/Republican-Conference-Chairmen/">Republican Conference Chairmen</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+                    <li><a href="/People/Office/Clerks/">Clerks of the House</a></li>
+                    <li><a href="/People/Office/Chaplains/">Chaplains of the House</a></li>
+                    <li><a href="/People/Office/Chief-Administrative-Officers/">Chief Administrative Officers of the House</a></li>
+                    <li><a href="/People/Office/Parliamentarians/">Parliamentarians of the House</a></li>
+                    <li><a href="/People/Office/Sergeants-at-Arms/">Sergeants at Arms</a></li>
+                    <li><a href="/People/Appointed-Officials/Appointed-Officials/">Appointed Officials of the House</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+                    <li><a href="/People/Office/Postmasters/">Postmasters of the House</a></li>
+                    <li><a href="/People/Office/Doorkeepers/">Doorkeepers of the House</a></li>
+                    <li><a href="/People/McCormack-Award/">John W. McCormack Annual Award of Excellence to Congressional Employees</a></li>
+                    <li><a href="/People/Other-Office/Supreme-Court/">House Members Who Became U.S. Supreme Court Justices</a></li>
+                    <li><a href="/People/Other-Office/President/">House Members Who Received Electoral College Votes</a></li>
+                    <li><a href="/People/Continental-Congress/Continental-Confederation-Congresses/">Continental and Confederation Congresses</a></li>
+		</ul>
+    </div>
+
+
+                    <div class="featured">
+                        <h2 class="replace title_graphic_featured_meganav">Featured</h2>
+                            <div class="callout-image-box">
+                                    <a href="/People/Search/">
+                                        <img alt="Search the People of the House" src="https://historycms2.house.gov/assets/31766.jpeg?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/People/Search/">Search the People of the House</a></h3>
+                            </div>
+                            <div class="callout-image-box">
+                                    <a href="/People/Office/Majority-Leaders/">
+                                        <img alt="Majority Leaders" src="https://historycms2.house.gov/assets/107.asset?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/People/Office/Majority-Leaders/">Majority Leaders</a></h3>
+                            </div>
+
+                    </div>
+            </div>
+		    <div class="meganav meganav-3 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/apa/">Asian and Pacific Islander Americans in Congress</a></li>
+                    <li><a href="/Exhibitions-and-Publications/HAIC/Hispanic-Americans-in-Congress/">Hispanic Americans in Congress</a></li>
+                    <li><a href="/Exhibitions-and-Publications/BAIC/Black-Americans-in-Congress/">Black Americans in Congress</a></li>
+                    <li><a href="/Exhibition-and-Publications/WIC/Women-in-Congress/">Women in Congress</a></li>
+                    <li><a href="/Exhibitions-and-Publications/WIC/Century-of-Women-Jeannette-Rankin/">Jeannette Rankin’s Historic Election: A Century of Women in Congress</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Civil-Rights/Civil-Rights/">The House and Civil Rights</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Florence-Kahn/Florence-Kahn/">Florence Kahn: Congressional Widow to Trailblazing Lawmaker</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+                    <li><a href="/Exhibitions-and-Publications/How-the-House-Works/">How the House Works</a></li>
+                    <li><a href="/the-first-women-in-congress/">The First Women in Congress</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Capitol/">What&#39;s in the Capitol?</a></li>
+                    <li><a href="/Exhibitions-and-Publications/House-Office-Buildings/House-Office-Buildings/">House Office Buildings</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Souvenirs/Souvenir-intro/">The Tourist’s Capitol</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Electronic-Technology/House-Technology/">Electronic Technology in the House of Representatives</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+                    <li><a href="/Exhibitions-and-Publications/Johnson-Impeachment/">The House Impeaches Andrew Johnson</a></li>
+                    <li><a href="/peoples-house/">The People’s House: A Guide to Its History, Spaces, and Traditions</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Page-History/House-Page-History/">History of the House Page Program</a></li>
+                    <li><a href="/Exhibitions-and-Publications/1954-Shooting/1954/">The 1954 Shooting</a></li>
+                    <li><a href="/Exhibitions-and-Publications/Baseball-Game/Congressional-Baseball/">An Annual Outing: The Congressional Baseball Game</a></li>
+                    <li><a href="/Exhibitions-and-Publications/House-Bean-Soup/House-Bean-Soup/">What&#39;s on the Menu? Bean Soup!</a></li>
+		</ul>
+    </div>
+
+
+                    <div class="featured">
+                        <h2 class="replace title_graphic_featured_meganav">Featured</h2>
+                            <div class="callout-image-box">
+                                    <a href="/Exhibitions-and-Publications/How-the-House-Works/">
+                                        <img alt="Online Exhibit: How the House Works" src="https://historycms2.house.gov/assets/25769810994.asset?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/Exhibitions-and-Publications/How-the-House-Works/">Online Exhibit: How the House Works</a></h3>
+                            </div>
+                            <div class="callout-image-box">
+                                    <a href="/peoples-house/">
+                                        <img alt="The People’s House" src="https://historycms2.house.gov/assets/25769810995.asset?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/peoples-house/">The People’s House</a></h3>
+                            </div>
+
+                    </div>
+            </div>
+		    <div class="meganav meganav-4 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/Collection/Search/">Collections Search</a></li>
+                    <li><a href="/Collection/Search?Subject=Events">Events</a></li>
+                    <li><a href="/Collection/Search?Classification=Furniture+%26+Decorative+Arts">Furniture &amp; Decorative Arts</a></li>
+                    <li><a href="/Collection/Search?Classification=Historical%20Artifacts">Historical Artifacts</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+                    <li><a href="/Collection/Search?Subject=Life%20in%20the%20House">Life in the House</a></li>
+                    <li><a href="/Collection/Search?Classification=Painting+%26+Sculpture">Painting &amp; Sculpture</a></li>
+                    <li><a href="/Collection/Search?Subject=People">People</a></li>
+                    <li><a href="/Collection/Search?Classification=Photographs">Photographs</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+                    <li><a href="/Collection/Search?Subject=Places">Places</a></li>
+                    <li><a href="/Collection/Search?Subject=Popular%20Culture">Popular Culture</a></li>
+                    <li><a href="/Collection/Search?Classification=Prints+%26+Drawings">Prints &amp; Drawings</a></li>
+		</ul>
+    </div>
+
+
+                    <div class="featured">
+                        <h2 class="replace title_graphic_featured_meganav">Featured</h2>
+                            <div class="callout-image-box">
+                                    <a href="/Collection/Listing/2006/2006-162-000/">
+                                        <img alt="Mace of the U.S. House of Represen- tatives" src="https://historycms2.house.gov/assets/37820.jpeg?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/Collection/Listing/2006/2006-162-000/">Mace of the U.S. House of Represen- tatives</a></h3>
+                            </div>
+
+                    </div>
+            </div>
+		    <div class="meganav meganav-5 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/Oral-History/Century-of-Women/">A Century of Women in Congress</a></li>
+                    <li><a href="/Oral-History/Events/September-11/September-11-2001/">September 11, 2001</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+                    <li><a href="/Oral-History/People/">People</a></li>
+                    <li><a href="/Oral-History/Events/">Events</a></li>
+                    <li><a href="/Oral-History/Institution/">Institution</a></li>
+                    <li><a href="/Oral-History/Objects/">Objects</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+                    <li><a href="/Oral-History/Documentaries/">Documentaries</a></li>
+                    <li><a href="/Oral-History/Interviewee-Listing/Interviewees/">Interviewees</a></li>
+                    <li><a href="/Oral-History/Transcripts/Index/">Oral History Transcripts</a></li>
+		</ul>
+    </div>
+
+
+                    <div class="featured">
+                        <h2 class="replace title_graphic_featured_meganav">Featured</h2>
+                            <div class="callout-image-box">
+                                    <a href="/Oral-History/Events/1954-Shooting/">
+                                        <img alt="1954 Shooting in the House Chamber" src="https://historycms2.house.gov/assets/25769806975.asset?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/Oral-History/Events/1954-Shooting/">1954 Shooting in the House Chamber</a></h3>
+                            </div>
+
+                    </div>
+            </div>
+		    <div class="meganav meganav-6 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/Education/NHD/NHD-Resources/">National History Day 2020: Resource Guide</a></li>
+                    <li><a href="/Education/Book-Request/">Book Request Form for Educators</a></li>
+                    <li><a href="/Education/uncle_joe_on_the_go/">Take #UncleJoeOnTheGo</a></li>
+                    <li><a href="/Education/Capitol-Tour/Capitol-Tour/">Time for a Tour: Visiting the People’s House</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+                    <li><a href="/Education/Lesson-Plans/Education-Lesson-Plans/">Lesson Plans</a></li>
+                    <li><a href="/Education/Fact-Sheets/Education-Fact-Sheets/">Education Fact Sheets</a></li>
+                    <li><a href="/Education/Lesson-Plans/Online-Resources/">Online Resources</a></li>
+                    <li><a href="/Education/Lesson-Plans/Glossary/">Glossary</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+                    <li><a href="/Education/House-Trivia/House-Trivia/">House Trivia</a></li>
+                    <li><a href="/Education/Timeline/Timeline/">Timeline</a></li>
+		</ul>
+    </div>
+
+
+                    <div class="featured">
+                        <h2 class="replace title_graphic_featured_meganav">Featured</h2>
+                            <div class="callout-image-box">
+                                    <a href="/Education/uncle_joe_on_the_go/">
+                                        <img alt="Travels With &lt;br />
+Uncle Joe" src="https://historycms2.house.gov/assets/15032419691.asset?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/Education/uncle_joe_on_the_go/">Travels With <br />
+Uncle Joe</a></h3>
+                            </div>
+
+                    </div>
+            </div>
+		    <div class="meganav meganav-7 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/HouseRecord/Search/">Records Search</a></li>
+                    <li><a href="/Records-and-Research/House-Records/">Researching the House: Official Records</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+                    <li><a href="/Records-and-Research/Outside-Research/">Researching the House: Other Primary Sources</a></li>
+                    <li><a href="/Records-and-Research/Bibliographies/">Researching the House: Bibliographies</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+                    <li><a href="/Records-and-Research/References/">Researching the House: Secondary Sources</a></li>
+                    <li><a href="/Records-and-Research/Finding-Aids/Finding-Aids-for-Official-House-Records/">Finding Aids for Official House Records</a></li>
+		</ul>
+    </div>
+
+
+                    <div class="featured">
+                        <h2 class="replace title_graphic_featured_meganav">Featured</h2>
+                            <div class="callout-image-box">
+                                    <a href="/HouseRecord/Search/">
+                                        <img alt="Records Search: Explore Primary Sources" src="https://historycms2.house.gov/assets/15032436808.asset?wd=90" />
+                                    </a>
+                        
+                                <h3><a href="/HouseRecord/Search/">Records Search: Explore Primary Sources</a></h3>
+                            </div>
+
+                    </div>
+            </div>
+		    <div class="meganav meganav-8 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+		</ul>
+    </div>
+
+
+            </div>
+		    <div class="meganav meganav-9 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+		</ul>
+    </div>
+
+
+            </div>
+		    <div class="meganav meganav-10 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+		</ul>
+    </div>
+
+
+            </div>
+		    <div class="meganav meganav-11 hidden">
+                <span class="white"></span>
+
+                    <div class="col col1">
+        <ul>
+                    <li><a href="/About/">About</a></li>
+		</ul>
+    </div>
+
+                    <div class="col col2">
+        <ul>
+		</ul>
+    </div>
+
+                    <div class="col col3">
+        <ul>
+		</ul>
+    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+
+
+        
+    		
+        <div class="glow">
+		</div>
+	</div>
+		
+    <div class="hatched">
+        <div class="tools-wrap container_24">
+            <div class="inner grid_24 clearfix">
+                
+
+            <ul class="breadcrumb menu inline">
+                        <li>
+                            <a href="/Home/">Home</a>
+                                 &gt;
+                        </li>
+                        <li>
+                            <a href="/Institution/">Institution</a>
+                        </li>
+            </ul>
+
+
+
+
+                
+<ul class="tools menu inline">
+        <li><a href="#" class="js replace tri-state button btn_recommend " data-id="33626" title="Vote to feature this on the home page.">Vote to feature this on the home page</a></li>
+    <li><a href="#" class="js replace sprite button btn_cite">Cite</a></li>
+    <li><a href="#" class="js replace sprite button btn_print">Print</a></li>
+    <li><a href="http://www.addthis.com/bookmark.php?v=250" class="js replace sprite button btn_share addthis_button">Share</a></li>
+
+</ul>
+
+            </div>
+        </div>
+        
+
+
+
+
+
+
+
+
+<div class="content-wrap">
+    <div class="inner container_24 clearfix">
+        <div class="grid_24 main-column">
+            <div class="grid_7 prefix_1 omega callouts-column">
+                
+
+
+<div class="inner">
+    
+
+
+
+        <div class="callout historical-highlights">
+            <h2 class="replace title_graphic_historical_highlight">Historical Highlight</h2>
+            <div class="callout-image-box">
+                    <a href="/Historical-Highlights/1800-1850/President-Thomas-Jefferson-s-secret-letter-to-Congress/">
+                        <img src="https://historycms2.house.gov/assets/37586.jpeg?wd=190" />
+                    </a> 
+                <span class="date">January 18, 1803 </span>
+                <h3><a href="/Historical-Highlights/1800-1850/President-Thomas-Jefferson-s-secret-letter-to-Congress/">President Thomas Jefferson’s secret letter to Congress</a></h3>
+            </div>
+        </div>
+        <div class="callout related-collection-objects">
+            <h2 class="replace title_graphic_related_collection_object">Related Collection Object</h2>
+            <div class="callout-image-box">
+                    <a href="/Collection/Listing/PA2011/PA2011-09-0122/">
+                        <img alt="Congressional Clean Up" src="https://historycms2.house.gov/assets/37876.jpeg?wd=190" />
+                    </a>   
+                <h3><a href="/Collection/Listing/PA2011/PA2011-09-0122/">Congressional Clean Up</a></h3>
+            </div>
+        </div>
+   
+</div>
+
+            </div>
+            <div class="inner clearfix">
+                <h1>Presidents, Vice Presidents, &amp; Coinciding Sessions of Congress</h1>
+
+                        <p>
+                            <p>
+
+<div class="captionbox captionbox-190 ">
+    <img alt="This bust is one of hundreds made in 1932 to honor George Washington&#39;s 200th birthday." class="zoomable" src="https://historycms2.house.gov/assets/41544.jpeg?wd=190" /><span class="zoomable-path">/tiles/non-collection/i/im_inst_pres-vp-coinc_2003_010_001.xml</span>
+    <span class="credit">Collection of the U.S. House of Representatives<br /><a href="/Collection/Listing/2003/2003-010-001/" title="About this object">About this object</a></span>
+    <span class="caption">This bust is one of hundreds made in 1932 to honor George Washington's 200th birthday.</span>
+</div>
+
+From 1789 until 1933, the terms of President and Vice President and the term of the Congress coincided, beginning on March 4 and ending on March 3. This changed when the 20th amendment to the Constitution was adopted in 1933. Beginning in 1934, the convening date for Congress became January 3 (unless Congress by law appoints a different day), and beginning in 1937 the starting date for the presidential term became January 20. Because of this change, the number of Congresses overlapping with a presidential term increased from two to three, although the third only overlaps by a few weeks.</p><p><b>Places where the President and Congress meet:</b></p><ul><li><a href="/Institution/Presidential-Vetoes/Presidential-Vetoes/" title="Presidential Vetoes">Presidential Vetoes</a></li><li><a href="/Institution/SOTU/State-of-the-Union/" title="State of the Union">State of the Union</a></li><li><a href="/Institution/Electoral-College/Electoral-College/" title="Electoral College Fast Facts">Electoral College Fast Facts</a></li><li><a href="/Institution/Origins-Development/Impeachment/" title="Impeachment">Impeachment</a></li><li><a href="/Institution/Joint-Sessions/Joint-Sessions/" title="Joint Meetings, Joint Sessions, &amp;amp; Inaugurations">Joint Meetings, Joint Sessions, &amp; Inaugurations</a></li></ul>
+                        </p>
+                    <div 
+                        class="manual-table manual-table-not-sortable"
+                        
+                    >
+                            <p>
+                                <h2> Presidents &amp; VPs / Sessions of Congress</h2><table width="100%" cellspacing="0" cellpadding="0" border="0"><thead><tr><th>No.
+</th><th>
+                                President</th><th>
+                                    Vice President
+                                </th><th>Years of Service
+                               </th><th>Congresses
+                               </th></tr></thead><tbody><tr><td class="alt_row" width="5%" align="left"><div align="center">
+                                        1.</div></td><td><a href="/People/Detail/23425?ret=True" title="George Washington">George Washington</a></td><td><a href="/People/Detail/8309?ret=True" title="John Adams">John Adams</a>                                 </td><td>
+                                    Apr. 30, 1789–Mar. 3, 1797
+                                </td><td>
+                                    1, 2, 3, 4
+                                </td></tr><tr><td class="alt_row" width="5%" align="left"><div align="center">
+                                        2.</div></td><td>
+                                    John Adams
+                                </td><td><a href="/People/Detail/15781?ret=True" title="Thomas Jefferson                                ">Thomas Jefferson                                </a></td><td>
+                                    Mar. 4, 1797–Mar. 3, 1801
+                                </td><td>
+                                    5, 6
+                                </td></tr><tr><td class="alt_row" width="5%" align="left"><div align="center">
+                                        3.</div></td><td>
+                                    Thomas Jefferson
+                                </td><td>
+                                    Aaron Burr
+                                </td><td>
+                                    Mar. 4, 1801–Mar. 3, 1805
+                                </td><td>
+                                    7, 8
+                                </td></tr><tr><td>
+                                     
+                                </td><td>
+                                    Thomas Jefferson
+                                </td><td><a href="/People/Detail/11107?ret=True" title="George Clinton">George Clinton</a></td><td>
+                                    Mar. 4, 1805–Mar. 3, 1809
+                                </td><td>
+                                    9, 10
+                                </td></tr><tr><td class="alt_row" width="5%" align="left"><div align="center">
+                                        4.</div></td><td><a href="/People/Detail/17381?ret=True" title="James Madison">James Madison</a></td><td>
+                                    George Clinton<sup>1</sup>
+                                 </td><td>
+                                    Mar. 4, 1809–Mar. 3, 1813
+                                </td><td>
+                                    11, 12
+                                </td></tr><tr valign="top"><td>
+                                     
+                                </td><td>
+                                    James Madison
+                                </td><td width="24%" align="left"><a href="/People/Detail/13737?ret=True" title="Elbridge Gerry">Elbridge Gerry</a><sup>2</sup>
+                                 </td><td width="30%" align="left">
+                                    Mar. 4, 1813–Mar. 3, 1817
+                                </td><td width="25%" align="left">
+                                    13, 14
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        5.</div></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/18410?ret=True" title="James Monroe">James Monroe</a></td><td class="alt_row" width="24%" align="left">
+                                    Daniel D. Tompkins
+                                </td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1817–Mar. 3, 1825
+                                </td><td class="alt_row" width="25%" align="left">
+                                    15, 16, 17, 18
+                                </td></tr><tr valign="top"><td width="5%" height="19" align="left"><div align="center">
+                                        6.</div></td><td width="24%" height="19" align="left"><a href="/People/Detail/8312?ret=True" title="John Quincy Adams">John Quincy Adams</a></td><td width="24%" height="19" align="left"><a href="/People/Detail/10497?ret=True" title="John C. Calhoun">John C. Calhoun</a>                                 </td><td width="30%" height="19" align="left">
+                                    Mar. 4, 1825–Mar. 3, 1829
+                                </td><td width="25%" height="19" align="left">
+                                    19, 20
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        7.</div></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/15699?ret=True" title="Andrew Jackson">Andrew Jackson</a>                                 </td><td class="alt_row" width="24%" align="left">
+                                    John C. Calhoun<sup>3</sup>
+                                 </td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1829–Mar. 3, 1833
+                                </td><td class="alt_row" width="25%" align="left">
+                                    21, 22
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left">
+                                     
+                                </td><td class="alt_row" width="24%" align="left">
+                                    Andrew Jackson
+                                </td><td class="alt_row" width="24%" align="left">
+                                    Martin Van Buren
+                                </td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1833–Mar. 3, 1837
+                                </td><td class="alt_row" width="25%" align="left">
+                                    23, 24
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        8.</div></td><td width="24%" align="left">
+                                    Martin Van Buren
+                                </td><td width="24%" align="left">
+                                    Richard M. Johnson
+                                </td><td width="30%" align="left">
+                                    Mar. 4, 1837–Mar. 3, 1841
+                                </td><td width="25%" align="left">
+                                    25, 26
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        9.</div></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/14628?ret=True" title="William Henry Harrison">William Henry Harrison</a><sup>4</sup>
+                                 </td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/23187?ret=True" title="John Tyler">John Tyler</a>                                 </td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1841–Apr. 4, 1841
+                                </td><td class="alt_row" width="25%" align="left">
+                                    27
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        10.</div></td><td width="24%" align="left">
+                                    John Tyler
+                                </td><td width="24%" align="left">
+                                    ............
+                                </td><td width="30%" align="left">
+                                    Apr. 6, 1841–Mar. 3, 1845
+                                </td><td width="25%" align="left">
+                                    27, 28
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        11.</div></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/19788?ret=True" title="James K. Polk                                ">James K. Polk                                </a></td><td class="alt_row" width="24%" align="left">
+                                    George M. Dallas
+                                </td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1845–Mar. 3, 1849
+                                </td><td class="alt_row" width="25%" align="left">
+                                    29, 30
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        12.</div></td><td width="24%" align="left">
+                                    Zachary Taylor<sup>4</sup>
+                                 </td><td width="24%" align="left"><a href="/People/Detail/13119?ret=True" title="Millard Fillmore">Millard Fillmore</a></td><td width="30%" align="left">
+                                    Mar. 5, 1849–July 9, 1850
+                                </td><td width="25%" align="left">
+                                    31
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        13.</div></td><td class="alt_row" width="24%" align="left">
+                                    Millard Fillmore
+                                </td><td class="alt_row" width="24%" align="left">
+                                    ............
+                                </td><td class="alt_row" width="30%" align="left">
+                                    July 10, 1850–Mar. 3, 1853
+                                </td><td class="alt_row" width="25%" align="left">
+                                    31, 32
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        14.</div></td><td width="24%" align="left"><a href="/People/Detail/19692?ret=True" title="Franklin Pierce">Franklin Pierce</a></td><td width="24%" align="left"><a href="/People/Detail/16350?ret=True" title="William R. King">William R. King</a><sup>5</sup>
+                                 </td><td width="30%" align="left">
+                                    Mar. 4, 1853–Mar. 3, 1857
+                                </td><td width="25%" align="left">
+                                    33, 34
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        15.</div></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/10073?ret=True" title="James Buchanan">James Buchanan</a></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/9799" title="John C. Breckinridge">John C. Breckinridge</a></td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1857–Mar. 3, 1861
+                                </td><td class="alt_row" width="25%" align="left">
+                                    35, 36
+                                </td></tr><tr valign="top"><td width="5%" height="21" align="left"><div align="center">
+                                        16.</div></td><td width="24%" height="21" align="left"><a href="/People/Detail/16982?ret=True" title="Abraham Lincoln">Abraham Lincoln</a></td><td width="24%" height="21" align="left"><a href="/People/Detail/14435?ret=True" title="Hannibal Hamlin                                ">Hannibal Hamlin                                </a></td><td width="30%" height="21" align="left">
+                                    Mar. 4, 1861–Mar. 3, 1865</td><td width="25%" height="21" align="left">
+                                    37, 38
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Abraham Lincoln <sup>4</sup>
+                                 </td><td width="24%" align="left"><a href="/People/Detail/15840?ret=True" title="Andrew Johnson                                ">Andrew Johnson                                </a></td><td width="30%" align="left">
+                                    Mar. 4, 1865–Apr. 15, 1865
+                                </td><td width="25%" align="left">
+                                    39
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        17.</div></td><td class="alt_row" width="24%" align="left">
+                                    Andrew Johnson
+                                </td><td class="alt_row" width="24%" align="left">
+                                    ............
+                                </td><td class="alt_row" width="30%" align="left">
+                                    Apr. 15, 1865–Mar. 3, 1869
+                                </td><td class="alt_row" width="25%" align="left">
+                                    39, 40
+                                </td></tr><tr valign="top"><td width="5%" height="23" align="left"><div align="center">
+                                        18.</div></td><td width="24%" height="23" align="left">
+                                    Ulysses S. Grant
+                                </td><td width="24%" height="23" align="left"><a href="/People/Detail/11234?ret=True" title="Schuyler Colfax">Schuyler Colfax</a></td><td width="30%" height="23" align="left">
+                                    Mar. 4, 1869–Mar. 3, 1873
+                                </td><td width="25%" height="23" align="left">
+                                    41, 42
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Ulysses S. Grant
+                                </td><td width="24%" align="left">
+                                    Henry Wilson<sup>6</sup>
+                                 </td><td width="30%" align="left">
+                                    Mar. 4, 1873–Mar. 3, 1877
+                                </td><td width="25%" align="left">
+                                    43, 44
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        19.</div></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/14767?ret=True" title="Rutherford B. Hayes">Rutherford B. Hayes</a></td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/23623?ret=True" title="William A. Wheeler                                ">William A. Wheeler                                </a></td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1877–Mar. 3, 1881
+                                </td><td class="alt_row" width="25%" align="left">
+                                    45, 46
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        20.</div></td><td width="24%" align="left"><a href="/People/Detail/13641?ret=True" title="James A. Garfield">James A. Garfield</a><sup>4</sup>
+                                 </td><td width="24%" align="left">
+                                    Chester A. Arthur
+                                </td><td width="30%" align="left">
+                                    Mar. 4, 1881–Sept. 19, 1881
+                                </td><td width="25%" align="left">
+                                    47
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center">
+                                        21.</div></td><td class="alt_row" width="24%" align="left">
+                                    Chester A. Arthur
+                                </td><td class="alt_row" width="24%" align="left">
+                                    ............
+                                </td><td class="alt_row" width="30%" align="left">
+                                    Sept. 20, 1881–Mar. 3, 1885
+                                </td><td class="alt_row" width="25%" align="left">
+                                    47, 48
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        22.</div></td><td width="24%" align="left">
+                                    Grover Cleveland
+                                </td><td width="24%" align="left"><a href="/People/Detail/14894?ret=True" title="Thomas A. Hendricks">Thomas A. Hendricks</a><sup>7</sup>
+                                 </td><td width="30%" align="left">
+                                    Mar. 4, 1885–Mar. 3, 1889
+                                </td><td width="25%" align="left">
+                                    49, 50
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left"><div align="center"> 
+                                        23.</div></td><td class="alt_row" width="24%" align="left">
+                                    Benjamin Harrison
+                                </td><td class="alt_row" width="24%" align="left"><a href="/People/Detail/18601?ret=True" title="Levi P. Morton">Levi P. Morton</a></td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1889–Mar. 3, 1893
+                                </td><td class="alt_row" width="25%" align="left">
+                                    51, 52
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        24.</div></td><td width="24%" align="left">
+                                    Grover Cleveland
+                                </td><td width="24%" align="left"><a href="/People/Detail/22239?ret=True" title="Adlai E. Stevenson">Adlai E. Stevenson</a>                                 </td><td width="30%" align="left">
+                                    Mar. 4, 1893–Mar. 3, 1897
+                                </td><td width="25%" align="left">
+                                    53, 54
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" height="20" align="left"><div align="center">
+                                        25.</div></td><td class="alt_row" width="24%" height="20" align="left"><a href="/People/Detail/17980?ret=True" title="William McKinley                                ">William McKinley                                </a></td><td class="alt_row" width="24%" height="20" align="left">
+                                    Garret A. Hobart<sup>8</sup>
+                                 </td><td class="alt_row" width="30%" height="20" align="left">
+                                    Mar. 4, 1897–Mar. 3, 1901
+                                </td><td class="alt_row" width="25%" height="20" align="left">
+                                    55, 56
+                                </td></tr><tr valign="top"><td class="alt_row" width="5%" align="left">
+                                     
+                                </td><td class="alt_row" width="24%" align="left">
+                                    William McKinley<sup>4</sup>
+                                 </td><td class="alt_row" width="24%" align="left">
+                                    Theodore Roosevelt
+                                </td><td class="alt_row" width="30%" align="left">
+                                    Mar. 4, 1901–Sept. 14, 1901
+                                </td><td class="alt_row" width="25%" align="left">
+                                    57
+                                </td></tr><tr valign="top"><td width="5%" height="20" align="left"><div align="center">
+                                        26.</div></td><td width="24%" height="20" align="left">
+                                    Theodore Roosevelt
+                                </td><td width="24%" height="20" align="left">
+                                    ............
+                                </td><td width="30%" height="20" align="left">
+                                    Sept. 14, 1901–Mar. 3, 1905
+                                </td><td width="25%" height="20" align="left">
+                                    57, 58
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Theodore Roosevelt
+                                </td><td width="24%" align="left">
+                                    Charles W. Fairbanks
+                                </td><td width="30%" align="left">
+                                    Mar. 4, 1905–Mar. 3, 1909
+                                </td><td width="25%" align="left">
+                                    59, 60
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        27.</div></td><td width="24%" align="left">
+                                    William H. Taft
+                                </td><td width="24%" align="left"><a href="/People/Detail/21567?ret=True" title="James S. Sherman">James S. Sherman</a><sup>9</sup>
+                                 </td><td width="30%" align="left">
+                                    Mar. 4, 1909–Mar. 3, 1913
+                                </td><td width="25%" align="left">
+                                    61, 62
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        28.</div></td><td width="24%" align="left">
+                                    Woodrow Wilson
+                                </td><td width="24%" align="left">
+                                    Thomas R. Marshall
+                                </td><td width="30%" align="left">
+                                    Mar. 4, 1913–Mar. 3, 1921
+                                </td><td width="25%" align="left">
+                                    63, 64, 65, 66
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        29.</div></td><td width="24%" align="left">
+                                    Warren G. Harding<sup>4</sup>
+                                 </td><td width="24%" align="left">
+                                    Calvin Coolidge
+                                </td><td width="30%" align="left">
+                                    Mar. 4, 1921–Aug. 2, 1923
+                                </td><td width="25%" align="left">
+                                    67, 68
+                                </td></tr><tr valign="top"><td width="5%" height="23" align="left"><div align="center">
+                                        30.</div></td><td width="24%" height="23" align="left">
+                                    Calvin Coolidge
+                                </td><td width="24%" height="23" align="left">
+                                    ............
+                                </td><td width="30%" height="23" align="left">
+                                    Aug. 3, 1923–Mar. 3, 1925
+                                </td><td width="25%" height="23" align="left">
+                                    68
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Calvin Coolidge
+                                </td><td width="24%" align="left">
+                                    Charles G. Dawes
+                                </td><td width="30%" align="left">
+                                    Mar. 4, 1925–Mar. 3, 1929
+                                </td><td width="25%" align="left">
+                                    69, 70
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        31.</div></td><td width="24%" align="left">
+                                    Herbert C. Hoover
+                                </td><td width="24%" align="left"><a href="/People/Detail/11714?ret=True" title="Charles Curtis                                ">Charles Curtis                                </a></td><td width="30%" align="left">
+                                    Mar. 4, 1929–Mar. 3, 1933
+                                </td><td width="25%" align="left">
+                                    71, 72
+                                </td></tr><tr valign="top"><td width="5%" height="19" align="left"><div align="center">
+                                        32.</div></td><td width="24%" height="19" align="left">
+                                    Franklin D. Roosevelt
+                                </td><td width="24%" height="19" align="left"><a href="/People/Detail/13655?ret=True" title="John N. Garner                                ">John N. Garner                                </a></td><td width="30%" height="19" align="left">
+                                    Mar. 4, 1933–Jan. 20, 1941
+                                </td><td width="25%" height="19" align="left">
+                                    73, 74, 75, 76, 77
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Franklin D. Roosevelt
+                                </td><td width="24%" align="left">
+                                    Henry A. Wallace
+                                </td><td width="30%" align="left">
+                                    Jan. 20, 1941–Jan. 20, 1945
+                                </td><td width="25%" align="left">
+                                    77, 78, 79
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Franklin D. Roosevelt <sup>4</sup>
+                                 </td><td width="24%" align="left">
+                                    Harry S. Truman
+                                </td><td width="30%" align="left">
+                                    Jan. 20, 1945–Apr. 12, 1945
+                                </td><td width="25%" align="left">
+                                    79
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" height="20" align="left"><div align="center">
+                                        33.</div></td><td width="24%" height="20" align="left">
+                                    Harry S. Truman
+                                </td><td width="24%" height="20" align="left">
+                                    ............
+                                </td><td width="30%" height="20" align="left">
+                                    Apr. 12, 1945–Jan. 20, 1949
+                                </td><td width="25%" height="20" align="left">
+                                    79, 80, 81
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Harry S. Truman
+                                </td><td width="24%" align="left"><a href="/People/Detail/8958?ret=True" title="Alben W. Barkley">Alben W. Barkley</a></td><td width="30%" align="left">
+                                    Jan. 20, 1949–Jan. 20, 1953
+                                </td><td width="25%" align="left">
+                                    81, 82, 83
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        34.</div></td><td width="24%" align="left">
+                                    Dwight D. Eisenhower
+                                </td><td width="24%" align="left"><a href="/People/Detail/18976?ret=True" title="Richard M. Nixon                                ">Richard M. Nixon                                </a></td><td width="30%" align="left">
+                                    Jan. 20, 1953–Jan. 20, 1961
+                                </td><td width="25%" align="left">
+                                    83, 84, 85, 86, 87
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        35.</div></td><td width="24%" align="left"><a href="/People/Detail/7707?ret=True" title="John F. Kennedy">John F. Kennedy</a><sup>4</sup>
+                                 </td><td width="24%" align="left"><a href="/People/Detail/15895?ret=True" title="Lyndon B. Johnson">Lyndon B. Johnson</a></td><td width="30%" align="left">
+                                    Jan. 20, 1961–Nov. 22, 1963
+                                </td><td width="25%" align="left">
+                                    87, 88
+                                </td></tr><tr valign="top"><td width="5%" height="22" align="left"><div align="center">
+                                        36.</div></td><td width="24%" height="22" align="left">
+                                    Lyndon B. Johnson
+                                </td><td width="24%" height="22" align="left">
+                                    ............
+                                </td><td width="30%" height="22" align="left">
+                                    Nov. 22, 1963–Jan. 20, 1965
+                                </td><td width="25%" height="22" align="left">
+                                    88, 89
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Lyndon B. Johnson
+                                </td><td width="24%" align="left">
+                                    Hubert H. Humphrey
+                                </td><td width="30%" align="left">
+                                    Jan. 20, 1965–Jan. 20, 1969
+                                </td><td width="25%" align="left">
+                                    89, 90, 91
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        37.</div></td><td width="24%" align="left">
+                                    Richard M. Nixon
+                                </td><td width="24%" align="left">
+                                    Spiro T. Agnew<sup>10</sup>
+                                 </td><td width="30%" align="left">
+                                    Jan. 20, 1969–Dec. 6, 1973
+                                </td><td width="25%" align="left">
+                                    91, 92, 93
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Richard M. Nixon <sup>12</sup>
+                                 </td><td width="24%" align="left"><a href="/People/Detail/13301?ret=True" title="Gerald R. Ford">Gerald R. Ford</a><sup>11
+                                 </sup></td><td width="30%" align="left">
+                                    Dec. 6, 1973–Aug. 9, 1974
+                                </td><td width="25%" align="left">
+                                    93
+                                </td></tr><tr valign="top"><td width="5%" height="23" align="left"><div align="center">
+                                        38.</div></td><td width="24%" height="23" align="left">
+                                    Gerald R. Ford
+                                </td><td width="24%" height="23" align="left">
+                                    ............
+                                </td><td width="30%" height="23" align="left">
+                                    Aug. 9, 1974–Dec. 19, 1974
+                                </td><td width="25%" height="23" align="left">
+                                    93
+                                </td></tr><tr valign="top"><td width="5%" align="left">
+                                     
+                                </td><td width="24%" align="left">
+                                    Gerald R. Ford
+                                </td><td width="24%" align="left">
+                                    Nelson A. Rockefeller <sup>13</sup>
+                                 </td><td width="30%" align="left">
+                                    Dec. 19, 1974–Jan. 20, 1977
+                                </td><td width="25%" align="left">
+                                    93, 94, 95
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        39.</div></td><td width="24%" align="left">
+                                    James Earl Carter
+                                </td><td width="24%" align="left">
+                                    Walter F. Mondale
+                                </td><td width="30%" align="left">
+                                    Jan. 20, 1977–Jan. 20, 1981
+                                </td><td width="25%" align="left">
+                                    95, 96, 97
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        40.</div></td><td width="24%" align="left">
+                                    Ronald Reagan
+                                </td><td width="24%" align="left"><a href="/People/Detail/10276?ret=True" title="George Bush">George Bush</a>                                 </td><td width="30%" align="left">
+                                    Jan. 20, 1981–Jan. 20, 1989
+                                </td><td width="25%" align="left">
+                                    97, 98, 99, 100, 101
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        41.</div></td><td width="24%" align="left">
+                                    George Bush
+                                </td><td width="24%" align="left">
+                                    Dan Quayle
+                                </td><td width="30%" align="left">
+                                    Jan. 20, 1989–Jan. 20, 1993
+                                </td><td width="25%" align="left">
+                                    101, 102, 103,
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        42.</div></td><td width="24%" align="left">
+                                    William J. Clinton
+                                </td><td width="24%" align="left"><a href="/People/Detail/13970?ret=True" title="Albert Gore                                ">Albert Gore                                </a></td><td width="30%" align="left">
+                                    Jan. 20, 1993–Jan. 20, 2001
+                                </td><td width="25%" align="left">
+                                    103, 104, 105, 106, 107
+                                </td></tr><tr class="alt_row" valign="top"><td width="5%" align="left"><div align="center">
+                                        43.</div></td><td width="24%" align="left">
+                                    George W. Bush
+                                </td><td width="24%" align="left"><a href="/People/Detail/10884?ret=True" title="Dick Cheney">Dick Cheney</a></td><td width="30%" align="left">
+                                    Jan. 20, 2001–Jan. 20, 2009
+                                </td><td width="25%" align="left">
+                                    107, 108, 109, 110, 111
+                                </td></tr><tr valign="top"><td width="5%" align="left"><div align="center">
+                                        44.</div></td><td width="24%" align="left"><a href="/People/Detail/19276?ret=True" title="Barack H. Obama">Barack H. Obama</a></td><td width="24%" align="left">
+                                    Joseph R. Biden, Jr.
+                                </td><td width="30%" align="left">
+                                    Jan. 20, 2009–Jan. 20, 2017</td><td width="25%" align="left">
+                                    111, 112, 113, 114, 115</td></tr><tr><td colspan="1"> 45.</td><td colspan="1">Donald J. Trump</td><td colspan="1"><a href="/People/Detail/20013?ret=True" title="Michael Pence">Michael Pence</a></td><td colspan="1">Jan. 20, 2017–present</td><td colspan="1">115, 116</td></tr></tbody></table>
+                            </p>
+                    </div>
+
+                
+           
+
+
+    <div class="footnotes">
+        <h2>Footnotes</h2>
+                <p><sup>1</sup>Died Apr. 20, 1812</p>        
+                <p><sup>2</sup>Died Nov. 23, 1814</p>        
+                <p><sup>3</sup>Resigned Dec. 28, 1832, to become United States Senator</p>        
+                <p><sup>4</sup>Died in office</p>        
+                <p><sup>5</sup>Died Apr. 18, 1853</p>        
+                <p><sup>6</sup>Died Nov. 22, 1875</p>        
+                <p><sup>7</sup>Died Nov. 25, 1885</p>        
+                <p><sup>8</sup>Died Nov. 21, 1899</p>        
+                <p><sup>9</sup>Died Oct. 30, 1912</p>        
+                <p><sup>10</sup>Resigned Oct. 10, 1973</p>        
+                <p><sup>11</sup>First Vice President nominated by the President and confirmed by the Congress pursuant to the 25th amendment to the Constitution; took the oath of office on Dec. 6, 1973 in the Hall of the House of Representatives</p>        
+                <p><sup>12</sup>Resigned from office</p>        
+                <p><sup>13</sup>Nominated to be Vice President by President Gerald R. Ford on Aug. 20, 1974; confirmed by the Senate on Dec. 10, 1974; confirmed by the House and took the oath of office on Dec. 19, 1974 in the Senate Chamber</p>        
+    </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+		
+    
+
+
+<div class="footer-wrap clear">
+    <div class="footer container_24">
+		<div class="inner grid_24 clearfix">
+            <address>Office of the Historian: <a href="mailto:history@mail.house.gov">history@mail.house.gov</a><br />
+Office of Art &amp; Archives, Office of the Clerk: <a href="mailto:art@mail.house.gov">art@mail.house.gov</a>,
+<a href="mailto:archives@mail.house.gov">archives@mail.house.gov</a></address>
+
+            <ul class="footer-menu menu inline">
+                <li><a href="/About/">Contact</a></li>
+                <li><a href="/About/Security-and-Privacy/">Privacy</a></li>
+                    <li><a href="http://www.youtube.com/ushousehistory" rel="external" class="replace icon icon_youtube">YouTube</a></li>
+                    <li> <a href="https://www.twitter.com/ushousehistory/" rel="external" class="replace icon icon_twitter">Tweet</a></li>
+            </ul>
+		</div>
+    </div>
+</div>
+
+    
+<div class="js citation hidden">
+
+
+
+    <div class="inner">
+        <a href="#" class="replace sprite btn_close_image_overlay">Close</a>
+        <h2>Cite This Page</h2>
+        <p>
+<em>History, Art &amp; Archives, U.S. House of Representatives,</em> “Presidents, Vice Presidents, &amp; Coinciding Sessions of Congress,”                <a href="https://history.house.gov/Institution/Presidents-Coinciding/Presidents-Coinciding/">https://history.house.gov/Institution/Presidents-Coinciding/Presidents-Coinciding/</a>
+(March 04, 2020)        </p>
+
+
+        <h3>For Additional Information</h3>
+        <p>
+            
+<strong>Office of the Historian</strong><br /><strong>Office of Art and Archives</strong>                <br />                                                                                                                                                     
+Attic, Thomas Jefferson Building<br />Washington, D.C. 20515<br />(202) 226-1300                <br />                                                                                                                                                     
+        </p>
+
+        
+            <ul>
+                    <li><a href="mailto:history@mail.house.gov" title="mailto:history@mail.house.gov">history@mail.house.gov</a></li>                
+                    <li><a href="mailto:art@mail.house.gov" title="mailto:art@mail.house.gov">art@mail.house.gov</a></li>                
+                    <li><a href="mailto:archives@mail.house.gov" title="mailto:archives@mail.house.gov">archives@mail.house.gov</a></li>                
+            </ul>
+
+    </div>
+</div>
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-9875785-18', 'auto');
+        ga('send', 'pageview');
+	</script>
+
+</body>
+
+</html>
